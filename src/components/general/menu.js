@@ -1,0 +1,54 @@
+import React, {Component, useState} from 'react';
+import {Link, NavLink} from "react-router-dom";
+import search from "../../assets/image/main/search-icon.png"
+import Social from "./social";
+import About from "../menu/about";
+import CoreAdvice from "../menu/coreAdvice";
+import {Language} from "../menu/Language";
+import close from '../../assets/image/main/close.png'
+
+const Menu = () => {
+        const [openModal, setOpenModal] = useState(false);
+
+    const toggleModal = () => {
+        setOpenModal(!openModal);
+    }
+
+        return (
+            <div className="relative mb-0">
+                {!openModal ? (
+                    <div className="bg-blue">
+                        <div className='wrapper h-[78px] flex justify-between items-center font-inter'>
+                            <About/>
+                            <CoreAdvice/>
+                            <NavLink to="/news"
+                                     className="text-white text-[14px] font-semibold">Новости</NavLink>
+                            <NavLink to="/decrees"
+                                     className="text-white text-[14px] font-semibold">Документы</NavLink>
+                            <NavLink to="/gallery"
+                                     className="text-white text-[14px] font-semibold ">Галерея</NavLink>
+                            <NavLink to="/y-map" className="w-[91px] h-[34px] bg-orange rounded font-medium text-white text-[15px] py-1.5 px-[22px] ">Y-Map
+                            </NavLink>
+                            <Language/>
+                            <img src={search} alt="search" className='w-[20px] h-[20px] cursor-pointer'
+                                 onClick={toggleModal}/>
+                            <Social/>
+                        </div>
+                    </div>
+                    ) : (
+                    <div className=" w-full h-[78px] bg-blueLight z-10">
+                        <div className="wrapper py-[22px]">
+                            <input type='text' autoFocus={true}
+                                   className='bg-blueLight border-none outline-none w-[98.5%] h-[24px] font-medium text-[15px]'
+                                   placeholder='Поиск'/>
+                            <img src={close} alt='close' className='py-2 cursor-pointer' onClick={toggleModal}/>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+
+        );
+}
+
+export default Menu;

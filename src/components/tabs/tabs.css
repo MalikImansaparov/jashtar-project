@@ -1,0 +1,10 @@
+a {
+    color: #333333;
+    text-decoration: none;
+}
+a.activeTab {
+    font-weight: bold;
+    color: blue;
+    border-bottom: 1px solid blue;
+}
+
