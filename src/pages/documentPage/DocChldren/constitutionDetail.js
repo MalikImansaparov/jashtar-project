@@ -5,17 +5,16 @@ import doc from "../../../assets/image/general/doc.png";
 import download from "../../../assets/image/general/download.png";
 import DocSidebar from "../docSidebar";
 import {useFetch} from "../../../api/useFetch";
-import {base, councilUrl, docsUrl, lead} from "../../../api/const";
+import {lead} from "../../../api/const";
 import {BreadCrumbs} from "../../../components/modules/breadcrumbs";
 
-const LawsDetail = () => {
-    const { isLoading, response } = useFetch(base + docsUrl + '/documents_document/');
-    console.log('d', response)
+const ConstitutionDetail = () => {
+    const { response } = useFetch(lead);
 
     const [crumbs] = useState([
         'Документы',
         '❯',
-        'Законы',
+        'Положения',
         '❯',
     ]);
 
@@ -74,4 +73,4 @@ const LawsDetail = () => {
     );
 };
 
-export default LawsDetail;
+export default ConstitutionDetail;

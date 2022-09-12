@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {BreadCrumb} from "../components/general/breadcrumb";
 import {SwiperSlide} from "swiper/react";
 import {useFetch} from "../api/useFetch";
-import {url} from "../api/const";
+import {newsUrl, url} from "../api/const";
 import {ClipLoader} from "react-spinners";
 import {Link} from "react-router-dom";
 import ReactPaginate from "react-paginate";
@@ -10,34 +10,8 @@ import ReactPaginate from "react-paginate";
 const NewsPage = () => {
     const [items, setItems] = useState([]);
     const [pageCount, setpageCount] = useState(0);
-    const { isLoading, response } = useFetch(url);
-    window.scroll(0,0)
-    let limit = 3;
+    const { isLoading, response } = useFetch(newsUrl);
 
-    // useEffect(() => {
-    //     const getComments = async () => {
-    //         const res = await fetch(
-    //             `https://jsonplaceholder.typicode.com/comments?_page=1&_limit=${limit}`
-    //         );
-    //         const data = await res.json();
-    //         const total = res.headers.get('x-total-count');
-    //         setpageCount(Math.ceil(total / limit));
-    //         // console.log(Math.ceil(total/12));
-    //         setItems(data);
-    //     };
-    //
-    //     getComments();
-    // }, [limit]);
-    //
-    // const fetchComments = async (currentPage) => {
-    //     const res = await fetch(
-    //         // `http://localhost:3004/comments?_page=${currentPage}&_limit=${limit}`
-    //         `https://jsonplaceholder.typicode.com/comments?_page=${currentPage}&_limit=${limit}`
-    //     );
-    //     const data = await res.json();
-    //     return data;
-    // };
-    //
     const handlePageClick = async (data) => {
     //     console.log(data.selected);
     //     let currentPage = data.selected + 1;

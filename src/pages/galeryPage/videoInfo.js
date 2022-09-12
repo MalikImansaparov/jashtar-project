@@ -5,10 +5,12 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import {useFetch} from "../../api/useFetch";
-import {lead, url} from "../../api/const";
+import {base, galeryUrl, lead, url} from "../../api/const";
+import {useClickOutside} from "../../hooks/useOutside";
 
 const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
-    const { response } = useFetch(lead);
+    const [ref] = useClickOutside(() => setOpenRegisterModal(false))
+    const { isLoading, response } = useFetch(base + galeryUrl + '/gallery_image/');
     document.body.style.overflow = "hidden";
 
     const onClose = () => {
@@ -18,8 +20,8 @@ const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
 
     return (
         <div>
-            <Modal open={openRegisterModal} >
-                <div className='w-[1236px] bg-white rounded-[12px] px-8'>
+            <Modal open={openRegisterModal}>
+                <div className='w-[1236px] bg-white rounded-[12px] px-8' ref={ref}>
                         {response &&
                             response.map((item) => (
                                     <div key={item.id}>
@@ -35,11 +37,11 @@ const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                             allowFullScreen
                                             title="Embedded youtube"
                                         />
-                                        <div className='block text-base text-blue font-medium mb-3 mt-[32px]'>Список участников координационного совета:</div>
+                                        <div className='block text-base text-blue font-medium mb-3 mt-[32px]'>{item.title}</div>
                                         <div className="flex items-center mb-[26px]">
-                                            <p className="font-normal text-base">Приоритетным направлением IFC в Кыргызской Республике является поддержка развития и диверсификации частного сектора с целью улучшения конкурентоспособности страны и возможностей трудоустройства. IFC помогает совершенствовать операционную деятельность компаний, создать благоприятную среду для ведения бизнеса и увеличить доступ к финансированию для малого и среднего бизнеса (МСБ).</p>
+                                            <p className="font-normal text-base">{item.desk_ky}</p>
                                         </div>
-                                        <p className="font-medium text-sm text-grey">16 июня, 2022 г.</p>
+                                        <p className="font-medium text-sm text-grey">{item.date}</p>
                                     </div>
                             ))}
                 </div>

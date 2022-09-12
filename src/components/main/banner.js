@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import {Link} from "react-router-dom";
-import { url } from '../../api/const';
+import {b, base, mainUrl, uri, url} from '../../api/const';
 import { useFetch } from '../../api/useFetch';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination} from "swiper";
@@ -9,10 +9,19 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import '../../index.css';
 import {ClipLoader} from "react-spinners";
+import sanitize from 'sanitize-html'
+import SanitizedHTML from 'react-sanitized-html';
+
+const HTML_FROM_USER = '<a href="http://bing.com/">Bing</a>';
 
 const Banner = () => {
-  const { isLoading, response } = useFetch(url);
+  const { isLoading, response } = useFetch(base + mainUrl + '/slider/');
     const swiperRef = useRef();
+
+    const Sanitized = ({ html = "" }) => {
+        const sanitized = sanitize(html);
+        return <span dangerouslySetInnerHTML={{ __html: sanitized }} />;
+    };
 
     if (isLoading) {
         return (
@@ -48,26 +57,28 @@ const Banner = () => {
             <SwiperSlide key={item.id}>
               <div className="flex flex-wrap justify-center w-full max-h-[624px] bg-arrow">
                 <img
-                  src={item.path}
+                  src={uri + item.background_image}
                   alt=""
                   className="w-full max-h-[624px] object-cover bg-no-repeat relative"
                 />
-                  <div className='w-full h-[624px] bg-gradient-banner opacity-[40%] absolute top-0 left-0 z-10'></div>
+                  <div className='w-full h-[624px] bg-gradient-banner opacity-[40%] absolute top-0 left-0 z-0'></div>
                   {/*<div className='w-[4.3%] h-[624px] absolute bg-gradient-banner opacity-[40%] top-0 right-0 z-100'></div>*/}
-                <div className="container w-[1236px] h-[624px] m-auto text-white bg-gradient-banner absolute top-0 flex items-center">
+                <div className="container w-[1236px] h-[624px] m-auto text-white bg-gradient-banner absolute top-0 flex items-center z-1000">
                   <div className="ml-[52px] items-center">
                     <p className="text-[32px] font-bold">
-                      Виртуальная выставка технологий:
+                        <Sanitized html={item.title_ky}/>
                     </p>
                     <p className="text-[32px] font-normal">
-                      Завтрашние технологии сегодня
+
                     </p>
                     <p className="mt-[26px] font-normal text-[26px]">
-                      Зарегистрируйтесь сейчас на
-                      <Link to="/" className="underline text-white">
-                        {' '}
-                        jashtar.gov.kg
-                      </Link>
+
+                        <SanitizedHTML html={item.subtitle_ky} />
+
+                      {/*<Link to="/" className="underline text-white">*/}
+                      {/*  {' '}*/}
+                      {/*  jashtar.gov.kg*/}
+                      {/*</Link>*/}
                     </p>
                   </div>
                 </div>

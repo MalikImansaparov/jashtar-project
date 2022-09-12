@@ -8,7 +8,7 @@ import {useFetch} from "../../../api/useFetch";
 import {lead} from "../../../api/const";
 import {BreadCrumbs} from "../../../components/modules/breadcrumbs";
 
-const PositionDetail = () => {
+const StatementsDetail = () => {
     const { response } = useFetch(lead);
 
     const [crumbs] = useState([
@@ -66,11 +66,10 @@ const PositionDetail = () => {
                         <p className="text-[13px] font-normal mb-3">О противодействии коррупции</p>
                         <img src={download} alt='pdf'/>
                     </div>
-
                 </div>
             </div>
         </div>
     );
 };
 
-export default PositionDetail;
+export default StatementsDetail;

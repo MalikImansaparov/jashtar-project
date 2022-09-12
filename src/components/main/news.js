@@ -1,5 +1,5 @@
 import {useFetch} from "../../api/useFetch";
-import {url} from "../../api/const";
+import {base, uri, url} from "../../api/const";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
@@ -9,7 +9,7 @@ import { useRef } from 'react';
 import {Link} from "react-router-dom";
 
 export const News = () => {
-  const { response } = useFetch(url);
+    const { isLoading, response } = useFetch(base + uri + '/news/');
   const swiperRef = useRef();
 
     const settings = {

@@ -4,10 +4,15 @@ import leader1 from '../../assets/image/about/akdn1.png'
 import leader2 from '../../assets/image/about/akdn2.png'
 import CordinationList from "./cordinationList";
 import jashtar from "../../assets/image/general/Jashtar-logo.png"
+import {useFetch} from "../../api/useFetch";
+import {base, councilUrl, mainUrl, uri} from "../../api/const";
 
 
 export const UniversitySoviet = () => {
+    const { isLoading, response } = useFetch(base + councilUrl + '/council_uniparticipant/');
+    console.log(response)
     return (
+
         <div>
             <div className='wrapper'>
                 <div className="container w-[1196px]">
@@ -26,66 +31,23 @@ export const UniversitySoviet = () => {
                 </div>
                 <div className="w-full text-base font-normal leading-[19.3px] my-8">Функционируя во всех 7 областях Кыргызстана в поддержку национальных приоритетов развития, агентства АКДН работают ради достижения общей цели повышения доступа к высококачественному образованию, создания экономических возможностей и финансовой инклюзивности, развития человеческого потенциала и инфраструктуры, а также укрепления гражданского общества и местного управления. В Кыргызстане агентства АКДН обеспечивают занятость более 1500 человек, большинство из которых являются местными гражданами.</div>
                 <div className="flex w-full justify-between mb-[62px]">
-                    <div className="flex w-[291px] shadow-sm p-3 rounded-[12px]">
-                        <img
-                            src={leader1}
-                            alt="cart-img"
-                            className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
-                        />
-                        <div className="w-[193px] m-auto ">
-                            <p className="text-[12px] mb-1 font-normal text-blue">
-                                Баркат Фазал
-                            </p>
-                            <p className="text-[11px] font-light">
-                                Глава Организации Ага Хана по развитию в Кыргызской Республике (АКДН)
-                            </p>
+                    {response && response(item => (
+                        <div className="flex w-[291px] shadow-sm p-3 rounded-[12px]" key={item.id}>
+                            <img
+                                src={uri + item.avatar_image}
+                                alt="cart-img"
+                                className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
+                            />
+                            <div className="w-[193px] m-auto">
+                                <p className="text-[12px] mb-1 font-normal text-blue">
+                                    {item.full_name_ky}
+                                </p>
+                                <p className="text-[11px] font-light ">
+                                    {item.anotation_ky}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="flex w-[291px] shadow-sm p-3 rounded-[12px]">
-                        <img
-                            src={leader2}
-                            alt="cart-img"
-                            className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
-                        />
-                        <div className="w-[193px] m-auto">
-                            <p className="text-[12px] mb-1 font-normal text-blue">
-                                Алтааф Хашам
-                            </p>
-                            <p className="text-[11px] font-light ">
-                                Руководитель по вопросам программ и менеджмента представительства АКДН в КР
-                            </p>
-                        </div>
-                    </div>
-                    <div className="flex w-[291px] shadow-sm p-3 rounded-[12px]">
-                        <img
-                            src={leader2}
-                            alt="cart-img"
-                            className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
-                        />
-                        <div className="w-[193px] m-auto">
-                            <p className="text-[12px] mb-1 font-normal text-blue">
-                                Алтааф Хашам
-                            </p>
-                            <p className="text-[11px] font-light ">
-                                Руководитель по вопросам программ и менеджмента представительства АКДН в КР
-                            </p>
-                        </div>
-                    </div>
-                    <div className="flex w-[291px] shadow-sm p-3 rounded-[12px]">
-                        <img
-                            src={leader2}
-                            alt="cart-img"
-                            className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
-                        />
-                        <div className="w-[193px] m-auto">
-                            <p className="text-[12px] mb-1 font-normal text-blue">
-                                Алтааф Хашам
-                            </p>
-                            <p className="text-[11px] font-light ">
-                                Руководитель по вопросам программ и менеджмента представительства АКДН в КР
-                            </p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
             <CordinationList/>

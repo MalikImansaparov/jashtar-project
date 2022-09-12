@@ -6,12 +6,21 @@ import About from "../menu/about";
 import CoreAdvice from "../menu/coreAdvice";
 import {Language} from "../menu/Language";
 import close from '../../assets/image/main/close.png'
+import SearchPage from "../SearchPage";
+import {useNavigate} from "react-router";
 
 const Menu = () => {
+        const navigate = useNavigate()
         const [openModal, setOpenModal] = useState(false);
+
 
     const toggleModal = () => {
         setOpenModal(!openModal);
+    }
+
+    const handleSubmit = (e) => {
+        <SearchPage value={e}/>
+        navigate('/search')
     }
 
         return (
@@ -40,7 +49,7 @@ const Menu = () => {
                         <div className="wrapper py-[22px]">
                             <input type='text' autoFocus={true}
                                    className='bg-blueLight border-none outline-none w-[98.5%] h-[24px] font-medium text-[15px]'
-                                   placeholder='Поиск'/>
+                                   placeholder='Поиск' onKeyDown={e => e.key === 'Enter' && handleSubmit(e.target.value)}/>
                             <img src={close} alt='close' className='py-2 cursor-pointer' onClick={toggleModal}/>
                         </div>
                     </div>
