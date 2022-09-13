@@ -60,5 +60,5 @@ btn-blue:hover {
 }
 
 .link {
-    @apply font-semibold py-4 flex justify-end text-right
+    @apply font-semibold py-4 flex pl-12
 }

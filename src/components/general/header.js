@@ -3,8 +3,12 @@ import logo from "../../assets/image/main/logotip.png"
 import avatar from "../../assets/image/main/logo.png"
 import {project} from "../statiic/data";
 import {Link, NavLink} from "react-router-dom";
+import {useFetch} from "../../api/useFetch";
+import {base, mainUrl, uri} from "../../api/const";
 
 const Header = () => {
+    const { isLoading, response } = useFetch(base + mainUrl + '/quote/');
+
     return (
         <div className='bg-white'>
         <div className='wrapper flex justify-between items-center'>
@@ -22,13 +26,16 @@ const Header = () => {
                     </Link>
                 ))}
             </div>
-            <div className='flex'>
-                <div className=" mt-3.5 pt-1">
-                    <p className=" text-[11px] w-[284px] font-medium flex-wrap text-blue leading-[13px]">“Молодежь должна стать основным локомотивом развития нашего Кыргызстана.”</p>
-                    <div className="text-[10px] text-right font-normal mt-[10px] text-grey">Жапаров С.Н., Президент КР</div>
+            {response && response.map( item => (
+                <div className='flex' key={item.id}>
+                    <div className=" mt-3.5 pt-1">
+                        <p className=" text-[11px] w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_ky}</p>
+                        <div className="text-[10px] text-right font-normal mt-[10px] text-grey">{item.annotation_ky}</div>
+                    </div>
+                    <img className="w-[62px] h-[62px] my-[8px] ml-[6px]" src={uri + item.avatar_image} alt='logo' />
                 </div>
-                <img className="w-[62px] h-[62px] my-[8px] ml-[6px]" src={avatar} alt='logo' />
-            </div>
+            ))}
+
 
         </div>
         </div>

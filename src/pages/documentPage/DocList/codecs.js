@@ -9,7 +9,7 @@ import {NavLink} from "react-router-dom";
 import {useFetch} from "../../../api/useFetch";
 import {url} from "../../../api/const";
 
-const Concepts = () => {
+const Codecs = () => {
     const { isLoading, response } = useFetch(url);
 
     return (
@@ -30,4 +30,4 @@ const Concepts = () => {
     );
 };
 
-export default Concepts;
+export default Codecs;

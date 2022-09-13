@@ -16,16 +16,19 @@ import EventsPage from "../pages/eventsPage";
 import DetailEvents from "../pages/detailEvents";
 import GalleryPage from "../pages/galeryPage/galeryPage";
 import DecreesDetail from "../pages/documentPage/DocChldren/decreesDetail";
-import PositionDetail from "../pages/documentPage/DocChldren/positionDetail";
+import ConstitutionDetail from "../pages/documentPage/DocChldren/constitutionDetail";
 import LawsDetail from "../pages/documentPage/DocChldren/lawsDetail";
-import Concepts from "../pages/documentPage/DocList/concepts";
-import ConceptsDetail from "../pages/documentPage/DocChldren/conceptsDetail";
+import Codecs from "../pages/documentPage/DocList/codecs";
+import CodecsDetail from "../pages/documentPage/DocChldren/codecsDetail";
 import YMap from "../pages/y-map";
 import Decrees from "../pages/documentPage/DocList/decrees";
 import Laws from "../pages/documentPage/DocList/laws";
-import Positions from "../pages/documentPage/DocList/position";
+import Positions from "../pages/documentPage/DocList/constution";
 import Projects from "../pages/aboutPages/project/projects";
 import InfoLeadership from "../components/leadship/infoLeadership";
+import SearchPage from "../components/SearchPage";
+import Constitution from "../pages/documentPage/DocList/constution";
+import Statement from "../pages/documentPage/DocList/statement";
 
 export const publicRoutes = [
     { path: '/', component: MainPage },
@@ -46,14 +49,17 @@ export const publicRoutes = [
     { path: '/events', component: EventsPage },
     { path: '/events/:id', component: DetailEvents },
     { path: '/gallery', component: GalleryPage },
-    { path: '/decrees', component: Decrees },
-    { path: '/position', component: Positions },
+    { path: '/decress', component: Decrees },
+    { path: '/codes', component: Codecs },
     { path: '/laws', component: Laws},
-    { path: '/concept', component: Concepts},
+    { path: '/constitution', component: Constitution},
+    { path: '/statements', component: Statement},
     { path: '/decrees/:id', component: DecreesDetail },
-    { path: '/position/:id', component: PositionDetail },
+    { path: '/codes/:id', component: ConstitutionDetail },
     { path: '/laws/:id', component: LawsDetail},
-    { path: '/concept/:id', component: ConceptsDetail},
+    { path: '/statements/:id', component: CodecsDetail},
+    { path: '/constitution/:id', component: CodecsDetail},
     { path: '/y-map', component: YMap},
     { path: '/leadership/:id', component: InfoLeadership},
+    { path: '/search', component: SearchPage},
 ];

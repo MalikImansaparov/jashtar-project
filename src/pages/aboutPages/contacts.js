@@ -2,8 +2,12 @@ import React from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
 import bg from "../../assets/image/about/contacts-bg.png";
 import pattern from "../../assets/image/main/Looper-1.png"
+import {aboutUrl, base} from "../../api/const";
+import {useFetch} from "../../api/useFetch";
 
 export const Contacts = () => {
+    const { isLoading, response } = useFetch(base + aboutUrl + 'about_us_phonenumber');
+
     const bgImageStyle = {
         backgroundImage: `url('${bg}')`,
         backgroundSize: 'cover'
@@ -24,10 +28,12 @@ export const Contacts = () => {
                 </div>
                 <div className="relative rounded w-[532px] h-[322px] bg-white flex justify-center items-center ml-[261px]">
                     <img src={pattern} alt="pattern" className="absolute top-0 right-[20px] w-[200px] h-[200px]"/>
-                    <div>
-                    <p className="text-base font-medium mb-[22px]">Адрес:<span className="text-blue"> Пушкина 78, 720040 Бишкек, Кыргызстан</span></p>
-                    <p className="text-base font-medium">Телефон: <span className="text-blue"> +996 312 661194; +996 312 660952</span></p>
-                    </div>
+                    { response && response.map( item => (
+                        <div key={item.id}>
+                            <p className="text-base font-medium mb-[22px]">Адрес:<span className="text-blue"> Пушкина 78, 720040 Бишкек, Кыргызстан</span></p>
+                            <p className="text-base font-medium">Телефон: <span className="text-blue">{item.phone}</span></p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

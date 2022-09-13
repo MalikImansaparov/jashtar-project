@@ -8,7 +8,7 @@ import {useFetch} from "../../../api/useFetch";
 import {BreadCrumbs} from "../../../components/modules/breadcrumbs";
 import {lead} from "../../../api/const";
 
-const ConceptsDetail = () => {
+const CodecsDetail = () => {
     const {id} = useParams()
     const { response } = useFetch(lead);
 
@@ -76,4 +76,4 @@ const ConceptsDetail = () => {
     );
 };
 
-export default ConceptsDetail;
+export default CodecsDetail;

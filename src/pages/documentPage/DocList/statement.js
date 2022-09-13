@@ -9,7 +9,7 @@ import {NavLink} from "react-router-dom";
 import {useFetch} from "../../../api/useFetch";
 import {url} from "../../../api/const";
 
-const Positions = () => {
+const Statement = () => {
     const { isLoading, response } = useFetch(url);
 
     return (
@@ -23,7 +23,7 @@ const Positions = () => {
             {response && response.map( item => (
                 <div className='flex items-center mt-4'>
                     <img src={arrow} alt='arrow' className='w-[3.5px] h-[7px]'/>
-                    <NavLink to={`/position/${item.id}`} className='ml-[11px] font-medium text-base text-blue'>О местной государственной администрации и органах местного самоуправления</NavLink>
+                    <NavLink to={`/statement/${item.id}`} className='ml-[11px] font-medium text-base text-blue'>О местной государственной администрации и органах местного самоуправления</NavLink>
                 </div>
             )) }
             </div>
@@ -32,4 +32,4 @@ const Positions = () => {
     );
 };
 
-export default Positions;
+export default Statement;

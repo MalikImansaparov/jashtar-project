@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import {useFetch} from "../../api/useFetch";
-import {url} from "../../api/const";
+import {base, galeryUrl, uri, url} from "../../api/const";
 import point from '../../assets/image/general/point.png'
 import GalleryInfo from "./galleryInfo";
 import VideoInfo from "./videoInfo";
 import ReactPaginate from "react-paginate";
+import {useClickOutside} from "../../hooks/useOutside";
 
 const VideoPanel = () => {
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
-    const { response } = useFetch(url);
+    const { isLoading, response } = useFetch(base + galeryUrl + '/gallery_videogallery/');
 
     return (
         <div className="wrapper">
@@ -18,23 +19,22 @@ const VideoPanel = () => {
                     <iframe
                         width="580"
                         height="326"
-                        src={`https://www.youtube.com/embed/vQzb34h7mtY`}
+                        src={uri + item.video}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         title="Embedded youtube"
                     />
                     <div className="p-4 cursor-pointer">
-                   <p className='text-[18px] font-normal'>Learn Adobe Illustrator | Free Course</p>
+                   <p className='text-[18px] font-normal'>{item.title_ky}</p>
                     <div className="flex items-center">
-                    <span className="mt-2 mb-3">30K views</span>
                     <img src={point} alt="" className="mx-4 border-[50%] w-[5px] h-[5px]"/>
-                    <span className="text-sm font-normal ">3 days ago</span>
+                    <span className="text-sm font-normal ">{item.date}</span>
                     </div>
-                    <div className="flex">
-                        <img src={item.path} alt=""className="w-8 h-8 rounded-[50%]"/>
-                        <p className="text-[18px] font-base pl-2">David White</p>
-                    </div>
+                    {/*<div className="flex">*/}
+                    {/*    <img src={item.path} alt=""className="w-8 h-8 rounded-[50%]"/>*/}
+                    {/*    <p className="text-[18px] font-base pl-2">David White</p>*/}
+                    {/*</div>*/}
                     </div>
                 </div>
                 ))}

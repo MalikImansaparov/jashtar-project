@@ -9,10 +9,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import {settings} from "../../components/slider/settings";
 import {useFetch} from "../../api/useFetch";
-import {url} from "../../api/const";
+import {base, galeryUrl, url} from "../../api/const";
+import {useClickOutside} from "../../hooks/useOutside";
 
 const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
-    const { response } = useFetch(url);
+    const [ref] = useClickOutside(() => setOpenRegisterModal(false))
+    const { isLoading, response } = useFetch(base + galeryUrl + '/gallery_image/');
     const swiperRef = useRef();
     document.body.style.overflow = "hidden";
 
@@ -44,7 +46,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                             response.map((item) => (
                                 <SwiperSlide key={item.id}>
                                     <div>
-                                        <div className="flex justify-end mt-[37px] mb-[27px]">
+                                        <div className="flex justify-end mt-[37px] mb-[27px]" ref={ref}>
                                             <img src={close} alt="close icon " className="cursor-pointer" onClick={onClose}/>
                                         </div>
                                         <img src={lotte} alt='img' className="w-full h-[555px]"/>
@@ -58,11 +60,11 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                                 onClick={() => swiperRef.current.slideNext()}
                                             ></div>
                                         </div>
-                                        <div className='block text-base text-blue font-medium mb-3'>Список участников координационного совета:</div>
+                                        <div className='block text-base text-blue font-medium mb-3'>{item.title_ky}</div>
                                         <div className="flex items-center mb-[26px]">
-                                            <p className="font-normal text-base">Приоритетным направлением IFC в Кыргызской Республике является поддержка развития и диверсификации частного сектора с целью улучшения конкурентоспособности страны и возможностей трудоустройства. IFC помогает совершенствовать операционную деятельность компаний, создать благоприятную среду для ведения бизнеса и увеличить доступ к финансированию для малого и среднего бизнеса (МСБ).</p>
+                                            <p className="font-normal text-base">{item.desc_ky}</p>
                                         </div>
-                                        <p className="font-medium text-sm text-grey">16 июня, 2022 г.</p>
+                                        <p className="font-medium text-sm text-grey">{item.date}</p>
                                     </div>
                                 </SwiperSlide>
                             ))}

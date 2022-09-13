@@ -26,10 +26,11 @@ export const BreadCrumb = () => {
                     {pathname === '/university' ? <span className="crumbs" onClick={() => navigate(-1)}>Координационный совет<img src={arrow} alt="" className="mx-4 w-2 h-4"/>  Совет университетов</span> : null}
                             {pathname === '/partners' ? <span className="crumbs" onClick={() => navigate(-1)}>Координационный совет<img src={arrow} alt="" className="mx-4 w-2 h-4"/>  Партнеры</span> : null}
 
-                    {pathname === '/decrees' ? <span className="crumbs" onClick={() => navigate(-1)}>Документы<img src={arrow} alt="" className="mx-4 w-2 h-4"/> Указы</span> : null}
-                    {pathname === '/laws' ? <span className="crumbs" onClick={() => navigate(-1)}>Документы<img src={arrow} alt="" className="mx-4 w-2 h-4"/> Законы</span> : null}
-                    {pathname === '/concept' ? <span className="crumbs" onClick={() => navigate(-1)}>Документы<img src={arrow} alt="" className="mx-4 w-2 h-4"/> Концепты</span> : null}
-                    {pathname === '/position' ? <span className="crumbs" onClick={() => navigate(-1)}>Документы<img src={arrow} alt="" className="mx-4 w-2 h-4"/> Положения</span> : null}
+                    {pathname === '/decrees' ? <span className="crumbs" onClick={() => navigate(-1)}>Документы<img src={arrow} alt="" className="mx-4 w-2 h-4"/> Указы Презтдента КР</span> : null}
+                    {pathname === '/laws' ? <span className="crumbs" onClick={() => navigate(-1)}>Документы<img src={arrow} alt="" className="mx-4 w-2 h-4"/> Законы КР</span> : null}
+                    {pathname === '/statements' ? <span className="crumbs" onClick={() => navigate(-1)}>Документы<img src={arrow} alt="" className="mx-4 w-2 h-4"/> Постановления КР</span> : null}
+                    {pathname === '/constitution' ? <span className="crumbs" onClick={() => navigate(-1)}>Документы<img src={arrow} alt="" className="mx-4 w-2 h-4"/> Конституция КР</span> : null}
+                    {pathname === '/codes' ? <span className="crumbs" onClick={() => navigate(-1)}>Документы<img src={arrow} alt="" className="mx-4 w-2 h-4"/> Кодексы КР</span> : null}
 
                     {pathname === '/gallery' ? <span className="crumbs" onClick={() => navigate(-1)}>Галерея<img src={arrow} alt="" className="mx-4 w-2 h-4"/>Фото</span> : null}
                     {pathname === '/news' ? <span className="crumbs" onClick={() => navigate(-1)}>Новости<img src={arrow} alt="" className="mx-4 w-2 h-4"/> Все новости</span> : null}

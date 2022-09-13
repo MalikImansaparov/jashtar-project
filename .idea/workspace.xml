@@ -2,21 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a69f4fd-236d-4872-b47f-1cd45521cebc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/i18next.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/language/eng.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/language/kyr.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/language/rus.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/const.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/const.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/general/breadcrumb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/general/breadcrumb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/general/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/general/footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modules/breadcrumbs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/breadcrumbs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/general/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/general/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/general/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/general/menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/leadship/infoLeadership.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/leadship/infoLeadership.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/banner.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/banner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/news.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/volunter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/volunter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/Language.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/Language.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/menu/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/about.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/aboutPages/contacts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/aboutPages/contacts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/aboutPages/jashtarProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/aboutPages/jashtarProject.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/aboutPages/leadership.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/aboutPages/leadership.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/aboutPages/ministry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/aboutPages/ministry.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/aboutPages/project/infoProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/aboutPages/project/infoProject.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/aboutPages/timeLine/timeLine.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/aboutPages/timeLine/timeLine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cordinationPages/partners.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cordinationPages/partners.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/aboutPages/valuation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/aboutPages/valuation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cordinationPages/cordinationList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cordinationPages/cordinationList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cordinationPages/infoPartners.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cordinationPages/infoPartners.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cordinationPages/internationaOrganization.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cordinationPages/internationaOrganization.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/cordinationPages/universitySoviet.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cordinationPages/universitySoviet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/detailEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detailEvents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/detailNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/detailNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cordinationPages/youthoOrganization.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cordinationPages/youthoOrganization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentPage/DocChldren/conceptsDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentPage/DocChldren/lawsDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentPage/DocChldren/lawsDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentPage/DocChldren/positionDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentPage/DocList/concepts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentPage/DocList/position.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentPage/docSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentPage/docSidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/galeryPage/galleryInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/galeryPage/galleryInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/galeryPage/modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/galeryPage/modal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/galeryPage/photoPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/galeryPage/photoPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/galeryPage/videoInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/galeryPage/videoInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/galeryPage/videoPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/galeryPage/videoPanel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/newsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/newsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +58,7 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="tsconfig.json" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -52,7 +83,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/malik/Desktop/New folder/react-app/src/components/general&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/malik/Desktop/New folder (2)/react-app&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -229,6 +260,10 @@
       <workItem from="1662606950614" duration="15603000" />
       <workItem from="1662629005061" duration="139000" />
       <workItem from="1662629326350" duration="2208000" />
+      <workItem from="1662975786616" duration="1494000" />
+      <workItem from="1662977574353" duration="6579000" />
+      <workItem from="1662990499880" duration="7244000" />
+      <workItem from="1663038677036" duration="393000" />
     </task>
     <servers />
   </component>

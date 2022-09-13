@@ -2,9 +2,11 @@ import React, {useRef} from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination} from "swiper";
 import {useFetch} from "../../api/useFetch";
-import {url} from "../../api/const";
+import {base, eventsUrl, url} from "../../api/const";
 import dots from "../../assets/image/main/Ellipse 1.png"
 import {Link} from "react-router-dom";
+
+
 
 const settings = {
     breakpoints: {
@@ -24,7 +26,8 @@ const settings = {
 }
 
 export const Events = () => {
-    const { isLoading, response } = useFetch(url);
+    const { isLoading, response } = useFetch(base + eventsUrl + 'events/');
+
     const swiperRef = useRef();
 
     return (
