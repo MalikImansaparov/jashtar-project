@@ -46,7 +46,6 @@ const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                             ))}
                 </div>
             </Modal>
-
         </div>
     );
 };

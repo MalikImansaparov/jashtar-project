@@ -5,16 +5,20 @@ import doc from "../../../assets/image/general/doc.png";
 import download from "../../../assets/image/general/download.png";
 import DocSidebar from "../docSidebar";
 import {useFetch} from "../../../api/useFetch";
-import {lead} from "../../../api/const";
+import {base, docsUrl, lead} from "../../../api/const";
 import {BreadCrumbs} from "../../../components/modules/breadcrumbs";
+import {useTranslation} from "react-i18next";
+import {useParams} from "react-router-dom";
 
 const StatementsDetail = () => {
-    const { response } = useFetch(lead);
+    const {id} = useParams()
+    const { response } = useFetch(base + docsUrl + `/documents/${id}`);
+    const {t} = useTranslation()
 
     const [crumbs] = useState([
-        'Документы',
+        t('documents'),
         '❯',
-        'Положения',
+        t('statements'),
         '❯',
     ]);
 

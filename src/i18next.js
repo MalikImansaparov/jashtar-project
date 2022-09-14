@@ -8,8 +8,6 @@ import {initReactI18next, useTranslation} from "react-i18next";
 
 const availableLanguages = ["en", "ru", "ky"];
 
-const { t, i18n } = useTranslation();
-
 export const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
 };

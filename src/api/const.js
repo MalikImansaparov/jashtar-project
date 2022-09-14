@@ -1,8 +1,7 @@
+
 //import axios from 'axios';
+import axios from 'axios';
 export const url = "https://my-json-server.typicode.com/MalikImansaparov/json-server/news"
-export const lead = "https://my-json-server.typicode.com/MalikImansaparov/json-server/news?_limit=1"
-export const lastLead = "https://my-json-server.typicode.com/MalikImansaparov/json-server/news?_limit=3"
-export const twoLead = "https://my-json-server.typicode.com/MalikImansaparov/json-server/news?_limit=2"
 
 
 // export const instance = axios.create({
@@ -12,6 +11,14 @@ export const twoLead = "https://my-json-server.typicode.com/MalikImansaparov/jso
 //         'Content-Type': 'application/json',
 //     },
 // })
+
+export const instance = axios.create({
+    baseURL: "https://jashtar.prosoft.kg/f4116002dd4697f6b3a8434f253e4069674c2b6aeadf0bdba1e8fc683337c11d",
+    headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+    },
+})
 export const uri = 'https://jashtar.prosoft.kg'
 export const base = 'https://jashtar.prosoft.kg/'
 export const newsUrl = '19fba0e995b9794fc2c26217bf3b725c2f0d9eeda16719fe75e3ba23ca73bfc4'

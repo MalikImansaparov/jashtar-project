@@ -1,13 +1,12 @@
 import React from 'react';
 import {RenderArrow} from "../../utils/arrow";
 import {useFetch} from "../../api/useFetch";
-import {url} from "../../api/const";
+import {aboutUrl, base, uri} from "../../api/const";
 import { useMatchMedia } from '../../hooks/useMatchMedia';
-import path from "../../assets/image/partners/Ellipse 2.png"
 import {Link} from "react-router-dom";
 
 const SecondLead = () => {
-  const { isLoading, response } = useFetch(url);
+    const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
   const { isMobile, isTablet, isDesktop } = useMatchMedia();
 
   return (
@@ -15,14 +14,14 @@ const SecondLead = () => {
       <div className="wrapper justify-between align-middle">
 
         {/*md: jc*/}
-        {response &&
-          response.map((item) => (
+          {response &&
+              response.filter(i => i.floor === 2 ).map( item => (
             <div
               className="block shadow-sm w-[234px] h-[186px] bg-white rounded-2xl text-center"
               key={item.id}
             >
               <img
-                src={path}
+                src={uri + item.avatar_image}
                 alt="cart-img"
                 className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
               />
@@ -34,7 +33,7 @@ const SecondLead = () => {
                     Министр культуры, информации, спорта и молодежной политики Кыргызской Республики
                 </p>
               </div>
-                <Link to=':id'>
+                <Link to={`${item.id}`}>
               <button className="h-6 w-full bg-btnLight text-[11px] font-medium text-orange rounded-b-2xl">
                 Биография
               </button>

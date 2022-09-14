@@ -9,18 +9,14 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import '../../index.css';
 import {ClipLoader} from "react-spinners";
-import sanitize from 'sanitize-html'
 import SanitizedHTML from 'react-sanitized-html';
+import {useTranslation} from "react-i18next";
 
 
 const Banner = () => {
   const { isLoading, response } = useFetch(base + mainUrl + '/slider/');
     const swiperRef = useRef();
-
-    const Sanitized = ({ html = "" }) => {
-        const sanitized = sanitize(html);
-        return <span dangerouslySetInnerHTML={{ __html: sanitized }} />;
-    };
+    const {t} = useTranslation()
 
     if (isLoading) {
         return (
@@ -65,15 +61,13 @@ const Banner = () => {
                 <div className="container w-[1236px] h-[624px] m-auto text-white bg-gradient-banner absolute top-0 flex items-center z-1000">
                   <div className="ml-[52px] items-center">
                     <p className="text-[32px] font-bold">
-                        <Sanitized html={item.title_ky}/>
+                        <SanitizedHTML html={item.title_ky}/>
+                    </p>
+                    <p className="text-[32px] font-normal">
                     </p>
                     <p className="text-[32px] font-normal"></p>
                     <p className="mt-[26px] font-normal text-[26px]">
-                        <SanitizedHTML html={item.subtitle_ky} />
-                      {/*<Link to="/" className="underline text-white">*/}
-                      {/*  {' '}*/}
-                      {/*  jashtar.gov.kg*/}
-                      {/*</Link>*/}
+                        <SanitizedHTML html={(item.subtitle_ky)}/>
                     </p>
                   </div>
                 </div>

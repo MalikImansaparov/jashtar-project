@@ -3,10 +3,12 @@ import {useFetch} from "../../api/useFetch";
 import {base, mainUrl, uri} from "../../api/const";
 import SanitizedHTML from "react-sanitized-html";
 import {useNavigate} from "react-router";
+import {useTranslation} from "react-i18next";
 
 const Volunter = () => {
     const { isLoading, response } = useFetch(base + mainUrl + '/subprojects/');
     const navigate = useNavigate()
+    const {t} = useTranslation()
 
     return (
         <div className="mt-[62px]">
@@ -19,7 +21,7 @@ const Volunter = () => {
                         <p className='text-[22px] font-semibold mb-3'>{item.title_ky}</p>
                         <div className="font-normal text-base max-w-[422px] leading-5 text-grey">{item.desc_ky}</div>
                         <button className='button' onClick={() => window.open(item.apply_link)}>
-                           Стать волонтером
+                            {t('volunteer')}
                         </button>
                     </div>
                 </div>
@@ -32,7 +34,6 @@ const Volunter = () => {
                         </div>
                         <img src={uri + item.corresponding_image} alt='volunter' className='w-[50%]'/>
                     </div>
-
             ))}
         </div>
     );

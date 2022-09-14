@@ -8,11 +8,12 @@ import {Language} from "../menu/Language";
 import close from '../../assets/image/main/close.png'
 import SearchPage from "../SearchPage";
 import {useNavigate} from "react-router";
+import {useTranslation} from "react-i18next";
 
 const Menu = () => {
         const navigate = useNavigate()
         const [openModal, setOpenModal] = useState(false);
-
+        const {t} = useTranslation()
 
     const toggleModal = () => {
         setOpenModal(!openModal);
@@ -31,11 +32,11 @@ const Menu = () => {
                             <About/>
                             <CoreAdvice/>
                             <NavLink to="/news"
-                                     className="text-white text-[14px] font-semibold">Новости</NavLink>
-                            <NavLink to="/decrees"
-                                     className="text-white text-[14px] font-semibold">Документы</NavLink>
+                                     className="text-white text-[14px] font-semibold">{t("news")}</NavLink>
+                            <NavLink to="/constitution"
+                                     className="text-white text-[14px] font-semibold">{t("documents")}</NavLink>
                             <NavLink to="/gallery"
-                                     className="text-white text-[14px] font-semibold ">Галерея</NavLink>
+                                     className="text-white text-[14px] font-semibold ">{t("gallery")}</NavLink>
                             <NavLink to="/y-map" className="w-[91px] h-[34px] bg-orange rounded font-medium text-white text-[15px] py-1.5 px-[22px] ">Y-Map
                             </NavLink>
                             <Language/>

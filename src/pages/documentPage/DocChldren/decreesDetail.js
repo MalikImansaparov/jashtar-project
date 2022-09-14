@@ -5,16 +5,20 @@ import doc from "../../../assets/image/general/doc.png";
 import download from "../../../assets/image/general/download.png";
 import DocSidebar from "../docSidebar";
 import {useFetch} from "../../../api/useFetch";
-import {lead} from "../../../api/const";
+import {base, docsUrl, lead, mainUrl} from "../../../api/const";
 import {BreadCrumbs} from "../../../components/modules/breadcrumbs";
+import {useTranslation} from "react-i18next";
+import {useParams} from "react-router-dom";
+import {downloadFile} from "../../../components/modules/downloadFile";
 
 const DecreesDetail = () => {
-    const { response } = useFetch(lead);
-
+    const {id} = useParams()
+    const { response } = useFetch(base + docsUrl + `/documents/${id}`);
+    const {t} = useTranslation()
     const [crumbs] = useState([
-        'Документы',
+        t('documents'),
         '❯',
-        'Указы',
+        t('decrees'),
         '❯',
     ]);
 
@@ -59,7 +63,7 @@ const DecreesDetail = () => {
                     <div className='w-[152px]'>
                         <img src={pdf} alt='pdf'/>
                         <p className="text-[13px] font-normal mb-3">О противодействии коррупции</p>
-                        <img src={download} alt='pdf'/>
+                        <img src={download} alt='pdf' onClick={() => downloadFile()}/>
                     </div>
                     <div className='w-[152px]'>
                         <img src={doc} alt='pdf'/>

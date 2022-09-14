@@ -6,16 +6,17 @@ import DocSidebar from "../docSidebar";
 import {useParams} from "react-router-dom";
 import {useFetch} from "../../../api/useFetch";
 import {BreadCrumbs} from "../../../components/modules/breadcrumbs";
-import {lead} from "../../../api/const";
+import {base, docsUrl, lead, mainUrl} from "../../../api/const";
+import {useTranslation} from "react-i18next";
 
 const CodecsDetail = () => {
     const {id} = useParams()
-    const { response } = useFetch(lead);
-
+    const { response } = useFetch(base + docsUrl + `/documents/${id}`);
+    const {t} = useTranslation()
     const [crumbs] = useState([
-        'Документы',
+         t('documents'),
         '❯',
-        'Концепты',
+        t('codecs'),
         '❯',
     ]);
 

@@ -7,6 +7,7 @@
       <change afterPath="$PROJECT_DIR$/src/language/kyr.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/language/rus.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/const.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/const.js" afterDir="false" />
@@ -47,6 +48,8 @@
       <change beforePath="$PROJECT_DIR$/src/pages/newsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/newsPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+=======
+>>>>>>> f0ae1efc7bddf557aad0d9895d382ac54dde7a84
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +86,11 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+<<<<<<< HEAD
     &quot;last_opened_file_path&quot;: &quot;C:/Users/malik/Desktop/New folder (2)/react-app&quot;,
+=======
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/malik/Desktop/New folder/react-app/src/pages/documentPage/DocChldren&quot;,
+>>>>>>> f0ae1efc7bddf557aad0d9895d382ac54dde7a84
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -97,11 +104,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\malik\Desktop\New folder\react-app\src\pages\documentPage\DocChldren" />
+      <recent name="C:\Users\malik\Desktop\New folder\react-app\src\pages\documentPage\DocList" />
       <recent name="C:\Users\malik\Desktop\New folder\react-app\src\components\general" />
       <recent name="C:\Users\malik\Desktop\react-app\src\pages\documentPage" />
       <recent name="C:\Users\malik\Desktop\react-app\src\pages\galeryPage" />
-      <recent name="E:\tailwind-crash-course\tailwind-crash-course\src\assets\image" />
-      <recent name="E:\tailwind-crash-course\tailwind-crash-course\src\components\leadship" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\malik\Desktop\New folder\react-app\src\assets\image\general" />
@@ -134,8 +141,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -259,11 +266,25 @@
       <workItem from="1662599871138" duration="2206000" />
       <workItem from="1662606950614" duration="15603000" />
       <workItem from="1662629005061" duration="139000" />
+<<<<<<< HEAD
       <workItem from="1662629326350" duration="2208000" />
       <workItem from="1662975786616" duration="1494000" />
       <workItem from="1662977574353" duration="6579000" />
       <workItem from="1662990499880" duration="7244000" />
       <workItem from="1663038677036" duration="393000" />
+=======
+      <workItem from="1662629326350" duration="2609000" />
+      <workItem from="1662636130682" duration="4445000" />
+      <workItem from="1662647734659" duration="2861000" />
+      <workItem from="1662686356422" duration="626000" />
+      <workItem from="1662692173766" duration="26275000" />
+      <workItem from="1662733021969" duration="6849000" />
+      <workItem from="1662770748781" duration="22222000" />
+      <workItem from="1662854225176" duration="1726000" />
+      <workItem from="1662871749994" duration="8559000" />
+      <workItem from="1662891103412" duration="19112000" />
+      <workItem from="1662953398350" duration="13403000" />
+>>>>>>> f0ae1efc7bddf557aad0d9895d382ac54dde7a84
     </task>
     <servers />
   </component>
@@ -303,10 +324,6 @@
           <url>file://$PROJECT_DIR$/src/pages/detailEvents.js</url>
           <line>38</line>
           <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/pages/galeryPage/photoPanel.js</url>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/general/social.js</url>

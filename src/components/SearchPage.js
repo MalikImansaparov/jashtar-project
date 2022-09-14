@@ -1,5 +1,9 @@
 import React, {useEffect, useState} from 'react';
+
 // import {instance} from "../api/const";
+
+import {instance} from "../api/const";
+
 import path
     from "../assets/image/partners/1031036878_0_0_6016_3400_600x0_80_0_0_413f7b1b5ff473578023e30c42c5dc0f 2.png";
 import {useFetch} from "../api/useFetch";
@@ -10,12 +14,20 @@ const SearchPage = ({value}) => {
     const {response} = useFetch(url)
 
     const searchMaterial = async (value) => {
+
         // try {
         //     const response = await instance.get(`/work/search/?search=${value}`);
         //     return setItems(response.data);
         // } catch (error) {
         //     return console.log(error);
         // }
+
+        try {
+            const response = await instance.get(`/work/search/?search=${value}`);
+            return setItems(response.data);
+        } catch (error) {
+            return console.log(error);
+        }
     };
 
     useEffect(() => {
@@ -31,7 +43,7 @@ const SearchPage = ({value}) => {
     }
 
     return (
-        <div className=" wrapper py-[62px]">
+        <div className="wrapper py-[62px]">
             {response &&
                 response.map((item) => (
                     <div

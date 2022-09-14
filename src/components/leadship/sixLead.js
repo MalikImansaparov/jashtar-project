@@ -1,25 +1,24 @@
 import React from 'react';
 import {RenderArrow} from "../../utils/arrow";
 import {useFetch} from "../../api/useFetch";
-import {lastLead, url} from "../../api/const";
-import path from "../../assets/image/partners/Ellipse 2.png"
+import {aboutUrl, base, lastLead, uri, url} from "../../api/const";
 import {Link} from "react-router-dom";
 
 export const SixthLead = () => {
-    const { isLoading, response } = useFetch(lastLead);
+    const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
 
     return (
         <div className='mt-4'>
             <div className="wrapper justify-center align-middle">
                 {/*md: jc*/}
                 {response &&
-                    response.map((item) => (
+                    response.filter(i => i.floor === 6 ).map( item => (
                         <div
                             className="block shadow-sm w-[234px] h-[186px] bg-white rounded-2xl text-center mx-4"
                             key={item.id}
                         >
                             <img
-                                src={path}
+                                src={uri + item.avatar_image}
                                 alt="cart-img"
                                 className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
                             />
@@ -31,7 +30,7 @@ export const SixthLead = () => {
                                     Министр культуры, информации, спорта и молодежной политики Кыргызской Республики
                                 </p>
                             </div>
-                            <Link to=':id'>
+                            <Link to={`${item.id}`}>
                             <button className="h-6 w-full bg-btnLight font-medium text-xs text-orange rounded-b-2xl">
                                 Биография
                             </button>

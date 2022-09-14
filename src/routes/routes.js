@@ -29,6 +29,7 @@ import InfoLeadership from "../components/leadship/infoLeadership";
 import SearchPage from "../components/SearchPage";
 import Constitution from "../pages/documentPage/DocList/constution";
 import Statement from "../pages/documentPage/DocList/statement";
+import StatementsDetail from "../pages/documentPage/DocChldren/statementsDetail";
 
 export const publicRoutes = [
     { path: '/', component: MainPage },
@@ -55,10 +56,10 @@ export const publicRoutes = [
     { path: '/constitution', component: Constitution},
     { path: '/statements', component: Statement},
     { path: '/decrees/:id', component: DecreesDetail },
-    { path: '/codes/:id', component: ConstitutionDetail },
+    { path: '/codes/:id', component: CodecsDetail },
     { path: '/laws/:id', component: LawsDetail},
-    { path: '/statements/:id', component: CodecsDetail},
-    { path: '/constitution/:id', component: CodecsDetail},
+    { path: '/statements/:id', component: StatementsDetail},
+    { path: '/constitution/:id', component: ConstitutionDetail},
     { path: '/y-map', component: YMap},
     { path: '/leadership/:id', component: InfoLeadership},
     { path: '/search', component: SearchPage},

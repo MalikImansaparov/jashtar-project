@@ -6,8 +6,6 @@ import {base, eventsUrl, url} from "../../api/const";
 import dots from "../../assets/image/main/Ellipse 1.png"
 import {Link} from "react-router-dom";
 
-
-
 const settings = {
     breakpoints: {
         640: {

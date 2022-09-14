@@ -21,7 +21,7 @@ export const BreadCrumbs = (props) => {
                     </div>
                 );
             })}
-            <span className="ml-1.5">{props.title.split(' ').splice(0, 3).join(' ')+' ...'}</span>
+            <span className="ml-1.5">{props.title}</span>
         </div>
     );
 };

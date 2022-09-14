@@ -1,12 +1,12 @@
 import React from 'react';
 import {RenderArrow} from "../../utils/arrow";
 import {useFetch} from "../../api/useFetch";
-import {lead} from "../../api/const";
+import {aboutUrl, base, lead, uri} from "../../api/const";
 import path from "../../assets/image/partners/Ellipse 2.png"
 import {Link} from "react-router-dom";
 
 export const FivthLead = () => {
-    const { isLoading, response } = useFetch(lead);
+    const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
 
     return (
         <div>
@@ -15,13 +15,13 @@ export const FivthLead = () => {
                     <RenderArrow angle={90} lenght={800} width={'515px'} line={4}/>
                 </div>
                 {response &&
-                    response.map((item) => (
+                    response.filter(i => i.floor === 5 ).map( item => (
                         <div
                             className="block shadow-sm w-[234px] h-[186px] bg-white rounded-2xl text-center"
                             key={item.id}
                         >
                             <img
-                                src={path}
+                                src={uri + item.avatar_image}
                                 alt="cart-img"
                                 className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
                             />
@@ -33,7 +33,7 @@ export const FivthLead = () => {
                                     Министр культуры, информации, спорта и молодежной политики Кыргызской Республики
                                 </p>
                             </div>
-                            <Link to=':id'>
+                            <Link to={`${item.id}`}>
                             <button className="h-6 w-full bg-btnLight font-medium text-xs text-orange rounded-b-2xl">
                                 Биография
                             </button>

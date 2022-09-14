@@ -7,10 +7,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { useRef } from 'react';
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 export const News = () => {
     const { isLoading, response } = useFetch(base + uri + '/news/');
   const swiperRef = useRef();
+  const {t} = useTranslation()
 
     const settings = {
         breakpoints: {
@@ -40,7 +42,7 @@ export const News = () => {
   return (
     <div className="container m-auto w-[1236px] pt-[62px] relative mb-[62px] z-10">
       <div className="flex justify-between">
-        <p className="title">Новости</p>
+        <p className="title">{t('news')}</p>
         <Link to='/news' className="all-view">Посмотреть все</Link>
       </div>
         <div className='block justify-center m-auto'>
@@ -66,7 +68,7 @@ export const News = () => {
               <SwiperSlide key={item.id}>
                 <Link to={`news/${item.id}`} className=" block max-w-[384px] m-auto shadow-md rounded bg-white pb-4 mb-4 leading-5 cursor-pointer">
                   <img
-                    src={item.path}
+                    src={uri + item}
                     alt="cart-img"
                     className="mb-3 h-[247px] w-[384px] rounded-t"
                   />

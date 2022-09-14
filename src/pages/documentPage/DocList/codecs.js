@@ -22,7 +22,7 @@ const Codecs = () => {
             {response && response.map( item => (
                 <div className='flex items-center mt-4' key={item.id}>
                     <img src={arrow} alt='arrow' className='w-[3.5px] h-[7px]'/>
-                    <NavLink to={`/concept/${item.id}`} className='ml-[11px] font-medium text-base text-blue'>О местной государственной администрации и органах местного самоуправления</NavLink>
+                    <NavLink to={`/codes/${item.id}`} className='ml-[11px] font-medium text-base text-blue'>О местной государственной администрации и органах местного самоуправления</NavLink>
                 </div>
             )) }
             </div>

@@ -10,7 +10,7 @@ const GaleryPage = () => {
         {
             id: 1,
             tabTitle: 'Фото',
-            component: <PhotoPanel/>
+            component: <PhotoPanel/>,
         },
         {
             id: 2,

@@ -23,7 +23,7 @@ const Constitution = () => {
             {response && response.map( item => (
                 <div className='flex items-center mt-4'>
                     <img src={arrow} alt='arrow' className='w-[3.5px] h-[7px]'/>
-                    <NavLink to={`/position/${item.id}`} className='ml-[11px] font-medium text-base text-blue'>О местной государственной администрации и органах местного самоуправления</NavLink>
+                    <NavLink to={`/constitution/${item.id}`} className='ml-[11px] font-medium text-base text-blue'>О местной государственной администрации и органах местного самоуправления</NavLink>
                 </div>
             )) }
             </div>

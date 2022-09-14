@@ -7,7 +7,6 @@ import { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import {settings} from "../../components/slider/settings";
 import {useFetch} from "../../api/useFetch";
 import {base, galeryUrl, url} from "../../api/const";
 import {useClickOutside} from "../../hooks/useOutside";

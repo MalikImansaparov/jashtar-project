@@ -1,13 +1,15 @@
 import React from 'react';
 import logo from "../../assets/image/main/logotip.png"
-import avatar from "../../assets/image/main/logo.png"
 import {project} from "../statiic/data";
 import {Link, NavLink} from "react-router-dom";
 import {useFetch} from "../../api/useFetch";
 import {base, mainUrl, uri} from "../../api/const";
+import {useTranslation} from "react-i18next";
+
 
 const Header = () => {
     const { isLoading, response } = useFetch(base + mainUrl + '/quote/');
+    const { t } = useTranslation();
 
     return (
         <div className='bg-white'>
@@ -15,8 +17,8 @@ const Header = () => {
             <div className='flex'>
                 <NavLink to='/'><img className="w-[54px] h-[54px] my-[8px] mr-3 cursor-pointer" src={logo} alt='logo'/></NavLink>
                 <div className="mt-2.5 pt-1">
-                    <p className="text-[11px] font-monserrat w-[284px] flex-wrap leading-[13px]">Министерство культуры, информации, спорта и молодежной политики Кыргызской Республики</p>
-                    <p className="text-sm text-blue font-semibold mt-1 text-blue leading-[14px]">Жаштар саясаты</p>
+                    <p className="text-[11px] font-monserrat w-[284px] flex-wrap leading-[13px]">{t("main")}</p>
+                    <p className="text-sm text-blue font-semibold mt-1 text-blue leading-[14px]">{t("name")}</p>
                 </div>
             </div>
             <div className="flex w-379 h-[78px] items-center">
@@ -35,8 +37,6 @@ const Header = () => {
                     <img className="w-[62px] h-[62px] my-[8px] ml-[6px]" src={uri + item.avatar_image} alt='logo' />
                 </div>
             ))}
-
-
         </div>
         </div>
     );

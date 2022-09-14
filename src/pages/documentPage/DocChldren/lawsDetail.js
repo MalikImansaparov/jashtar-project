@@ -7,15 +7,19 @@ import DocSidebar from "../docSidebar";
 import {useFetch} from "../../../api/useFetch";
 import {base, councilUrl, docsUrl, lead} from "../../../api/const";
 import {BreadCrumbs} from "../../../components/modules/breadcrumbs";
+import {useTranslation} from "react-i18next";
+import {useParams} from "react-router-dom";
 
 const LawsDetail = () => {
-    const { isLoading, response } = useFetch(base + docsUrl + '/documents_document/');
+    const {id} = useParams()
+    const { response } = useFetch(base + docsUrl + `/documents/${id}`);
     console.log('d', response)
+    const {t} = useTranslation()
 
     const [crumbs] = useState([
-        'Документы',
+        t('documents'),
         '❯',
-        'Законы',
+        t('laws'),
         '❯',
     ]);
 
