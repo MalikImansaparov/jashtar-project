@@ -43,7 +43,7 @@ export const News = () => {
     <div className="container m-auto w-[1236px] pt-[62px] relative mb-[62px] z-10">
       <div className="flex justify-between">
         <p className="title">{t('news')}</p>
-        <Link to='/news' className="all-view">Посмотреть все</Link>
+        <Link to='/news' className="all-view">{t('all')}</Link>
       </div>
         <div className='block justify-center m-auto'>
       <Swiper

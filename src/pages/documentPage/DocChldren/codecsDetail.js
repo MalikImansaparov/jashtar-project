@@ -21,7 +21,7 @@ const CodecsDetail = () => {
     ]);
 
     return (
-        <div className='w-full flex'>
+        <div className='w-full h-[100%] flex'>
             <DocSidebar className='h-full'/>
             <div className="ml-[63px] mb-[62px] max-w-[885px] mt-16">
                 {response &&  response.map( res => (

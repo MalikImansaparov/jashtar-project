@@ -7,25 +7,25 @@ import DocSidebar from "../docSidebar";
 import arrow from "../../../assets/image/general/docArrow.png";
 import {NavLink} from "react-router-dom";
 import {useFetch} from "../../../api/useFetch";
-import {url} from "../../../api/const";
+import {base, docsUrl, url} from "../../../api/const";
 
 const Statement = () => {
-    const { isLoading, response } = useFetch(url);
+    const {response} = useFetch(base + docsUrl + `/document`);
 
     return (
         <div className="flex">
             <DocSidebar/>
-        <div className="pl-[67px] ">
+        <div className="pl-[67px] h-auto">
             <div className="container mb-8">
                 <BreadCrumb />
             </div>
-
-            {response && response.map( item => (
+            {response &&
+                response.filter(i => i.category === 3 ).map( item => (
                 <div className='flex items-center mt-4'>
                     <img src={arrow} alt='arrow' className='w-[3.5px] h-[7px]'/>
-                    <NavLink to={`/statements/${item.id}`} className='ml-[11px] font-medium text-base text-blue'>О местной государственной администрации и органах местного самоуправления</NavLink>
+                    <NavLink to={`/statements/${item.id}`} className='ml-[11px] font-medium text-base text-blue'>{item.title_ky}</NavLink>
                 </div>
-            )) }
+            ))}
             </div>
 
         </div>

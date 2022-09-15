@@ -2,32 +2,44 @@ import './gallery.css'
 import React, { useState } from 'react';
 import VideoPanel from "./videoPanel";
 import PhotoPanel from "./photoPanel";
-import {BreadCrumb} from "../../components/general/breadcrumb";
+import {BreadCrumbs} from "../../components/modules/breadcrumbs";
+import {useTranslation} from "react-i18next";
 
 const GaleryPage = () => {
+    const {t} = useTranslation()
     const [currentTab, setCurrentTab] = useState('1');
     const tabs = [
         {
             id: 1,
-            tabTitle: 'Фото',
+            tabTitle: t('photo'),
             component: <PhotoPanel/>,
+            tab: t('photo')
         },
         {
             id: 2,
-            tabTitle: 'Видео',
-            component: <VideoPanel/>
+            tabTitle: t('video'),
+            component: <VideoPanel/>,
+            tab: t('video')
         },
     ];
+
+    const [crumbs] = useState([
+        t('gallery'),
+        '❯',
+    ]);
 
     const handleTabClick = (e) => {
         setCurrentTab(e.target.id);
     }
 
-
     return (
         <div className='wrapper h-auto'>
-            <div className="container w-full">
-                <BreadCrumb />
+            <div className="container w-full mt-[62px]">
+                {tabs.map((tab, i) =>
+                    <div key={i}>
+                        {currentTab === `${tab.id}` &&  <BreadCrumbs crumbs={crumbs} title={tab.tab} key={tab.id}/>}
+                    </div>
+                )}
             </div>
             <div className='tabs w-[100%] mb-8 '>
                 {tabs.map((tab, i) =>

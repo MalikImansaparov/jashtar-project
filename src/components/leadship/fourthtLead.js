@@ -1,10 +1,7 @@
 import React from 'react';
-import {RenderArrow} from "../../utils/arrow";
 import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, uri, url} from "../../api/const";
-import path from "../../assets/image/partners/Ellipse 2.png"
 import {Link} from "react-router-dom";
-
 
 export const FourthLead = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');

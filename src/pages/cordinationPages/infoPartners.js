@@ -5,8 +5,10 @@ import Popover from "../galeryPage/popover";
 import {useClickOutside} from "../../hooks/useOutside";
 import {useFetch} from "../../api/useFetch";
 import {base, councilUrl, uri, url} from "../../api/const";
+import {useTranslation} from "react-i18next";
 
 const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
+    const {t} = useTranslation()
     const [ref] = useClickOutside(() => setOpenRegisterModal(false))
     document.body.style.overflow = "hidden";
     const link = "https://bischkek.diplo.de/kg-ru/themen/weitere-themen/gtz/1256134"
@@ -42,7 +44,7 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                         </div>
                             ))}
                         <div className="mt-[62px]">
-                            <div className='block text-base font-semibold mb-[36px]'>Список совместных проектов:</div>
+                            <div className='block text-base font-semibold mb-[36px]'>{t("listProject")}</div>
                             <div className="flex items-center mb-[62px] flex-wrap">
                                 {/*{response?.map(item => (*/}
                                 {/*    <div key={item.id} className="flex items-center w-[100%] cursor-pointer" onClick={() => window.open(link, '_blank')}>*/}

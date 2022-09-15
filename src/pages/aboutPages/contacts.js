@@ -4,10 +4,11 @@ import bg from "../../assets/image/about/contacts-bg.png";
 import pattern from "../../assets/image/main/Looper-1.png"
 import {aboutUrl, base} from "../../api/const";
 import {useFetch} from "../../api/useFetch";
+import {useTranslation} from "react-i18next";
 
 export const Contacts = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + 'about_us_phonenumber');
-
+    const {t} = useTranslation()
     const bgImageStyle = {
         backgroundImage: `url('${bg}')`,
         backgroundSize: 'cover'
@@ -23,7 +24,7 @@ export const Contacts = () => {
             <div className='flex'>
                 <div className="flex justify-center items-center w-[443px]">
                     <p className="font-semibold text-[18px] text-white leading-[23px]">
-                        Министерство культуры, информации, спорта и <br/> молодежной политики Кыргызской Республики
+                        {t("main")}
                     </p>
                 </div>
                 <div className="relative rounded w-[532px] h-[322px] bg-white flex justify-center items-center ml-[261px]">

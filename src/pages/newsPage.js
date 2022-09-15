@@ -6,11 +6,13 @@ import {newsUrl, url} from "../api/const";
 import {ClipLoader} from "react-spinners";
 import {Link} from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import {useTranslation} from "react-i18next";
 
 const NewsPage = () => {
     const [items, setItems] = useState([]);
     const [pageCount, setpageCount] = useState(0);
     const { isLoading, response } = useFetch(newsUrl);
+    const {t} = useTranslation()
 
     const handlePageClick = async (data) => {
     //     console.log(data.selected);
@@ -54,7 +56,7 @@ const NewsPage = () => {
                                         <div className="flex justify-between w-[324px] mt-4">
                                             <p className="text-sm font-medium text-grey">{item.date}</p>
                                             <Link to={`${item.id}`} className="text-blue underline cursor-pointer text-sm">
-                                                Подробнее
+                                                {t("more")}
                                             </Link>
                                         </div>
                                     </div>

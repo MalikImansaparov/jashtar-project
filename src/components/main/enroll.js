@@ -6,13 +6,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { useFetch } from '../../api/useFetch';
-import { url } from '../../api/const'
+import {aboutUrl, base, url} from '../../api/const'
 import pattern from '../../assets/image/main/Looper-1.png'
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 export const Enroll = () => {
-  const { isLoading, response } = useFetch(url);
+  const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
   const swiperRef = useRef();
+  const {t} = useTranslation()
 
   return (
     <div className="bg-gradient-enroll w-screen h-[216px] relative ">
@@ -42,20 +44,20 @@ export const Enroll = () => {
                       Лекция: ”Средства телекоммуникации в образовании”
                     </p>
                     <div className="flex mt-[32px]">
-                      <div className="mr-[66px]">
-                        <span className="clock">16</span>
-                        <span className="clock mx-7">:</span>
-                        <span className="clock">16</span>
-                        <span className="clock mx-7">:</span>
-                        <span className="clock">16</span>
-                      </div>
+                      {/*<div className="mr-[66px]">*/}
+                      {/*  <span className="clock">16</span>*/}
+                      {/*  <span className="clock mx-7">:</span>*/}
+                      {/*  <span className="clock">16</span>*/}
+                      {/*  <span className="clock mx-7">:</span>*/}
+                      {/*  <span className="clock">16</span>*/}
+                      {/*</div>*/}
                       <div className="mr-[32px]">
-                        <p className="text-base font-normal text-grey">
-                          Места ограничены:
-                          <span className="text-blue"> осталось 32</span>
-                        </p>
+                        {/*<p className="text-base font-normal text-grey">*/}
+                        {/*  Места ограничены:*/}
+                        {/*  <span className="text-blue"> осталось 32</span>*/}
+                        {/*</p>*/}
                         <Link to={`events/${item.id}`} className="btn mt-[29px] pointer-events-auto">
-                          Подробнее
+                            {t('more')}
                         </Link>
                       </div>
                     </div>

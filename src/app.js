@@ -22,7 +22,7 @@ function App() {
                     />
                 ))}
             </Routes>
-            <div className="absolute left-0 bottom-[-110px] w-full h-[120px]">
+            <div className="absolute left-0 bottom-[-120px] w-full h-[120px]">
                 <Footer />
             </div>
         </div>

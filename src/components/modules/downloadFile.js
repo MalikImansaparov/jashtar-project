@@ -1,16 +1,19 @@
-import {instance} from "../../api/const";
-
-export async function downloadFile(file) {
-    const response = await instance.get(`url`,{
+export const downloadFile = async (url) => {
+    fetch('http://www.africau.edu/images/default/sample.pdf', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/pdf',
+            //multipart/form-data
+        },
     })
-    if (response.status === 200) {
-        const blob = await response.blob()
-        const downloadUrl = window.URL.createObjectURL(blob)
-        const link = document.createElement('a')
-        link.href = downloadUrl
-        link.download = file.name
-        document.body.appendChild(link)
-        link.click()
-        link.remove()
-    }
+        .then((response) => response.blob())
+        .then((blob) => {
+            const url = window.URL.createObjectURL(new Blob([blob]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = "doc";
+            document.body.appendChild(link);
+            link.click();
+            link.parentNode.removeChild(link);
+        });
 }

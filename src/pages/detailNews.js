@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import about from "../assets/image/main/about.png";
 import {useFetch} from "../api/useFetch";
-import {lead, uri, url} from "../api/const";
+import {aboutUrl, lead, uri, url} from "../api/const";
 import {BreadCrumbs} from "../components/modules/breadcrumbs";
 import {useParams} from "react-router-dom";
 

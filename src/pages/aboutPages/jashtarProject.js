@@ -6,7 +6,7 @@ import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, uri} from "../../api/const";
 
 export const JashtarProject = () => {
-    const { isLoading, response } = useFetch(base + aboutUrl + '/about_us_youthpolicy/');
+    const { isLoading, response } = useFetch(base + aboutUrl + '/youthpolicy/');
 
     return (
         <div className="w-full relative pb-[63px]">

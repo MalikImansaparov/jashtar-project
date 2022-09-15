@@ -31,5 +31,16 @@
   "constitutions": "Constitution KR",
   "allNews": "All news",
   "allEvents": "All events",
-  "allDocs": "All documents"
+  "allDocs": "All documents",
+  "president": "President of the Kyrgyz Republic",
+  "ministers": "Cabinet of Ministers Kyrgyz Republic",
+  "council": "The Supreme Council of the Kyrgyz Republic",
+  "electronics": "State portal of electronic services Kyrgyz Republic",
+  "discussion": "Unified portal for public discussion of draft regulatory legal acts of the KR",
+  "biography": "Biography",
+  "listProject": "List of joint projects:",
+  "listCoordination": "List of members of the coordinating council:",
+  "photo": "Photo",
+  "video": "Video"
+
 }

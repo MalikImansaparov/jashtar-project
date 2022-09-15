@@ -9,14 +9,16 @@ import osce from "../../assets/image/about/orgonization/osce 1.png"
 import jica from "../../assets/image/about/orgonization/Jica 1.png"
 import {useFetch} from "../../api/useFetch";
 import {url} from "../../api/const";
+import {useTranslation} from "react-i18next";
 
 
 const CordinationList = () => {
+    const {t} = useTranslation()
     const { isLoading, response } = useFetch(url);
 
     return (
         <div className='wrapper'>
-            <div className='block text-base font-semibold mb-[36px]'>Список участников координационного совета:</div>
+            <div className='block text-base font-semibold mb-[36px]'>{t("listCoordination")}</div>
             <div className="flex items-center mb-[62px] flex-wrap">
                 {response?.map(item => (
                     <div key={item.id} className="flex items-center w-[100%]">

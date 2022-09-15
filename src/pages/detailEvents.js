@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import {BreadCrumb} from "../components/general/breadcrumb";
-import about from "../assets/image/main/about.png";
 import dots from "../assets/image/main/Ellipse 1.png";
 import {BreadCrumbs} from "../components/modules/breadcrumbs";
 import {useParams} from "react-router-dom";

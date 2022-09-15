@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {RenderArrow} from "../../utils/arrow";
 import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, lead, uri} from "../../api/const";
@@ -7,6 +7,13 @@ import {Link} from "react-router-dom";
 
 const FirstLead = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
+    const [state, setState] = useState(response)
+    console.log('f',state)
+
+    useEffect(() => {
+        setState(response)
+    },[response])
+
 
     return (
       <div>

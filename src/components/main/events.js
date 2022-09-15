@@ -5,6 +5,7 @@ import {useFetch} from "../../api/useFetch";
 import {base, eventsUrl, url} from "../../api/const";
 import dots from "../../assets/image/main/Ellipse 1.png"
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const settings = {
     breakpoints: {
@@ -25,14 +26,14 @@ const settings = {
 
 export const Events = () => {
     const { isLoading, response } = useFetch(base + eventsUrl + 'events/');
-
+    const {t} = useTranslation()
     const swiperRef = useRef();
 
     return (
         <div className="container m-auto w-[1236px] pt-[62px] relative mb-[62px] z-10">
             <div className="flex justify-between">
-                <p className="title">Мероприятие</p>
-                <Link to="/events" className="all-view">Посмотреть все</Link>
+                <p className="title">{t('events')}</p>
+                <Link to="/events" className="all-view">{t('all')}</Link>
             </div>
                 <Swiper
                     {...settings}

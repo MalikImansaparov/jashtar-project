@@ -35,13 +35,12 @@ export const BreadCrumb = () => {
                     {pathname === '/constitution' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("documents")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>{t("constitutions")}</span> : null}
                     {pathname === '/codes' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("documents")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>{t("codecs")}</span> : null}
 
-                    {pathname === '/gallery' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("gallery")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>Фото</span> : null}
-                    {pathname === '/news' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("documents")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>t("allDocs")}</span> : null}
-                    {pathname === '/news/:id' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("news")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>t("allNews")}</span> : null}
-                    {pathname === '/events' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("events")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>t("allEvets")}</span> : null}
+                    {pathname === '/news' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("documents")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>{t("allDocs")}</span> : null}
+                    {pathname === '/news/:id' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("news")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>{t("allNews")}</span> : null}
+                    {pathname === '/events' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("events")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>{t("allEvets")}</span> : null}
                 </div>
                 <div className='text-lg font-medium text-white' onClick={() => navigate(-1)}>
-                    {pathname === '/ministry' ?  <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow2} alt="" className="mx-4 w-2 h-4 "/>t("ministry")}</span> : null}
+                    {pathname === '/ministry' ?  <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow2} alt="" className="mx-4 w-2 h-4 "/>{t("ministry")}</span> : null}
                 </div>
                 </>
             )}

@@ -21,7 +21,7 @@ export const BreadCrumbs = (props) => {
                     </div>
                 );
             })}
-            <span className="ml-1.5">{props.title}</span>
+            <span className="ml-1.5 text-lg font-medium text-grey">{props.title}</span>
         </div>
     );
 };
