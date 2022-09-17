@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import about from "../assets/image/main/about.png";
 import {useFetch} from "../api/useFetch";
-import {aboutUrl, lead, uri, url} from "../api/const";
+import {aboutUrl, base, lead, newsUrl, uri, url} from "../api/const";
 import {BreadCrumbs} from "../components/modules/breadcrumbs";
 import {useParams} from "react-router-dom";
 
 
 const DetailNews = () => {
     const {id} = useParams()
-    const { isLoading, response } = useFetch(base + aboutUrl + `/staff/${id}`);
+    const { isLoading, response } = useFetch(base + newsUrl + `/news/${id}`);
     window.scroll(0,0)
 
     const [crumbs] = useState([

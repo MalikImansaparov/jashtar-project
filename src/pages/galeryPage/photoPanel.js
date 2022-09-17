@@ -1,14 +1,27 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useFetch} from "../../api/useFetch";
-import {base, uri, url} from '../../api/const'
+import {base, galeryUrl, mainUrl, uri, url} from '../../api/const'
 import GalleryInfo from "./galleryInfo";
 import ReactPaginate from "react-paginate";
 import {useClickOutside} from "../../hooks/useOutside";
+import {useTranslation} from "react-i18next";
+import axios from "axios";
 
 const PhotoPanel = () => {
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
     const [ref] = useClickOutside(() => setOpenRegisterModal(false))
-    const { isLoading, response } = useFetch(base + uri + '/gallery_image/');
+    const { isLoading,  } = useFetch(base + uri + '/photo/');
+    const [response, setResponse] = useState([])
+    const {i18n} = useTranslation()
+
+    const getData = async () => {
+        const res = await axios.get(base + galeryUrl + '/photo/')
+        setResponse(res.data)
+    }
+
+    useEffect(() => {
+        getData()
+    },[])
 
 
     const onOpen = () => {

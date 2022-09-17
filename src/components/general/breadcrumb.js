@@ -18,7 +18,7 @@ export const BreadCrumb = () => {
                 <>
                 <div className='text-lg font-medium text-grey'>
                     {pathname === '/valuation' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>{t("valuation")}</span> : null}
-                    {pathname === '/leadership' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>{t("leadship")}</span> : null}
+                    {pathname === '/management' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>{t("leadship")}</span> : null}
                     {pathname === '/timeline' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>{t("timeline")}</span> : null}
                     {pathname === '/jashtar' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>{t("young")}</span> : null}
                     {pathname === '/contacts' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4"/>{t("contacts")}</span>  : null}

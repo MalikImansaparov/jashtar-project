@@ -5,12 +5,24 @@ import p2 from "../../assets/image/partners/모드=정상 1 (1).png";
 import p3 from "../../assets/image/partners/모드=정상 (1).png";
 import p4 from "../../assets/image/partners/모드=정상-8 (1).png";
 import {useFetch} from "../../api/useFetch";
-import {url} from '../../api/const'
+import {base, councilUrl, url} from '../../api/const'
 import InfoPartners from "./infoPartners";
+import {useTranslation} from "react-i18next";
 
 export const PartnersList = () => {
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
-    const { isLoading, response } = useFetch(url);
+    const {response} = useFetch(base + councilUrl + `/partner/`);
+    const {t} = useTranslation()
+    return (
+        <div className="w-[362px] bg-blueLight pt-[32px] text-grey active:border-b-2 border-fuchsia-600">
+            {response && response.map( item => (
+                <div className="w-[220px]" key={item.id}>
+                    <NavLink to={`/category/${item.id}`} className={({ isActive }) =>
+                        isActive ? 'activity link' : 'link'}>{item.title_ky}</NavLink>
+                </div>
+            ))}
+        </div>
+    );
 
     return (
         <div className='wrapper w-full pb-16'>

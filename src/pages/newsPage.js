@@ -2,23 +2,45 @@ import React, {useEffect, useState} from 'react';
 import {BreadCrumb} from "../components/general/breadcrumb";
 import {SwiperSlide} from "swiper/react";
 import {useFetch} from "../api/useFetch";
-import {newsUrl, url} from "../api/const";
+import {base, docsUrl, mainUrl, newsUrl, url} from "../api/const";
 import {ClipLoader} from "react-spinners";
 import {Link} from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import {useTranslation} from "react-i18next";
+import axios from "axios";
 
 const NewsPage = () => {
-    const [items, setItems] = useState([]);
     const [pageCount, setpageCount] = useState(0);
-    const { isLoading, response } = useFetch(newsUrl);
+    const {isLoading} = useFetch(base + newsUrl + `/news/`);
     const {t} = useTranslation()
+    const [response, setResponse] = useState([])
+    const {i18n} = useTranslation()
+
+    const getData = async () => {
+        const res = await axios.get(base + mainUrl + '/news/')
+        setResponse(res.data)
+    }
+
+    useEffect(() => {
+        getData()
+    },[])
+
+    const fetchComments = async (currentPage) => {
+        const res = await fetch(
+            `${baseURL}work?limit=${limit}&offset=${currentPage}`
+        );
+        const data = await res.json();
+        return data.results;
+    };
 
     const handlePageClick = async (data) => {
-    //     console.log(data.selected);
-    //     let currentPage = data.selected + 1;
-    //     const commentsFormServer = await fetchComments(currentPage);
-    //     setItems(commentsFormServer);
+        if( data.selected > 0 ){
+            let currentPage = data.selected + 11;
+            const commentsFormServer = await fetchComments(currentPage);
+            setResponse(commentsFormServer);
+        } else {
+            getComments()
+        }
     };
 
     if (isLoading) {

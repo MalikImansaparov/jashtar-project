@@ -10,7 +10,7 @@ import {useFetch} from "../../../api/useFetch";
 import {base, docsUrl, url} from "../../../api/const";
 
 const Statement = () => {
-    const {response} = useFetch(base + docsUrl + `/document`);
+    const {response} = useFetch(base + docsUrl );
 
     return (
         <div className="flex">

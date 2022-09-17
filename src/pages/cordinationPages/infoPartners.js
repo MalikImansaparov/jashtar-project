@@ -13,7 +13,7 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
     document.body.style.overflow = "hidden";
     const link = "https://bischkek.diplo.de/kg-ru/themen/weitere-themen/gtz/1256134"
 
-    const { isLoading, response } = useFetch(base + councilUrl + '/council_partner/');
+    const { isLoading, response } = useFetch(base + councilUrl + '/partner/${id}');
     console.log(response)
 
     const onClose = () => {

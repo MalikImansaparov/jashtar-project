@@ -19,9 +19,9 @@ const Menu = () => {
         setOpenModal(!openModal);
     }
 
-    const handleSubmit = (e) => {
-        <SearchPage value={e}/>
-        navigate('/search')
+    function handle(val){
+        navigate('/search'),
+        <SearchPage value={val}/>
     }
 
         return (
@@ -33,7 +33,7 @@ const Menu = () => {
                             <CoreAdvice/>
                             <NavLink to="/news"
                                      className="text-white text-[14px] font-semibold">{t("news")}</NavLink>
-                            <NavLink to="/constitution"
+                            <NavLink to="/category/1"
                                      className="text-white text-[14px] font-semibold">{t("documents")}</NavLink>
                             <NavLink to="/gallery"
                                      className="text-white text-[14px] font-semibold ">{t("gallery")}</NavLink>
@@ -50,7 +50,7 @@ const Menu = () => {
                         <div className="wrapper py-[22px]">
                             <input type='text' autoFocus={true}
                                    className='bg-blueLight border-none outline-none w-[98.5%] h-[24px] font-medium text-[15px]'
-                                   placeholder='Поиск' onKeyDown={e => e.key === 'Enter' && handleSubmit(e.target.value)}/>
+                                   placeholder='Поиск' onKeyDown={e => e.key === 'Enter' && handle(e.target.value)}/>
                             <img src={close} alt='close' className='py-2 cursor-pointer' onClick={toggleModal}/>
                         </div>
                     </div>

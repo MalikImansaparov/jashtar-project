@@ -12,16 +12,15 @@ export const BreadCrumbs = (props) => {
     return (
         <div className='flex mb-8'>
             {props.crumbs.map((crumb, i) => {
-                const actives = isLast(i) ? `actives` : '';
                 return (
                     <div className='text-lg font-medium text-grey' key={i}>
-                        <div onClick={() => navigate(-1)}  className={`${actives} mx-1.5`}>
+                        <div onClick={() => navigate(-1)}  className="mx-1.5 cursor-pointer">
                             {crumb}
                         </div>
                     </div>
                 );
             })}
-            <span className="ml-1.5 text-lg font-medium text-grey">{props.title}</span>
+            <span className="ml-1.5 text-lg font-medium text-grey">{props.title.length > 35 ? props.title.split('').splice(0, 72) : props.title} ...</span>
         </div>
     );
 };

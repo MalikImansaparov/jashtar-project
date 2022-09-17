@@ -4,7 +4,7 @@ import axios from 'axios';
 export const url = "https://my-json-server.typicode.com/MalikImansaparov/json-server/news"
 
 export const instance = axios.create({
-    baseURL: "https://jashtar.prosoft.kg/f4116002dd4697f6b3a8434f253e4069674c2b6aeadf0bdba1e8fc683337c11d",
+    baseURL: "https://jashtar.prosoft.kg/",
     headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -19,6 +19,8 @@ export const docsUrl = '9b16b44d0e0a5cac4f968befb0b5b5eba913f9ef3dfa1501ed728b6e
 export const mainUrl = 'd16a80a43d7a3d5a56ed355931766b681f849b2b99a91b99f2ecf10d5d4797df'
 export const galeryUrl = 'ce387d5e0a2972dea9e5129a52ac3b8d58a4d180fc9eece5946d926643a3d2c0'
 export const aboutUrl = 'f4116002dd4697f6b3a8434f253e4069674c2b6aeadf0bdba1e8fc683337c11d'
+export const searchUrl = 'd16a80a43d7a3d5a56ed355931766b681f849b2b99a91b99f2ecf10d5d4797df'
+
 // export const Url = ''
 // export const Url = ''
 // export const Url = ''

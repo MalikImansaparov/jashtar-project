@@ -12,7 +12,7 @@ import {useParams} from "react-router-dom";
 
 const LawsDetail = () => {
     const {id} = useParams()
-    const { response } = useFetch(base + docsUrl + `/documents/${id}`);
+    const { response } = useFetch(url);
     console.log('d', response)
     const {t} = useTranslation()
 

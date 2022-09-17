@@ -10,7 +10,7 @@ import {useClickOutside} from "../../hooks/useOutside";
 
 const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
     const [ref] = useClickOutside(() => setOpenRegisterModal(false))
-    const { isLoading, response } = useFetch(base + galeryUrl + '/gallery_image/');
+    const { isLoading, response } = useFetch(base + galeryUrl + '/video/');
     document.body.style.overflow = "hidden";
 
     const onClose = () => {

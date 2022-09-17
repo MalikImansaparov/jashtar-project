@@ -8,7 +8,7 @@ import {ClipLoader} from "react-spinners";
 import path from "../../../assets/image/partners/Ellipse 2.png"
 
 const TimeLine = () => {
-    const { isLoading, response } = useFetch(base + aboutUrl + '/about_us_chronology/');
+    const { isLoading, response } = useFetch(base + aboutUrl + '/chronology/');
     console.log(response)
 
     if (isLoading) {

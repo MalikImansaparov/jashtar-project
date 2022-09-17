@@ -16,7 +16,7 @@ import EventsPage from "../pages/eventsPage";
 import DetailEvents from "../pages/detailEvents";
 import GalleryPage from "../pages/galeryPage/galeryPage";
 import DecreesDetail from "../pages/documentPage/DocChldren/decreesDetail";
-import ConstitutionDetail from "../pages/documentPage/DocChldren/constitutionDetail";
+import ConstitutionDetail from "../pages/documentPage/DocChldren/categoryDetail";
 import LawsDetail from "../pages/documentPage/DocChldren/lawsDetail";
 import Codecs from "../pages/documentPage/DocList/codecs";
 import CodecsDetail from "../pages/documentPage/DocChldren/codecsDetail";
@@ -30,11 +30,13 @@ import SearchPage from "../components/SearchPage";
 import Constitution from "../pages/documentPage/DocList/constution";
 import Statement from "../pages/documentPage/DocList/statement";
 import StatementsDetail from "../pages/documentPage/DocChldren/statementsDetail";
+import CategoryList from "../pages/documentPage/DocList/category";
+import DocumentDetail from "../pages/documentPage/DocChldren/categoryDetail";
 
 export const publicRoutes = [
     { path: '/', component: MainPage },
     { path: '/valuation', component: Valuation },
-    { path: '/leadership', component: Leadership },
+    { path: '/management', component: Leadership },
     { path: '/timeline', component: TimeLine },
     { path: '/ministry', component: Ministry },
     { path: '/projects', component: Projects },
@@ -53,14 +55,15 @@ export const publicRoutes = [
     { path: '/decress', component: Decrees },
     { path: '/codes', component: Codecs },
     { path: '/laws', component: Laws},
-    { path: '/constitution', component: Constitution},
+    { path: '/category', component: Constitution},
     { path: '/statements', component: Statement},
     { path: '/decrees/:id', component: DecreesDetail },
     { path: '/codes/:id', component: CodecsDetail },
     { path: '/laws/:id', component: LawsDetail},
     { path: '/statements/:id', component: StatementsDetail},
-    { path: '/constitution/:id', component: ConstitutionDetail},
+    { path: '/category/:id', component: CategoryList},
+    { path: '/document/:id', component: DocumentDetail},
     { path: '/y-map', component: YMap},
-    { path: '/leadership/:id', component: InfoLeadership},
+    { path: '/management/:id', component: InfoLeadership},
     { path: '/search', component: SearchPage},
 ];

@@ -1,15 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import dots from "../assets/image/main/Ellipse 1.png";
 import {ClipLoader} from "react-spinners";
 import {useFetch} from "../api/useFetch";
-import {url} from "../api/const";
+import {base, docsUrl, eventsUrl, mainUrl, url} from "../api/const";
 import {BreadCrumb} from "../components/general/breadcrumb";
 import {Link} from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import {useTranslation} from "react-i18next";
+import axios from "axios";
 
 const EventsPage = () => {
-    const { isLoading, response } = useFetch(url);
+    const { isLoading } = useFetch(base + eventsUrl + `/events/`);
     window.scroll(0,0)
+    const [response, setResponse] = useState([])
+    const {i18n} = useTranslation()
+
+    const getData = async () => {
+        const res = await axios.get(base + mainUrl + '/events/')
+        setResponse(res.data)
+    }
+
+    useEffect(() => {
+        getData()
+    },[])
 
     if (isLoading) {
         return (

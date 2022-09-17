@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useFetch} from "../../api/useFetch";
 import {base, galeryUrl, uri, url} from "../../api/const";
 import point from '../../assets/image/general/point.png'
@@ -6,10 +6,23 @@ import GalleryInfo from "./galleryInfo";
 import VideoInfo from "./videoInfo";
 import ReactPaginate from "react-paginate";
 import {useClickOutside} from "../../hooks/useOutside";
+import axios from "axios";
+import {useTranslation} from "react-i18next";
 
 const VideoPanel = () => {
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
-    const { isLoading, response } = useFetch(base + galeryUrl + '/gallery_videogallery/');
+    const { isLoading} = useFetch(base + galeryUrl + '/video/');
+    const [response, setResponse] = useState([])
+    const {i18n} = useTranslation()
+
+    const getData = async () => {
+        const res = await axios.get(base + galeryUrl + '/video/')
+        setResponse(res.data)
+    }
+
+    useEffect(() => {
+        getData()
+    },[])
 
     return (
         <div className="wrapper">
