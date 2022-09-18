@@ -13,13 +13,13 @@
   "all": "See all",
   "events": "Events",
   "valuation": "Valuation",
-  "leadship": "Leadership",
+  "leadship": "Managment",
   "timeline": "Timeline",
   "ministry": "Ministry",
   "politics": "Young politics",
   "projects": "Our projects",
   "contacts": "Contacts",
-  "international": "International organizations",
+  "internalization": "International organizations",
   "young": "Youth organizations",
   "university": "Council of Universities",
   "partners": "Partners",
@@ -42,6 +42,6 @@
   "listCoordination": "List of members of the coordinating council:",
   "photo": "Photo",
   "video": "Video",
-  "download": "Download file"
-
+  "download": "Download file",
+  "work": "Labor activity"
 }

@@ -3,17 +3,19 @@ import dots from "../assets/image/main/Ellipse 1.png";
 import {BreadCrumbs} from "../components/modules/breadcrumbs";
 import {useParams} from "react-router-dom";
 import {useFetch} from "../api/useFetch";
-import {aboutUrl, base, eventsUrl, lead, uri} from "../api/const";
+import {aboutUrl, base, eventsUrl, uri} from "../api/const";
+import {useTranslation} from "react-i18next";
 
 const DetailEvents = () => {
     window.scroll(0,0)
     const {id} = useParams()
     const { isLoading, response } = useFetch(base + eventsUrl + `/events/${id}`);
+    const {t} = useTranslation()
 
     const [crumbs] = useState([
-        'Событии',
+        t("events"),
         '❯',
-        'Все событии',
+        t("allEvents"),
         '❯',
     ]);
 

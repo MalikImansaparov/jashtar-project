@@ -1,28 +1,30 @@
 import React, {useEffect, useState} from 'react';
 import {base, instance, searchUrl} from "../api/const";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
-const SearchPage = ({value}) => {
-    // const [items, setItems] = useState([])
-    //
-    // const searchMaterial = async (value) => {
-    //     try {
-    //         const response = await axios({
-    //             method: 'post',
-    //             url: base + searchUrl + "/search/",
-    //             data: {
-    //                 "body": `${value}`,
-    //             }
-    //         })
-    //         return setItems(response.data);
-    //     } catch (error) {
-    //         return console.log(error);
-    //     }
-    // };
-    //
-    // useEffect(() => {
-    //     searchMaterial(props.props)
-    // },[])
+const SearchPage = () => {
+    const value = localStorage.getItem('search')
+    const [items, setItems] = useState([])
+
+    const searchMaterial = async (val) => {
+        try {
+            const response = await axios({
+                method: 'post',
+                url: base + searchUrl + "/search/",
+                data: {
+                    "body": `${val}`,
+                }
+            })
+            return setItems(response.data);
+        } catch (error) {
+            return console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        searchMaterial(value)
+    },[])
 
     // if (response.length === 0) {
     //     return (
@@ -34,38 +36,26 @@ const SearchPage = ({value}) => {
 
     return (
         <div className="wrapper py-[62px]">
-            {value.val}
-            {/*{items &&*/}
-            {/*    items.map((item) => (*/}
-            {/*        <div*/}
-            {/*            className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white"*/}
-            {/*            key={item.id}*/}
-            {/*        >{value}*/}
-            {/*            /!*<div className="m-auto w-[231px]">*!/*/}
-            {/*            /!*    <img*!/*/}
-            {/*            /!*        src={path}*!/*/}
-            {/*            /!*        alt="values"*!/*/}
-            {/*            /!*        className=" h-[131px] w-[231px] rounded mb-[10px]"*!/*/}
-            {/*            /!*    />*!/*/}
-            {/*            /!*</div>*!/*/}
-            {/*            <div className="ml-[32px] pt-[33px]">*/}
-            {/*                <p className="text-[16px] mb-1 font-medium text-blue">*/}
-            {/*                    { response.docs && response.docs.map(item => (*/}
-            {/*                        <div key={item.id}>*/}
-            {/*                            {item.title_ky}*/}
-            {/*                        </div>*/}
-            {/*                    ))}*/}
-            {/*                </p>*/}
-            {/*                /!*<div className="flex w-[857px] mb-4 min-h-[88px]">*!/*/}
-            {/*                /!*    <p className="text-[14px] font-normal mx-4 w-[809px]">*!/*/}
-            {/*                /!*        Молодежь должна быть воспитана на благородных традициях. Традиция – это не мертвая реликвия прошлого. Это –*!/*/}
-            {/*                /!*        боевое могучее оружие, выкованное и отточенное в прошлом для великих битв настоящего и будущего.*!/*/}
-            {/*                /!*    </p>*!/*/}
-
-            {/*                /!*</div>*!/*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    ))}*/}
+            {items &&
+                    <div
+                        className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white"
+                    >
+                        <div className="ml-[32px] py-6">
+                            <div className="w-[1100px] mb-4 min-h-[88px]">
+                                   { items.docs && items.docs.map(item => (
+                                        <div onClick={() => window.open(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">
+                                            {item.title_ky}
+                                        </div>
+                                    ))}
+                                {/*{ items.managment && items.managment.map(item => (*/}
+                                {/*    <div onClick={() => window.open(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">*/}
+                                {/*        {item.title_en}*/}
+                                {/*    </div>*/}
+                                {/*))}*/}
+                            </div>
+                        </div>
+                    </div>
+                }
         </div>
     );
 };

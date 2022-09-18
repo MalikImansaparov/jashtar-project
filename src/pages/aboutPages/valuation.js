@@ -6,10 +6,11 @@ import rigth from '../../assets/image/about/rigth.png'
 import {BreadCrumb} from "../../components/general/breadcrumb";
 import {ClipLoader} from "react-spinners";
 import path from "../../assets/image/partners/1031036878_0_0_6016_3400_600x0_80_0_0_413f7b1b5ff473578023e30c42c5dc0f 2.png"
+import {useTranslation} from "react-i18next";
 
 const Valuation = () => {
-    const { isLoading, response } = useFetch(base + aboutUrl + '/values_values/');
-    console.log('v',response)
+    const { isLoading, response } = useFetch(base + aboutUrl + '/values/');
+    const {i18n} = useTranslation()
 
     if (isLoading) {
         return (

@@ -10,11 +10,12 @@ import {aboutUrl, base, url} from '../../api/const'
 import pattern from '../../assets/image/main/Looper-1.png'
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import {Sanitized} from "../general/sanitize";
 
 export const Enroll = () => {
-  const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
+  const { isLoading, response } = useFetch(base + aboutUrl + '/events/');
   const swiperRef = useRef();
-  const {t} = useTranslation()
+  const {t, i18n} = useTranslation()
 
   return (
     <div className="bg-gradient-enroll w-screen h-[216px] relative ">
@@ -40,9 +41,24 @@ export const Enroll = () => {
               <SwiperSlide key={item.id}>
                 <div className="h-[100%] w-[100%] flex">
                   <div className="mt-[52px] max-w-[815px]">
-                    <p className="text-[22px] text-semibold text-white">
-                      Лекция: ”Средства телекоммуникации в образовании”
-                    </p>
+                    {
+                      i18n.language === "ky" &&
+                        <p className="text-[22px] text-semibold text-white">
+                          <Sanitized html={item.title_ky}/>
+                        </p>
+                    }
+                    {
+                        i18n.language === "ru" &&
+                        <p className="text-[22px] text-semibold text-white">
+                          <Sanitized html={item.title_ru}/>
+                        </p>
+                    }
+                    {
+                        i18n.language === "en" &&
+                        <p className="text-[22px] text-semibold text-white">
+                          <Sanitized html={item.title_en}/>
+                        </p>
+                    }
                     <div className="flex mt-[32px]">
                       {/*<div className="mr-[66px]">*/}
                       {/*  <span className="clock">16</span>*/}

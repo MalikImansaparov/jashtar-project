@@ -1,11 +1,6 @@
 import React from 'react';
 import {BreadCrumb} from "../../../components/general/breadcrumb";
-import pdf from "../../../assets/image/general/pdf.png";
-import doc from "../../../assets/image/general/doc.png";
-import download from "../../../assets/image/general/download.png";
 import DocSidebar from "../docSidebar";
-import arrow from "../../../assets/image/general/docArrow.png";
-import {NavLink} from "react-router-dom";
 import {useFetch} from "../../../api/useFetch";
 import {base, docsUrl, url} from "../../../api/const";
 

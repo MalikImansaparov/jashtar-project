@@ -7,8 +7,9 @@ import {useFetch} from "../../api/useFetch";
 import {useTranslation} from "react-i18next";
 
 export const Contacts = () => {
-    const { isLoading, response } = useFetch(base + aboutUrl + 'about_us_phonenumber');
+    const { isLoading, response } = useFetch(base + aboutUrl + '/contacts/');
     const {t} = useTranslation()
+
     const bgImageStyle = {
         backgroundImage: `url('${bg}')`,
         backgroundSize: 'cover'

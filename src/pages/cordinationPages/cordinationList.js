@@ -8,13 +8,13 @@ import ifc from "../../assets/image/about/orgonization/Inter-C-K.png"
 import osce from "../../assets/image/about/orgonization/osce 1.png"
 import jica from "../../assets/image/about/orgonization/Jica 1.png"
 import {useFetch} from "../../api/useFetch";
-import {url} from "../../api/const";
+import {base, councilUrl, uri, url} from "../../api/const";
 import {useTranslation} from "react-i18next";
 
 
 const CordinationList = () => {
     const {t} = useTranslation()
-    const { isLoading, response } = useFetch(url);
+    const { isLoading, response } = useFetch(base + councilUrl + '/staff/');
 
     return (
         <div className='wrapper'>
@@ -23,7 +23,7 @@ const CordinationList = () => {
                 {response?.map(item => (
                     <div key={item.id} className="flex items-center w-[100%]">
                 <div className="flex justify-center items-center shadow-org py-[13px] px-[30px] rounded-[12px] w-[291px] h-[86px] mr-[62px]">
-                <img src={kfw} alt='organization' className=''/>
+                <img src={uri + item.id} alt='organization' className=''/>
                 </div>
                 <p className="font-normal text-base">1. Deutsche Gesellschaft fur Internationale Zusammenarbeit (GIZ) GmbH</p>
                     </div>

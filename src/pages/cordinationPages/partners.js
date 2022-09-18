@@ -8,6 +8,7 @@ import {useFetch} from "../../api/useFetch";
 import {base, councilUrl, url} from '../../api/const'
 import InfoPartners from "./infoPartners";
 import {useTranslation} from "react-i18next";
+import {NavLink} from "react-router-dom";
 
 export const PartnersList = () => {
     const [openRegisterModal, setOpenRegisterModal] = useState(false);

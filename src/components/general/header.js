@@ -9,7 +9,7 @@ import {useTranslation} from "react-i18next";
 
 const Header = () => {
     const { isLoading, response } = useFetch(base + mainUrl + '/quote/');
-    const { t } = useTranslation();
+    const { t, i18n} = useTranslation();
 
     return (
         <div className='bg-white'>
@@ -30,10 +30,21 @@ const Header = () => {
             </div>
             {response && response.map( item => (
                 <div className='flex' key={item.id}>
+                    { i18n.language === 'ky' &&
                     <div className=" mt-3.5 pt-1">
                         <p className=" text-[11px] w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_ky}</p>
                         <div className="text-[10px] text-right font-normal mt-[10px] text-grey">{item.annotation_ky}</div>
-                    </div>
+                    </div>}
+                    { i18n.language === 'ru' &&
+                        <div className=" mt-3.5 pt-1">
+                            <p className="text-[11px] w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_ru}</p>
+                            <div className="text-[10px] text-right font-normal mt-[10px] text-grey">{item.annotation_ru}</div>
+                        </div>}
+                    { i18n.language === 'en' &&
+                        <div className=" mt-3.5 pt-1">
+                            <p className=" text-[11px] w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_en}</p>
+                            <div className="text-[10px] text-right font-normal mt-[10px] text-grey">{item.annotation_en}</div>
+                        </div>}
                     <img className="w-[62px] h-[62px] my-[8px] ml-[6px]" src={uri + item.avatar_image} alt='logo' />
                 </div>
             ))}

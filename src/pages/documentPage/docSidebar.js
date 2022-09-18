@@ -6,8 +6,8 @@ import {base, docsUrl} from "../../api/const";
 
 const DocSidebar = () => {
     const {response} = useFetch(base + docsUrl + `/category/`);
-
     const {t} = useTranslation()
+
     return (
         <div className="w-[320px] bg-blueLight pt-[32px] text-grey active:border-b-2 border-fuchsia-600">
             {response && response.map( item => (

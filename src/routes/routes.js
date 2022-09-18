@@ -15,21 +15,15 @@ import NewsPage from "../pages/newsPage";
 import EventsPage from "../pages/eventsPage";
 import DetailEvents from "../pages/detailEvents";
 import GalleryPage from "../pages/galeryPage/galeryPage";
-import DecreesDetail from "../pages/documentPage/DocChldren/decreesDetail";
-import ConstitutionDetail from "../pages/documentPage/DocChldren/categoryDetail";
-import LawsDetail from "../pages/documentPage/DocChldren/lawsDetail";
 import Codecs from "../pages/documentPage/DocList/codecs";
-import CodecsDetail from "../pages/documentPage/DocChldren/codecsDetail";
 import YMap from "../pages/y-map";
 import Decrees from "../pages/documentPage/DocList/decrees";
 import Laws from "../pages/documentPage/DocList/laws";
-import Positions from "../pages/documentPage/DocList/constution";
 import Projects from "../pages/aboutPages/project/projects";
 import InfoLeadership from "../components/leadship/infoLeadership";
 import SearchPage from "../components/SearchPage";
 import Constitution from "../pages/documentPage/DocList/constution";
 import Statement from "../pages/documentPage/DocList/statement";
-import StatementsDetail from "../pages/documentPage/DocChldren/statementsDetail";
 import CategoryList from "../pages/documentPage/DocList/category";
 import DocumentDetail from "../pages/documentPage/DocChldren/categoryDetail";
 
@@ -41,7 +35,7 @@ export const publicRoutes = [
     { path: '/ministry', component: Ministry },
     { path: '/projects', component: Projects },
     { path: '/contacts', component: Contacts },
-    { path: '/jashtar', component: JashtarProject },
+    { path: '/policy', component: JashtarProject },
     { path: '/international', component: InternationOrganization },
     { path: '/young', component: YoungOrganization },
     { path: '/university', component: UniversitySoviet},
@@ -57,10 +51,6 @@ export const publicRoutes = [
     { path: '/laws', component: Laws},
     { path: '/category', component: Constitution},
     { path: '/statements', component: Statement},
-    { path: '/decrees/:id', component: DecreesDetail },
-    { path: '/codes/:id', component: CodecsDetail },
-    { path: '/laws/:id', component: LawsDetail},
-    { path: '/statements/:id', component: StatementsDetail},
     { path: '/category/:id', component: CategoryList},
     { path: '/document/:id', component: DocumentDetail},
     { path: '/y-map', component: YMap},

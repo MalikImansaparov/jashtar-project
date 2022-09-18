@@ -3,8 +3,7 @@ import {BreadCrumb} from "../../../components/general/breadcrumb";
 import DocSidebar from "../docSidebar";
 import arrow from "../../../assets/image/general/docArrow.png";
 import {NavLink, useParams} from "react-router-dom";
-import {useFetch} from "../../../api/useFetch";
-import {base, docsUrl, mainUrl, url} from "../../../api/const";
+import {base, docsUrl} from "../../../api/const";
 import {useTranslation} from "react-i18next";
 import axios from "axios";
 

@@ -4,18 +4,20 @@ import {useParams} from "react-router-dom";
 import {aboutUrl, base, lead, uri} from "../../api/const";
 import {useFetch} from "../../api/useFetch";
 import {BreadCrumbs} from "../modules/breadcrumbs";
-import path from "../../assets/image/partners/1031036878_0_0_6016_3400_600x0_80_0_0_413f7b1b5ff473578023e30c42c5dc0f 2.png"
+import {useTranslation} from "react-i18next";
+import {Sanitized} from "../general/sanitize";
 
 const InfoLeadership = () => {
     const {id} = useParams()
     const { isLoading, response } = useFetch(base + aboutUrl + `/staff/${id}`);
+    const {t, i18n} = useTranslation()
 
     const [crumbs] = useState([
-        'О нас',
+        t("about"),
         '❯',
-        'Руководство',
+        t("leadship"),
         '❯',
-        'Биография'
+        t("biography")
     ]);
 
     return (
@@ -26,6 +28,7 @@ const InfoLeadership = () => {
                         <BreadCrumbs crumbs={crumbs}/>
                 </div>
                 {response &&
+                    i18n.language === 'ky' &&
                     <div>
                         <div className='flex mb-8 w-full'>
                             <img src={uri + response.avatar_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
@@ -38,8 +41,49 @@ const InfoLeadership = () => {
                                 </p>
                             </div>
                         </div>
-                        <p className="w-full text-base font-semibold mb-[22px]">Трудовая деятелность:</p>
+                        <p className="w-full text-base font-semibold mb-[22px]">{t('work')}</p>
                         <p className='font-normal text-base w-full '>
+                            <Sanitized html={response.full_name_ky}/>
+                        </p>
+                    </div>
+                }
+                {response &&
+                    i18n.language === 'ru' &&
+                    <div>
+                        <div className='flex mb-8 w-full'>
+                            <img src={uri + response.avatar_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
+                            <div className="w-[742px]">
+                                <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_ru}</p>
+                                <p className="font-base text-grey text-base mb-8">{response.annotation_ru}
+                                </p>
+                                <p>
+                                    {response.biography_ru}
+                                </p>
+                            </div>
+                        </div>
+                        <p className="w-full text-base font-semibold mb-[22px]">{t('work')}</p>
+                        <p className='font-normal text-base w-full '>
+                            <Sanitized html={response.full_name_en}/>
+                        </p>
+                    </div>
+                }
+                {response &&
+                    i18n.language === 'en' &&
+                    <div>
+                        <div className='flex mb-8 w-full'>
+                            <img src={uri + response.avatar_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
+                            <div className="w-[742px]">
+                                <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_en}</p>
+                                <p className="font-base text-grey text-base mb-8">{response.annotation_en}
+                                </p>
+                                <p>
+                                    {response.biography_en}
+                                </p>
+                            </div>
+                        </div>
+                        <p className="w-full text-base font-semibold mb-[22px]">{t('work')}</p>
+                        <p className='font-normal text-base w-full '>
+                            <Sanitized html={response.full_name_en}/>
                         </p>
                     </div>
                 }

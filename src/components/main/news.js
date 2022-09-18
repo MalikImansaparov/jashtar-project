@@ -12,7 +12,7 @@ import {useTranslation} from "react-i18next";
 export const News = () => {
     const { isLoading, response } = useFetch(base + uri + '/news/');
   const swiperRef = useRef();
-  const {t} = useTranslation()
+  const {t, i18n} = useTranslation()
 
     const settings = {
         breakpoints: {

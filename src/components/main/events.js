@@ -26,7 +26,7 @@ const settings = {
 
 export const Events = () => {
     const { isLoading, response } = useFetch(base + eventsUrl + 'events/');
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
     const swiperRef = useRef();
 
     return (

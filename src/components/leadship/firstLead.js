@@ -2,18 +2,17 @@ import React, {useEffect, useState} from 'react';
 import {RenderArrow} from "../../utils/arrow";
 import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, lead, uri} from "../../api/const";
-import path from "../../assets/image/partners/Ellipse 2.png"
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const FirstLead = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
     const [state, setState] = useState(response)
-    console.log('f',state)
+    const {i18n} = useTranslation()
 
     useEffect(() => {
         setState(response)
     },[response])
-
 
     return (
       <div>
@@ -32,17 +31,36 @@ const FirstLead = () => {
                                 alt="cart-img"
                                 className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
                             />
+                            {i18n.language === 'ky' &&
                             <div className="w-[193px] m-auto">
                                 <p className="text-xs mb-1 font-normal text-blue">
-                                    Жаманкулов Азамат Капарович
+                                    {item.full_name_ky}
                                 </p>
                                 <p className="description">
-                                    Министр культуры, информации, спорта и молодежной политики Кыргызской Республики
+                                    {item.annotation_ky}
                                 </p>
-                            </div>
+                            </div>}
+                            {i18n.language === 'ru' &&
+                            <div className="w-[193px] m-auto">
+                                <p className="text-xs mb-1 font-normal text-blue">
+                                    {item.full_name_ru}
+                                </p>
+                                <p className="description">
+                                    {item.annotation_ru}
+                                </p>
+                            </div>}
+                            {i18n.language === 'en' &&
+                                <div className="w-[193px] m-auto">
+                                    <p className="text-xs mb-1 font-normal text-blue">
+                                        {item.full_name_en}
+                                    </p>
+                                    <p className="description">
+                                        {item.annotation_en}
+                                    </p>
+                                </div>}
                             <Link to={`${item.id}`}>
                             <button className="h-6 w-full bg-btnLight text-[11px] font-medium text-orange rounded-b-2xl">
-                                Биография
+                                {t("biography")}
                             </button>
                             </Link>
                         </div>

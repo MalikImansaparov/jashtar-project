@@ -19,9 +19,9 @@ const Menu = () => {
         setOpenModal(!openModal);
     }
 
-    function handle(val){
-        navigate('/search'),
-        <SearchPage value={val}/>
+    const handleChange = (val) => {
+        localStorage.setItem("search", val)
+        navigate('/search')
     }
 
         return (
@@ -50,14 +50,12 @@ const Menu = () => {
                         <div className="wrapper py-[22px]">
                             <input type='text' autoFocus={true}
                                    className='bg-blueLight border-none outline-none w-[98.5%] h-[24px] font-medium text-[15px]'
-                                   placeholder='Поиск' onKeyDown={e => e.key === 'Enter' && handle(e.target.value)}/>
+                                   placeholder='Поиск' onKeyDown={e => e.key === 'Enter' && handleChange(e.target.value)}/>
                             <img src={close} alt='close' className='py-2 cursor-pointer' onClick={toggleModal}/>
                         </div>
                     </div>
                 )}
             </div>
-
-
         );
 }
 

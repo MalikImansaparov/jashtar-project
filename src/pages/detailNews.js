@@ -4,17 +4,19 @@ import {useFetch} from "../api/useFetch";
 import {aboutUrl, base, lead, newsUrl, uri, url} from "../api/const";
 import {BreadCrumbs} from "../components/modules/breadcrumbs";
 import {useParams} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 
 const DetailNews = () => {
     const {id} = useParams()
     const { isLoading, response } = useFetch(base + newsUrl + `/news/${id}`);
     window.scroll(0,0)
+    const {t} = useTranslation()
 
     const [crumbs] = useState([
-        'Новости',
+        t("news"),
         '❯',
-        'Все новости',
+        t("allNews"),
         '❯',
     ]);
 

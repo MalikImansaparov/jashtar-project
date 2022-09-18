@@ -88,7 +88,6 @@ const TimeLine = () => {
                             {/*        ))}*/}
                             </div>
                         </TabPanel>
-                    // ))}
                 </Tabs>
             </div>
         </div>
