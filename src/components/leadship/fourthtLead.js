@@ -6,7 +6,7 @@ import {useTranslation} from "react-i18next";
 
 export const FourthLead = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
-    const {i18n} = useTranslation()
+    const {t, i18n} = useTranslation()
 
     return (
         <div className='mb-[92px] '>

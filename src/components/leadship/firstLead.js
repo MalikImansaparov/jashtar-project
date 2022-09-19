@@ -8,7 +8,7 @@ import {useTranslation} from "react-i18next";
 const FirstLead = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
     const [state, setState] = useState(response)
-    const {i18n} = useTranslation()
+    const {t, i18n} = useTranslation()
 
     useEffect(() => {
         setState(response)

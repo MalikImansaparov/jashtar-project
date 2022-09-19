@@ -7,7 +7,7 @@ import {useTranslation} from "react-i18next";
 
 export const SixthLead = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
-    const {i18n} = useTranslation()
+    const {t, i18n} = useTranslation()
 
     return (
         <div className='mt-4'>
@@ -16,7 +16,7 @@ export const SixthLead = () => {
                 {response &&
                     response.filter(i => i.floor === 6 ).map( item => (
                         <div
-                            className="block shadow-sm w-[234px] h-[186px] bg-white rounded-2xl text-center"
+                            className="block shadow-sm w-[234px] h-[186px] bg-white rounded-2xl text-center mx-2"
                             key={item.id}
                         >
                             <img

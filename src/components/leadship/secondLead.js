@@ -9,10 +9,10 @@ import {useTranslation} from "react-i18next";
 const SecondLead = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
   const { isMobile, isTablet, isDesktop } = useMatchMedia();
-  const {i18n} = useTranslation()
+  const {t, i18n} = useTranslation()
 
   return (
-    <div>
+    <div className="grid justify-center m-auto">
       <div className="wrapper justify-between align-middle">
           {response &&
               response.filter(i => i.floor === 2 ).map( item => (
@@ -26,7 +26,7 @@ const SecondLead = () => {
                           className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
                       />
                       {i18n.language === 'ky' &&
-                          <div className="w-[193px] m-auto">
+                          <div className="w-[193px] h-[90px] m-auto">
                               <p className="text-xs mb-1 font-normal text-blue">
                                   {item.full_name_ky}
                               </p>
@@ -59,10 +59,12 @@ const SecondLead = () => {
                       </Link>
                   </div>
               ))}
-        {isDesktop && (
-          <RenderArrow angle={180} lenght={50} width={'35px'} line={1.2} />
-        )}
       </div>
+        {isDesktop && (
+            <div className="m-auto mt-6">
+            <RenderArrow angle={180} lenght={50} width={'35px'} line={1.2}/>
+            </div>
+        )}
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import './app.css'
 import {Route, Routes} from "react-router-dom";
-import Header from "./components/general/header";
 import Menu from "./components/general/menu";
 import React from "react";
 import {publicRoutes} from "./routes/routes";
 import Footer from "./components/general/footer";
+import Header from "./components/general/header";
 
 document.body.style.overflow = "";
 

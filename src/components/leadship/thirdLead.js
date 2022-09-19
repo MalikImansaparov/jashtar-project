@@ -10,7 +10,7 @@ import {useTranslation} from "react-i18next";
 
 export const ThirdLead = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
-    const {i18n} = useTranslation()
+    const {t, i18n} = useTranslation()
 
     return (
         <div>
@@ -32,7 +32,7 @@ export const ThirdLead = () => {
                                 className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
                             />
                             {i18n.language === 'ky' &&
-                                <div className="w-[193px] m-auto">
+                                <div className="w-[193px]  m-auto">
                                     <p className="text-xs mb-1 font-normal text-blue">
                                         {item.full_name_ky}
                                     </p>

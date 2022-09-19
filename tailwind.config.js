@@ -13,15 +13,6 @@ module.exports = {
 			'md': {'max': '767px'},
 			'sm': {'max': '639px'},
 		},
-		gridTemplateAreas: {
-			'default': [
-				'a    b   b',
-				'a    b   b',
-				'a    c   c',
-				'd    c   c',
-				'd    c   c.',
-			]
-		},
 		// screens: {
 		// 	sm: '640px',
 		// 	md: '768px',
