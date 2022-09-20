@@ -6,7 +6,6 @@ import About from "../menu/about";
 import CoreAdvice from "../menu/coreAdvice";
 import {Language} from "../menu/Language";
 import close from '../../assets/image/main/close.png'
-import SearchPage from "../SearchPage";
 import {useNavigate} from "react-router";
 import {useTranslation} from "react-i18next";
 
@@ -32,12 +31,18 @@ const Menu = () => {
                             <About/>
                             <CoreAdvice/>
                             <NavLink to="/news"
-                                     className="text-white text-[14px] font-semibold">{t("news")}</NavLink>
+                                     className="text-white text-[14px] font-semibold">
+                                <span className="text-sm font-normal">{t("news")}</span>
+                            </NavLink>
                             <NavLink to="/category/1"
-                                     className="text-white text-[14px] font-semibold">{t("documents")}</NavLink>
+                                     className="text-white text-[14px] font-semibold">
+                                <span className="text-sm font-normal">{t("documents")}</span>
+                            </NavLink>
                             <NavLink to="/gallery"
-                                     className="text-white text-[14px] font-semibold ">{t("gallery")}</NavLink>
-                            <NavLink to="/y-map" className="w-[91px] h-[34px] bg-orange rounded font-medium text-white text-[15px] py-1.5 px-[22px] ">Y-Map
+                                     className="text-white text-[14px] font-semibold ">
+                                <span className="text-sm font-normal">{t("gallery")}</span>
+                            </NavLink>
+                            <NavLink to="/y-map" className="w-[91px] h-[34px] bg-orange rounded font-normal text-white text-[14px] py-1.5 px-[22px] ">Y-Map
                             </NavLink>
                             <Language/>
                             <img src={search} alt="search" className='w-[20px] h-[20px] cursor-pointer'

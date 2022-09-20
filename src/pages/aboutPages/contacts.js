@@ -8,7 +8,7 @@ import {useTranslation} from "react-i18next";
 
 export const Contacts = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/contacts/');
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
 
     const bgImageStyle = {
         backgroundImage: `url('${bg}')`,
@@ -22,22 +22,53 @@ export const Contacts = () => {
             <div className="container w-[1196px] m-auto">
                 <BreadCrumb/>
             </div>
-            <div className='flex'>
+            {response && response.map(item => (
+            <div className='flex' key={item.id}>
                 <div className="flex justify-center items-center w-[443px]">
-                    <p className="font-semibold text-[18px] text-white leading-[23px]">
-                        {t("main")}
-                    </p>
+                    {i18n.language === "ky" &&
+                        <p className="font-semibold text-[18px] text-white leading-[23px]">
+                            {item.title_ky}
+                        </p>
+                    }
+                    {i18n.language === "ru" &&
+                        <p className="font-semibold text-[18px] text-white leading-[23px]">
+                            {item.title_ru}
+                        </p>
+                    }
+                    {i18n.language === "en" &&
+                        <p className="font-semibold text-[18px] text-white leading-[23px]">
+                            {item.title_en}
+                        </p>
+                    }
                 </div>
                 <div className="relative rounded w-[532px] h-[322px] bg-white flex justify-center items-center ml-[261px]">
                     <img src={pattern} alt="pattern" className="absolute top-0 right-[20px] w-[200px] h-[200px]"/>
+                    <div className="">
                     { response && response.map( item => (
                         <div key={item.id}>
-                            <p className="text-base font-medium mb-[22px]">Адрес:<span className="text-blue"> Пушкина 78, 720040 Бишкек, Кыргызстан</span></p>
-                            <p className="text-base font-medium">Телефон: <span className="text-blue">{item.phone}</span></p>
+                            {i18n.language === "ky" &&
+                                <p className="text-base font-medium mb-[22px]">{t('address')}<span
+                                    className="text-blue">{item.address_ky}</span></p>
+                            }
+                            {i18n.language === "ru" &&
+                                <p className="text-base font-medium mb-[22px]">{t('address')}<span
+                                    className="text-blue">{item.address_ru}</span></p>
+                            }
+                            {i18n.language === "en" &&
+                                <p className="text-base font-medium mb-[22px]">{t('address')}<span
+                                    className="text-blue">{item.address_en}</span></p>
+                            }
                         </div>
                     ))}
+                    { item.contact.map( i => (
+                        <div key={i.id}>
+                            <p className="text-base font-medium">{t('phone')}<span className="text-blue">{i.phone}</span></p>
+                        </div>
+                    ))}
+                    </div>
                 </div>
             </div>
+            ))}
         </div>
         </div>
     );

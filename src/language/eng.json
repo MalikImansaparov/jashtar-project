@@ -43,5 +43,8 @@
   "photo": "Photo",
   "video": "Video",
   "download": "Download file",
-  "work": "Labor activity"
+  "work": "Labor activity",
+  "notFound": "Material not found",
+  "address": "Address: ",
+  "phone": "Phone: "
 }

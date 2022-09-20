@@ -7,7 +7,7 @@ import meta from "../../assets/image/general/f.png";
 const FooterSocial = () => {
     return (
         <div className="flex">
-            <div className='socials ' onClick={() => window.open('https://www.youtube.com/channel/UCSyRfISynsKOnXi9j21mzUA')}>
+            <div className='socials' onClick={() => window.open('https://www.youtube.com/channel/UCSyRfISynsKOnXi9j21mzUA')}>
                 <img src={youtube} alt="social" className="w-[17px] h-[12px]"/>
             </div>
             <div className='socials ml-[10px]' onClick={() => window.open('https://t.me/jashtargovkg')}>

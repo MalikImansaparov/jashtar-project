@@ -1,13 +1,17 @@
 import React from 'react';
 import {Link, NavLink} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import arr from "../../assets/image/general/menus.svg"
 
 const About = () => {
     const { t } = useTranslation();
 
     return (
         <div className="group relative">
-            <NavLink to="/" className="text-white text-[14px] font-semibold">{t("about")}</NavLink>
+            <NavLink to="/" className="flex text-white text-[14px] font-semibold">
+                <img src={arr} className='mr-[5px]' alt='lang'/>
+                <span className="text-sm font-normal">{t("about")}</span>
+            </NavLink>
             <ul className="absolute hidden group-hover:block z-20">
                     <Link to='/valuation' className="btn-blue mt-[27px]">{t("valuation")}</Link>
                     <Link to='/management' className="btn-blue">{t("leadship")}</Link>
