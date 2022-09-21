@@ -73,7 +73,7 @@ export const YoungOrganization = () => {
                         <div className="flex justify-center items-center shadow-org py-[13px] px-[30px] rounded-[12px] w-[291px] h-[86px] mr-[62px]">
                             <img src={uri + item.id} alt='organization' className=''/>
                         </div>
-                        <p className="font-normal text-base">1. Deutsche Gesellschaft fur Internationale Zusammenarbeit (GIZ) GmbH</p>
+                        <p className="font-normal text-base">{i}</p>
                             </div>
                             ))}
                     </div>

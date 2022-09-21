@@ -2,7 +2,7 @@ import React from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
 import bg from "../../assets/image/about/contacts-bg.png";
 import pattern from "../../assets/image/main/Looper-1.png"
-import {aboutUrl, base} from "../../api/const";
+import {aboutUrl, base, uri} from "../../api/const";
 import {useFetch} from "../../api/useFetch";
 import {useTranslation} from "react-i18next";
 
@@ -15,15 +15,19 @@ export const Contacts = () => {
         backgroundSize: 'cover'
     }
 
+    // backgroundImage: `url('${uri + response.map(i => i.background_image)}')`,
+
     return (
-        <div className="w-full h-[655px]  mb-[62px] relative" style={bgImageStyle}>
+        <>
+            {response && response.map(item => (
+        <div className="w-full h-[655px]  mb-[62px] relative" style={bgImageStyle} key={item.id}>
             <div className='h-[232px] w-[60%] absolute top-[170px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar z-10'></div>
         <div className='wrapper'>
             <div className="container w-[1196px] m-auto">
                 <BreadCrumb/>
             </div>
-            {response && response.map(item => (
-            <div className='flex' key={item.id}>
+
+            <div className='flex'>
                 <div className="flex justify-center items-center w-[443px]">
                     {i18n.language === "ky" &&
                         <p className="font-semibold text-[18px] text-white leading-[23px]">
@@ -45,7 +49,7 @@ export const Contacts = () => {
                     <img src={pattern} alt="pattern" className="absolute top-0 right-[20px] w-[200px] h-[200px]"/>
                     <div className="">
                     { response && response.map( item => (
-                        <div key={item.id}>
+                        <div key={item.id} className="text-white">
                             {i18n.language === "ky" &&
                                 <p className="text-base font-medium mb-[22px]">{t('address')}<span
                                     className="text-blue">{item.address_ky}</span></p>
@@ -68,9 +72,10 @@ export const Contacts = () => {
                     </div>
                 </div>
             </div>
+        </div>
+        </div>
             ))}
-        </div>
-        </div>
+        </>
     );
 };
 

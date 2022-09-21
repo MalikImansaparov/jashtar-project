@@ -5,7 +5,6 @@ import {Enroll} from "../components/main/enroll";
 import {Events} from "../components/main/events";
 import Volunter from "../components/main/volunter";
 import Partners from "../components/main/partners";
-import SearchPage from "../components/SearchPage";
 
 const MainPage = () => {
     return (

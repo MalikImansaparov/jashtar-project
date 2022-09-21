@@ -25,7 +25,7 @@ const InfoLeadership = () => {
             <div className='h-[232px] w-[38.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar'></div>
             <div className="wrapper">
                 <div className="container mb-8 mt-16">
-                        <BreadCrumbs crumbs={crumbs}/>
+                        <BreadCrumbs crumbs={crumbs} title={" "}/>
                 </div>
                 {response &&
                     i18n.language === 'ky' &&
@@ -37,13 +37,13 @@ const InfoLeadership = () => {
                                 <p className="font-base text-grey text-base mb-8">{response.annotation_ky}
                                 </p>
                                 <p>
-                                    {response.biography_ky}
+                                  <Sanitized html={response.biography_ky}/>
                                 </p>
                             </div>
                         </div>
                         <p className="w-full text-base font-semibold mb-[22px]">{t('work')}</p>
                         <p className='font-normal text-base w-full '>
-                            <Sanitized html={response.full_name_ky}/>
+                            <Sanitized html={response.employment_ky}/>
                         </p>
                     </div>
                 }
@@ -57,13 +57,13 @@ const InfoLeadership = () => {
                                 <p className="font-base text-grey text-base mb-8">{response.annotation_ru}
                                 </p>
                                 <p>
-                                    {response.biography_ru}
+                                    <Sanitized html={response.biography_ru}/>
                                 </p>
                             </div>
                         </div>
                         <p className="w-full text-base font-semibold mb-[22px]">{t('work')}</p>
                         <p className='font-normal text-base w-full '>
-                            <Sanitized html={response.full_name_en}/>
+                            <Sanitized html={response.employment_ru}/>
                         </p>
                     </div>
                 }
@@ -77,13 +77,13 @@ const InfoLeadership = () => {
                                 <p className="font-base text-grey text-base mb-8">{response.annotation_en}
                                 </p>
                                 <p>
-                                    {response.biography_en}
+                                    <Sanitized html={response.biography_en}/>
                                 </p>
                             </div>
                         </div>
                         <p className="w-full text-base font-semibold mb-[22px]">{t('work')}</p>
                         <p className='font-normal text-base w-full '>
-                            <Sanitized html={response.full_name_en}/>
+                            <Sanitized html={response.employment_en}/>
                         </p>
                     </div>
                 }

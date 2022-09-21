@@ -8,13 +8,12 @@ import {base, councilUrl, uri, url} from "../../api/const";
 import {useTranslation} from "react-i18next";
 
 const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
-    const {t} = useTranslation()
+    const {t, i18n} = useTranslation()
     const [ref] = useClickOutside(() => setOpenRegisterModal(false))
     document.body.style.overflow = "hidden";
     const link = "https://bischkek.diplo.de/kg-ru/themen/weitere-themen/gtz/1256134"
 
     const { isLoading, response } = useFetch(base + councilUrl + '/partner/${id}');
-    console.log(response)
 
     const onClose = () => {
         setOpenRegisterModal(false)
@@ -30,9 +29,11 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                         </div>
                         {response && response(item => (
                         <div className="flex" key={item.id}>
+
                             <div className='w-[332px] h-[277px] rounded shadow-partner flex justify-center items-center mb-[10px]'>
                                 <img src={uri + item.org_image} alt='img' className="w-[245px] h-[48px]"/>
                             </div>
+                            {i18n.language === "ky" &&
                             <div className='ml-[106px]'>
                                 <p className='text-blue text-base font-semibold mb-8'>
                                     {response.title_ky}
@@ -40,7 +41,7 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                                 <p className="w-[718px] text-base font-normal leading-[19.3px]">
                                     {response.desk_ky}
                                 </p>
-                            </div>
+                            </div>}
                         </div>
                             ))}
                         <div className="mt-[62px]">

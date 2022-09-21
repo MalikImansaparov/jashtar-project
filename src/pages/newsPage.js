@@ -12,9 +12,8 @@ import axios from "axios";
 const NewsPage = () => {
     const [pageCount, setpageCount] = useState(0);
     const {isLoading} = useFetch(base + newsUrl + `/news/`);
-    const {t} = useTranslation()
     const [response, setResponse] = useState([])
-    const {i18n} = useTranslation()
+    const {t, i18n} = useTranslation()
 
     const getData = async () => {
         const res = await axios.get(base + mainUrl + '/news/')
@@ -68,12 +67,13 @@ const NewsPage = () => {
                                         alt="cart-img"
                                         className="mb-3 h-[247px] w-[384px] rounded-t"
                                     />
+                                    {i18n.language === "ky" &&
                                     <div className="px-2.5">
                                         <p className="text-base mb-3 font-extrabold h-[38px] w-[324px] leading-[19px]">
-                                            Стипендиальная программа для иностранных студентов
+                                            {item.title_ky}
                                         </p>
                                         <p className="text-base font-normal w-[324px] h-[38px] grey overflow-y-hidden leading-[19px]">
-                                            Программа разработана для талантливых иностранных студентов, желающих обу...
+                                            {item.desc_ky}
                                         </p>
                                         <div className="flex justify-between w-[324px] mt-4">
                                             <p className="text-sm font-medium text-grey">{item.date}</p>
@@ -81,7 +81,7 @@ const NewsPage = () => {
                                                 {t("more")}
                                             </Link>
                                         </div>
-                                    </div>
+                                    </div>}
                                 </Link>
                         ))}
                 </div>

@@ -20,7 +20,8 @@ export const JashtarProject = () => {
         {response &&
           response.map((item) => (
             <div className="flex mb-8 w-full flex-wrap" key={item.id}>
-              <Sanitized html={item.desc_ky} />
+              <Sanitized html={uri + item.desc_ky} allowedAttributes={false}
+                         allowedTags={false} />
             </div>
           ))}
       </div>

@@ -20,7 +20,9 @@ export const BreadCrumbs = (props) => {
                     </div>
                 );
             })}
-            <span className="ml-1.5 text-lg font-medium text-grey">{props.title.length > 35 ? props.title.split('').splice(0, 72) : props.title} ...</span>
+            <span className="ml-1.5 text-lg font-medium text-grey">{props.title.length > 35 ?
+                props.title.split('').splice(0, 72) : props.title}
+                {props.title.length > 25 && <span> ... </span>}</span>
         </div>
     );
 };

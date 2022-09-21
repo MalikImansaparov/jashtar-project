@@ -6,10 +6,12 @@ import {useFetch} from "../../../api/useFetch";
 import {aboutUrl, base, twoLead, url} from "../../../api/const";
 import {ClipLoader} from "react-spinners";
 import path from "../../../assets/image/partners/Ellipse 2.png"
+import {useTranslation} from "react-i18next";
+import {Sanitized} from "../../../components/general/sanitize";
 
 const TimeLine = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/chronology/');
-    console.log(response)
+    const {t, i18n} = useTranslation()
 
     if (isLoading) {
         return (
@@ -40,52 +42,60 @@ const TimeLine = () => {
                     {/*{response?.map(item => (*/}
                         <TabPanel >
                             <div className='w-[867px] mx-[52px]'>
-                            {/*<div className="flex">*/}
-                            {/*    {response?.map(item => (*/}
-                            {/*    <div className="flex w-[291px] mr-[106px] shadow-sm p-3 rounded-[12px]" key={item.id}>*/}
-                            {/*    <img*/}
-                            {/*        src={item}*/}
-                            {/*        alt="cart-img"*/}
-                            {/*        className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"*/}
-                            {/*    />*/}
-                            {/*    <div className="w-[193px] m-auto ">*/}
-                            {/*        <p className="text-[12px] mb-1 fo t-normal text-blue">*/}
-                            {/*         Жаманкулов Азамат Капарович*/}
-                            {/*        </p>*/}
-                            {/*        <p className="text-[11px] font-light">*/}
-                            {/*            Министр культуры, информации, спорта и молодежной политики Кыргызской Республики*/}
-                            {/*        </p>*/}
-                            {/*    </div>*/}
-                            {/*    </div>*/}
-                            {/*    ))}*/}
-                            {/*</div>*/}
-                            {/*    {response && response.map(item => (*/}
-                            {/*    <div className="" key={item.id}>*/}
-                            {/*        <p className="text-base text-blue font-extrabold mt-[62px]">*/}
-                            {/*            {item.title_ky}*/}
-                            {/*        </p>*/}
-                            {/*        <p className="text-base  font-normal my-[32px]">*/}
-                            {/*            {item.desk_ky}*/}
-                            {/*        <p className="text-base  font-normal my-[32px]">*/}
-                            {/*            В 1996 году Государственный комитет Кыргызской Республики по туризму и спорту реорганизован в*/}
-                            {/*            Министерство туризма и спорта Кыргызской Республики, которое в декабре этого же года*/}
-                            {/*            реорганизовано в Государственное агентство по туризму и спорту при Правительстве Кыргызской*/}
-                            {/*            Республики. В конце 2000 года ведомство реорганизовано в Государственный комитет Кыргызской Республики по туризму, спорту и молодежной политике.*/}
-                            {/*        </p>*/}
-                            {/*        <p className="text-base  font-normal my-[32px]">*/}
-                            {/*            В 2005 году комитет реорганизован в Государственное агентство по физической культуре и спорту*/}
-                            {/*            при Правительстве Кыргызской Республики, которое в 2007 году реорганизовано в Государственное*/}
-                            {/*            агентство по физической культуре и спорту, делам молодежи и защите детей при Правительстве*/}
-                            {/*            Кыргызской Республики. В 2009 году ведомство снова реорганизовано в Государственное агентство физической культуры и спорта при Правительстве Кыргызской Республики.*/}
-                            {/*        </p>*/}
-                            {/*        <p className="text-base font-normal mt-[32px]">*/}
-                            {/*            В 2015 году образовано Государственное агентство по делам молодежи, физической культуры и*/}
-                            {/*            спорта при Правительстве Кыргызской Республики на базе Государственного агентства физической*/}
-                            {/*            культуры и спорта при Правительстве Кыргызской Республики, с передачей от преобразуемого*/}
-                            {/*            Министерства труда, миграции и молодежи Кыргызской Республики функций по делам молодежи.*/}
-                            {/*        </p>*/}
-                            {/*    </div>*/}
-                            {/*        ))}*/}
+                            <div className="flex flex-wrap">
+                                {response && response.map(item => (
+                                    <div key={item.id}>
+                                <div className="flex w-[325px] mb-4 mr-[106px] shadow-sm p-3 rounded-[12px]">
+                                <img
+                                    src={item}
+                                    alt="cart-img"
+                                    className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
+                                />
+                                    {i18n.language === "ky" &&
+                                <div className="w-[193px] m-auto ">
+                                    <p className="text-[12px] mb-1 fo t-normal text-blue">
+                                        {item.full_name_ky}
+                                    </p>
+                                    <p className="text-[11px] font-light">
+                                        {item.annotation_ky}
+                                    </p>
+                                </div> }
+                                    {i18n.language === "ru" &&
+                                        <div className="w-[193px] m-auto ">
+                                            <p className="text-[12px] mb-1 fo t-normal text-blue">
+                                                {item.full_name_ru}
+                                            </p>
+                                            <p className="text-[11px] font-light">
+                                                {item.annotation_ru}
+                                            </p>
+                                        </div> }
+                                    {i18n.language === "en" &&
+                                        <div className="w-[193px] m-auto ">
+                                            <p className="text-[12px] mb-1 fo t-normal text-blue">
+                                                {item.full_name_en}
+                                            </p>
+                                            <p className="text-[11px] font-light">
+                                                {item.annotation_en}
+                                            </p>
+                                        </div> }
+                                </div>
+                                        {i18n.language === "ky" &&
+                                        <div>
+                                        <p className="text-base text-blue font-extrabold mt-[62px]">*/}
+                                                    {item.title_ky}
+                                                </p>
+                                                <p className="text-base  font-normal my-[32px]">
+                                                    <Sanitized html={item.desk_ky}/>
+                                                </p>
+                                        </div>}
+                                    </div>
+                                ))}
+                            </div>
+                                {/*{response && response.map(item => (*/}
+                                {/*<div className="" key={item.id}>*/}
+                                {/*
+                                {/*</div>*/}
+                                {/*    ))}*/}
                             </div>
                         </TabPanel>
                 </Tabs>
