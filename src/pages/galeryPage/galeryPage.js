@@ -11,16 +11,17 @@ const GaleryPage = () => {
     const tabs = [
         {
             id: 1,
-            tabTitle: t('photo'),
-            component: <PhotoPanel/>,
-            tab: t('photo')
-        },
-        {
-            id: 2,
             tabTitle: t('video'),
             component: <VideoPanel/>,
             tab: t('video')
         },
+        {
+            id: 2,
+            tabTitle: t('photo'),
+            component: <PhotoPanel/>,
+            tab: t('photo')
+        },
+
     ];
 
     const [crumbs] = useState([

@@ -18,8 +18,6 @@ const DocumentDetail = () => {
     const [crumbs] = useState([
         t('documents'),
         '❯',
-        t('constitutions'),
-        '❯',
     ]);
 
     if (isLoading) {

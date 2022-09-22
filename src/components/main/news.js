@@ -1,5 +1,5 @@
 import {useFetch} from "../../api/useFetch";
-import {base, uri, url} from "../../api/const";
+import {base, newsUrl, uri, url} from "../../api/const";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
@@ -8,9 +8,10 @@ import 'swiper/css/navigation';
 import { useRef } from 'react';
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import {Sanitized} from "../general/sanitize";
 
 export const News = () => {
-    const { isLoading, response } = useFetch(base + uri + '/news/');
+    const { response } = useFetch(base + newsUrl + '/news/');
   const swiperRef = useRef();
   const {t, i18n} = useTranslation()
 
@@ -64,26 +65,57 @@ export const News = () => {
       >
         <div className="block justify-center m-auto">
           {response &&
-            response.map((item) => (
+            response.results.map((item) => (
               <SwiperSlide key={item.id}>
                 <Link to={`news/${item.id}`} className=" block max-w-[384px] m-auto shadow-md rounded bg-white pb-4 mb-4 leading-5 cursor-pointer">
                   <img
-                    src={uri + item}
+                    src={uri + item.preview_image}
                     alt="cart-img"
                     className="mb-3 h-[247px] w-[384px] rounded-t"
                   />
                   <div className="px-2.5">
-                    <p className="text-base mb-3 font-extrabold h-[38px] w-[324px] leading-[19px]">
-                        Стипендиальная программа для иностранных студентов
-                    </p>
-                    <p className="text-base font-normal w-[324px] h-[38px] grey overflow-y-hidden leading-[19px]">
-                        Программа разработана для талантливых иностранных студентов, желающих обу...
-                    </p>
+                      {i18n.language === "ky" &&
+                      <>
+                      <p className="text-base font-semibold w-[324px] h-[28px] text-black overflow-y-hidden leading-[19px]">
+                          {item.title_ky.length > 40 ? item.title_ky.split("").splice(0, 32)  : item.title_ky }
+                      </p>
+                          <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
+                              <Sanitized html={item.desc_ky}/>
+                          </p>
+                      </>}
+                      {i18n.language === "ru" &&
+                          <>
+                              {item.title_ru}
+                              <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
+                                  <Sanitized html={item.desc_ru}/>
+                              </p>
+                          </>}
+                      {i18n.language === "en" &&
+                          <>
+                              {item.title_en}
+                              <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
+                                  <Sanitized html={item.desc_en}/>
+                              </p>
+                          </>}
+                      {i18n.language === "ru" &&
+                          <div>
+                              {item.title_ru}
+                              <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
+                                  <Sanitized html={item.desc_ru}/>
+                              </p>
+                          </div>}
+                      {i18n.language === "en" &&
+                          <div>
+                              {item.title_en}
+                              <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
+                                  <Sanitized html={item.desc_en}/>
+                              </p>
+                          </div>}
                     <div className="flex justify-between w-[324px] mt-4">
-                      <p className="text-sm font-medium text-grey" >{item.date}</p>
-                      <div className="text-blue underline cursor-pointer text-sm">
-                        Подробнее
-                      </div>
+                      <p className="text-sm font-medium text-grey" >{item.news_date}</p>
+                      <Link to={`${item.id}`} className="text-blue underline cursor-pointer text-sm">
+                          {t('more')}
+                      </Link>
                     </div>
                   </div>
                 </Link>

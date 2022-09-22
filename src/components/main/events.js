@@ -2,10 +2,11 @@ import React, {useRef} from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination} from "swiper";
 import {useFetch} from "../../api/useFetch";
-import {base, eventsUrl, url} from "../../api/const";
+import {base, eventsUrl, uri, url} from "../../api/const";
 import dots from "../../assets/image/main/Ellipse 1.png"
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import {Sanitized} from "../general/sanitize";
 
 const settings = {
     breakpoints: {
@@ -25,7 +26,7 @@ const settings = {
 }
 
 export const Events = () => {
-    const { isLoading, response } = useFetch(base + eventsUrl + 'events/');
+    const { isLoading, response } = useFetch(base + eventsUrl + '/events/');
     const {t, i18n} = useTranslation()
     const swiperRef = useRef();
 
@@ -53,30 +54,31 @@ export const Events = () => {
                 >
                     <div className="block justify-center m-auto">
                     {response &&
-                        response.map((item) => (
+                        response.results.map((item) => (
                             <SwiperSlide key={item.id}>
                             <Link to={`events/${item.id}`}
                                 className="max-w-[384px] h-[419px] m-auto shadow-md rounded bg-white pb-4 mb-4 leading-5 block"
                             >
                                 <img
-                                    src={item.path}
+                                    src={uri + item.preview_image}
                                     alt="cart-img"
                                     className="mb-3 h-[247px] w-[384px] rounded-t"
                                 />
                                 <div className="px-2.5">
                                     <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
-                                        Стипендиальная программа для иностранных студентов
+                                        {item.title_ky}
                                     </p>
                                     <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
-                                        Программа разработана для талантливых иностранных студентов, желающих обу...</p>
+                                        <Sanitized html={item.desc_ky}/>
+                                    </p>
                                     <div className="w-[324px] my-4 text-sm font-medium">
                                         <p className="text-grey flex">
-                                            <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                            <span>Дата:</span><span className='text-black '>&nbsp;{item.date}</span>
+                                            <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1.5" alt='dots'/>
+                                            <span>{t('date')}</span><span className='text-black '>&nbsp;{item.event_date}</span>
                                         </p>
                                         <p className="text-grey flex">
-                                            <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                            Место проведения: <span className='text-black'>&nbsp;отель Orion</span>
+                                            <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1.5" alt='dots'/>
+                                            {t('location')} <span className='text-black'>&nbsp;{item.location}</span>
                                         </p>
                                     </div>
                                 </div>

@@ -8,31 +8,32 @@ import ReactPaginate from "react-paginate";
 import {useClickOutside} from "../../hooks/useOutside";
 import axios from "axios";
 import {useTranslation} from "react-i18next";
+import dots from "../../assets/image/main/Ellipse 1.png";
 
 const VideoPanel = () => {
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
-    const { isLoading} = useFetch(base + galeryUrl + '/video/');
-    const [response, setResponse] = useState([])
-    const {i18n} = useTranslation()
+    const { isLoading, response} = useFetch(base + galeryUrl + '/video/');
+    // const [response, setResponse] = useState([])
+    const {t, i18n} = useTranslation()
 
-    const getData = async () => {
-        const res = await axios.get(base + galeryUrl + '/video/')
-        setResponse(res.data)
-    }
-
-    useEffect(() => {
-        getData()
-    },[])
+    // const getData = async () => {
+    //     const res = await axios.get(base + galeryUrl + '/video/')
+    //     setResponse(res.data)
+    // }
+    //
+    // useEffect(() => {
+    //     getData()
+    // },[])
 
     return (
         <div className="wrapper">
         <div className='flex flex-wrap justify-between mt-[62px]'>
-            {response && response.map((item) => (
-                <div className='mb-[62px] shadow-md rounded-md' onClick={() => setOpenRegisterModal(true)}>
+            {response && response.results.map((item) => (
+                <div className='mb-[62px] shadow-md rounded-md w-[580px]' onClick={() => setOpenRegisterModal(true)}>
                     <iframe
                         width="580"
                         height="326"
-                        src={uri + item.video}
+                        src={item.video}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
@@ -40,9 +41,9 @@ const VideoPanel = () => {
                     />
                     <div className="p-4 cursor-pointer">
                    <p className='text-[18px] font-normal'>{item.title_ky}</p>
-                    <div className="flex items-center">
-                    <img src={point} alt="" className="mx-4 border-[50%] w-[5px] h-[5px]"/>
-                    <span className="text-sm font-normal ">{item.date}</span>
+                    <div className="flex items-center mt-2">
+                        <img src={point} className="mr-[10px] w-[8px] h-[8px] mt-1.5" alt='dots'/>
+                        <span>{t('date')}</span><span className='text-black '>&nbsp;{item.date}</span>
                     </div>
                     {/*<div className="flex">*/}
                     {/*    <img src={item.path} alt=""className="w-8 h-8 rounded-[50%]"/>*/}
@@ -53,6 +54,7 @@ const VideoPanel = () => {
                 ))}
             {openRegisterModal && openRegisterModal && (
                 <VideoInfo
+                    id={response.id}
                     openRegisterModal={openRegisterModal}
                     setOpenRegisterModal={() => setOpenRegisterModal(false)}
                 />

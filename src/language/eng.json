@@ -13,7 +13,7 @@
   "all": "See all",
   "events": "Events",
   "valuation": "Valuation",
-  "leadship": "Managment",
+  "leadship": "Managmment",
   "timeline": "Timeline",
   "ministry": "Ministry",
   "politics": "Young politics",
@@ -47,5 +47,7 @@
   "work": "Labor activity",
   "notFound": "Material not found",
   "address": "Address: ",
-  "phone": "Phone: "
+  "phone": "Phone: ",
+  "date": "Data: ",
+  "location": "Location: "
 }

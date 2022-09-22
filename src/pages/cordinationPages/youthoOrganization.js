@@ -65,16 +65,21 @@ export const YoungOrganization = () => {
            </div>
             <div>
             <div className='block text-base font-semibold mb-[36px]'>{t("listCoordination")}</div>
-            <div className="flex items-center mb-[62px] flex-wrap">
-                {response.map(i => (
-                    <div key={i.id} className="flex items-center w-[100%]">
-                        {i.yorganizationpart.map( item => (
-                            <div>
-                        <div className="flex justify-center items-center shadow-org py-[13px] px-[30px] rounded-[12px] w-[291px] h-[86px] mr-[62px]">
-                            <img src={uri + item.id} alt='organization' className=''/>
+            <div className=" mb-[62px]">
+                {response && response.map(i => (
+                    <div key={i.id} className="flex flex-wrap items-center">
+                        {i.yorganizationmemb.map( item => (
+                        <div className="flex flex-wrap shadow-org py-[13px] px-[30px] my-[10px] rounded-[12px]">
+                            {i18n.language === "ky" &&
+                                <p className="font-normal text-base w-[1180px]">{item.annotation_ky}</p>
+                            }
+                            {i18n.language === "ru" &&
+                                <p className="font-normal text-base w-[1180px]">{item.annotation_ru}</p>
+                            }
+                            {i18n.language === "en" &&
+                                <p className="font-normal text-base w-[1180px]">{item.annotation_en}</p>
+                            }
                         </div>
-                        <p className="font-normal text-base">{i}</p>
-                            </div>
                             ))}
                     </div>
                 ))}

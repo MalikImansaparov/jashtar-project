@@ -6,9 +6,12 @@ import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, uri} from "../../api/const";
 import SanitizedHTML from "react-sanitized-html";
 import {Sanitized} from "../../components/general/sanitize";
+import sanitizeHtml from "sanitize-html";
 
 export const JashtarProject = () => {
   const { isLoading, response } = useFetch(base + aboutUrl + '/youthpolicy/');
+  console.log(response)
+
 
   return (
     <div className="w-full relative pb-[63px]">
@@ -20,8 +23,8 @@ export const JashtarProject = () => {
         {response &&
           response.map((item) => (
             <div className="flex mb-8 w-full flex-wrap" key={item.id}>
-              <Sanitized html={uri + item.desc_ky} allowedAttributes={false}
-                         allowedTags={false} />
+                <SanitizedHTML html={item.desc_ky} allowedAttributes={false}
+                               allowedTags={false} />
             </div>
           ))}
       </div>

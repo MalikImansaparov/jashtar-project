@@ -6,14 +6,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { useFetch } from '../../api/useFetch';
-import {aboutUrl, base, url} from '../../api/const'
+import {aboutUrl, base, eventsUrl, uri, url} from '../../api/const'
 import pattern from '../../assets/image/main/Looper-1.png'
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import {Sanitized} from "../general/sanitize";
+import dots from "../../assets/image/main/Ellipse 1.png";
 
 export const Enroll = () => {
-  const { isLoading, response } = useFetch(base + aboutUrl + '/events/');
+  const { isLoading, response } = useFetch(base + eventsUrl + '/events/');
   const swiperRef = useRef();
   const {t, i18n} = useTranslation()
 
@@ -37,51 +38,36 @@ export const Enroll = () => {
           modules={[Pagination, Navigation]}
         >
           {response &&
-            response.map((item) => (
+            response.results.map((item) => (
               <SwiperSlide key={item.id}>
                 <div className="h-[100%] w-[100%] flex">
                   <div className="mt-[52px] max-w-[815px]">
                     {
                       i18n.language === "ky" &&
-                        <p className="text-[22px] text-semibold text-white">
+                        <div className="w-[461px]">
+                        <p className="text-[22px] text-semibold text-white w-[461px] mb-[22px]">
                           <Sanitized html={item.title_ky}/>
                         </p>
+                          <p className="text-[16px] text-normal max-h-[38px] grey overflow-y-hidden leading-[19px]">
+                            <Sanitized html={item.desc_ky}/>
+                          </p>
+                          <div className="flex mt-8 justify-between">
+                            <p className="text-grey flex">
+                              <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-2" alt='dots'/>
+                              <span>{t('date')}</span><span className='text-black '>&nbsp;{item.event_date}</span>
+                            </p>
+                              <Link to={`events/${item.id}`} className="btn pointer-events-auto mr-8">
+                                {t('more')}
+                              </Link>
+                          </div>
+                        </div>
                     }
-                    {
-                        i18n.language === "ru" &&
-                        <p className="text-[22px] text-semibold text-white">
-                          <Sanitized html={item.title_ru}/>
-                        </p>
-                    }
-                    {
-                        i18n.language === "en" &&
-                        <p className="text-[22px] text-semibold text-white">
-                          <Sanitized html={item.title_en}/>
-                        </p>
-                    }
-                    <div className="flex mt-[32px]">
-                      {/*<div className="mr-[66px]">*/}
-                      {/*  <span className="clock">16</span>*/}
-                      {/*  <span className="clock mx-7">:</span>*/}
-                      {/*  <span className="clock">16</span>*/}
-                      {/*  <span className="clock mx-7">:</span>*/}
-                      {/*  <span className="clock">16</span>*/}
-                      {/*</div>*/}
-                      <div className="mr-[32px]">
-                        {/*<p className="text-base font-normal text-grey">*/}
-                        {/*  Места ограничены:*/}
-                        {/*  <span className="text-blue"> осталось 32</span>*/}
-                        {/*</p>*/}
-                        <Link to={`events/${item.id}`} className="btn mt-[29px] pointer-events-auto">
-                            {t('more')}
-                        </Link>
-                      </div>
-                    </div>
+
                   </div>
                     <img
-                      src={person}
+                      src={uri + item.preview_image}
                       alt="person"
-                      className="max-w-[236px] max-h-[264px]"
+                      className="w-[516px] max-h-[264px]"
                     />
                 </div>
               </SwiperSlide>

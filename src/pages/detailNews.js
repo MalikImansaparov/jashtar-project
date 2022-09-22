@@ -7,7 +7,6 @@ import {useParams} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import {Sanitized} from "../components/general/sanitize";
 
-
 const DetailNews = () => {
     const {id} = useParams()
     const { isLoading, response } = useFetch(base + newsUrl + `/news/${id}`);
@@ -24,20 +23,47 @@ const DetailNews = () => {
     return (
         <div className="w-full relative mb-[63px]">
             <div className='h-[232px] w-[38.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar'></div>
-            {response && response.map( item =>  (
-        <div className="wrapper">
+            {response && <>
+            {i18n.language === "ky" &&
+                <div className="wrapper">
             <div className="container mb-8 mt-16">
-                    <BreadCrumbs crumbs={crumbs} title={item.title}/>
+                    <BreadCrumbs crumbs={crumbs} title={response.title_ky}/>
             </div>
-            {/*{i18n.language === "ky" && }*/}
             <div className='flex mb-8 w-full'>
-                <img src={uri + item.image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
-                <div className="">
-                    <Sanitized html={item.desk_ky}/>
+                <img src={uri + response.preview_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
+                <div className="w-[742px]">
+                    <p className="mb-8">{response.title_ky}</p>
+                    <Sanitized html={response.desc_ky}/>
                 </div>
             </div>
-        </div>
-                ))}
+        </div>}
+                {i18n.language === "ru" &&
+                    <div className="wrapper">
+                        <div className="container mb-8 mt-16">
+                            <BreadCrumbs crumbs={crumbs} title={response.title_ru}/>
+                        </div>
+                        <div className='flex mb-8 w-full'>
+                            <img src={uri + response.preview_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
+                            <div className="w-[742px]">
+                                <p className="mb-8">{response.title_ru}</p>
+                                <Sanitized html={response.desc_ru}/>
+                            </div>
+                        </div>
+                    </div>}
+            </>}
+            {i18n.language === "en" &&
+                <div className="wrapper">
+                    <div className="container mb-8 mt-16">
+                        <BreadCrumbs crumbs={crumbs} title={response.title_en}/>
+                    </div>
+                    <div className='flex mb-8 w-full'>
+                        <img src={uri + response.preview_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
+                        <div className="w-[742px]">
+                            <p className="mb-8">{response.title_en}</p>
+                            <Sanitized html={response.desc_en}/>
+                        </div>
+                    </div>
+                </div>}
         </div>
     );
 };
