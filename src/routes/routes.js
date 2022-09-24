@@ -15,15 +15,9 @@ import NewsPage from "../pages/newsPage";
 import EventsPage from "../pages/eventsPage";
 import DetailEvents from "../pages/detailEvents";
 import GalleryPage from "../pages/galeryPage/galeryPage";
-import Codecs from "../pages/documentPage/DocList/codecs";
-import YMap from "../pages/y-map";
-import Decrees from "../pages/documentPage/DocList/decrees";
-import Laws from "../pages/documentPage/DocList/laws";
 import Projects from "../pages/aboutPages/project/projects";
 import InfoLeadership from "../components/leadship/infoLeadership";
 import SearchPage from "../components/SearchPage";
-import Constitution from "../pages/documentPage/DocList/constution";
-import Statement from "../pages/documentPage/DocList/statement";
 import CategoryList from "../pages/documentPage/DocList/category";
 import DocumentDetail from "../pages/documentPage/DocChldren/categoryDetail";
 
@@ -46,14 +40,8 @@ export const publicRoutes = [
     { path: '/events', component: EventsPage },
     { path: '/events/:id', component: DetailEvents },
     { path: '/gallery', component: GalleryPage },
-    { path: '/decress', component: Decrees },
-    { path: '/codes', component: Codecs },
-    { path: '/laws', component: Laws},
-    { path: '/category', component: Constitution},
-    { path: '/statements', component: Statement},
     { path: '/category/:id', component: CategoryList},
     { path: '/document/:id', component: DocumentDetail},
-    { path: '/y-map', component: YMap},
     { path: '/management/:id', component: InfoLeadership},
     { path: '/search', component: SearchPage},
 ];

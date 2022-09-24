@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import lotte from "../../../assets/image/about/partners/롯데.png";
 import close from "../../../assets/image/about/close.png"
 import Popup from "./popup";
 import {useClickOutside} from "../../../hooks/useOutside";
 import {aboutUrl, base, uri} from "../../../api/const";
 import {useFetch} from "../../../api/useFetch";
+import {ClipLoader} from "react-spinners";
 
 const InfoProject = ({openRegisterModal, setOpenRegisterModal}) => {
     const [ref] = useClickOutside(() => setOpenRegisterModal(true))
@@ -21,6 +21,14 @@ const InfoProject = ({openRegisterModal, setOpenRegisterModal}) => {
         <div>
             <Popup open={openRegisterModal}>
                 <div className='w-[1236px] h-auto bg-white rounded-[12px] p-[37px]' ref={ref}>
+                    { isLoading &&
+                        <div role="status" className='flex justify-center my-28 pb-24'>
+                            <ClipLoader
+                                color="#1985A1"
+                                size={300}
+                            />
+                        </div>
+                    }
                     <div className="flex justify-end cursor-pointer">
                         <img src={close} alt="close icon" onClick={onClose}/>
                     </div>
@@ -30,8 +38,7 @@ const InfoProject = ({openRegisterModal, setOpenRegisterModal}) => {
                             <img src={uri + item.proj_image} alt='img' className="w-[245px] h-[48px]"/>
                         </div>
                         <div className='ml-[106px]'>
-                            <p className='text-blue text-base font-semibold mb-8'>
-                                {item.title_ky}
+                            <p className='text-blue text-base font-semibold mb-8' dangerouslySetInnerHTML={item.title_ky}>
                             </p>
                             <p className="w-[718px] text-base font-normal leading-[19.3px]">
                                 {item.desh_ky}

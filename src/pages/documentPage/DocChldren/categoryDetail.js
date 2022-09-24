@@ -10,6 +10,7 @@ import {useParams} from "react-router-dom";
 import {downloadFile, openPDFFile} from "../../../components/modules/downloadFile";
 import SanitizedHTML from "react-sanitized-html";
 import {ClipLoader} from "react-spinners";
+import DOMPurify from 'dompurify'
 
 const DocumentDetail = () => {
     const {id} = useParams()
@@ -31,6 +32,12 @@ const DocumentDetail = () => {
         )
     }
 
+    const createMarkup = (html) => {
+        return {
+            __html: DOMPurify.sanitize(html)
+        };
+    };
+
     return (
         <div className='w-full flex'>
             <div className="ml-[63px] mb-[62px] max-w-[1220px] mt-16">
@@ -39,10 +46,8 @@ const DocumentDetail = () => {
                     {i18n.language === "ky" &&
                     <>
                         <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
-                            <SanitizedHTML  html={response.title_ky}/>
                         <div className="flex text-center justify-center items-center">
-                        <SanitizedHTML html={response.body_ky} allowedAttributes={false}
-                                       allowedTags={false} allowedSchemes={[ 'data']} className="m-auto self-center"/>
+                         <div dangerouslySetInnerHTML={createMarkup(response.body_ky)}></div>
                         </div>
                         <p className="text-base font-medium text-blue mb-[28px]">{t('download')}</p>
                         <div className='flex'>
@@ -62,10 +67,8 @@ const DocumentDetail = () => {
                         {i18n.language === "en" &&
                             <>
                                 <BreadCrumbs crumbs={crumbs} title={response.title_en} />
-                                <SanitizedHTML  html={response.title_en}/>
                                 <div className="flex text-center justify-center items-center">
-                                    <SanitizedHTML html={response.body_en} allowedAttributes={false}
-                                                   allowedTags={false} allowedSchemes={[ 'data']} className="m-auto self-center"/>
+                                    <div dangerouslySetInnerHTML={createMarkup(response.body_en)}></div>
                                 </div>
                                 <p className="text-base font-medium text-blue mb-[28px]">{t('download')}</p>
                                 <div className='flex'>
@@ -85,10 +88,8 @@ const DocumentDetail = () => {
                         {i18n.language === "ru" &&
                             <>
                                 <BreadCrumbs crumbs={crumbs} title={response.title_ru} />
-                                <SanitizedHTML  html={response.title_ru}/>
                                 <div className="flex text-center justify-center items-center">
-                                    <SanitizedHTML html={response.body_ru} allowedAttributes={false}
-                                                   allowedTags={false} allowedSchemes={[ 'data']} className="m-auto self-center"/>
+                                    <div dangerouslySetInnerHTML={createMarkup(response.body_ru)}></div>
                                 </div>
                                 <p className="text-base font-medium text-blue mb-[28px]">{t('download')}</p>
                                 <div className='flex'>

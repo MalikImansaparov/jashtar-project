@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
 import {BreadCrumb} from "../../../components/general/breadcrumb";
 import lotte from "../../../assets/image/about/partners/롯데.png";
-import p2 from "../../../assets/image/partners/모드=정상 1 (1).png";
-import p3 from "../../../assets/image/partners/모드=정상 (1).png";
-import p4 from "../../../assets/image/partners/모드=정상-8 (1).png";
 import {useFetch} from "../../../api/useFetch";
 import {aboutUrl, base, url} from "../../../api/const";
 import InfoProject from "./infoProject";

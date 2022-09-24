@@ -7,8 +7,10 @@ import 'swiper/css/navigation';
 import {useFetch} from "../../api/useFetch";
 import {base, galeryUrl, lead, url} from "../../api/const";
 import {useClickOutside} from "../../hooks/useOutside";
+import {Sanitized} from "../../components/general/sanitize";
 
 const VideoInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
+
     const [ref] = useClickOutside(() => setOpenRegisterModal(false))
     const { isLoading, response } = useFetch(base + galeryUrl + `/video/${id}`);
     document.body.style.overflow = "hidden";
@@ -23,7 +25,7 @@ const VideoInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
             <Modal open={openRegisterModal}>
                 <div className='w-[1236px] bg-white rounded-[12px] px-8' ref={ref}>
                         {response &&
-                                    <div>
+                                    <div className="">
                                         <div className="flex justify-end mt-[37px] mb-[27px] cursor-pointer">
                                             <img src={close} alt="close icon" onClick={onClose}/>
                                         </div>
@@ -38,7 +40,8 @@ const VideoInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
                                         />
                                         <div className='block text-base text-blue font-medium mb-3 mt-[32px]'>{response.title_ky}</div>
                                         <div className="flex items-center mb-[26px]">
-                                            <p className="font-normal text-base">{response.desc_ky}</p>
+                                            <p className="font-normal text-base">
+                                                <Sanitized html={response.desc_ky}/></p>
                                         </div>
                                         <p className="font-medium text-sm text-grey">{response.date}</p>
                                     </div>

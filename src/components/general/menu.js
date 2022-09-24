@@ -8,19 +8,24 @@ import {Language} from "../menu/Language";
 import close from '../../assets/image/main/close.png'
 import {useNavigate} from "react-router";
 import {useTranslation} from "react-i18next";
+import SearchPage from "../SearchPage";
 
 const Menu = () => {
         const navigate = useNavigate()
         const [openModal, setOpenModal] = useState(false);
+        const value = localStorage.getItem('search')
         const {t} = useTranslation()
 
     const toggleModal = () => {
         setOpenModal(!openModal);
     }
 
-    const handleChange = (val) => {
-        localStorage.setItem("search", val)
-        navigate('/search')
+    const handleChange = () => {
+        if( window.location.pathname !== "/search"){
+            navigate('/search')
+        } else {
+            SearchPage()
+        }
     }
 
         return (
@@ -39,11 +44,11 @@ const Menu = () => {
                                 <span className="text-sm font-normal">{t("documents")}</span>
                             </NavLink>
                             <NavLink to="/gallery"
-                                     className="text-white text-[14px] font-semibold ">
+                                     className="text-white text-[14px] font-semibold">
                                 <span className="text-sm font-normal">{t("gallery")}</span>
                             </NavLink>
-                            <NavLink to="/y-map" className="w-[91px] h-[34px] bg-orange rounded font-normal text-white text-[14px] py-1.5 px-[22px] ">Y-Map
-                            </NavLink>
+                            <div onClick={() => window.location.replace("https://jashtar.prosoft.kg/ymap/")} className="w-[91px] h-[34px] bg-orange rounded font-normal text-white text-[14px] py-1.5 px-[22px] cursor-pointer">Y-Map
+                            </div>
                             <Language/>
                             <img src={search} alt="search" className='w-[20px] h-[20px] cursor-pointer'
                                  onClick={toggleModal}/>
@@ -55,7 +60,7 @@ const Menu = () => {
                         <div className="wrapper py-[22px]">
                             <input type='text' autoFocus={true}
                                    className='bg-blueLight border-none outline-none w-[98.5%] h-[24px] font-medium text-[15px]'
-                                   placeholder='Поиск' onKeyDown={e => e.key === 'Enter' && handleChange(e.target.value)}/>
+                                   placeholder='Поиск' onChange={(e) => localStorage.setItem("search", e.target.value)} onKeyDown={e => e.key === 'Enter' && handleChange()}/>
                             <img src={close} alt='close' className='py-2 cursor-pointer' onClick={toggleModal}/>
                         </div>
                     </div>

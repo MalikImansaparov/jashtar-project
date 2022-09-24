@@ -1,18 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
-import leader1 from '../../assets/image/about/akdn1.png'
-import leader2 from '../../assets/image/about/akdn2.png'
-import CordinationList from "./cordinationList";
-import jashtar from "../../assets/image/general/Jashtar-logo.png"
 import {useFetch} from "../../api/useFetch";
 import {base, councilUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
-import Sanitized from "react-sanitized-html";
-
+import DOMPurify from "dompurify";
 
 export const YoungOrganization = () => {
     const { isLoading, response } = useFetch(base + councilUrl + '/yorganization/');
     const {t, i18n} = useTranslation()
+
+    const createMarkup = (html) => {
+        return {
+            __html: DOMPurify.sanitize(html)
+        };
+    };
 
     return (
         <div className='wrapper'>
@@ -37,7 +38,7 @@ export const YoungOrganization = () => {
                         </div>
                     }
                     <div className="flex w-full">
-                        <Sanitized html={item.desc_ky}/>
+                        <div dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
                     </div>
                 </div>
             ))}

@@ -12,24 +12,53 @@ import dots from "../../assets/image/main/Ellipse 1.png";
 
 const VideoPanel = () => {
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
-    const { isLoading, response} = useFetch(base + galeryUrl + '/video/');
-    // const [response, setResponse] = useState([])
+    // const { isLoading, response} = useFetch(base + galeryUrl + '/video/');
+    const [response, setResponse] = useState([])
+    const [pageCount, setpageCount] = useState(0);
     const {t, i18n} = useTranslation()
+    const limit = 3
 
-    // const getData = async () => {
-    //     const res = await axios.get(base + galeryUrl + '/video/')
-    //     setResponse(res.data)
-    // }
-    //
-    // useEffect(() => {
-    //     getData()
-    // },[])
+    const getData = async () => {
+            const res = await fetch(
+             'https://jashtar.prosoft.kg/ce387d5e0a2972dea9e5129a52ac3b8d58a4d180fc9eece5946d926643a3d2c0/video/'
+            );
+            const data = await res.json();
+            const total = res.headers.get('x-total-count');
+            setpageCount(Math.ceil(total / limit));
+            // console.log(Math.ceil(total/12));
+            setResponse(data);
+    }
+
+    useEffect(() => {
+        getData()
+    },[limit])
+
+
+
+
+    const fetchComments = async (count) => {
+        const res = await fetch(
+            `https://jashtar.prosoft.kg/ce387d5e0a2972dea9e5129a52ac3b8d58a4d180fc9eece5946d926643a3d2c0/video/?page=${count}`
+        );
+        const data = await res.json();
+        return data.results;
+    };
+
+    const handlePageClick = async (data) => {
+
+            let currentPage = data.selected + 1;
+            const commentsFormServer = await fetchComments(currentPage);
+            setResponse(commentsFormServer);
+
+
+
+    };
 
     return (
         <div className="wrapper">
         <div className='flex flex-wrap justify-between mt-[62px]'>
-            {response && response.results.map((item) => (
-                <div className='mb-[62px] shadow-md rounded-md w-[580px]' onClick={() => setOpenRegisterModal(true)}>
+            {response.results && response.results.map((item) => (
+                <div className='mb-[62px] shadow-md rounded-md w-[580px]' onClick={() => setOpenRegisterModal(true)} key={item.id}>
                     <iframe
                         width="580"
                         height="326"
@@ -45,28 +74,24 @@ const VideoPanel = () => {
                         <img src={point} className="mr-[10px] w-[8px] h-[8px] mt-1.5" alt='dots'/>
                         <span>{t('date')}</span><span className='text-black '>&nbsp;{item.date}</span>
                     </div>
-                    {/*<div className="flex">*/}
-                    {/*    <img src={item.path} alt=""className="w-8 h-8 rounded-[50%]"/>*/}
-                    {/*    <p className="text-[18px] font-base pl-2">David White</p>*/}
-                    {/*</div>*/}
                     </div>
+                    {openRegisterModal && openRegisterModal && (
+                        <VideoInfo
+                            id={item.id}
+                            openRegisterModal={openRegisterModal}
+                            setOpenRegisterModal={() => setOpenRegisterModal(false)}
+                        />
+                    )}
                 </div>
                 ))}
-            {openRegisterModal && openRegisterModal && (
-                <VideoInfo
-                    id={response.id}
-                    openRegisterModal={openRegisterModal}
-                    setOpenRegisterModal={() => setOpenRegisterModal(false)}
-                />
-            )}
         </div>
             <div className="paginate">
                 <ReactPaginate
                     nextLabel="❯"
-                    // onPageChange={handlePageClick}
+                    onPageChange={handlePageClick}
                     pageRangeDisplayed={3}
                     marginPagesDisplayed={2}
-                    pageCount={5}
+                    pageCount={pageCount}
                     previousLabel="❮"
                     pageClassName="page-item"
                     pageLinkClassName="page-link"

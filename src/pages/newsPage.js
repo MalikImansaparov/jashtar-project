@@ -26,7 +26,6 @@ const NewsPage = () => {
     //     getData()
     // },[])
 
-
     // const fetchComments = async (currentPage) => {
     //     const res = await fetch(
     //         `${baseURL}work?limit=${limit}&offset=${currentPage}`

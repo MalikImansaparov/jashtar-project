@@ -5,7 +5,6 @@ import {Tab, TabList, TabPanel, Tabs} from "react-tabs";
 import {useFetch} from "../../../api/useFetch";
 import {aboutUrl, base, twoLead, url} from "../../../api/const";
 import {ClipLoader} from "react-spinners";
-import path from "../../../assets/image/partners/Ellipse 2.png"
 import {useTranslation} from "react-i18next";
 import {Sanitized} from "../../../components/general/sanitize";
 
