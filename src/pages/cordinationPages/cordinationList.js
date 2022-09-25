@@ -3,7 +3,6 @@ import {useFetch} from "../../api/useFetch";
 import {base, councilUrl, uri, url} from "../../api/const";
 import {useTranslation} from "react-i18next";
 
-
 const CordinationList = () => {
     const {t, i18n} = useTranslation()
     const { isLoading, response } = useFetch(base + councilUrl + '/staff/');

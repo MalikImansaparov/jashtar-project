@@ -10,18 +10,18 @@ import axios from "axios";
 const PhotoPanel = () => {
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
     const [ref] = useClickOutside(() => setOpenRegisterModal(false))
-    const { isLoading,  } = useFetch(base + uri + '/photo/');
-    const [response, setResponse] = useState([])
-    const {i18n} = useTranslation()
+    const { isLoading, response } = useFetch(base + galeryUrl + '/photo/');
+    // const [response, setResponse] = useState([])
+    const {t, i18n} = useTranslation()
 
-    const getData = async () => {
-        const res = await axios.get(base + galeryUrl + '/photo/')
-        setResponse(res.data)
-    }
-
-    useEffect(() => {
-        getData()
-    },[])
+    // const getData = async () => {
+    //     const res = await axios.get(base + galeryUrl + '/photo/')
+    //     setResponse(res.data)
+    // }
+    //
+    // useEffect(() => {
+    //     getData()
+    // },[])
 
 
     const onOpen = () => {
@@ -29,27 +29,39 @@ const PhotoPanel = () => {
         document.body.style.overflow = "";
     }
 
-    const title = "Фестиваль молодежи 2022! (+10 фото)"
 
     return (
         <div className="wrapper">
             <div className="grid grid-cols-3 gap-[32px] px-8 mt-8">
-            {response && response.map((item) => (
+            {response && response.results.map((item) => (
                 <div key={item.id} className="relative top-0 left-0 right-0 bottom-0 w-[379px] cursor-pointer" onClick={onOpen}>
                     <div className="w-[100%] inline-block relative">
-                    <img src={uri + item.image} alt="" className=" cursor-pointer w-[100%] inline-block pointer-events-none" />
+                    <img src={uri + item.gallery.map(i => i.image)} alt="" className=" cursor-pointer w-[100%] inline-block pointer-events-none" />
                 <div className="h-[52px] w-full bg-[#3070B688] absolute bottom-0 left-0">
-                    <p className="p-4 font-semibold text-base text-white">{title.length > 25 ? title.split('').splice(0, 35) : title}</p>
+                    {i18n.language === 'ky' &&
+                        <p className="p-4 font-semibold text-base text-white">{item.title_ky.length > 25 ? item.title_ky.split('').splice(0, 25) : item.title_ky}
+                            <span> ( {response.count} {t("photo")} )</span></p>
+                    }
+                    {i18n.language === 'ru' &&
+                        <p className="p-4 font-semibold text-base text-white">{item.title_ru.length > 25 ? item.title_ru.split('').splice(0, 25) : item.title_ru}
+                            <span> ( {response.count} {t("photo")} )</span></p>
+                    }
+                    {i18n.language === 'en' &&
+                        <p className="p-4 font-semibold text-base text-white">{item.title_en.length > 25 ? item.title_en.split('').splice(0, 25) : item.title_en}
+                            <span> ( {response.count} {t("photo")} )</span></p>
+                    }
                 </div>
                 </div>
+                    {openRegisterModal && (
+                        <GalleryInfo
+                            id={item.id}
+                            openRegisterModal={openRegisterModal} ref={ref}
+                            setOpenRegisterModal={() => setOpenRegisterModal(false)}
+                        />
+                    )}
                 </div>
             ))}
-                {openRegisterModal && (
-                    <GalleryInfo
-                        openRegisterModal={openRegisterModal} ref={ref}
-                        setOpenRegisterModal={() => setOpenRegisterModal(false)}
-                    />
-                )}
+
             </div>
             <div className="paginate">
                 <ReactPaginate

@@ -67,7 +67,7 @@ export const News = () => {
           {response &&
             response.results.map((item) => (
               <SwiperSlide key={item.id}>
-                <Link to={`news/${item.id}`} className=" block max-w-[384px] m-auto shadow-md rounded bg-white pb-4 mb-4 leading-5 cursor-pointer">
+                <Link to={`news/${item.id}`} className=" block max-w-[384px] mr-0 shadow-md rounded bg-white pb-4 mb-4 leading-5 cursor-pointer">
                   <img
                     src={uri + item.preview_image}
                     alt="cart-img"
@@ -77,7 +77,7 @@ export const News = () => {
                       {i18n.language === "ky" &&
                       <>
                       <p className="text-base font-semibold w-[324px] h-[28px] text-black overflow-y-hidden leading-[19px]">
-                          {item.title_ky.length > 40 ? item.title_ky.split("").splice(0, 32)  : item.title_ky }
+                          {item.title_ky.length > 40 ? item.title_ky.split("").splice(0, 32) : item.title_ky }...
                       </p>
                           <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
                               <Sanitized html={item.desc_ky}/>
@@ -85,32 +85,22 @@ export const News = () => {
                       </>}
                       {i18n.language === "ru" &&
                           <>
-                              {item.title_ru}
+                          <p className="text-base font-semibold w-[324px] h-[28px] text-black overflow-y-hidden leading-[19px]">
+                              {item.title_ru.length > 40 ? item.title_ru.split("").splice(0, 32)  : item.title_ru}...
+                          </p>
                               <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
                                   <Sanitized html={item.desc_ru}/>
                               </p>
                           </>}
                       {i18n.language === "en" &&
                           <>
-                              {item.title_en}
+                          <p className="text-base font-semibold w-[324px] h-[28px] text-black overflow-y-hidden leading-[19px]">
+                              {item.title_en.length > 40 ? item.title_en.split("").splice(0, 32)  : item.title_en }...
+                          </p>
                               <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
                                   <Sanitized html={item.desc_en}/>
                               </p>
                           </>}
-                      {i18n.language === "ru" &&
-                          <div>
-                              {item.title_ru}
-                              <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
-                                  <Sanitized html={item.desc_ru}/>
-                              </p>
-                          </div>}
-                      {i18n.language === "en" &&
-                          <div>
-                              {item.title_en}
-                              <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
-                                  <Sanitized html={item.desc_en}/>
-                              </p>
-                          </div>}
                     <div className="flex justify-between w-[324px] mt-4">
                       <p className="text-sm font-medium text-grey" >{item.news_date}</p>
                       <Link to={`${item.id}`} className="text-blue underline cursor-pointer text-sm">

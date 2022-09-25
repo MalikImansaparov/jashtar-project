@@ -65,12 +65,33 @@ export const Events = () => {
                                     className="mb-3 h-[247px] w-[384px] rounded-t"
                                 />
                                 <div className="px-2.5">
+                                    {i18n.language === "ky" &&
+                                        <>
                                     <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
                                         {item.title_ky}
                                     </p>
                                     <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
                                         <Sanitized html={item.desc_ky}/>
                                     </p>
+                                    </>}
+                                    {i18n.language === "ru" &&
+                                        <>
+                                            <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
+                                                {item.title_ru}
+                                            </p>
+                                            <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
+                                                <Sanitized html={item.desc_ru}/>
+                                            </p>
+                                        </>}
+                                    {i18n.language === "en" &&
+                                        <>
+                                            <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
+                                                {item.title_en}
+                                            </p>
+                                            <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
+                                                <Sanitized html={item.desc_en}/>
+                                            </p>
+                                        </>}
                                     <div className="w-[324px] my-4 text-sm font-medium">
                                         <p className="text-grey flex">
                                             <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1.5" alt='dots'/>

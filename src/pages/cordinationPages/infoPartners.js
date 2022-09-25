@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import close from "../../assets/image/about/close.png"
-import kfw from "../../assets/image/about/orgonization/kfw-group.png"
 import Popover from "../galeryPage/popover";
 import {useClickOutside} from "../../hooks/useOutside";
 import {useFetch} from "../../api/useFetch";
@@ -66,7 +65,7 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal, id}) => {
                                         {response.title_en}
                                     </p>
                                     <p className="w-[718px] text-base font-normal leading-[19.3px]">
-                                        <div dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
+                                        <div dangerouslySetInnerHTML={createMarkup(response.desc_en)}></div>
                                     </p>
                                 </div>}
                         </div>

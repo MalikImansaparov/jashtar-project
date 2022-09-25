@@ -1,31 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {base, instance, searchUrl} from "../api/const";
-import axios from "axios";
 import {useTranslation} from "react-i18next";
+import {useSelector} from "react-redux";
 
 const SearchPage = () => {
     const value = localStorage.getItem('search')
-    const [items, setItems] = useState(item)
     const {t, i18n} = useTranslation()
-
-    const searchMaterial = async (val) => {
-        try {
-            const response = await axios({
-                method: 'post',
-                url: base + searchUrl + "/search/",
-                data: {
-                    "body": `${val}`,
-                }
-            })
-            return setItems(response.data);
-        } catch (error) {
-            return console.log(error);
-        }
-    };
-
-    useEffect(() => {
-        searchMaterial(value)
-    },[value])
+    const items = useSelector(state => state.search.data)
 
     return (
         <div className="wrapper py-[62px]">

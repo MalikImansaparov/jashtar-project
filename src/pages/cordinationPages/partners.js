@@ -38,7 +38,15 @@ export const PartnersList = () => {
                                 <div className='w-full h-[160px] rounded shadow-partner flex justify-center items-center mb-[10px] cursor-pointer' key={item.id} >
                                     <img src={uri + item.org_image} alt='img'/>
                                 </div>
-                                <p className='text-[13px] font-medium leading-[16px] text-blue text-center w-[182px]'>{item.title_ky}</p>
+                                {i18n.language === "ky" &&
+                                    <p className='text-[13px] font-medium leading-[16px] text-blue text-center w-[182px]'>{item.title_ky}</p>
+                                }
+                                {i18n.language === "ru" &&
+                                    <p className='text-[13px] font-medium leading-[16px] text-blue text-center w-[182px]'>{item.title_ru}</p>
+                                }
+                                {i18n.language === "en" &&
+                                    <p className='text-[13px] font-medium leading-[16px] text-blue text-center w-[182px]'>{item.title_en}</p>
+                                }
                             </div>
                             {openRegisterModal && openRegisterModal && (
                                 <InfoPartners

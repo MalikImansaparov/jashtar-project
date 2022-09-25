@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import {Link, NavLink} from "react-router-dom";
 import search from "../../assets/image/main/search-icon.png"
 import Social from "./social";
@@ -9,24 +9,25 @@ import close from '../../assets/image/main/close.png'
 import {useNavigate} from "react-router";
 import {useTranslation} from "react-i18next";
 import SearchPage from "../SearchPage";
+import {useDispatch} from "react-redux";
+import {asyncSearch} from "../../store/asyncAction";
 
 const Menu = () => {
         const navigate = useNavigate()
         const [openModal, setOpenModal] = useState(false);
         const value = localStorage.getItem('search')
         const {t} = useTranslation()
+        const dispatch = useDispatch()
 
     const toggleModal = () => {
         setOpenModal(!openModal);
     }
 
-    const handleChange = () => {
-        if( window.location.pathname !== "/search"){
-            navigate('/search')
-        } else {
-            SearchPage()
-        }
-    }
+   const handleChange = (e) => {
+            dispatch(asyncSearch(e))
+            navigate('/search/')
+   }
+
 
         return (
             <div className="relative mb-0">
@@ -60,7 +61,7 @@ const Menu = () => {
                         <div className="wrapper py-[22px]">
                             <input type='text' autoFocus={true}
                                    className='bg-blueLight border-none outline-none w-[98.5%] h-[24px] font-medium text-[15px]'
-                                   placeholder='Поиск' onChange={(e) => localStorage.setItem("search", e.target.value)} onKeyDown={e => e.key === 'Enter' && handleChange()}/>
+                                   placeholder='Поиск' onKeyDown={e => e.key === 'Enter' && handleChange(e.target.value)}/>
                             <img src={close} alt='close' className='py-2 cursor-pointer' onClick={toggleModal}/>
                         </div>
                     </div>

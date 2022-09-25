@@ -2,14 +2,17 @@ import React, {useState} from 'react';
 import close from "../../../assets/image/about/close.png"
 import Popup from "./popup";
 import {useClickOutside} from "../../../hooks/useOutside";
-import {aboutUrl, base, uri} from "../../../api/const";
+import {aboutUrl, base, councilUrl, uri} from "../../../api/const";
 import {useFetch} from "../../../api/useFetch";
 import {ClipLoader} from "react-spinners";
+import {createMarkup} from "../../../components/general/dompurify";
+import {useTranslation} from "react-i18next";
 
-const InfoProject = ({openRegisterModal, setOpenRegisterModal}) => {
+
+const InfoProject = ({openRegisterModal, setOpenRegisterModal , id}) => {
     const [ref] = useClickOutside(() => setOpenRegisterModal(true))
-    const { isLoading, response } = useFetch(base + aboutUrl + '/about_us_project/');
-    console.log(response)
+    const { isLoading, response } = useFetch(base + councilUrl + `/partner/${id}`)
+    const {i18n} = useTranslation()
     document.body.style.overflow = "hidden";
 
     const onClose = () => {
@@ -32,23 +35,41 @@ const InfoProject = ({openRegisterModal, setOpenRegisterModal}) => {
                     <div className="flex justify-end cursor-pointer">
                         <img src={close} alt="close icon" onClick={onClose}/>
                     </div>
-                    {response && response(item => (
-                    <div className="flex pt-3" key={item.id}>
-                        <div className='w-[332px] h-[277px] rounded shadow-partner flex justify-center items-center mb-[10px]'>
-                            <img src={uri + item.proj_image} alt='img' className="w-[245px] h-[48px]"/>
+                    {response &&
+                        <div className="flex" key={response.id}>
+
+                            <div className='w-[332px] h-[276px] rounded shadow-partner flex justify-center items-center mb-[10px]'>
+                                <img src={uri + response.org_image} alt='img' className="w-[245px]"/>
+                            </div>
+                            {i18n.language === "ky" &&
+                                <div className='ml-[106px]'>
+                                    <p className='text-blue text-base font-semibold mb-8'>
+                                        {response.title_ky}
+                                    </p>
+                                    <p className="w-[718px] text-base font-normal leading-[19.3px]">
+                                        <div dangerouslySetInnerHTML={createMarkup(response.desc_ky)}></div>
+                                    </p>
+                                </div>}
+                            {i18n.language === "ru" &&
+                                <div className='ml-[106px]'>
+                                    <p className='text-blue text-base font-semibold mb-8'>
+                                        {response.title_ru}
+                                    </p>
+                                    <p className="w-[718px] text-base font-normal leading-[19.3px]">
+                                        <div dangerouslySetInnerHTML={createMarkup(response.desc_ru)}></div>
+                                    </p>
+                                </div>}
+                            {i18n.language === "en" &&
+                                <div className='ml-[106px]'>
+                                    <p className='text-blue text-base font-semibold mb-8'>
+                                        {response.title_en}
+                                    </p>
+                                    <p className="w-[718px] text-base font-normal leading-[19.3px]">
+                                        <div dangerouslySetInnerHTML={createMarkup(response.desc_en)}></div>
+                                    </p>
+                                </div>}
                         </div>
-                        <div className='ml-[106px]'>
-                            <p className='text-blue text-base font-semibold mb-8' dangerouslySetInnerHTML={item.title_ky}>
-                            </p>
-                            <p className="w-[718px] text-base font-normal leading-[19.3px]">
-                                {item.desh_ky}
-                            </p>
-                            <p className="w-[718px] text-base font-normal leading-[19.3px] mt-8">
-                                IFC помогает совершенствовать операционную деятельность компаний, создать благоприятную среду для ведения бизнеса и увеличить доступ к финансированию для малого и среднего бизнеса (МСБ). IFC также нацелена на увеличение прямых инвестиций в сельскохозяйственный сектор и горнорудную промышленность, а также исследует возможности увеличения проектов по возобновляемой энергетике и энергоэффективности, в т.ч. через государственно-частное партнерство.
-                            </p>
-                        </div>
-                    </div>
-                        ))}
+                    }
                 </div>
             </Popup>
         </div>

@@ -7,12 +7,16 @@ import 'swiper/css/pagination';
 import App from "./app";
 import {BrowserRouter} from "react-router-dom";
 import './i18next';
+import {Provider} from "react-redux";
+import store from "./store/store";
 
 ReactDOM.render(
 	<Suspense fallback="...">
 	<React.StrictMode>
 		<BrowserRouter>
-			<App/>
+			<Provider store={store}>
+			  <App/>
+			</Provider>
 		</BrowserRouter>,
 	 </React.StrictMode>,
 	</Suspense>,

@@ -42,15 +42,34 @@ export const Enroll = () => {
               <SwiperSlide key={item.id}>
                 <div className="h-[100%] w-[100%] flex">
                   <div className="mt-[52px] max-w-[815px]">
-                    {
-                      i18n.language === "ky" &&
                         <div className="w-[461px]">
+                          {i18n.language === "ky" &&
+                              <>
                         <p className="text-[22px] text-semibold text-white w-[461px] mb-[22px]">
                           <Sanitized html={item.title_ky}/>
                         </p>
                           <p className="text-[16px] text-normal max-h-[38px] grey overflow-y-hidden leading-[19px]">
                             <Sanitized html={item.desc_ky}/>
                           </p>
+                              </>}
+                          {i18n.language === "ru" &&
+                              <>
+                                <p className="text-[22px] text-semibold text-white w-[461px] mb-[22px]">
+                                  <Sanitized html={item.title_ru}/>
+                                </p>
+                                <p className="text-[16px] text-normal max-h-[38px] grey overflow-y-hidden leading-[19px]">
+                                  <Sanitized html={item.desc_ru}/>
+                                </p>
+                              </>}
+                          {i18n.language === "en" &&
+                              <>
+                                <p className="text-[22px] text-semibold text-white w-[461px] mb-[22px]">
+                                  <Sanitized html={item.title_en}/>
+                                </p>
+                                <p className="text-[16px] text-normal max-h-[38px] grey overflow-y-hidden leading-[19px]">
+                                  <Sanitized html={item.desc_en}/>
+                                </p>
+                              </>}
                           <div className="flex mt-8 justify-between">
                             <p className="text-grey flex">
                               <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-2" alt='dots'/>
@@ -61,8 +80,6 @@ export const Enroll = () => {
                               </Link>
                           </div>
                         </div>
-                    }
-
                   </div>
                     <img
                       src={uri + item.preview_image}

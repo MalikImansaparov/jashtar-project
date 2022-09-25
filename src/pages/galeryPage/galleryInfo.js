@@ -1,6 +1,5 @@
 import React, {useRef} from 'react';
 import close from "../../assets/image/about/close.png";
-import lotte from "../../assets/image/main/news.png";
 import Modal from './modal'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper';
@@ -8,14 +7,18 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import {useFetch} from "../../api/useFetch";
-import {base, galeryUrl, url} from "../../api/const";
+import {base, galeryUrl, uri, url} from "../../api/const";
 import {useClickOutside} from "../../hooks/useOutside";
+import {Sanitized} from "../../components/general/sanitize";
+import {useTranslation} from "react-i18next";
+import {ClipLoader} from "react-spinners";
 
-const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
+const GalleryInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
     const [ref] = useClickOutside(() => setOpenRegisterModal(false))
-    const { isLoading, response } = useFetch(base + galeryUrl + '/gallery_image/');
-    const swiperRef = useRef();
     document.body.style.overflow = "hidden";
+    const { isLoading, response } = useFetch(base + galeryUrl + `/photo/${id}`);
+    const swiperRef = useRef();
+    const {i18n} = useTranslation()
 
     const onClose = () => {
         setOpenRegisterModal(false)
@@ -25,7 +28,15 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
     return (
         <div>
             <Modal open={openRegisterModal} >
-                <div className='w-[1236px]  bg-white rounded-[12px] px-8 shadow-org'>
+                <div className='w-[1236px] h-full bg-white rounded-[12px] px-8 shadow-org'>
+                    { isLoading &&
+                        <div role="status" className='flex justify-center my-28 pb-24'>
+                            <ClipLoader
+                                color="#1985A1"
+                                size={300}
+                            />
+                        </div>
+                    }
                     <Swiper
                         hashNavigation={{
                             watchState: true,
@@ -41,14 +52,14 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                         }}
                         modules={[Pagination, Navigation]}
                     >
-                        {response &&
-                            response.map((item) => (
-                                <SwiperSlide key={item.id}>
-                                    <div>
-                                        <div className="flex justify-end mt-[37px] mb-[27px]" ref={ref}>
-                                            <img src={close} alt="close icon " className="cursor-pointer" onClick={onClose}/>
+                        { response &&
+                                <SwiperSlide>
+                                    <div ref={ref}>
+                                        <div className="flex justify-end mt-[37px] mb-[27px] cursor-pointer" >
+                                            <img src={close} alt="close icon" onClick={onClose}/>
                                         </div>
-                                        <img src={lotte} alt='img' className="w-full h-[555px]"/>
+                                        <img src={uri + response.gallery.map(i => i.image)} alt='img' className="w-full h-[555px]"/>
+                                        { response.gallery.length > 1 &&
                                         <div className="flex justify-center mt-8 mb-4">
                                             <div
                                                 className="info-prev"
@@ -58,15 +69,35 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                                 className="info-next"
                                                 onClick={() => swiperRef.current.slideNext()}
                                             ></div>
-                                        </div>
-                                        <div className='block text-base text-blue font-medium mb-3'>{item.title_ky}</div>
+                                        </div>}
+                                        { i18n.language === "ky" &&
+                                        <>
+                                        <div className='block text-base text-blue font-medium mb-3'>{response.title_ky}</div>
                                         <div className="flex items-center mb-[26px]">
-                                            <p className="font-normal text-base">{item.desc_ky}</p>
+                                            <p className="font-normal text-base">
+                                                <Sanitized html={response.desc_ky}/></p>
                                         </div>
-                                        <p className="font-medium text-sm text-grey">{item.date}</p>
+                                        </>}
+                                        { i18n.language === "ru" &&
+                                            <>
+                                                <div className='block text-base text-blue font-medium mb-3'>{response.title_ru}</div>
+                                                <div className="flex items-center mb-[26px]">
+                                                    <p className="font-normal text-base">
+                                                        <Sanitized html={response.desc_ru}/></p>
+                                                </div>
+                                            </>}
+                                        { i18n.language === "en" &&
+                                            <>
+                                                <div className='block text-base text-blue font-medium mb-3'>{response.title_en}</div>
+                                                <div className="flex items-center mb-[26px]">
+                                                    <p className="font-normal text-base">
+                                                        <Sanitized html={response.desc_en}/></p>
+                                                </div>
+                                            </>}
+                                        <p className="font-medium text-sm text-grey">{response.date}</p>
                                     </div>
                                 </SwiperSlide>
-                            ))}
+                           }
                     </Swiper>
                 </div>
             </Modal>

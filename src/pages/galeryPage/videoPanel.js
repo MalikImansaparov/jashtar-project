@@ -8,7 +8,7 @@ import ReactPaginate from "react-paginate";
 import {useClickOutside} from "../../hooks/useOutside";
 import axios from "axios";
 import {useTranslation} from "react-i18next";
-import dots from "../../assets/image/main/Ellipse 1.png";
+
 
 const VideoPanel = () => {
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
@@ -25,7 +25,6 @@ const VideoPanel = () => {
             const data = await res.json();
             const total = res.headers.get('x-total-count');
             setpageCount(Math.ceil(total / limit));
-            // console.log(Math.ceil(total/12));
             setResponse(data);
     }
 
@@ -45,13 +44,9 @@ const VideoPanel = () => {
     };
 
     const handlePageClick = async (data) => {
-
             let currentPage = data.selected + 1;
             const commentsFormServer = await fetchComments(currentPage);
             setResponse(commentsFormServer);
-
-
-
     };
 
     return (
@@ -71,7 +66,7 @@ const VideoPanel = () => {
                     <div className="p-4 cursor-pointer">
                    <p className='text-[18px] font-normal'>{item.title_ky}</p>
                     <div className="flex items-center mt-2">
-                        <img src={point} className="mr-[10px] w-[8px] h-[8px] mt-1.5" alt='dots'/>
+                        <img src={point} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
                         <span>{t('date')}</span><span className='text-black '>&nbsp;{item.date}</span>
                     </div>
                     </div>

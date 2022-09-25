@@ -1,18 +1,13 @@
 import React from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
-import about from "../../assets/image/main/about.png"
-import about2 from "../../assets/image/about/about2.png"
 import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, uri} from "../../api/const";
-import DOMPurify from "dompurify";
-import SanitizedHTML from "react-sanitized-html";
-import {Sanitized} from "../../components/general/sanitize";
-import sanitizeHtml from "sanitize-html";
+import {createMarkup} from "../../components/general/dompurify";
+import {useTranslation} from "react-i18next";
 
 export const JashtarProject = () => {
   const { isLoading, response } = useFetch(base + aboutUrl + '/youthpolicy/');
-
-
+  const {i18n} = useTranslation()
 
   return (
     <div className="w-full relative pb-[63px]">
@@ -23,7 +18,15 @@ export const JashtarProject = () => {
         {response &&
           response.map((item) => (
             <div className="flex mb-8 w-full flex-wrap" key={item.id}>
-                <div dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
+                {i18n.language === "ky" &&
+                    <div dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
+                }
+                {i18n.language === "ru" &&
+                    <div dangerouslySetInnerHTML={createMarkup(item.desc_ru)}></div>
+                }
+                {i18n.language === "en" &&
+                    <div dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
+                }
             </div>
           ))}
       </div>
