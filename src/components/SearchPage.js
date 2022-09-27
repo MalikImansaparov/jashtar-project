@@ -1,20 +1,43 @@
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {asyncSearch} from "../store/asyncAction";
+import axios from "axios";
+import {base, searchUrl} from "../api/const";
 
 const SearchPage = () => {
     const value = localStorage.getItem('search')
     const {t, i18n} = useTranslation()
-    const items = useSelector(state => state.search.data)
+    const item = useSelector(state => state.search.data)
+    const dispatch = useDispatch()
+    const [items, setItems] = useState()
+
+    const Search = async () => {
+        const response = await axios({
+            method: 'post',
+            url: base + searchUrl + "/search/",
+            data: {
+                "body": `${value}`,
+            }})
+        setItems(response.data)
+    }
+
+    useEffect( () => {
+        Search()
+    },[])
 
     return (
         <div className="wrapper py-[62px]">
-            {/*{items && items.events.length === 0 && items.managment.length === 0 && items.news.length === 0 && items.partner.length === 0 && items.project.length === 0 && items.docs.length === 0 &&*/}
-            {/*    items.events.length === 0 || items.managment.length === 0 || items.news.length === 0 || items.partner.length === 0 || items.project.length === 0 || items.docs.length === 0 &&*/}
+            {/*{items && items.events.length <= 0 && items.managment.length <= 0 && items.news.length <= 0 && items.partner.length <= 0 && items.project.length <= 0 && items.docs.length <= 0 &&*/}
             {/*    <div className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white">*/}
             {/*        <p className="my-16 text-[20px]">{t('notFound')}</p>*/}
             {/*    </div>*/}
             {/*}*/}
+            {items && items.length === 0 &&
+                <div className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white">
+                    <p className="my-16 text-[20px]">{t('notFound')}</p>
+                </div>
+            }
             {items &&
                     <div
                         className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white"

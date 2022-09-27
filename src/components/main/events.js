@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination} from "swiper";
 import {useFetch} from "../../api/useFetch";
-import {base, eventsUrl, uri, url} from "../../api/const";
+import {aboutUrl, base, eventsUrl, uri, url} from "../../api/const";
 import dots from "../../assets/image/main/Ellipse 1.png"
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
@@ -68,7 +68,7 @@ export const Events = () => {
                                     {i18n.language === "ky" &&
                                         <>
                                     <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
-                                        {item.title_ky}
+                                        {item.title_ky.length > 60 ? item.title_ky.slice(0, 60) + "..." : item.title_ky}
                                     </p>
                                     <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
                                         <Sanitized html={item.desc_ky}/>

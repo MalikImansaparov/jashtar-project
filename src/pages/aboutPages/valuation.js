@@ -44,7 +44,7 @@ const Valuation = () => {
                     {item.full_name_ky}
                 </p>
                 <p className="text-[11px] font-normal mb-4 text-center px-[20px]">
-                    {item.anotation_ky}
+                    {item.annotation_ky}
                 </p>
               </div>
               <div className="ml-[32px] pt-[33px]">

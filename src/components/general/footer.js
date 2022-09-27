@@ -36,7 +36,7 @@ const Footer = () => {
                         ))}
 
                 </div>
-                            ))}
+                ))}
             </div>
             <div className="absolute right-0 bottom-5"><FooterSocial/></div>
         </div>

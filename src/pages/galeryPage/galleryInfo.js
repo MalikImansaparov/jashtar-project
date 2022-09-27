@@ -27,8 +27,8 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
 
     return (
         <div>
-            <Modal open={openRegisterModal} >
-                <div className='w-[1236px] h-full bg-white rounded-[12px] px-8 shadow-org'>
+            <Modal open={openRegisterModal}>
+                <div className='w-[1236px] bg-white rounded-[12px] px-8 shadow-org'>
                     { isLoading &&
                         <div role="status" className='flex justify-center my-28 pb-24'>
                             <ClipLoader
@@ -37,30 +37,36 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
                             />
                         </div>
                     }
-                    <Swiper
-                        hashNavigation={{
-                            watchState: true,
-                        }}
-                        spaceBetween={50}
-                        slidesPerView={1}
-                        navigation={{
-                            nextEl: '.info-next',
-                            prevEl: '.info-prev',
-                        }}
-                        onSwiper={(swiper) => {
-                            swiperRef.current = swiper;
-                        }}
-                        modules={[Pagination, Navigation]}
-                    >
+                    <div className="flex justify-end mt-[37px] mb-[27px] cursor-pointer" >
+                         <img src={close} alt="close icon" onClick={onClose} />
+                    </div>
                         { response &&
-                                <SwiperSlide>
                                     <div ref={ref}>
-                                        <div className="flex justify-end mt-[37px] mb-[27px] cursor-pointer" >
-                                            <img src={close} alt="close icon" onClick={onClose}/>
-                                        </div>
-                                        <img src={uri + response.gallery.map(i => i.image)} alt='img' className="w-full h-[555px]"/>
+
+
+                                        <Swiper
+                                            hashNavigation={{
+                                                watchState: true,
+                                            }}
+                                            spaceBetween={0}
+                                            slidesPerView={1}
+                                            navigation={{
+                                                nextEl: '.info-next',
+                                                prevEl: '.info-prev',
+                                            }}
+                                            onSwiper={(swiper) => {
+                                                swiperRef.current = swiper;
+                                            }}
+                                            modules={[Pagination, Navigation]}
+                                        >
+                                        {response.gallery.map(i => (
+                                            <SwiperSlide key={i.id} >
+                                                <img src={uri + i.image} alt='img' className="w-full h-[555px]" />
+                                            </SwiperSlide>
+                                        ))}
+                                        </Swiper>
                                         { response.gallery.length > 1 &&
-                                        <div className="flex justify-center mt-8 mb-4">
+                                        <div className="flex justify-center mt-8 mb-3">
                                             <div
                                                 className="info-prev"
                                                 onClick={() => swiperRef.current.slidePrev()}
@@ -72,7 +78,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
                                         </div>}
                                         { i18n.language === "ky" &&
                                         <>
-                                        <div className='block text-base text-blue font-medium mb-3'>{response.title_ky}</div>
+                                        <div className='block text-base text-blue font-medium mb-2'>{response.title_ky}</div>
                                         <div className="flex items-center mb-[26px]">
                                             <p className="font-normal text-base">
                                                 <Sanitized html={response.desc_ky}/></p>
@@ -80,7 +86,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
                                         </>}
                                         { i18n.language === "ru" &&
                                             <>
-                                                <div className='block text-base text-blue font-medium mb-3'>{response.title_ru}</div>
+                                                <div className='block text-base text-blue font-medium mb-2'>{response.title_ru}</div>
                                                 <div className="flex items-center mb-[26px]">
                                                     <p className="font-normal text-base">
                                                         <Sanitized html={response.desc_ru}/></p>
@@ -88,7 +94,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
                                             </>}
                                         { i18n.language === "en" &&
                                             <>
-                                                <div className='block text-base text-blue font-medium mb-3'>{response.title_en}</div>
+                                                <div className='block text-base text-blue font-medium mb-2'>{response.title_en}</div>
                                                 <div className="flex items-center mb-[26px]">
                                                     <p className="font-normal text-base">
                                                         <Sanitized html={response.desc_en}/></p>
@@ -96,9 +102,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
                                             </>}
                                         <p className="font-medium text-sm text-grey">{response.date}</p>
                                     </div>
-                                </SwiperSlide>
                            }
-                    </Swiper>
                 </div>
             </Modal>
 

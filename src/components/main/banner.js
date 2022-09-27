@@ -39,90 +39,90 @@ const Banner = () => {
         )
     }
 
-  return (
-    <div className="relative">
-      <Swiper
-        hashNavigation={{
-          watchState: true,
-        }}
-        onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-        }}
-        loop={true}
-        slidesPerView={1}
-        navigation={{
-            nextEl: '.banner-next',
-            prevEl: '.banner-prev',
-        }}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >
-        {response &&
-          response.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="flex flex-wrap justify-center w-full max-h-[624px] bg-arrow">
-                <img
-                  src={uri + item.background_image}
-                  alt=""
-                  className="w-full max-h-[624px] object-cover bg-no-repeat relative"
-                />
-                  <div className='w-full h-[624px] bg-gradient-banner opacity-[40%] absolute top-0 left-0 z-0'></div>
-                  {/*<div className='w-[4.3%] h-[624px] absolute bg-gradient-banner opacity-[40%] top-0 right-0 z-100'></div>*/}
-                <div className="container w-[1236px] h-[624px] m-auto text-white bg-gradient-banner absolute top-0 flex items-center z-1000">
-                    {i18n.language === 'ky' &&
-                        <div className="ml-[52px] items-center">
-                            <p className="text-[32px] font-bold">
-                                <SanitizedHTML html={item.title_ky}/>
-                            </p>
-                            <p className="text-[32px] font-normal">
-                            </p>
-                            <p className="text-[32px] font-normal"></p>
-                            <p className="mt-[26px] font-normal text-[26px]">
-                                <SanitizedHTML html={(item.subtitle_ky)}/>
-                            </p>
-                        </div>
-                    }
-                    {i18n.language === 'ru' &&
-                        <div className="ml-[52px] items-center">
-                            <p className="text-[32px] font-bold">
-                                <SanitizedHTML html={item.title_ru}/>
-                            </p>
-                            <p className="text-[32px] font-normal">
-                            </p>
-                            <p className="text-[32px] font-normal"></p>
-                            <p className="mt-[26px] font-normal text-[26px]">
-                                <SanitizedHTML html={(item.subtitle_ru)}/>
-                            </p>
-                        </div>
-                    }
-                    {i18n.language === 'en' &&
-                        <div className="ml-[52px] items-center">
-                            <p className="text-[32px] font-bold">
-                                <SanitizedHTML html={item.title_en}/>
-                            </p>
-                            <p className="text-[32px] font-normal">
-                            </p>
-                            <p className="text-[32px] font-normal"></p>
-                            <p className="mt-[26px] font-normal text-[26px]">
-                                <SanitizedHTML html={(item.subtitle_en)}/>
-                            </p>
-                        </div>
-                    }
-                </div>
-                  </div>
-            </SwiperSlide>
-          ))}
-      </Swiper>
-      <div
-          className="banner-prev absolute top-[300px] left-[20px]"
-          onClick={() => swiperRef.current.slidePrev()}
-      ></div>
-      <div
-          className="banner-next absolute top-[300px] right-[25px]"
-          onClick={() => swiperRef.current.slideNext()}
-      ></div>
-    </div>
-  );
+    return (
+        <div className="relative">
+            <Swiper
+                hashNavigation={{
+                    watchState: true,
+                }}
+                onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
+                }}
+                loop={true}
+                slidesPerView={1}
+                navigation={{
+                    nextEl: '.banner-next',
+                    prevEl: '.banner-prev',
+                }}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+            >
+                {response &&
+                    response.map((item) => (
+                        <SwiperSlide key={item.id}>
+                            <div className="flex flex-wrap justify-center w-full max-h-[624px] bg-arrow">
+                                <img
+                                    src={uri + item.background_image}
+                                    alt=""
+                                    className="w-full max-h-[624px] object-cover bg-no-repeat relative"
+                                />
+                                <div className='w-full h-[624px] bg-gradient-banner opacity-[40%] absolute top-0 left-0 z-0'></div>
+                                {/*<div className='w-[4.3%] h-[624px] absolute bg-gradient-banner opacity-[40%] top-0 right-0 z-100'></div>*/}
+                                <div className="container w-[1236px] h-[624px] m-auto text-white bg-gradient-banner absolute top-0 flex items-center z-1000">
+                                    {i18n.language === 'ky' &&
+                                        <div className="ml-[52px] items-center">
+                                            <p className="text-[32px] font-bold">
+                                                <SanitizedHTML html={item.title_ky}/>
+                                            </p>
+                                            <p className="text-[32px] font-normal">
+                                            </p>
+                                            <p className="text-[32px] font-normal"></p>
+                                            {/*<p className="mt-[26px] font-normal text-[26px]">*/}
+                                            {/*    <SanitizedHTML html={(item.subtitle_ky)}/>*/}
+                                            {/*</p>*/}
+                                        </div>
+                                    }
+                                    {i18n.language === 'ru' &&
+                                        <div className="ml-[52px] items-center">
+                                            <p className="text-[32px] font-bold">
+                                                <SanitizedHTML html={item.title_ru}/>
+                                            </p>
+                                            <p className="text-[32px] font-normal">
+                                            </p>
+                                            <p className="text-[32px] font-normal"></p>
+                                            {/*<p className="mt-[26px] font-normal text-[26px]">*/}
+                                            {/*    <SanitizedHTML html={(item.subtitle_ru)}/>*/}
+                                            {/*</p>*/}
+                                        </div>
+                                    }
+                                    {i18n.language === 'en' &&
+                                        <div className="ml-[52px] items-center">
+                                            <p className="text-[32px] font-bold">
+                                                <SanitizedHTML html={item.title_en}/>
+                                            </p>
+                                            <p className="text-[32px] font-normal">
+                                            </p>
+                                            <p className="text-[32px] font-normal"></p>
+                                            {/*<p className="mt-[26px] font-normal text-[26px]">*/}
+                                            {/*    <SanitizedHTML html={(item.subtitle_en)}/>*/}
+                                            {/*</p>*/}
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+            </Swiper>
+            <div
+                className="banner-prev absolute top-[300px] left-[20px]"
+                onClick={() => swiperRef.current.slidePrev()}
+            ></div>
+            <div
+                className="banner-next absolute top-[300px] right-[25px]"
+                onClick={() => swiperRef.current.slideNext()}
+            ></div>
+        </div>
+    );
 };
 
 export default Banner;

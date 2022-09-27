@@ -32,7 +32,7 @@ const DetailNews = () => {
             <div className='flex mb-8 w-full'>
                 <img src={uri + response.preview_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
                 <div className="w-[742px]">
-                    <p className="mb-8">{response.title_ky}</p>
+                    <p className="mb-6 font-semibold text-[18px]">{response.title_ky}</p>
                     <Sanitized html={response.desc_ky}/>
                 </div>
             </div>

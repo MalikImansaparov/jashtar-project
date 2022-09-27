@@ -73,14 +73,11 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal, id}) => {
                         <div className="mt-[62px]">
                             <div className='block text-base font-semibold mb-[36px]'>{t("listProject")}</div>
                             <div className="flex items-center mb-[62px] flex-wrap">
-                                {/*{response?.map(item => (*/}
-                                {/*    <div key={item.id} className="flex items-center w-[100%] cursor-pointer" onClick={() => window.open(link, '_blank')}>*/}
-                                {/*        <div className="flex justify-center items-center shadow-org py-[13px] px-[30px] rounded-[12px] w-[291px] h-[86px] mr-[62px]">*/}
-                                {/*            <img src={kfw} alt='organization' className=''/>*/}
-                                {/*        </div>*/}
-                                {/*        <p className="font-normal text-base">1. Deutsche Gesellschaft fur Internationale Zusammenarbeit (GIZ) GmbH</p>*/}
-                                {/*    </div>*/}
-                                {/*))}*/}
+                                {response?.map(item => (
+                                    <div key={item.id} className="flex items-center w-[100%] cursor-pointer" onClick={() => window.open(link, '_blank')}>
+
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

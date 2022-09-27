@@ -8,7 +8,6 @@ import {Language} from "../menu/Language";
 import close from '../../assets/image/main/close.png'
 import {useNavigate} from "react-router";
 import {useTranslation} from "react-i18next";
-import SearchPage from "../SearchPage";
 import {useDispatch} from "react-redux";
 import {asyncSearch} from "../../store/asyncAction";
 
@@ -23,11 +22,13 @@ const Menu = () => {
         setOpenModal(!openModal);
     }
 
-   const handleChange = (e) => {
-            dispatch(asyncSearch(e))
-            navigate('/search/')
-   }
-
+    const handleChange = () => {
+        if( window.location.pathname !== "/search"){
+            navigate('/search')
+        } else {
+           dispatch(asyncSearch())
+        }
+    }
 
         return (
             <div className="relative mb-0">
@@ -61,7 +62,7 @@ const Menu = () => {
                         <div className="wrapper py-[22px]">
                             <input type='text' autoFocus={true}
                                    className='bg-blueLight border-none outline-none w-[98.5%] h-[24px] font-medium text-[15px]'
-                                   placeholder='Поиск' onKeyDown={e => e.key === 'Enter' && handleChange(e.target.value)}/>
+                                   placeholder='Поиск' onChange={(e) => localStorage.setItem("search", e.target.value)} onKeyDown={e => e.key === 'Enter' && handleChange()}/>
                             <img src={close} alt='close' className='py-2 cursor-pointer' onClick={toggleModal}/>
                         </div>
                     </div>

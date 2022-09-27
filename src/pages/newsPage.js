@@ -44,26 +44,26 @@ const NewsPage = () => {
     //     }
     // };
 
-    // if (isLoading) {
-    //     return (
-    //         <div role="status" className='flex justify-center my-28 pb-24'>
-    //             <ClipLoader
-    //                 color="#1985A1"
-    //                 size={300}
-    //             />
-    //         </div>
-    //     )
-    // }
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
+    }
 
     return (
         <div className='wrapper'>
             <div className="container">
                 <BreadCrumb />
             </div>
-                <div className="wrapper flex justify-around flex-wrap m-auto">
+                <div className="flex">
                     {response &&
                         response.results.map((item) => (
-                                <Link to={`${item.id}`} className="max-w-[384px] m-auto shadow-md rounded bg-white pb-4 mb-[62px] leading-5 cursor-pointer" key={item.id}>
+                                <Link to={`${item.id}`} className="max-w-[384px] m-auto shadow-md rounded bg-white pb-4 mb-[62px] leading-5 cursor-pointer even:mx-9" key={item.id}>
                                     <img
                                         src={uri +  item.preview_image}
                                         alt="cart-img"
@@ -78,6 +78,24 @@ const NewsPage = () => {
                                         <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
                                             <Sanitized html={item.desc_ky}/>
                                         </p>
+                                            </div>}
+                                        {i18n.language === "ru" &&
+                                            <div>
+                                                <p className="text-base font-extrabold h-[38px] w-[324px] leading-[19px]">
+                                                    {item.title_ru}
+                                                </p>
+                                                <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
+                                                    <Sanitized html={item.desc_ru}/>
+                                                </p>
+                                            </div>}
+                                        {i18n.language === "en" &&
+                                            <div>
+                                                <p className="text-base font-extrabold h-[38px] w-[324px] leading-[19px]">
+                                                    {item.title_en}
+                                                </p>
+                                                <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
+                                                    <Sanitized html={item.desc_en}/>
+                                                </p>
                                             </div>}
                                         <div className="flex justify-between w-[324px] mt-4">
                                             <p className="text-sm font-medium text-grey">{item.news_date}</p>
@@ -95,7 +113,7 @@ const NewsPage = () => {
                 // onPageChange={handlePageClick}
                 pageRangeDisplayed={3}
                 marginPagesDisplayed={2}
-                pageCount={5}
+                pageCount={1}
                 previousLabel="❮"
                 pageClassName="page-item"
                 pageLinkClassName="page-link"

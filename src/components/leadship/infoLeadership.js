@@ -22,7 +22,7 @@ const InfoLeadership = () => {
 
     return (
         <div className="w-full relative pb-[63px]">
-            <div className='h-[232px] w-[38.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar'></div>
+            <div className='h-[310px] w-[37.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar'></div>
             <div className="wrapper">
                 <div className="container mb-8 mt-16">
                         <BreadCrumbs crumbs={crumbs} title={" "}/>
@@ -30,8 +30,8 @@ const InfoLeadership = () => {
                 {response &&
                     i18n.language === 'ky' &&
                     <div>
-                        <div className='flex mb-8 w-full'>
-                            <img src={uri + response.avatar_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
+                        <div className='flex mb-8 w-full justify-between'>
+                            <img src={uri + response.avatar_image} className='h-[380px] w-[380px] mr-[62px] z-10 bg-contain' alt='about'/>
                             <div className="w-[742px]">
                                 <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_ky}</p>
                                 <p className="font-base text-grey text-base mb-8">{response.annotation_ky}

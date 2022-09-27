@@ -25,16 +25,16 @@ const EventsPage = () => {
     //     getData()
     // },[])
     //
-    // if (isLoading) {
-    //     return (
-    //         <div role="status" className='flex justify-center my-28 pb-24'>
-    //             <ClipLoader
-    //                 color="#1985A1"
-    //                 size={300}
-    //             />
-    //         </div>
-    //     )
-    // }
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
+    }
 
     return (
         <div className="wrapper">
@@ -44,7 +44,7 @@ const EventsPage = () => {
             <div className="flex justify-around flex-wrap">
                 {response &&
                     response.results.map((item) => (
-                            <Link to={`${item.id}`} className="max-w-[384px] max-h-[419px] m-auto shadow-md rounded bg-white pb-4 leading-5 mb-[62px] cursor-pointer" key={item.id}>
+                            <Link to={`${item.id}`} className="max-w-[484px] max-h-[419px]  shadow-md rounded bg-white pb-4 leading-5 mb-[62px] cursor-pointer" key={item.id}>
                                 <img
                                     src={uri + item.preview_image}
                                     alt="cart-img"

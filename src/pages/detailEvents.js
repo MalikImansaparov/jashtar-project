@@ -31,7 +31,8 @@ const DetailEvents = () => {
                 </div>
                 <div className='flex mb-8 w-full'>
                     <img src={uri + response.preview_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
-                <div className="w-[742px] my-[62px] text-sm font-medium">
+                <div className="w-[742px] mb-[62px] text-sm font-medium">
+                    <p className="mb-6 font-semibold text-[18px]">{response.title_ky}</p>
                     <Sanitized html={response.desc_ky}/>
                     <p className="text-grey mt-8 flex">
                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
