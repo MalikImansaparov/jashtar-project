@@ -11,10 +11,11 @@ import {Sanitized} from "../../components/general/sanitize";
 import {useTranslation} from "react-i18next";
 import {ClipLoader} from "react-spinners";
 
-const VideoInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
-
+const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
+    const id = localStorage.getItem('id')
     const [ref] = useClickOutside(() => setOpenRegisterModal(false))
     const { isLoading, response } = useFetch(base + galeryUrl + `/video/${id}`);
+
     document.body.style.overflow = "hidden";
     const {i18n} = useTranslation()
 

@@ -6,6 +6,7 @@ import {useFetch} from "../../api/useFetch";
 import {BreadCrumbs} from "../modules/breadcrumbs";
 import {useTranslation} from "react-i18next";
 import {Sanitized} from "../general/sanitize";
+import {ClipLoader} from "react-spinners";
 
 const InfoLeadership = () => {
     const {id} = useParams()
@@ -20,9 +21,20 @@ const InfoLeadership = () => {
         t("biography")
     ]);
 
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
+    }
+
     return (
         <div className="w-full relative pb-[63px]">
-            <div className='h-[310px] w-[37.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar'></div>
+            <div className='h-[310px] w-[32.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar'></div>
             <div className="wrapper">
                 <div className="container mb-8 mt-16">
                         <BreadCrumbs crumbs={crumbs} title={" "}/>
@@ -31,10 +43,10 @@ const InfoLeadership = () => {
                     i18n.language === 'ky' &&
                     <div>
                         <div className='flex mb-8 w-full justify-between'>
-                            <img src={uri + response.avatar_image} className='h-[380px] w-[380px] mr-[62px] z-10 bg-contain' alt='about'/>
-                            <div className="w-[742px]">
+                            <img src={uri + response.avatar_image} className='h-[380px] w-[300px] mr-[42px] z-10 bg-contain' alt='about'/>
+                            <div className="w-[800px]">
                                 <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_ky}</p>
-                                <p className="font-base text-grey text-base mb-8">{response.annotation_ky}
+                                <p className="font-base text-grey text-base mb-8 w-[500px]">{response.annotation_ky}
                                 </p>
                                 <p>
                                   <Sanitized html={response.biography_ky}/>

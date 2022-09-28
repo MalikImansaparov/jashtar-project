@@ -22,12 +22,17 @@ const PhotoPanel = () => {
     // useEffect(() => {
     //     getData()
     // },[])
+    const openModal = (id) => {
+        setOpenRegisterModal(true)
+        localStorage.setItem('id', id)
+    }
+
 
     return (
         <div className="wrapper">
             <div className="grid grid-cols-3 gap-[32px] px-8 mt-8">
             {response && response.results.map((item) => (
-                <div key={item.id} className="relative top-0 left-0 right-0 bottom-0 w-[379px] cursor-pointer" onClick={() =>  setOpenRegisterModal(true)}>
+                <div key={item.id} className="relative top-0 left-0 right-0 bottom-0 w-[379px] cursor-pointer" onClick={() =>  openModal(item.id)}>
                     <div className="w-[100%] inline-block relative">
                     <img src={uri + item.gallery[0].image} alt="" className=" cursor-pointer w-[100%] inline-block pointer-events-none" />
                 <div className="h-[52px] w-full bg-[#3070B688] absolute bottom-0 left-0">
@@ -45,16 +50,14 @@ const PhotoPanel = () => {
                     }
                 </div>
                 </div>
-                    {openRegisterModal && (
-                        <GalleryInfo
-                            id={item.id}
-                            openRegisterModal={openRegisterModal}
-                            setOpenRegisterModal={() => setOpenRegisterModal(false)}
-                        />
-                    )}
                 </div>
             ))}
-
+                {openRegisterModal && (
+                    <GalleryInfo
+                        openRegisterModal={openRegisterModal}
+                        setOpenRegisterModal={() => setOpenRegisterModal(false)}
+                    />
+                )}
             </div>
 
             {/*<div className="paginate">*/}

@@ -23,9 +23,9 @@ const Header = () => {
             </div>
             <div className="flex w-379 h-[78px] items-center">
                 {project.map( item => (
-                    <Link to={item.url} key={item.id} className="text-sm font-bold mx-[16px] underline">
+                    <div key={item.id} className="text-sm font-bold mx-[16px] underline cursor-pointer" onClick={() => window.open(item.url, '_blank')}>
                         {item.title}
-                    </Link>
+                    </div>
                 ))}
             </div>
             {response && response.map( item => (

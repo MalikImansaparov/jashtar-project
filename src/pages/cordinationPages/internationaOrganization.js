@@ -4,16 +4,23 @@ import {useFetch} from "../../api/useFetch";
 import {base, councilUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
 import DOMPurify from "dompurify";
+import {ClipLoader} from "react-spinners";
+import {createMarkup} from "../../components/general/dompurify";
 
 export const InternationOrganization = () => {
     const { isLoading, response } = useFetch(base + councilUrl + '/intorganization/');
     const {t, i18n} = useTranslation()
 
-    const createMarkup = (html) => {
-        return {
-            __html: DOMPurify.sanitize(html)
-        };
-    };
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
+    }
 
     return (
         <div className='wrapper'>

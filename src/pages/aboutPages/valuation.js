@@ -1,6 +1,6 @@
 import React from 'react';
 import {useFetch} from "../../api/useFetch";
-import {aboutUrl, base, url} from "../../api/const";
+import {aboutUrl, base, uri, url} from "../../api/const";
 import left from '../../assets/image/about/left.png'
 import rigth from '../../assets/image/about/rigth.png'
 import {BreadCrumb} from "../../components/general/breadcrumb";
@@ -36,7 +36,7 @@ const Valuation = () => {
             >
               <div className="m-auto w-[231px]">
                 <img
-                  src={path}
+                  src={uri + item.image}
                   alt="values"
                   className=" h-[131px] w-[231px] rounded mb-[10px]"
                 />

@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {asyncSearch} from "../store/asyncAction";
 import axios from "axios";
 import {base, searchUrl} from "../api/const";
+import {ClipLoader} from "react-spinners";
 
 const SearchPage = () => {
     const value = localStorage.getItem('search')
@@ -26,6 +27,17 @@ const SearchPage = () => {
         Search()
     },[])
 
+    if (!items) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
+    }
+
     return (
         <div className="wrapper py-[62px]">
             {/*{items && items.events.length <= 0 && items.managment.length <= 0 && items.news.length <= 0 && items.partner.length <= 0 && items.project.length <= 0 && items.docs.length <= 0 &&*/}
@@ -33,11 +45,11 @@ const SearchPage = () => {
             {/*        <p className="my-16 text-[20px]">{t('notFound')}</p>*/}
             {/*    </div>*/}
             {/*}*/}
-            {items && items.length === 0 &&
-                <div className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white">
-                    <p className="my-16 text-[20px]">{t('notFound')}</p>
-                </div>
-            }
+            {/*{items && items.length === 0 &&*/}
+            {/*    <div className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white">*/}
+            {/*        <p className="my-16 text-[20px]">{t('notFound')}</p>*/}
+            {/*    </div>*/}
+            {/*}*/}
             {items &&
                     <div
                         className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white"

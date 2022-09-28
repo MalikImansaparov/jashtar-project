@@ -3,11 +3,11 @@ import React from "react";
 const MODAL_STYLES = {
     position: "absolute",
     zIndex: "1000",
-    top: "700px",
+    top: "400px",
     left: "50%",
     Bottom: "1500px",
     transform: "translate(-50%, -50%)",
-    height: "1259px",
+    height: "659px",
     background: "#fff",
     overflow: "auto",
     borderRadius: "4px",

@@ -4,10 +4,22 @@ import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, uri} from "../../api/const";
 import {createMarkup} from "../../components/general/dompurify";
 import {useTranslation} from "react-i18next";
+import {ClipLoader} from "react-spinners";
 
 export const JashtarProject = () => {
   const { isLoading, response } = useFetch(base + aboutUrl + '/youthpolicy/');
   const {i18n} = useTranslation()
+
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
+    }
 
   return (
     <div className="w-full relative pb-[63px]">

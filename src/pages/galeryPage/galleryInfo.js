@@ -13,9 +13,10 @@ import {Sanitized} from "../../components/general/sanitize";
 import {useTranslation} from "react-i18next";
 import {ClipLoader} from "react-spinners";
 
-const GalleryInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
+const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
     const [ref] = useClickOutside(() => setOpenRegisterModal(false))
     document.body.style.overflow = "hidden";
+    const id = localStorage.getItem('id')
     const { isLoading, response } = useFetch(base + galeryUrl + `/photo/${id}`);
     const swiperRef = useRef();
     const {i18n} = useTranslation()
@@ -40,10 +41,9 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
                     <div className="flex justify-end mt-[37px] mb-[27px] cursor-pointer" >
                          <img src={close} alt="close icon" onClick={onClose} />
                     </div>
+                    <div ref={ref}>
                         { response &&
-                                    <div ref={ref}>
-
-
+                                    <div>
                                         <Swiper
                                             hashNavigation={{
                                                 watchState: true,
@@ -103,6 +103,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal, id}) => {
                                         <p className="font-medium text-sm text-grey">{response.date}</p>
                                     </div>
                            }
+                    </div>
                 </div>
             </Modal>
 

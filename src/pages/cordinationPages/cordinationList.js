@@ -2,10 +2,22 @@ import React from 'react';
 import {useFetch} from "../../api/useFetch";
 import {base, councilUrl, uri, url} from "../../api/const";
 import {useTranslation} from "react-i18next";
+import {ClipLoader} from "react-spinners";
 
 const CordinationList = () => {
     const {t, i18n} = useTranslation()
     const { isLoading, response } = useFetch(base + councilUrl + '/staff/');
+
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
+    }
 
     return (
         <div className='wrapper'>

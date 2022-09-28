@@ -5,11 +5,23 @@ import {aboutUrl, base, uri, url} from "../../../api/const";
 import InfoProject from "./infoProject";
 import {useTranslation} from "react-i18next";
 import InfoPartners from "../../cordinationPages/infoPartners";
+import {ClipLoader} from "react-spinners";
 
 const Projects = () => {
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
     const { isLoading, response } = useFetch(base + aboutUrl + '/project/');
     const {i18n} = useTranslation()
+
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
+    }
 
     return (
         <div className='wrapper w-full pb-16'>

@@ -60,10 +60,10 @@ const NewsPage = () => {
             <div className="container">
                 <BreadCrumb />
             </div>
-                <div className="flex">
+                <div className="flex flex-wrap">
                     {response &&
                         response.results.map((item) => (
-                                <Link to={`${item.id}`} className="max-w-[384px] m-auto shadow-md rounded bg-white pb-4 mb-[62px] leading-5 cursor-pointer even:mx-9" key={item.id}>
+                                <Link to={`${item.id}`} className="max-w-[384px] m-auto shadow-md rounded bg-white pb-4 mb-[62px] leading-5 cursor-pointer mx-3" key={item.id}>
                                     <img
                                         src={uri +  item.preview_image}
                                         alt="cart-img"
@@ -71,34 +71,34 @@ const NewsPage = () => {
                                     />
                                     <div className="px-2.5">
                                         {i18n.language === "ky" &&
-                                            <div>
-                                        <p className="text-base font-extrabold h-[38px] w-[324px] leading-[19px]">
-                                            {item.title_ky}
-                                        </p>
-                                        <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
-                                            <Sanitized html={item.desc_ky}/>
-                                        </p>
-                                            </div>}
+                                        <>
+                                            <p className="text-base font-semibold w-[324px] h-[28px] text-black overflow-y-hidden leading-[19px]">
+                                                {item.title_ky.length > 40 ? item.title_ky.split("").splice(0, 32) : item.title_ky }...
+                                            </p>
+                                            <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
+                                                <Sanitized html={item.desc_ky}/>
+                                            </p>
+                                        </>}
                                         {i18n.language === "ru" &&
-                                            <div>
-                                                <p className="text-base font-extrabold h-[38px] w-[324px] leading-[19px]">
-                                                    {item.title_ru}
+                                            <>
+                                                <p className="text-base font-semibold w-[324px] h-[28px] text-black overflow-y-hidden leading-[19px]">
+                                                    {item.title_ru.length > 40 ? item.title_ru.split("").splice(0, 32)  : item.title_ru}...
                                                 </p>
                                                 <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
                                                     <Sanitized html={item.desc_ru}/>
                                                 </p>
-                                            </div>}
+                                            </>}
                                         {i18n.language === "en" &&
-                                            <div>
-                                                <p className="text-base font-extrabold h-[38px] w-[324px] leading-[19px]">
-                                                    {item.title_en}
+                                            <>
+                                                <p className="text-base font-semibold w-[324px] h-[28px] text-black overflow-y-hidden leading-[19px]">
+                                                    {item.title_en.length > 40 ? item.title_en.split("").splice(0, 32)  : item.title_en }...
                                                 </p>
                                                 <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
                                                     <Sanitized html={item.desc_en}/>
                                                 </p>
-                                            </div>}
+                                            </>}
                                         <div className="flex justify-between w-[324px] mt-4">
-                                            <p className="text-sm font-medium text-grey">{item.news_date}</p>
+                                            <p className="text-sm font-medium text-grey">{item.news_date.split('-').reverse().join('-')}</p>
                                             <Link to={`${item.id}`} className="text-blue underline cursor-pointer text-sm">
                                                 {t("more")}
                                             </Link>

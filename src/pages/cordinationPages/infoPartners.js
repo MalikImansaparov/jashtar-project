@@ -3,22 +3,26 @@ import close from "../../assets/image/about/close.png"
 import Popover from "../galeryPage/popover";
 import {useClickOutside} from "../../hooks/useOutside";
 import {useFetch} from "../../api/useFetch";
-import {base, councilUrl, uri, url} from "../../api/const";
+import {aboutUrl, base, councilUrl, uri, url} from "../../api/const";
 import {useTranslation} from "react-i18next";
 import {createMarkup} from "../../components/general/dompurify";
 import {ClipLoader} from "react-spinners";
+import {getFetch} from "../../api/getFetch";
 
-const InfoPartners = ({openRegisterModal, setOpenRegisterModal, id}) => {
+const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
     const {t, i18n} = useTranslation()
     const [ref] = useClickOutside(() => setOpenRegisterModal(false))
     document.body.style.overflow = "hidden";
+    const id = localStorage.getItem('id')
 
     const { isLoading, response } = useFetch(base + councilUrl + `/partner/${id}`);
+    const { res } = getFetch(base + aboutUrl + '/project/');
 
     const onClose = () => {
         setOpenRegisterModal(false)
         document.body.style.overflow = "";
     }
+
 
         return (
             <div>
@@ -73,9 +77,11 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal, id}) => {
                         <div className="mt-[62px]">
                             <div className='block text-base font-semibold mb-[36px]'>{t("listProject")}</div>
                             <div className="flex items-center mb-[62px] flex-wrap">
-                                {response?.map(item => (
-                                    <div key={item.id} className="flex items-center w-[100%] cursor-pointer" onClick={() => window.open(link, '_blank')}>
-
+                                {res && res.map(item => (
+                                    <div key={item.id} className="flex items-center w-[100%] cursor-pointer" >
+                                        <img src={uri + item.proj_image} alt='organization' className='shadow-org py-[13px] px-[30px] rounded-[12px] w-[130px] h-[86px] mr-[62px]'/>
+                                        <p className="font-normal text-base">{item.title_ky}</p>
+                                        {/*onClick={() => window.open(link, '_blank')}*/}
                                     </div>
                                 ))}
                             </div>

@@ -5,6 +5,7 @@ import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, lead, uri} from "../../api/const";
 import {Sanitized} from "../../components/general/sanitize";
 import {useTranslation} from "react-i18next";
+import {ClipLoader} from "react-spinners";
 
 const Ministry = () => {
     const {i18n} = useTranslation()
@@ -14,6 +15,17 @@ const Ministry = () => {
         backgroundImage: `url('${bg}')`,
         // backgroundImage: `url('${uri + response.map(i => i.background_image)}')`,
         backgroundSize: 'cover'
+    }
+
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
     }
 
     return (

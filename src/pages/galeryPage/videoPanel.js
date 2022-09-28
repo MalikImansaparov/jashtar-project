@@ -8,6 +8,7 @@ import ReactPaginate from "react-paginate";
 import {useClickOutside} from "../../hooks/useOutside";
 import axios from "axios";
 import {useTranslation} from "react-i18next";
+import {ClipLoader} from "react-spinners";
 
 
 const VideoPanel = () => {
@@ -47,13 +48,19 @@ const VideoPanel = () => {
             let currentPage = data.selected + 1;
             const commentsFormServer = await fetchComments(currentPage);
             setResponse(commentsFormServer);
+
     };
+
+    const openModal = (id) => {
+        setOpenRegisterModal(true)
+        localStorage.setItem('id', id)
+    }
 
     return (
         <div className="wrapper">
         <div className='flex flex-wrap justify-between mt-[62px]'>
             {response.results && response.results.map((item) => (
-                <div className='mb-[62px] shadow-md rounded-md w-[580px]' onClick={() => setOpenRegisterModal(true)} key={item.id}>
+                <div className='mb-[62px] shadow-md rounded-md w-[580px]' onClick={() => openModal(item.id)} key={item.id}>
                     <iframe
                         width="580"
                         height="326"
@@ -70,15 +77,14 @@ const VideoPanel = () => {
                         <span>{t('date')}</span><span className='text-black '>&nbsp;{item.date}</span>
                     </div>
                     </div>
-                    {openRegisterModal && openRegisterModal && (
-                        <VideoInfo
-                            id={item.id}
-                            openRegisterModal={openRegisterModal}
-                            setOpenRegisterModal={() => setOpenRegisterModal(false)}
-                        />
-                    )}
                 </div>
                 ))}
+            {openRegisterModal && openRegisterModal && (
+                <VideoInfo
+                    openRegisterModal={openRegisterModal}
+                    setOpenRegisterModal={() => setOpenRegisterModal(false)}
+                />
+            )}
         </div>
             <div className="paginate">
                 <ReactPaginate
@@ -86,7 +92,7 @@ const VideoPanel = () => {
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={3}
                     marginPagesDisplayed={2}
-                    pageCount={pageCount}
+                    pageCount={1}
                     previousLabel="❮"
                     pageClassName="page-item"
                     pageLinkClassName="page-link"

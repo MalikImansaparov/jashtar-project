@@ -5,6 +5,7 @@ import pattern from "../../assets/image/main/Looper-1.png"
 import {aboutUrl, base, uri} from "../../api/const";
 import {useFetch} from "../../api/useFetch";
 import {useTranslation} from "react-i18next";
+import {ClipLoader} from "react-spinners";
 
 export const Contacts = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/contacts/');
@@ -13,6 +14,17 @@ export const Contacts = () => {
     const bgImageStyle = {
         backgroundImage: `url('${bg}')`,
         backgroundSize: 'cover'
+    }
+
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
     }
 
     // backgroundImage: `url('${uri + response.map(i => i.background_image)}')`,

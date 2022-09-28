@@ -95,11 +95,14 @@ export const Events = () => {
                                     <div className="w-[324px] my-4 text-sm font-medium">
                                         <p className="text-grey flex">
                                             <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1.5" alt='dots'/>
-                                            <span>{t('date')}</span><span className='text-black '>&nbsp;{item.event_date}</span>
+                                            <span>{t('date')}</span><span className='text-black '>&nbsp;{item.event_date.split('-').reverse().join('-')}</span>
                                         </p>
                                         <p className="text-grey flex">
                                             <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1.5" alt='dots'/>
-                                            {t('location')} <span className='text-black'>&nbsp;{item.location}</span>
+                                            {t('location')}
+                                            {i18n.language === "ky" && <span className='text-black'>&nbsp;{item.location_ky}</span>}
+                                            {i18n.language === "ru" && <span className='text-black'>&nbsp;{item.location_ru}</span>}
+                                            {i18n.language === "en" && <span className='text-black'>&nbsp;{item.location_en}</span>}
                                         </p>
                                     </div>
                                 </div>

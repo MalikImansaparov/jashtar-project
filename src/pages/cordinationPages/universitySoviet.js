@@ -3,10 +3,24 @@ import {BreadCrumb} from "../../components/general/breadcrumb";
 import {useFetch} from "../../api/useFetch";
 import {base, councilUrl, mainUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
+import {createMarkup} from "../../components/general/dompurify";
+import {ClipLoader} from "react-spinners";
 
 export const UniversitySoviet = () => {
     const { isLoading, response } = useFetch(base + councilUrl + '/unicouncil/');
-    const {i18n} = useTranslation()
+    const {t, i18n} = useTranslation()
+
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
+    }
+
     return (
         <div className='wrapper'>
             {response && response.map((item) => (
@@ -37,7 +51,7 @@ export const UniversitySoviet = () => {
             <div className="mt-[32px] mb-[62px]">
                 {response && response.map(i => (
                     <div className="flex" key={i.id}>
-                        {i.unicouncilpart.map( item => (
+                        {i.universitypart.map( item => (
                             <div key={item.id} className="flex w-[371px] shadow-sm p-3 rounded-[12px]">
                                 <img
                                     src={uri + item.avatar_image}
@@ -61,7 +75,7 @@ export const UniversitySoviet = () => {
                 <div className=" mb-[62px]">
                     {response && response.map(i => (
                         <div key={i.id} className="flex flex-wrap items-center">
-                            {i.unicouncilmemb.map( item => (
+                            {i.universitymemb.map( item => (
                                 <div className="flex flex-wrap shadow-org py-[13px] px-[30px] my-[10px] rounded-[12px]">
                                     {i18n.language === "ky" &&
                                         <p className="font-normal text-base w-[1180px]">{item.annotation_ky}</p>

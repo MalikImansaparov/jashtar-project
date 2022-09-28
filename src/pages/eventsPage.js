@@ -61,11 +61,51 @@ const EventsPage = () => {
                                         <div className="w-[324px] my-4 text-sm font-medium">
                                             <p className="text-grey flex">
                                                 <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                                <span>{t('date')}</span><span className='text-black '>&nbsp;{item.event_date}</span>
+                                                <span>{t('date')}</span><span className='text-black '>&nbsp;{item.event_date.split('-').reverse().join('-')}</span>
                                             </p>
                                             <p className="text-grey flex">
                                                 <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                                {t('location')}<span className='text-black'>&nbsp;{item.location}</span>
+                                                {t('location')}<span className='text-black'>&nbsp;{item.location_ky}</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                }
+                                {i18n.language === "ru" &&
+                                    <div className="px-2.5">
+                                        <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
+                                            {item.title_ru}
+                                        </p>
+                                        <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
+                                            <Sanitized html={item.desc_ru}/>
+                                        </p>
+                                        <div className="w-[324px] my-4 text-sm font-medium">
+                                            <p className="text-grey flex">
+                                                <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
+                                                <span>{t('date')}</span><span className='text-black '>&nbsp;{item.event_date.split('-').reverse().join('-')}</span>
+                                            </p>
+                                            <p className="text-grey flex">
+                                                <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
+                                                {t('location')}<span className='text-black'>&nbsp;{item.location_ru}</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                }
+                                {i18n.language === "en" &&
+                                    <div className="px-2.5">
+                                        <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
+                                            {item.title_en}
+                                        </p>
+                                        <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
+                                            <Sanitized html={item.desc_en}/>
+                                        </p>
+                                        <div className="w-[324px] my-4 text-sm font-medium">
+                                            <p className="text-grey flex">
+                                                <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
+                                                <span>{t('date')}</span><span className='text-black '>&nbsp;{item.event_date.split('-').reverse().join('-')}</span>
+                                            </p>
+                                            <p className="text-grey flex">
+                                                <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
+                                                {t('location')}<span className='text-black'>&nbsp;{item.location_en}</span>
                                             </p>
                                         </div>
                                     </div>
@@ -79,7 +119,7 @@ const EventsPage = () => {
                     // onPageChange={handlePageClick}
                     pageRangeDisplayed={3}
                     marginPagesDisplayed={2}
-                    pageCount={5}
+                    pageCount={1}
                     previousLabel="❮"
                     pageClassName="page-item"
                     pageLinkClassName="page-link"

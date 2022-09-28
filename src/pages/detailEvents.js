@@ -20,6 +20,17 @@ const DetailEvents = () => {
         '❯',
     ]);
 
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
+    }
+
     return (
         <div className="w-full relative mb-[63px]">
             <div className='h-[232px] w-[38.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar'></div>
@@ -40,7 +51,7 @@ const DetailEvents = () => {
                     </p>
                     <p className="text-grey flex">
                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                        {t('location')}<span className='text-black'>&nbsp;{response.location}</span>
+                        {t('location')}<span className='text-black'>&nbsp;{response.location_ky}</span>
                     </p>
                 </div>
             </div>
@@ -60,7 +71,7 @@ const DetailEvents = () => {
                                     </p>
                                     <p className="text-grey flex">
                                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                        {t('location')}<span className='text-black'>&nbsp;{response.location}</span>
+                                        {t('location')}<span className='text-black'>&nbsp;{response.location_ru}</span>
                                     </p>
                                 </div>
                             </div>
@@ -77,11 +88,11 @@ const DetailEvents = () => {
                                     <Sanitized html={response.desc_en}/>
                                     <p className="text-grey flex">
                                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                        <span>{t('date')}</span><span className='text-black '>&nbsp;{response.event_date}</span>
+                                        <span>{t('date')}</span><span className='text-black '>&nbsp;{response.event_date.split('-').reverse().join('-')}</span>
                                     </p>
                                     <p className="text-grey flex">
                                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                        {t('location')}<span className='text-black'>&nbsp;{response.location}</span>
+                                        {t('location')}<span className='text-black'>&nbsp;{response.location_en}</span>
                                     </p>
                                 </div>
                             </div>

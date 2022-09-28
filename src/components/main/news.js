@@ -102,7 +102,7 @@ export const News = () => {
                               </p>
                           </>}
                     <div className="flex justify-between w-[324px] mt-4">
-                      <p className="text-sm font-medium text-grey" >{item.news_date}</p>
+                      <p className="text-sm font-medium text-grey" >{item.news_date.split('-').reverse().join('-')}</p>
                       <Link to={`${item.id}`} className="text-blue underline cursor-pointer text-sm">
                           {t('more')}
                       </Link>

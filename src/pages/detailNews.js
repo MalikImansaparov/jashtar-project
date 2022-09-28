@@ -20,6 +20,17 @@ const DetailNews = () => {
         '❯',
     ]);
 
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
+    }
+
     return (
         <div className="w-full relative mb-[63px]">
             <div className='h-[232px] w-[38.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar'></div>
