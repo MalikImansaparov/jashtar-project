@@ -6,6 +6,7 @@ import {BreadCrumbs} from "../components/modules/breadcrumbs";
 import {useParams} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import {Sanitized} from "../components/general/sanitize";
+import {ClipLoader} from "react-spinners";
 
 const DetailNews = () => {
     const {id} = useParams()
@@ -33,7 +34,7 @@ const DetailNews = () => {
 
     return (
         <div className="w-full relative mb-[63px]">
-            <div className='h-[232px] w-[38.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar'></div>
+            <div className='h-[232px] w-[39.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar'></div>
             {response && <>
             {i18n.language === "ky" &&
                 <div className="wrapper">
