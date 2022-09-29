@@ -12,7 +12,7 @@ const Volunter = () => {
           {i18n.language === 'ky' && response &&
                response.map(item => (
                   item.id % 2 ?
-                      <div className=" flex w-full h-[302px] justify-center  bg-white shadow-vol" key={item.id}>
+                      <div className=" flex w-full h-[302px] justify-center  bg-white shadow-lg" key={item.id}>
                           <img src={uri + item.corresponding_image} alt='volunter' className='w-[50%]'/>
                           <div className="m-auto text-center bg-gradient-volunter">
                               <img src={uri + item.logo_image} alt='icon' className='w-[60px] h-[60px] mb-4 m-auto'/>
@@ -25,7 +25,7 @@ const Volunter = () => {
                           </div>
                       </div>
                       :
-                      <div className=" flex w-full h-[302px] justify-center  bg-white shadow-vol" key={item.id}>
+                      <div className=" flex w-full h-[302px] justify-center  bg-white shadow-lg" key={item.id}>
                           <div className="m-auto text-center bg-gradient-volunter">
                               <img src={uri + item.logo_image} alt='icon' className='w-[60px] h-[60px] mb-4 m-auto'/>
                               <p className='text-[22px] font-semibold mb-3'>{item.title_ky}</p>

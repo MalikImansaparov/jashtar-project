@@ -54,11 +54,13 @@ export const InternationOrganization = () => {
                     <div className="flex" key={i.id}>
                         {i.intorganizationpart.map( item => (
                             <div key={item.id} className="flex w-[371px] shadow-sm p-3 rounded-[12px]">
-                                <img
-                                    src={uri + item.avatar_image}
-                                    alt="cart-img"
-                                    className="block my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
-                                />
+                                <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px]">
+                                    <img
+                                        src={uri + item.avatar_image}
+                                        alt="cart-img"
+                                        className="h-auto w-[100%]"
+                                    />
+                                </div>
                                 <div className="w-[243px] m-auto">
                                     <p className="text-[12px] mb-1 font-normal text-blue">
                                         {item.full_name_ky}
@@ -77,15 +79,18 @@ export const InternationOrganization = () => {
                     {response && response.map(i => (
                         <div key={i.id} className="flex flex-wrap items-center">
                             {i.intorganizationmemb.map( item => (
-                                <div className="flex flex-wrap shadow-org py-[13px] px-[30px] my-[10px] rounded-[12px]">
+                                <div className="flex flex-wrap items-center shadow-enroll py-[13px] px-[30px] my-[10px] rounded-[12px] mb-[23px] w-[1230px]">
+                                    <div className="flex justify-center shadow-org py-[13px] px-[10px] rounded-[12px]  mr-[32px] w-[120px] h-[70px]">
+                                        <img src={uri + item.org_image} alt='organization' className='w-auto h-[100%]'/>
+                                    </div>
                                     {i18n.language === "ky" &&
-                                        <p className="font-normal text-base w-[1180px]">{item.annotation_ky}</p>
+                                        <p className="font-normal text-base w-[1000px]">{item.annotation_ky}</p>
                                     }
                                     {i18n.language === "ru" &&
-                                        <p className="font-normal text-base w-[1180px]">{item.annotation_ru}</p>
+                                        <p className="font-normal text-base w-[1000px]">{item.annotation_ru}</p>
                                     }
                                     {i18n.language === "en" &&
-                                        <p className="font-normal text-base w-[1180px]">{item.annotation_en}</p>
+                                        <p className="font-normal text-base w-[1000px]">{item.annotation_en}</p>
                                     }
                                 </div>
                             ))}

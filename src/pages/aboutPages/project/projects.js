@@ -23,18 +23,23 @@ const Projects = () => {
         )
     }
 
+    const openModal = (id) => {
+        setOpenRegisterModal(true)
+        localStorage.setItem('project', id)
+    }
+
     return (
-        <div className='wrapper w-full pb-16'>
+        <div className='wrapper w-full h-[100vh] pb-40 '>
             <div className="container w-[1196px]">
                 <BreadCrumb/>
             </div>
             <div className='w-full flex flex-row flex-wrap'>
                 {response && response.map(item => (
                     <div key={item.id}>
-                        <div className="w-[192px] h-[218px] mb-8 cursor-pointer transition-all hover:scale-125 even: mx-[26px] " onClick={() => setOpenRegisterModal(true)}
+                        <div className="w-[192px] h-[218px] mb-8 cursor-pointer transition-all hover:scale-125 even: mx-[26px]" onClick={() => openModal(item.id)}
                         >
-                            <div className='w-full h-[160px] rounded shadow-partner flex justify-center items-center mb-[10px] cursor-pointer' key={item.id} >
-                                <img src={uri + item.proj_image} alt='img' className="h-[120px]"/>
+                            <div className="w-[100%] h-[100%] overflow-hidden flex justify-center">
+                                <img src={uri + item.proj_image} alt='img' className="h-auto h-[120px] w-[150px] self-center"/>
                             </div>
                             {i18n.language === "ky" &&
                                 <p className='text-[13px] font-medium leading-[16px] text-blue text-center w-[182px]'>{item.title_ky.length > 70 ? item.title_ky.slice(0, 70) + "..." : item.title_ky}</p>
@@ -46,15 +51,14 @@ const Projects = () => {
                                 <p className='text-[13px] font-medium leading-[16px] text-blue text-center w-[182px]'>{item.title_en.length > 70 ? item.title_en.slice(0, 70) + "..." : item.title_en}</p>
                             }
                         </div>
-                        {openRegisterModal && openRegisterModal && (
-                            <InfoProject
-                                id={item.id}
-                                openRegisterModal={openRegisterModal}
-                                setOpenRegisterModal={() => setOpenRegisterModal(false)}
-                            />
-                        )}
                     </div>
                 ))}
+                {openRegisterModal && openRegisterModal && (
+                    <InfoProject
+                        openRegisterModal={openRegisterModal}
+                        setOpenRegisterModal={() => setOpenRegisterModal(false)}
+                    />
+                )}
             </div>
         </div>
     );

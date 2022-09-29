@@ -2,15 +2,15 @@ import React, {useState} from 'react';
 import close from "../../../assets/image/about/close.png"
 import Popup from "./popup";
 import {useClickOutside} from "../../../hooks/useOutside";
-import {aboutUrl, base, councilUrl, uri} from "../../../api/const";
+import {aboutUrl, base, uri} from "../../../api/const";
 import {useFetch} from "../../../api/useFetch";
 import {ClipLoader} from "react-spinners";
 import {createMarkup} from "../../../components/general/dompurify";
 import {useTranslation} from "react-i18next";
 
-
-const InfoProject = ({openRegisterModal, setOpenRegisterModal , id}) => {
+const InfoProject = ({openRegisterModal, setOpenRegisterModal }) => {
     const [ref] = useClickOutside(() => setOpenRegisterModal(true))
+    const id = localStorage.getItem('project')
     const { isLoading, response } = useFetch(base + aboutUrl + `/project/${id}`)
     const {i18n} = useTranslation()
     document.body.style.overflow = "hidden";
@@ -37,8 +37,10 @@ const InfoProject = ({openRegisterModal, setOpenRegisterModal , id}) => {
                     </div>
                     {response &&
                         <div className="flex" key={response.id}>
-                            <div className='w-[332px] h-[276px] rounded shadow-partner flex justify-center items-center mb-[10px] p-8'>
-                                <img src={uri + response.proj_image} alt='img' className="w-[245px] h-auto"/>
+                            <div className='w-[332px] h-[276px] rounded shadow-partner flex justify-center items-center mb-[10px] p-8 shadow-xl'>
+                                <div className="flex items-center w-[245px] h-[250px]">
+                                <img src={uri + response.proj_image} alt='img' className="h-auto w-[100%]"/>
+                                </div>
                             </div>
                             {i18n.language === "ky" &&
                                 <div className='ml-[76px]'>

@@ -1,7 +1,7 @@
 import {useState, useRef, useEffect} from 'react'
 
 
-export function getFetch(url, options) {
+export function useFetches(url, options) {
     const [isLoading, setLoading] = useState(true)
     const [res, setRes] = useState(null)
     const [error, setError] = useState(null)

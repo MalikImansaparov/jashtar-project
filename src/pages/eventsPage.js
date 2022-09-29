@@ -44,16 +44,18 @@ const EventsPage = () => {
             <div className="flex justify-around flex-wrap">
                 {response &&
                     response.results.map((item) => (
-                            <Link to={`${item.id}`} className="max-w-[484px] max-h-[419px]  shadow-md rounded bg-white pb-4 leading-5 mb-[62px] cursor-pointer" key={item.id}>
-                                <img
-                                    src={uri + item.preview_image}
-                                    alt="cart-img"
-                                    className="mb-3 h-[247px] w-[384px] rounded-t"
-                                />
+                            <Link to={`${item.id}`} className="max-w-[484px] max-h-[419px]  shadow-lg rounded bg-white pb-4 leading-5 mb-[62px] cursor-pointer hover:shadow-2xl" key={item.id}>
+                                <div className="mb-3 h-[247px] w-[384px] overflow-hidden rounded-t">
+                                    <img
+                                        src={uri + item.preview_image}
+                                        alt="cart-img"
+                                        className="h-auto w-[100%] rounded-t"
+                                    />
+                                </div>
                                 {i18n.language === "ky" &&
                                     <div className="px-2.5">
                                         <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
-                                            {item.title_ky}
+                                            {item.title_ky.length > 60 ? item.title_ky.slice(0, 60) + "..." : item.title_ky}
                                         </p>
                                         <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
                                             <Sanitized html={item.desc_ky}/>
@@ -73,7 +75,7 @@ const EventsPage = () => {
                                 {i18n.language === "ru" &&
                                     <div className="px-2.5">
                                         <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
-                                            {item.title_ru}
+                                            {item.title_ru.length > 60 ? item.title_ru.slice(0, 60) + "..." : item.title_ru}
                                         </p>
                                         <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
                                             <Sanitized html={item.desc_ru}/>
@@ -93,7 +95,7 @@ const EventsPage = () => {
                                 {i18n.language === "en" &&
                                     <div className="px-2.5">
                                         <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
-                                            {item.title_en}
+                                            {item.title_en.length > 60 ? item.title_en.slice(0, 60) + "..." : item.title_en}
                                         </p>
                                         <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
                                             <Sanitized html={item.desc_en}/>

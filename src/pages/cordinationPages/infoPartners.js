@@ -7,7 +7,8 @@ import {aboutUrl, base, councilUrl, uri, url} from "../../api/const";
 import {useTranslation} from "react-i18next";
 import {createMarkup} from "../../components/general/dompurify";
 import {ClipLoader} from "react-spinners";
-import {getFetch} from "../../api/getFetch";
+import {useFetches} from "../../api/getFetch";
+
 
 const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
     const {t, i18n} = useTranslation()
@@ -16,7 +17,7 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
     const id = localStorage.getItem('id')
 
     const { isLoading, response } = useFetch(base + councilUrl + `/partner/${id}`);
-    const { res } = getFetch(base + aboutUrl + '/project/');
+    const { res } = useFetches(base + aboutUrl + '/project/');
 
     const onClose = () => {
         setOpenRegisterModal(false)

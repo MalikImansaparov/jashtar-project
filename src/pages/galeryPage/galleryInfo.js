@@ -61,7 +61,9 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                         >
                                         {response.gallery.map(i => (
                                             <SwiperSlide key={i.id} >
-                                                <img src={uri + i.image} alt='img' className="w-full h-[555px]" />
+                                                <div className="h-[555px] w-[100%] overflow-hidden">
+                                                    <img src={uri + i.image} alt='img' className="w-[100%] h-[100%]" />
+                                                </div>
                                             </SwiperSlide>
                                         ))}
                                         </Swiper>

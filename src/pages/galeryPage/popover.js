@@ -5,7 +5,7 @@ const MODAL_STYLES = {
     zIndex: "1000",
     top: "400px",
     left: "50%",
-    Bottom: "1500px",
+    bottom: "200px",
     transform: "translate(-50%, -50%)",
     height: "659px",
     background: "#fff",

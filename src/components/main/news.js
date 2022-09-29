@@ -48,12 +48,17 @@ export const News = () => {
       </div>
         <div className='block justify-center m-auto'>
       <Swiper
-          {...settings}
+          onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+          }}
         hashNavigation={{
           watchState: true,
         }}
+
         spaceBetween={50}
-        slidesPerView={3}
+          loop={true}
+          slidesPerView={3}
+          speed={800}
         navigation={{
           nextEl: '.swiper-next',
           prevEl: '.swiper-prev',
@@ -67,45 +72,47 @@ export const News = () => {
           {response &&
             response.results.map((item) => (
               <SwiperSlide key={item.id}>
-                <Link to={`news/${item.id}`} className=" block max-w-[384px] mr-0 shadow-md rounded bg-white pb-4 mb-4 leading-5 cursor-pointer">
-                  <img
-                    src={uri + item.preview_image}
-                    alt="cart-img"
-                    className="mb-3 h-[247px] w-[384px] rounded-t"
-                  />
+                <Link to={`news/${item.id}`} className=" block max-w-[384px] mr-0 shadow-lg rounded bg-white pb-4 mb-4 leading-5 cursor-pointer hover:shadow-2xl ">
+                    <div className="mb-3 h-[247px] w-[384px] overflow-hidden rounded-t">
+                        <img
+                            src={uri + item.preview_image}
+                            alt="cart-img"
+                            className="h-auto w-[100%] rounded-t"
+                        />
+                    </div>
                   <div className="px-2.5">
                       {i18n.language === "ky" &&
                       <>
-                      <p className="text-base font-semibold w-[324px] h-[28px] text-black overflow-y-hidden leading-[19px]">
-                          {item.title_ky.length > 40 ? item.title_ky.split("").splice(0, 32) : item.title_ky }...
-                      </p>
-                          <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
+                          <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-y-hidden leading-[19px]">
+                              {item.title_ky.length > 60 ? item.title_ky.slice(0, 60) + "..." : item.title_ky }
+                          </p>
+                          <p className="text-base font-normal w-[324px] h-[38px] grey overflow-y-hidden leading-[19px]">
                               <Sanitized html={item.desc_ky}/>
                           </p>
                       </>}
                       {i18n.language === "ru" &&
                           <>
-                          <p className="text-base font-semibold w-[324px] h-[28px] text-black overflow-y-hidden leading-[19px]">
-                              {item.title_ru.length > 40 ? item.title_ru.split("").splice(0, 32)  : item.title_ru}...
+                          <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-y-hidden leading-[19px]">
+                              {item.title_ru.length > 60 ? item.title_ru.slice(0, 60) + "..."  : item.title_ru}
                           </p>
-                              <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
+                              <p className="text-base font-normal w-[324px] h-[38px] grey overflow-y-hidden leading-[19px]">
                                   <Sanitized html={item.desc_ru}/>
                               </p>
                           </>}
                       {i18n.language === "en" &&
                           <>
-                          <p className="text-base font-semibold w-[324px] h-[28px] text-black overflow-y-hidden leading-[19px]">
-                              {item.title_en.length > 40 ? item.title_en.split("").splice(0, 32)  : item.title_en }...
+                          <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-y-hidden leading-[19px]">
+                              {item.title_en.length > 60 ? item.title_en.slice(0, 60) + "..."  : item.title_en}
                           </p>
-                              <p className="text-base font-normal w-[324px] h-[58px] grey overflow-y-hidden leading-[19px]">
+                              <p className="text-base font-normal w-[324px] h-[38px] grey overflow-y-hidden leading-[19px]">
                                   <Sanitized html={item.desc_en}/>
                               </p>
                           </>}
                     <div className="flex justify-between w-[324px] mt-4">
                       <p className="text-sm font-medium text-grey" >{item.news_date.split('-').reverse().join('-')}</p>
-                      <Link to={`news/${item.id}`} className="text-blue underline cursor-pointer text-sm">
+                      <div className="text-blue underline cursor-pointer text-sm">
                           {t('more')}
-                      </Link>
+                      </div>
                     </div>
                   </div>
                 </Link>

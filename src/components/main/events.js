@@ -57,13 +57,15 @@ export const Events = () => {
                         response.results.map((item) => (
                             <SwiperSlide key={item.id}>
                             <Link to={`events/${item.id}`}
-                                className="max-w-[384px] h-[419px] m-auto shadow-md rounded bg-white pb-4 mb-4 leading-5 block"
+                                className="max-w-[384px] h-[419px] m-auto shadow-lg rounded bg-white pb-4 mb-4 leading-5 block hover:shadow-2xl"
                             >
-                                <img
-                                    src={uri + item.preview_image}
-                                    alt="cart-img"
-                                    className="mb-3 h-[247px] w-[384px] rounded-t"
-                                />
+                                <div className="mb-3 h-[247px] w-[384px] overflow-hidden rounded-t">
+                                    <img
+                                        src={uri + item.preview_image}
+                                        alt="cart-img"
+                                        className="h-auto w-[100%] rounded-t"
+                                    />
+                                </div>
                                 <div className="px-2.5">
                                     {i18n.language === "ky" &&
                                         <>
@@ -77,7 +79,7 @@ export const Events = () => {
                                     {i18n.language === "ru" &&
                                         <>
                                             <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
-                                                {item.title_ru}
+                                                {item.title_ru.length > 60 ? item.title_ky.slice(0, 60) + "..." : item.title_ky}
                                             </p>
                                             <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
                                                 <Sanitized html={item.desc_ru}/>
@@ -86,7 +88,7 @@ export const Events = () => {
                                     {i18n.language === "en" &&
                                         <>
                                             <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
-                                                {item.title_en}
+                                                {item.title_en.length > 60 ? item.title_ky.slice(0, 60) + "..." : item.title_ky}
                                             </p>
                                             <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
                                                 <Sanitized html={item.desc_en}/>

@@ -34,7 +34,7 @@ const DetailEvents = () => {
 
     return (
         <div className="w-full relative mb-[63px]">
-            <div className='h-[232px] w-[39.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar'></div>
+            <div className='h-[232px] w-[39.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
                 {response && <>
                 {i18n.language === "ky" &&
             <div className="wrapper">
@@ -42,7 +42,13 @@ const DetailEvents = () => {
                         <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
                 </div>
                 <div className='flex mb-8 w-full'>
-                    <img src={uri + response.preview_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
+                    <div className="h-[287px] w-[432px] mr-[62px] z-10 shadow-2xl overflow-hidden">
+                        <img
+                            src={uri + response.preview_image}
+                            alt="cart-img"
+                            className="h-auto w-[100%] rounded-t"
+                        />
+                    </div>
                 <div className="w-[742px] mb-[62px] text-sm font-medium">
                     <p className="mb-6 font-semibold text-[18px]">{response.title_ky}</p>
                     <Sanitized html={response.desc_ky}/>
@@ -60,15 +66,16 @@ const DetailEvents = () => {
                     {i18n.language === "ru" &&
                         <div className="wrapper">
                             <div className="container mb-8 mt-16">
-                                <BreadCrumbs crumbs={crumbs} title={response.title_ru}/>
+                                <BreadCrumbs crumbs={crumbs} title={response.title_ru} />
                             </div>
                             <div className='flex mb-8 w-full'>
                                 <img src={uri + response.preview_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
-                                <div className="my-[62px] text-sm font-medium">
+                                <div className="w-[742px] mb-[62px] text-sm font-medium">
+                                    <p className="mb-6 font-semibold text-[18px]">{response.title_ru}</p>
                                     <Sanitized html={response.desc_ru}/>
                                     <p className="text-grey mt-8 flex">
                                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                        <span>{t('date')}</span><span className='text-black '>&nbsp;{response.event_date}</span>
+                                        <span>{t('date')}</span><span className='text-black'>&nbsp;{response.event_date}</span>
                                     </p>
                                     <p className="text-grey flex">
                                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
@@ -82,14 +89,14 @@ const DetailEvents = () => {
                             <div className="container mb-8 mt-16">
                                 <BreadCrumbs crumbs={crumbs} title={response.title_en} />
                             </div>
-                            <div className='flex mb-8 mt-8 w-full'>
+                            <div className='flex mb-8 w-full'>
                                 <img src={uri + response.preview_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
-
-                                <div className="w-[324px] my-[62px] text-sm font-medium">
+                                <div className="w-[742px] mb-[62px] text-sm font-medium">
+                                    <p className="mb-6 font-semibold text-[18px]">{response.title_en}</p>
                                     <Sanitized html={response.desc_en}/>
-                                    <p className="text-grey flex">
+                                    <p className="text-grey mt-8 flex">
                                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                        <span>{t('date')}</span><span className='text-black '>&nbsp;{response.event_date.split('-').reverse().join('-')}</span>
+                                        <span>{t('date')}</span><span className='text-black '>&nbsp;{response.event_date}</span>
                                     </p>
                                     <p className="text-grey flex">
                                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>

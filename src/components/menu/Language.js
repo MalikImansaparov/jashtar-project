@@ -24,13 +24,13 @@ export const Language = () => {
             { openModal &&
                 <ul className="absolute z-10 cursor-pointer">
                     <li className="btn-blue mt-[28px]" onClick={() => onChange("ky")}>
-                        <>{t("ky")}</>
+                        <>Кыргызча</>
                     </li>
                     <li className="btn-blue" onClick={() => onChange("ru")}>
-                        <>{t("ru")}</>
+                        <>Русский</>
                     </li>
                     <li className="btn-blue" onClick={() => onChange("en")}>
-                        <>{t("en")}</>
+                        <>English</>
                     </li>
                 </ul>
             }

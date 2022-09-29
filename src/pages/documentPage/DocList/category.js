@@ -21,11 +21,11 @@ const CategoryList = () => {
                 </div>
                 {response &&
                     response.category.map( item => (
-                        <div className='flex flex-wrap w-[853px] items-center mt-4' key={item.id}>
-                             <img src={arrow} alt='arrow' className='w-[3.5px] h-[7px]'/>
+                        <div className='flex flex-wrap w-[873px] items-center mt-4' key={item.id}>
+
                             {i18n.language === "ky" &&
                                 <NavLink to={`/document/${item.id}`}
-                                         className='ml-[11px] font-medium text-base text-blue'>{item.title_ky}</NavLink>
+                                         className='flex ml-[11px] font-medium text-base text-blue'><img src={arrow} alt='arrow' className='w-[5px] h-[10px] self-center mr-3'/>{item.title_ky}</NavLink>
                             }
                             {i18n.language === "ru" &&
                                 <NavLink to={`/document/${item.id}`}

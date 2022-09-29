@@ -34,19 +34,21 @@ const PhotoPanel = () => {
             {response && response.results.map((item) => (
                 <div key={item.id} className="relative top-0 left-0 right-0 bottom-0 w-[379px] cursor-pointer" onClick={() =>  openModal(item.id)}>
                     <div className="w-[100%] inline-block relative">
-                    <img src={uri + item.gallery[0].image} alt="" className=" cursor-pointer w-[100%] inline-block pointer-events-none" />
-                <div className="h-[52px] w-full bg-[#3070B688] absolute bottom-0 left-0">
+                        <div className="cursor-pointer w-[100%] h-[269px] inline-block pointer-events-none overflow-hidden">
+                            <img src={uri + item.gallery[0].image} alt="" className="h-[100%] w-[100%]" />
+                        </div>
+                            <div className="h-[52px] w-full bg-[#3070B688] absolute bottom-0 left-0">
                     {i18n.language === 'ky' &&
-                        <p className="p-4 font-semibold text-base text-white">{item.title_ky.length > 25 ? item.title_ky.split('').splice(0, 25) : item.title_ky}
-                            <span> ( {item.gallery.length} {t("photo")} )</span></p>
+                        <p className="p-4 font-semibold text-base text-white">{item.title_ky.length > 30 ? item.title_ky.split('').splice(0, 35) : item.title_ky}
+                            </p>
                     }
                     {i18n.language === 'ru' &&
-                        <p className="p-4 font-semibold text-base text-white">{item.title_ru.length > 25 ? item.title_ru.split('').splice(0, 25) : item.title_ru}
-                            <span> ( {item.gallery.length} {t("photo")} )</span></p>
+                        <p className="p-4 font-semibold text-base text-white">{item.title_ru.length > 35 ? item.title_ru.split('').splice(0, 35)  : item.title_ru}
+                        </p>
                     }
                     {i18n.language === 'en' &&
-                        <p className="p-4 font-semibold text-base text-white">{item.title_en.length > 25 ? item.title_en.split('').splice(0, 25) : item.title_en}
-                            <span> ( {item.gallery.length} {t("photo")} )</span></p>
+                        <p className="p-4 font-semibold text-base text-white">{item.title_en.length > 35 ? item.title_en.split('').splice(0, 35)  : item.title_en}
+                         </p>
                     }
                 </div>
                 </div>

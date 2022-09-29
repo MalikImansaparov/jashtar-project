@@ -1,9 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Link} from "react-router-dom";
 import {b, base, mainUrl, uri, url} from '../../api/const';
 import { useFetch } from '../../api/useFetch';
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Navigation, Pagination} from "swiper";
+import {Autoplay, Navigation, Pagination} from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -45,16 +44,21 @@ const Banner = () => {
                 hashNavigation={{
                     watchState: true,
                 }}
+                autoplay={{
+                    delay: 3500,
+                    disableOnInteraction: false,
+                }}
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
                 }}
                 loop={true}
                 slidesPerView={1}
+                speed={800}
                 navigation={{
                     nextEl: '.banner-next',
                     prevEl: '.banner-prev',
                 }}
-                modules={[Pagination, Navigation]}
+                modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
                 {response &&
@@ -66,7 +70,7 @@ const Banner = () => {
                                     alt=""
                                     className="w-full max-h-[624px] object-cover bg-no-repeat relative"
                                 />
-                                <div className='w-full h-[624px] bg-gradient-banner opacity-[40%] absolute top-0 left-0 z-0'></div>
+                                {/*<div className='w-full h-[624px] bg-gradient-banner opacity-[40%] absolute top-0 left-0 z-0'></div>*/}
                                 {/*<div className='w-[4.3%] h-[624px] absolute bg-gradient-banner opacity-[40%] top-0 right-0 z-100'></div>*/}
                                 <div className="container w-[1236px] h-[624px] m-auto text-white bg-gradient-banner absolute top-0 flex items-center z-1000">
                                     {i18n.language === 'ky' &&

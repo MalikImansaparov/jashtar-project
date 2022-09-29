@@ -16,14 +16,16 @@ export const SixthLead = () => {
                 {response &&
                     response.filter(i => i.floor === 6 ).map( item => (
                         <div
-                            className="block shadow-sm w-[234px] h-[186px] bg-white rounded-2xl text-center mx-2"
+                            className="relative block shadow-sm w-[234px] h-[186px] bg-white rounded-2xl text-center mx-2 shadow-2xl"
                             key={item.id}
                         >
-                            <img
-                                src={uri + item.avatar_image}
-                                alt="cart-img"
-                                className="my-[14px] h-[62px] w-[62px] m-auto rounded-[50%]"
-                            />
+                            <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px]">
+                                <img
+                                    src={uri + item.avatar_image}
+                                    alt="cart-img"
+                                    className=" h-auto w-[100%] "
+                                />
+                            </div>
                             {i18n.language === 'ky' &&
                                 <div className="w-[193px] m-auto">
                                     <p className="text-xs mb-1 font-normal text-blue">
@@ -52,7 +54,7 @@ export const SixthLead = () => {
                                     </p>
                                 </div>}
                             <Link to={`${item.id}`}>
-                                <button className="h-6 w-full bg-btnLight text-[11px] font-medium text-orange rounded-b-2xl">
+                                <button className="absolute bottom-0 left-0 h-6 w-full bg-btnLight text-[11px] font-medium text-orange rounded-b-2xl">
                                     {t("biography")}
                                 </button>
                             </Link>

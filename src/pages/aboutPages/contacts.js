@@ -38,7 +38,6 @@ export const Contacts = () => {
             <div className="container w-[1196px] m-auto">
                 <BreadCrumb/>
             </div>
-
             <div className='flex'>
                 <div className="flex justify-center items-center w-[443px]">
                     {i18n.language === "ky" &&
