@@ -13,7 +13,9 @@ const Volunter = () => {
                response.map(item => (
                   item.id % 2 ?
                       <div className=" flex w-full h-[302px] justify-center  bg-white shadow-lg" key={item.id}>
-                          <img src={uri + item.corresponding_image} alt='volunter' className='w-[50%]'/>
+                          <div className='w-[675px] h-[302px] overflow-hidden'>
+                              <img src={uri + item.corresponding_image} alt='volunter' className='w-[100%] h-auto'/>
+                          </div>
                           <div className="m-auto text-center bg-gradient-volunter">
                               <img src={uri + item.logo_image} alt='icon' className='w-[60px] h-[60px] mb-4 m-auto'/>
                               <p className='text-[22px] font-semibold mb-3'>{item.title_ky}</p>
@@ -32,7 +34,9 @@ const Volunter = () => {
                               <div
                                   className="font-normal text-base max-w-[422px] leading-5 text-grey">{item.desc_ky}</div>
                           </div>
-                          <img src={uri + item.corresponding_image} alt='volunter' className='w-[50%]'/>
+                          <div className='w-[675px] h-[302px] overflow-hidden'>
+                          <img src={uri + item.corresponding_image} alt='volunter' className='w-[100%] h-auto'/>
+                          </div>
                       </div>
               ))
           }

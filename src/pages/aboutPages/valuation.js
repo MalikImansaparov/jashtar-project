@@ -31,14 +31,14 @@ const Valuation = () => {
         {response &&
           response.map((item) => (
             <div
-              className="flex w-[1236px] m-auto shadow-md rounded px-8 py-4 bg-white"
+              className="flex w-[1236px] m-auto shadow-xl rounded px-8 py-4 bg-white"
               key={item.id}
             >
               <div className="m-auto w-[231px]">
                 <img
                   src={uri + item.image}
                   alt="values"
-                  className=" h-[131px] w-[231px] rounded mb-[10px] shadow-enroll"
+                  className=" h-[131px] w-[231px] rounded mb-[10px] shadow-xl"
                 />
                 <p className="name">
                     {item.full_name_ky}

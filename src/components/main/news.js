@@ -48,9 +48,7 @@ export const News = () => {
       </div>
         <div className='block justify-center m-auto'>
       <Swiper
-          onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-          }}
+
         hashNavigation={{
           watchState: true,
         }}
@@ -58,7 +56,7 @@ export const News = () => {
         spaceBetween={50}
           loop={true}
           slidesPerView={3}
-          speed={800}
+          speed={400}
         navigation={{
           nextEl: '.swiper-next',
           prevEl: '.swiper-prev',

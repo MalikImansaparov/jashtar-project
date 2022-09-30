@@ -79,7 +79,8 @@ export const InternationOrganization = () => {
                     {response && response.map(i => (
                         <div key={i.id} className="flex flex-wrap items-center">
                             {i.intorganizationmemb.map( item => (
-                                <div className="flex flex-wrap items-center shadow-enroll py-[13px] px-[30px] my-[10px] rounded-[12px] mb-[23px] w-[1230px]">
+                                <div className="flex flex-wrap items-center shadow-enroll py-[10px] px-[30px] my-[5px] rounded-[12px] mb-[23px] w-[1230px] cursor-pointer hover:shadow-2xl"
+                                     onClick={() => window.open(item.url)}>
                                     <div className="flex justify-center shadow-org py-[13px] px-[10px] rounded-[12px]  mr-[32px] w-[120px] h-[70px]">
                                         <img src={uri + item.org_image} alt='organization' className='w-auto h-[100%]'/>
                                     </div>

@@ -37,15 +37,16 @@ export const Events = () => {
                 <Link to="/events" className="all-view">{t('all')}</Link>
             </div>
                 <Swiper
-                    {...settings}
-                    onSwiper={(swiper) => {
-                        swiperRef.current = swiper;
-                    }}
                     hashNavigation={{
                         watchState: true,
                     }}
-                    slidesPerView={3}
                     spaceBetween={50}
+                    loop={true}
+                    slidesPerView={3}
+                    speed={400}
+                    onSwiper={(swiper) => {
+                        swiperRef.current = swiper;
+                    }}
                     modules={[Pagination, Navigation]}
                     navigation={{
                         nextEl: '.button-next',

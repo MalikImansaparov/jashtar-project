@@ -16,7 +16,7 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
     document.body.style.overflow = "hidden";
     const id = localStorage.getItem('id')
 
-    const { isLoading, response } = useFetch(base + councilUrl + `/partner/${id}`);
+    const { isLoading, response } = useFetch(base + councilUrl + `/partner/${id}/`);
     const { res } = useFetches(base + aboutUrl + '/project/');
 
     const onClose = () => {

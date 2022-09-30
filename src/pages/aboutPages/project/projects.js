@@ -36,9 +36,9 @@ const Projects = () => {
             <div className='w-full flex flex-row flex-wrap'>
                 {response && response.map(item => (
                     <div key={item.id}>
-                        <div className="w-[192px] h-[218px] mb-8 cursor-pointer transition-all hover:scale-125 even: mx-[26px]" onClick={() => openModal(item.id)}
+                        <div className="w-[192px] h-[180px] mb-8 cursor-pointer shadow-lg transition-all hover:scale-125 even: mx-[26px]" onClick={() => openModal(item.id)}
                         >
-                            <div className="w-[100%] h-[100%] overflow-hidden flex justify-center">
+                            <div className="w-[100%] h-[100%] overflow-hidden flex justify-center mb-2">
                                 <img src={uri + item.proj_image} alt='img' className="h-auto h-[120px] w-[150px] self-center"/>
                             </div>
                             {i18n.language === "ky" &&

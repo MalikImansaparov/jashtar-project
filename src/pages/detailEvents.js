@@ -11,7 +11,7 @@ import {ClipLoader} from "react-spinners";
 const DetailEvents = () => {
     window.scroll(0,0)
     const {id} = useParams()
-    const { isLoading, response } = useFetch(base + eventsUrl + `/events/${id}`);
+    const { isLoading, response } = useFetch(base + eventsUrl + `/events/${id}/`);
     const {t, i18n} = useTranslation()
 
     const [crumbs] = useState([

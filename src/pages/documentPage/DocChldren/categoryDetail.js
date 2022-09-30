@@ -14,12 +14,14 @@ import DOMPurify from 'dompurify'
 
 const DocumentDetail = () => {
     const {id} = useParams()
-    const {isLoading, response} = useFetch(base + docsUrl + `/document/${id}`);
+    const {isLoading, response} = useFetch(base + docsUrl + `/document/${id}/`);
     const {t, i18n} = useTranslation()
+
     const [crumbs] = useState([
         t('documents'),
         '❯',
     ]);
+
 
     if (isLoading) {
         return (
@@ -101,7 +103,7 @@ const DocumentDetail = () => {
                                     <div className='w-[152px]'>
                                         <img src={doc} alt='pdf'/>
                                         <p className="text-[13px] font-normal mb-3">{response.doc.map(item => item.file_name)}</p>
-                                        <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item.file))}/>
+                                        <img src={download} alt='pdf' onClick={() => alert(response.doc.map(item => item))}/>
                                     </div>
                                 </div>
                             </>

@@ -17,10 +17,10 @@ const SecondLead = () => {
           {response &&
               response.filter(i => i.floor === 2 ).map( item => (
                   <div
-                      className="relative block shadow-sm w-[234px] h-[186px] bg-white rounded-2xl text-center shadow-2xl"
+                      className="relative block shadow-sm w-[234px] h-[196px] bg-white rounded-2xl text-center shadow-2xl"
                       key={item.id}
                   >
-                      <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px]">
+                      <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[13px]">
                       <img
                           src={uri + item.avatar_image}
                           alt="cart-img"

@@ -10,7 +10,7 @@ import {ClipLoader} from "react-spinners";
 
 const DetailNews = () => {
     const {id} = useParams()
-    const { isLoading, response } = useFetch(base + newsUrl + `/news/${id}`);
+    const { isLoading, response } = useFetch(base + newsUrl + `/news/${id}/`);
     window.scroll(0,0)
     const {t, i18n} = useTranslation()
 

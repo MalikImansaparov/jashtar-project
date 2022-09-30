@@ -17,7 +17,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
     const [ref] = useClickOutside(() => setOpenRegisterModal(false))
     document.body.style.overflow = "hidden";
     const id = localStorage.getItem('id')
-    const { isLoading, response } = useFetch(base + galeryUrl + `/photo/${id}`);
+    const { isLoading, response } = useFetch(base + galeryUrl + `/photo/${id}/`);
     const swiperRef = useRef();
     const {i18n} = useTranslation()
 

@@ -9,9 +9,9 @@ import {useTranslation} from "react-i18next";
 
 const CategoryList = () => {
     const {id} = useParams()
-    const {response} = useFetch(base + docsUrl + `/category/${id}`);
-    const {i18n ,t} = useTranslation()
-
+    const {response} = useFetch(base + docsUrl + `/category/${id}/`);
+    const {i18n ,t} = useTranslation();
+ console.log(response)
     return (
         <div className="flex">
             <DocSidebar/>

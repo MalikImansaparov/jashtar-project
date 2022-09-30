@@ -11,7 +11,7 @@ import {useTranslation} from "react-i18next";
 const InfoProject = ({openRegisterModal, setOpenRegisterModal }) => {
     const [ref] = useClickOutside(() => setOpenRegisterModal(true))
     const id = localStorage.getItem('project')
-    const { isLoading, response } = useFetch(base + aboutUrl + `/project/${id}`)
+    const { isLoading, response } = useFetch(base + aboutUrl + `/project/${id}/`)
     const {i18n} = useTranslation()
     document.body.style.overflow = "hidden";
 
@@ -38,7 +38,7 @@ const InfoProject = ({openRegisterModal, setOpenRegisterModal }) => {
                     {response &&
                         <div className="flex" key={response.id}>
                             <div className='w-[332px] h-[276px] rounded shadow-partner flex justify-center items-center mb-[10px] p-8 shadow-xl'>
-                                <div className="flex items-center w-[245px] h-[250px]">
+                                <div className="flex items-center w-[245px] h-[250px] m-auto">
                                 <img src={uri + response.proj_image} alt='img' className="h-auto w-[100%]"/>
                                 </div>
                             </div>

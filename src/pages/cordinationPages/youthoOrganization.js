@@ -5,6 +5,7 @@ import {base, councilUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
 import {createMarkup} from "../../components/general/dompurify";
 import {ClipLoader} from "react-spinners";
+import emblem from "../../assets/image/main/200px-Emblem_of_Kyrgyzstan 1.png"
 
 export const YoungOrganization = () => {
     const { isLoading, response } = useFetch(base + councilUrl + '/yorganization/');
@@ -78,9 +79,9 @@ export const YoungOrganization = () => {
                 {response && response.map(i => (
                     <div key={i.id} className="flex flex-wrap items-center">
                         {i.yorganizationmemb.map( item => (
-                            <div className="flex flex-wrap items-center shadow-enroll py-[13px] px-[30px] my-[10px] rounded-[12px] mb-[23px] w-[1230px]">
-                                <div className="flex justify-center shadow-org py-[13px] px-[10px] rounded-[12px]  mr-[32px] w-[120px] h-[70px]">
-                                    <img src={uri + item.avatar_image} alt='organization' className='w-auto h-[100%]'/>
+                            <div className="flex flex-wrap items-center shadow-enroll py-[10px] px-[30px] my-[5px] rounded-[12px] mb-[23px] w-[1230px]">
+                                <div className="flex justify-center shadow-org py-[13px] px-[10px] rounded-[12px] mr-[32px] w-[80px] h-[70px]">
+                                    <img src={emblem} alt='organization' className='w-62 h-62px'/>
                                 </div>
                                 {i18n.language === "ky" &&
                                     <p className="font-normal text-base w-[1000px]">{item.annotation_ky}</p>
