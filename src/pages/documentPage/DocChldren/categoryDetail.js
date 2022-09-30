@@ -76,12 +76,12 @@ const DocumentDetail = () => {
                                 <div className='flex'>
                                     <div className='w-[152px] cursor-pointer'>
                                         <img src={pdf} alt='pdf'/>
-                                        <p className="text-[13px] font-normal mb-3 ">{response.doc.map(item => item.file_name)}</p>
+                                        {/*<p className="text-[13px] font-normal mb-3 ">{response.doc.map(item => item.file_name)}</p>*/}
                                         <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item.file))}/>
                                     </div>
                                     <div className='w-[152px]'>
                                         <img src={doc} alt='pdf'/>
-                                        <p className="text-[13px] font-normal mb-3">{response.doc.map(item => item.file_name)}</p>
+                                        {/*<p className="text-[13px] font-normal mb-3">{response.doc.map(item => item.file_name)}</p>*/}
                                         <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item.file))}/>
                                     </div>
                                 </div>
@@ -98,9 +98,9 @@ const DocumentDetail = () => {
                                     <div className='w-[152px] cursor-pointer'>
                                         <img src={pdf} alt='pdf'/>
                                         <p className="text-[13px] font-normal mb-3 ">{response.doc.map(item => item.file_name)}</p>
-                                        <img src={download} alt='pdf' onClick={() => downloadFil(item.file)}/>
+                                        <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item))}/>
                                     </div>
-                                    <div className='w-[152px]'>
+                                    <div className='w-[152px] cursor-pointer'>
                                         <img src={doc} alt='pdf'/>
                                         <p className="text-[13px] font-normal mb-3">{response.doc.map(item => item.file_name)}</p>
                                         <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item))}/>
