@@ -10,7 +10,7 @@ import {ClipLoader} from "react-spinners";
 
 const InfoLeadership = () => {
     const {id} = useParams()
-    const { isLoading, response } = useFetch(base + aboutUrl + `/staff/${id}`);
+    const { isLoading, response } = useFetch(base + aboutUrl + `/staff/${id}/`);
     const {t, i18n} = useTranslation()
 
     const [crumbs] = useState([

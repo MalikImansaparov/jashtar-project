@@ -37,7 +37,7 @@ const PhotoPanel = () => {
                         <div className="cursor-pointer w-[100%] h-[269px] inline-block pointer-events-none overflow-hidden">
                             <img src={uri + item.gallery[0].image} alt="" className="h-[100%] w-[100%]" />
                         </div>
-                            <div className="h-[52px] w-full bg-[#3070B688] absolute bottom-0 left-0">
+                            <div className="h-[52px] w-full bg-[#3070B688] absolute bottom-1.5 left-0">
                     {i18n.language === 'ky' &&
                         <p className="p-4 font-semibold text-base text-white">{item.title_ky.length > 30 ? item.title_ky.split('').splice(0, 35) : item.title_ky}
                             </p>

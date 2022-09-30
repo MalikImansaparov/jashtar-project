@@ -70,7 +70,7 @@ export const News = () => {
           {response &&
             response.results.map((item) => (
               <SwiperSlide key={item.id}>
-                <Link to={`news/${item.id}`} className=" block max-w-[384px] mr-0 shadow-lg rounded bg-white pb-4 mb-4 leading-5 cursor-pointer hover:shadow-2xl ">
+                <Link to={`news/${item.id}`} className=" block w-[384px] mr-0 shadow-lg rounded bg-white pb-4 mb-4 leading-5 cursor-pointer hover:shadow-2xl ">
                     <div className="mb-3 h-[247px] w-[384px] overflow-hidden rounded-t">
                         <img
                             src={uri + item.preview_image}

@@ -58,7 +58,7 @@ export const Events = () => {
                         response.results.map((item) => (
                             <SwiperSlide key={item.id}>
                             <Link to={`events/${item.id}`}
-                                className="max-w-[384px] h-[419px] m-auto shadow-lg rounded bg-white pb-4 mb-4 leading-5 block hover:shadow-2xl"
+                                className="w-[384px] h-[419px] m-auto shadow-lg rounded bg-white pb-4 mb-4 leading-5 block hover:shadow-2xl"
                             >
                                 <div className="mb-3 h-[247px] w-[384px] overflow-hidden rounded-t">
                                     <img

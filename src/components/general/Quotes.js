@@ -31,23 +31,23 @@ const Quotes = () => {
             >
                 {response &&
                     response.map((item) => (
-                        <SwiperSlide key={item.id} className='flex '>
+                        <SwiperSlide key={item.id} className='flex items-center'>
                             <>
                                 { i18n.language === 'ky' &&
-                                    <div className=" mt-3.5 pt-1">
+                                    <div>
                                         <p className=" text-[11px] text-center w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_ky}</p>
-                                        <div className="text-[10px] text-right font-normal mt-[10px] text-grey">{item.annotation_ky}</div>
+                                        <div className="text-[10px] text-right w-[284px] font-normal mt-[10px] text-grey mr-2">{item.annotation_ky}</div>
                                     </div>}
-                                {/*{ i18n.language === 'ru' &&*/}
-                                {/*    <div className=" mt-3.5 pt-1">*/}
-                                {/*        <p className="text-[11px] w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_ru}</p>*/}
-                                {/*        <div className="text-[10px] text-right font-normal mt-[10px] text-grey">{item.annotation_ru}</div>*/}
-                                {/*    </div>}*/}
-                                {/*{ i18n.language === 'en' &&*/}
-                                {/*    <div className=" mt-3.5 pt-1">*/}
-                                {/*        <p className=" text-[11px] w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_en}</p>*/}
-                                {/*        <div className="text-[10px] text-right font-normal mt-[10px] text-grey">{item.annotation_en}</div>*/}
-                                {/*    </div>}*/}
+                                { i18n.language === 'ru' &&
+                                    <div>
+                                        <p className="text-[11px] w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_ru}</p>
+                                        <div className="text-[10px] text-right font-normal mt-[10px] text-grey mr-2">{item.annotation_ru}</div>
+                                    </div>}
+                                { i18n.language === 'en' &&
+                                    <div>
+                                        <p className=" text-[11px] w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_en}</p>
+                                        <div className="text-[10px] text-right font-normal mt-[10px] text-grey mr-2">{item.annotation_en}</div>
+                                    </div>}
                                 <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px] ">
                                     <img
                                         src={uri + item.avatar_image}
@@ -55,6 +55,7 @@ const Quotes = () => {
                                         className=" h-auto w-[100%]"
                                     />
                                 </div>
+
                                 </>
                         </SwiperSlide>
                     ))}

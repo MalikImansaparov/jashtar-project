@@ -60,15 +60,15 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                             modules={[Pagination, Navigation]}
                                         >
                                         {response.gallery.map(i => (
-                                            <SwiperSlide key={i.id} >
-                                                <div className="h-[555px] w-[100%] overflow-hidden">
-                                                    <img src={uri + i.image} alt='img' className="w-[100%] h-[100%]" />
+                                            <SwiperSlide key={i.id}>
+                                                <div className="w-full h-[600px] overflow-hidden ">
+                                                    <img src={uri + i.image} alt='img' className="w-[100%] h-auto " />
                                                 </div>
                                             </SwiperSlide>
                                         ))}
                                         </Swiper>
                                         { response.gallery.length > 1 &&
-                                        <div className="flex justify-center mt-8 mb-3">
+                                        <div className="flex justify-center mt-8 ">
                                             <div
                                                 className="info-prev"
                                                 onClick={() => swiperRef.current.slidePrev()}
@@ -80,7 +80,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                         </div>}
                                         { i18n.language === "ky" &&
                                         <>
-                                        <div className='block text-base text-blue font-medium mb-2'>{response.title_ky}</div>
+                                        <div className='block text-base text-blue font-medium mb-2 mt-4'>{response.title_ky}</div>
                                         <div className="flex items-center mb-[26px]">
                                             <p className="font-normal text-base">
                                                 <Sanitized html={response.desc_ky}/></p>
@@ -88,7 +88,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                         </>}
                                         { i18n.language === "ru" &&
                                             <>
-                                                <div className='block text-base text-blue font-medium mb-2'>{response.title_ru}</div>
+                                                <div className='block text-base text-blue font-medium mb-2 mt-4'>{response.title_ru}</div>
                                                 <div className="flex items-center mb-[26px]">
                                                     <p className="font-normal text-base">
                                                         <Sanitized html={response.desc_ru}/></p>
@@ -96,10 +96,11 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                             </>}
                                         { i18n.language === "en" &&
                                             <>
-                                                <div className='block text-base text-blue font-medium mb-2'>{response.title_en}</div>
+                                                <div className='block text-base text-blue font-medium mb-2 mt-4'>{response.title_en}</div>
                                                 <div className="flex items-center mb-[26px]">
                                                     <p className="font-normal text-base">
-                                                        <Sanitized html={response.desc_en}/></p>
+                                                        <Sanitized html={response.desc_en}/>
+                                                    </p>
                                                 </div>
                                             </>}
                                         <p className="font-medium text-sm text-grey">{response.date}</p>
