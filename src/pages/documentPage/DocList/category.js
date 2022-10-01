@@ -25,15 +25,24 @@ const CategoryList = () => {
 
                             {i18n.language === "ky" &&
                                 <NavLink to={`/document/${item.id}`}
-                                         className='flex ml-[11px] font-medium text-base text-blue'><img src={arrow} alt='arrow' className='w-[5px] h-[10px] self-center mr-3'/>{item.title_ky}</NavLink>
+                                         className='flex ml-[11px] font-medium text-base text-blue'>
+                                    <img src={arrow} alt='arrow' className='w-[5px] h-[10px] self-start mr-3 mt-2'/>
+                                    {item.title_ky}
+                                </NavLink>
                             }
                             {i18n.language === "ru" &&
                                 <NavLink to={`/document/${item.id}`}
-                                         className='ml-[11px] font-medium text-base text-blue'>{item.title_ru}</NavLink>
+                                         className='ml-[11px] font-medium text-base text-blue'>
+                                    <img src={arrow} alt='arrow' className='w-[5px] h-[10px] self-start mr-3 mt-2'/>
+                                    {item.title_ru}
+                                </NavLink>
                             }
                             {i18n.language === "en" &&
                                 <NavLink to={`/document/${item.id}`}
-                                         className='ml-[11px] font-medium text-base text-blue'>{item.title_en}</NavLink>
+                                         className='ml-[11px] font-medium text-base text-blue'>
+                                    <img src={arrow} alt='arrow' className='w-[5px] h-[10px] self-start mr-3 mt-2'/>
+                                    {item.title_en}
+                                </NavLink>
                             }
                         </div>
                     ))}

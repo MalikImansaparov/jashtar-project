@@ -8,7 +8,6 @@ import {BreadCrumbs} from "../../../components/modules/breadcrumbs";
 import {useTranslation} from "react-i18next";
 import {useParams} from "react-router-dom";
 import {downloadFile, openPDFFile} from "../../../components/modules/downloadFile";
-import SanitizedHTML from "react-sanitized-html";
 import {ClipLoader} from "react-spinners";
 import DOMPurify from 'dompurify'
 
@@ -52,16 +51,17 @@ const DocumentDetail = () => {
                          <div dangerouslySetInnerHTML={createMarkup(response.body_ky)}></div>
                         </div>
                         <p className="text-base font-medium text-blue mb-[28px]">{t('download')}</p>
+                        <div className="w-[400px]">
+                            <p className="text-[13px] font-normal mb-3 ">{response.doc.map(item => item.file_name)}</p>
+                        </div>
                         <div className='flex'>
-                            <div className='w-[152px] cursor-pointer'>
-                                <img src={pdf} alt='pdf'/>
-                                <p className="text-[13px] font-normal mb-3 ">{response.doc.map(item => item.file_name)}</p>
-                                <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item.file))}/>
-                            </div>
-                            <div className='w-[152px]'>
+                            {/*<div className='w-[152px] cursor-pointer'>*/}
+                            {/*    <img src={pdf} alt='pdf'/>*/}
+                            {/*    <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item.file))}/>*/}
+                            {/*</div>*/}
+                            <div className='w-[152px] cursor-pointer' onClick={() => downloadFile(response.doc.map(item => item.file))}>
                                 <img src={doc} alt='pdf'/>
-                                <p className="text-[13px] font-normal mb-3">{response.doc.map(item => item.file_name)}</p>
-                                <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item.file))}/>
+                                <img src={download} alt='pdf' className="ml-3"/>
                             </div>
                         </div>
                     </>
@@ -96,15 +96,14 @@ const DocumentDetail = () => {
                                 <p className="text-base font-medium text-blue mb-[28px]">{t('download')}</p>
                                 <div className='flex'>
                                     <div className='w-[152px] cursor-pointer'>
-                                        <img src={pdf} alt='pdf'/>
-                                        <p className="text-[13px] font-normal mb-3 ">{response.doc.map(item => item.file_name)}</p>
+                                        <img src={pdf} alt='pdf' mb-3/>
                                         <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item))}/>
                                     </div>
                                     <div className='w-[152px] cursor-pointer'>
                                         <img src={doc} alt='pdf'/>
-                                        <p className="text-[13px] font-normal mb-3">{response.doc.map(item => item.file_name)}</p>
                                         <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item))}/>
                                     </div>
+                                    <div className="text-[13px] font-normal ml-6">{response.doc.map(item => item.file_name)}</div>
                                 </div>
                             </>
                         }

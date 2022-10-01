@@ -49,5 +49,6 @@
   "address": "Address: ",
   "phone": "Phone: ",
   "date": "Date: ",
-  "location": "Location: "
+  "location": "Location: ",
+  "share": "Share a post"
 }

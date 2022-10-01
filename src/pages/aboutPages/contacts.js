@@ -33,7 +33,7 @@ export const Contacts = () => {
         <>
             {response && response.map(item => (
         <div className="w-full h-[655px]  mb-[62px] relative" style={bgImageStyle} key={item.id}>
-            <div className='h-[232px] w-[60%] absolute top-[170px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar z-10'></div>
+            <div className='h-[232px] w-[70%] absolute top-[170px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar z-0'></div>
         <div className='wrapper'>
             <div className="container w-[1196px] m-auto">
                 <BreadCrumb/>

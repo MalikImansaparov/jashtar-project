@@ -17,7 +17,7 @@ const Quotes = () => {
                     watchState: true,
                 }}
                 autoplay={{
-                    delay: 3500,
+                    delay: 6000,
                     disableOnInteraction: false,
                 }}
                 onSwiper={(swiper) => {
@@ -35,8 +35,8 @@ const Quotes = () => {
                             <>
                                 { i18n.language === 'ky' &&
                                     <div>
-                                        <p className=" text-[11px] text-center w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_ky}</p>
-                                        <div className="text-[10px] text-right w-[284px] font-normal mt-[10px] text-grey mr-2">{item.annotation_ky}</div>
+                                        <p className=" text-[12px] text-center w-[284px] font-medium flex-wrap text-blue leading-[11px]">{item.quote_ky}</p>
+                                        <div className="text-[11px] text-right w-[284px] font-normal mt-[10px] text-grey mr-2">{item.annotation_ky}</div>
                                     </div>}
                                 { i18n.language === 'ru' &&
                                     <div>

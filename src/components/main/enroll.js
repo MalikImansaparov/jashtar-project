@@ -11,9 +11,6 @@ import {Sanitized} from "../general/sanitize";
 import dots from '../../assets/image/main/Ellipse 1.png';
 import {Link} from "react-router-dom";
 import pattern from '../../assets/image/main/Looper-1.png';
-
-
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -45,15 +42,15 @@ export const Enroll = () => {
     }
 
     return (
-        <div className="bg-gradient-enroll w-screen h-[216px] relative">
-            <img src={pattern} alt="" className="absolute top-0 left-[25px] " />
+        <div className="bg-gradient-enroll w-screen h-[216px] m-auto justify-center relative max-w-[1440px]">
+            <img src={pattern} alt="" className="absolute top-0 left-[25px]" />
             <div className="max-w-[1032px] m-auto flex bg-enroll shadow-enroll rounded pl-[42px] absolute top-[-24px] left-[12%]">
             <Swiper
                 hashNavigation={{
                     watchState: true,
                 }}
                 autoplay={{
-                    delay: 3500,
+                    delay: 6000,
                     disableOnInteraction: false,
                 }}
                 onSwiper={(swiper) => {

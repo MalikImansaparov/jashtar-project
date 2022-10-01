@@ -4,7 +4,6 @@ import arrow from "../../assets/image/general/arr.svg"
 import arrow2  from "../../assets/image/general/arr2.svg"
 import {useTranslation} from "react-i18next";
 
-
 export const BreadCrumb = () => {
     const location = useLocation();
     const id = useParams()

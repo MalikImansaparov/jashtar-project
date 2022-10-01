@@ -1,15 +1,22 @@
-import React from 'react';
+import {React, useState} from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
 import {useFetch} from "../../api/useFetch";
 import {base, councilUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
-import DOMPurify from "dompurify";
 import {ClipLoader} from "react-spinners";
 import {createMarkup} from "../../components/general/dompurify";
+import InfoProject from "../aboutPages/project/infoProject";
+import InfoInternationalMember from "./infoInternationalMember";
 
 export const InternationOrganization = () => {
+    const [openRegisterModal, setOpenRegisterModal] = useState(false);
     const { isLoading, response } = useFetch(base + councilUrl + '/intorganization/');
     const {t, i18n} = useTranslation()
+
+    const openModal = (id) => {
+        setOpenRegisterModal(true)
+        localStorage.setItem('international', id)
+    }
 
     if (isLoading) {
         return (
@@ -80,7 +87,7 @@ export const InternationOrganization = () => {
                         <div key={i.id} className="flex flex-wrap items-center">
                             {i.intorganizationmemb.map( item => (
                                 <div className="flex flex-wrap items-center shadow-enroll py-[10px] px-[30px] my-[5px] rounded-[12px] mb-[23px] w-[1230px] cursor-pointer hover:shadow-2xl"
-                                     onClick={() => window.open(item.url)}>
+                                     onClick={() => openModal(item.id)}>
                                     <div className="flex justify-center shadow-org py-[13px] px-[10px] rounded-[12px]  mr-[32px] w-[120px] h-[70px]">
                                         <img src={uri + item.org_image} alt='organization' className='w-auto h-[100%]'/>
                                     </div>
@@ -97,6 +104,12 @@ export const InternationOrganization = () => {
                             ))}
                         </div>
                     ))}
+                    {openRegisterModal && openRegisterModal && (
+                        <InfoInternationalMember
+                            openRegisterModal={openRegisterModal}
+                            setOpenRegisterModal={() => setOpenRegisterModal(false)}
+                        />
+                    )}
                 </div>
             </div>
         </div>

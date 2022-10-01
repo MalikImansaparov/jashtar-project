@@ -8,7 +8,7 @@ import Partners from "../components/main/partners";
 
 const MainPage = () => {
     return (
-        <>
+        <div className="m-auto">
             <Banner/>
             <News/>
             <Enroll/>
@@ -16,7 +16,7 @@ const MainPage = () => {
             <Volunter/>
             <Partners/>
 
-        </>
+        </div>
     );
 };
 

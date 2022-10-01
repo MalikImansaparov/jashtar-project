@@ -5,6 +5,7 @@ import {aboutUrl, base, uri} from "../../api/const";
 import {createMarkup} from "../../components/general/dompurify";
 import {useTranslation} from "react-i18next";
 import {ClipLoader} from "react-spinners";
+import ShareSocial from "../../components/general/share-social";
 
 export const JashtarProject = () => {
   const { isLoading, response } = useFetch(base + aboutUrl + '/youthpolicy/');
@@ -42,6 +43,7 @@ export const JashtarProject = () => {
             </div>
           ))}
       </div>
+
     </div>
   );
 };

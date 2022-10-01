@@ -49,7 +49,7 @@ const Menu = () => {
                                      className="text-white text-[14px] font-semibold">
                                 <span className="text-sm font-normal">{t("gallery")}</span>
                             </NavLink>
-                            <div onClick={() => window.open("https://jashtar.prosoft.kg/ymap/", "_blank")} className="w-[91px] h-[34px] bg-orange rounded font-normal text-white text-[14px] py-1.5 px-[22px] cursor-pointer">Y-Map
+                            <div onClick={() => window.open("https://jashtar.info/ymap/", "_blank")} className="w-[91px] h-[34px] bg-orange rounded font-normal text-white text-[14px] py-1.5 px-[22px] cursor-pointer">Y-Map
                             </div>
                             <Language/>
                             <img src={search} alt="search" className='w-[20px] h-[20px] cursor-pointer'

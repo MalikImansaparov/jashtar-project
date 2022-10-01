@@ -7,7 +7,7 @@ const MODAL_STYLES = {
     left: "50%",
     bottom: "500px",
     transform: "translate(-50%, -50%)",
-    height: "550px",
+    height: "auto",
     background: "#fff",
     overflow: "auto",
     borderRadius: "4px",

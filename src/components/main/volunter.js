@@ -8,7 +8,7 @@ const Volunter = () => {
     const { t, i18n } = useTranslation();
 
     return (
-      <div className="mt-[62px]">
+      <div className="mt-[62px] m-auto max-w-[1348px]">
           {i18n.language === 'ky' && response &&
                response.map(item => (
                   item.id % 2 ?

@@ -22,7 +22,7 @@ const SecondLead = () => {
                   >
                       <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[13px]">
                       <img
-                          src={uri + item.avatar_image}
+                          src={uri + item.cropped_image}
                           alt="cart-img"
                           className=" h-auto w-[100%] "
                       />

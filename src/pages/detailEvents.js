@@ -7,6 +7,7 @@ import {aboutUrl, base, eventsUrl, uri} from "../api/const";
 import {useTranslation} from "react-i18next";
 import {Sanitized} from "../components/general/sanitize";
 import {ClipLoader} from "react-spinners";
+import ShareSocial from "../components/general/share-social";
 
 const DetailEvents = () => {
     window.scroll(0,0)
@@ -33,7 +34,7 @@ const DetailEvents = () => {
     }
 
     return (
-        <div className="w-full relative mb-[63px]">
+        <div className="wrapper w-full relative h-auto">
             <div className='h-[232px] w-[39.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
                 {response && <>
                 {i18n.language === "ky" &&
@@ -41,15 +42,15 @@ const DetailEvents = () => {
                 <div className="container mb-8 mt-16">
                         <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
                 </div>
-                <div className='flex mb-8 w-full'>
-                    <div className="h-[287px] w-[432px] mr-[62px] z-10 shadow-2xl overflow-hidden">
+                <div className='mb-8'>
+                    <div className="h-[287px] w-[432px] mb-2 mr-[62px] z-10 shadow-2xl overflow-hidden float-left">
                         <img
                             src={uri + response.preview_image}
                             alt="cart-img"
-                            className="h-auto w-[100%] rounded-t"
+                            className="h-auto w-[100%] relative z-10"
                         />
                     </div>
-                <div className="w-[742px] mb-[62px] text-sm font-medium">
+                <div className="mb-[62px] text-sm font-medium">
                     <p className="mb-6 font-semibold text-[18px]">{response.title_ky}</p>
                     <Sanitized html={response.desc_ky}/>
                     <p className="text-grey mt-8 flex">
@@ -105,6 +106,10 @@ const DetailEvents = () => {
                                 </div>
                             </div>
                         </div>}
+                    <div className="block ">
+                    <p className="mb-2">{t("share")}</p>
+                    <ShareSocial/>
+                    </div>
             </>}
         </div>
     );
