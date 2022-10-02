@@ -29,7 +29,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
     return (
         <div>
             <Modal open={openRegisterModal}>
-                <div className='w-[1236px] bg-white rounded-[12px] px-8 shadow-org'>
+                <div className='w-[1236px] bg-white rounded-[12px] px-8'>
                     { isLoading &&
                         <div role="status" className='flex justify-center my-28 pb-24'>
                             <ClipLoader
@@ -61,8 +61,8 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                         >
                                         {response.gallery.map(i => (
                                             <SwiperSlide key={i.id}>
-                                                <div className="w-full h-[600px] overflow-hidden ">
-                                                    <img src={uri + i.image} alt='img' className="w-[100%] h-auto " />
+                                                <div className="w-full h-[600px] overflow-hidden shadow-2xl">
+                                                    <img src={uri + i.image} alt='img' className="w-[100%] h-auto shadow-2xl" />
                                                 </div>
                                             </SwiperSlide>
                                         ))}

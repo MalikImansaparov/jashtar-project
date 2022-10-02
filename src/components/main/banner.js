@@ -48,9 +48,8 @@ const Banner = () => {
                     delay: 6000,
                     disableOnInteraction: false,
                 }}
-                onSwiper={(swiper) => {
-                    swiperRef.current = swiper;
-                }}
+                grabCursor={true}
+                spaceBetween={10}
                 loop={true}
                 slidesPerView={1}
                 speed={800}
@@ -59,7 +58,6 @@ const Banner = () => {
                     prevEl: '.banner-prev',
                 }}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
             >
                 {response &&
                     response.map((item) => (

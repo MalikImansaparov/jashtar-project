@@ -74,7 +74,7 @@ const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                                         <Sanitized html={response.desc_en}/></p>
                                                 </div>
                                             </> }
-                                        <p className="font-medium text-sm text-grey">{response.date}</p>
+                                        <p className="font-medium text-sm text-grey">{response.date.split('-').reverse().join('-')}</p>
                                     </div>
                            }
                 </div>

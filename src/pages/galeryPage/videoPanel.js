@@ -33,9 +33,6 @@ const VideoPanel = () => {
         getData()
     },[limit])
 
-
-
-
     const fetchComments = async (count) => {
         const res = await fetch(
             `https://jashtar.prosoft.kg/ce387d5e0a2972dea9e5129a52ac3b8d58a4d180fc9eece5946d926643a3d2c0/video/?page=${count}`
@@ -74,7 +71,7 @@ const VideoPanel = () => {
                    <p className='text-[18px] font-normal'>{item.title_ky}</p>
                     <div className="flex items-center mt-2">
                         <img src={point} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                        <span>{t('date')}</span><span className='text-black '>&nbsp;{item.date}</span>
+                        <span>{t('date')}</span><span className='text-black '>&nbsp;{item.date.split('-').reverse().join('-')}</span>
                     </div>
                     </div>
                 </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import {RenderArrow} from "../../utils/arrow";
 import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, lead, uri} from "../../api/const";
-import path from "../../assets/image/partners/Ellipse 2.png"
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 

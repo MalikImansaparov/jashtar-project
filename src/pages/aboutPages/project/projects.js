@@ -30,10 +30,10 @@ const Projects = () => {
 
     return (
         <div className='wrapper w-full h-[100vh] pb-40 '>
-            <div className="container w-[1196px]">
+            <div className="container w-[1196px] mb-0">
                 <BreadCrumb/>
             </div>
-            <div className='w-full flex flex-row flex-wrap'>
+            <div className='w-full flex flex-row flex-wrap items-start'>
                 {response && response.map(item => (
                     <div key={item.id}>
                         <div className="w-[192px] h-[180px] mb-8 cursor-pointer shadow-lg transition-all hover:scale-125 even: mx-[26px]" onClick={() => openModal(item.id)}

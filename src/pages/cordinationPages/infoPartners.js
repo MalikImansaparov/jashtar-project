@@ -41,8 +41,8 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                             <img src={close} alt="close icon" onClick={onClose}/>
                         </div>
                         {response &&
+                            <div>
                         <div className="flex" key={response.id}>
-
                             <div className='w-[332px] h-[276px] rounded shadow-partner flex justify-center items-center mb-[10px]'>
                                 <img src={uri + response.org_image} alt='img' className="w-[245px]"/>
                             </div>
@@ -74,7 +74,10 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                                     </p>
                                 </div>}
                         </div>
+                                <p className="bt-4 text-blue text-right cursor-pointer" onClick={() => window.open(response.url)}>{t('url')}</p>
+                            </div>
                             }
+
                         <div className="mt-[62px]">
                             <div className='block text-base font-semibold mb-[36px]'>{t("listProject")}</div>
                             <div className="flex items-center mb-[62px] flex-wrap">

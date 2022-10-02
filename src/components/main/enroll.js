@@ -57,8 +57,10 @@ export const Enroll = () => {
                     swiperRef.current = swiper;
                 }}
                 loop={true}
+                spaceBetween={10}
                 slidesPerView={1}
                 speed={800}
+                grabCursor={true}
                 navigation={{
                     nextEl: '.banner-next',
                     prevEl: '.banner-prev',

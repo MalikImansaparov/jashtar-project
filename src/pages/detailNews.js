@@ -8,6 +8,7 @@ import {useTranslation} from "react-i18next";
 import {Sanitized} from "../components/general/sanitize";
 import {ClipLoader} from "react-spinners";
 import ShareSocial from "../components/general/share-social";
+import {ImagesSlider} from "../components/general/photoSlider";
 
 const DetailNews = () => {
     const {id} = useParams()
@@ -35,7 +36,7 @@ const DetailNews = () => {
 
     return (
         <div className="wrapper w-full relative mb-[63px]">
-            <div className='h-[232px] w-[39.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
+            <div className='h-[212px] w-[47%] absolute top-[170px] left-[-100px] rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
             {response && <>
             {i18n.language === "ky" &&
                 <div className="wrapper">
@@ -43,12 +44,8 @@ const DetailNews = () => {
                     <BreadCrumbs crumbs={crumbs} title={response.title_ky}/>
             </div>
             <div className='mb-8'>
-                <div className="h-[287px] w-[432px] mr-[62px] mb-2 z-10 shadow-2xl overflow-hidden float-left ">
-                    <img
-                        src={uri + response.preview_image}
-                        alt="cart-img"
-                        className="h-auto w-[100%] relative z-10"
-                    />
+                <div className="w-[432px] h-auto mr-[62px] mb-2  float-left">
+                    <ImagesSlider images={response.news_slider}/>
                 </div>
                     <p className="mb-4 font-semibold text-[20px]">{response.title_ky}</p>
                     <Sanitized html={response.desc_ky}/>
@@ -59,18 +56,12 @@ const DetailNews = () => {
                         <div className="container mb-8 mt-16">
                             <BreadCrumbs crumbs={crumbs} title={response.title_ru}/>
                         </div>
-                        <div className='flex mb-8 w-full'>
-                            <div className="h-[287px] w-[432px] mr-[62px] z-10 shadow-enroll overflow-hidden">
-                                <img
-                                    src={uri + response.preview_image}
-                                    alt="cart-img"
-                                    className="h-auto w-[100%] rounded-t"
-                                />
+                        <div className='mb-8'>
+                            <div className="w-[432px] mr-[62px] mb-2 z-10 overflow-hidden float-left">
+                                <ImagesSlider images={response.news_slider}/>
                             </div>
-                            <div className="w-[892px]">
                                 <p className="mb-8 font-semibold text-[20px]">{response.title_ru}</p>
                                 <Sanitized html={response.desc_ru}/>
-                            </div>
                         </div>
                     </div>}
             </>}
@@ -79,12 +70,12 @@ const DetailNews = () => {
                     <div className="container mb-8 mt-16">
                         <BreadCrumbs crumbs={crumbs} title={response.title_en}/>
                     </div>
-                    <div className='flex mb-8 w-full'>
-                        <img src={uri + response.preview_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
-                        <div className="w-[742px]">
+                    <div className='mb-8'>
+                        <div className="w-[432px] mr-[62px] mb-2 z-10 overflow-hidden float-left">
+                            <ImagesSlider images={response.news_slider}/>
+                        </div>
                             <p className="mb-8 font-semibold text-[20px]">{response.title_en}</p>
                             <Sanitized html={response.desc_en}/>
-                        </div>
                     </div>
                 </div>}
             <div className="block mb-8">

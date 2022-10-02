@@ -34,11 +34,11 @@ const Valuation = () => {
               className="flex w-[1236px] m-auto shadow-xl rounded px-8 py-4 bg-white"
               key={item.id}
             >
-              <div className="m-auto w-[231px]">
+              <div className="m-auto w-[231px] h-[131px] overflow-hidden">
                 <img
                   src={uri + item.image}
                   alt="values"
-                  className=" h-[131px] w-[231px] rounded mb-[10px] shadow-xl"
+                  className=" h-auto w-[100%] rounded mb-[10px] shadow-xl"
                 />
                 <p className="name">
                     {item.full_name_ky}
