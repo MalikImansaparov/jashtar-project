@@ -38,7 +38,7 @@ const Valuation = () => {
                 <img
                   src={uri + item.image}
                   alt="values"
-                  className=" h-auto w-[100%] rounded mb-[10px] shadow-xl"
+                  className=" h-auto w-[100%] mb-[10px] shadow-xl"
                 />
                 <p className="name">
                     {item.full_name_ky}

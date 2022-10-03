@@ -51,7 +51,7 @@ const DetailEvents = () => {
                     <Sanitized html={response.desc_ky}/>
                     <p className="text-grey mt-8 flex">
                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                        <span>{t('date')}</span><span className='text-black '>&nbsp;{response.event_date}</span>
+                        <span>{t('date')}</span><span className='text-black '>&nbsp;{response.event_date.split('-').reverse().join('-')}</span>
                     </p>
                     <p className="text-grey flex">
                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
@@ -72,7 +72,7 @@ const DetailEvents = () => {
                                 <Sanitized html={response.desc_ky}/>
                                 <p className="text-grey mt-8 flex">
                                     <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                    <span>{t('date')}</span><span className='text-black '>&nbsp;{response.event_date}</span>
+                                    <span>{t('date')}</span><span className='text-black '>&nbsp;{response.event_date.split('-').reverse().join('-')}</span>
                                 </p>
                                 <p className="text-grey flex">
                                     <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
@@ -93,7 +93,7 @@ const DetailEvents = () => {
                                 <Sanitized html={response.desc_ky}/>
                                 <p className="text-grey mt-8 flex">
                                     <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                    <span>{t('date')}</span><span className='text-black '>&nbsp;{response.event_date}</span>
+                                    <span>{t('date')}</span><span className='text-black '>&nbsp;{response.event_date.split('-').reverse().join('-')}</span>
                                 </p>
                                 <p className="text-grey flex">
                                     <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>

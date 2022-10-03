@@ -43,28 +43,28 @@ const TimeLine = () => {
                     </TabList>
                                     {response && response.map(item => (
                                         <TabPanel key={item.id}>
-                                            <div className='w-[867px] mx-[2px]'>
-                                            <div className="flex flex-wrap justify-around">
+                                            <div className='w-[900px] mx-[2px]'>
+                                            <div className="flex flex-wrap justify-around ">
                                         {item.chrono.map( item => (
                                             <div className="flex w-[370px] mb-4 shadow-sm p-3 rounded-[12px]" key={item.id}>
                                                 <div className="h-[62px] w-[62px] overflow-hidden z-10 rounded-[50%] my-[14px] mr-4">
                                                     <img
                                                         src={uri + item.avatar_image}
                                                         alt="cart-img"
-                                                        className=" h-auto w-[100%] "
+                                                        className="h-auto w-[100%]"
                                                     />
                                                 </div>
                                                 {i18n.language === "ky" &&
-                                                    <div className="w-[275px] m-auto ">
+                                                    <div className="w-[275px] m-auto">
                                                         <p className="text-[12px] mb-1 fo t-normal text-blue">
                                                             {item.full_name_ky}
                                                         </p>
-                                                        <p className="text-[11px] font-light">
+                                                        <p className="text-[11px] font-light text-justify">
                                                             {item.annotation_ky}
                                                         </p>
                                                     </div> }
                                                 {i18n.language === "ru" &&
-                                                    <div className="w-[275px] m-auto ">
+                                                    <div className="w-[275px] m-auto text-justify">
                                                         <p className="text-[12px] mb-1 fo t-normal text-blue">
                                                             {item.full_name_ru}
                                                         </p>
@@ -73,11 +73,11 @@ const TimeLine = () => {
                                                         </p>
                                                     </div> }
                                                 {i18n.language === "en" &&
-                                                    <div className="w-[275px] m-auto ">
+                                                    <div className="w-[275px] m-auto text-justify">
                                                         <p className="text-[12px] mb-1 fo t-normal text-blue">
                                                             {item.full_name_en}
                                                         </p>
-                                                        <p className="text-[11px] font-light">
+                                                        <p className="text-[11px] font-light ">
                                                             {item.annotation_en}
                                                         </p>
                                                     </div> }

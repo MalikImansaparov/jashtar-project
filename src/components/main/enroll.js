@@ -72,7 +72,7 @@ export const Enroll = () => {
                     response.map((item) => (
                         <SwiperSlide key={item.id}>
                             <div className="h-[100%] w-[100%] flex justify-between">
-                                <div className="mt-[35px] max-w-[815px]">
+                                <div className="mt-[35px] max-w-[815px] m-auto">
                                     <div className="w-[561px]">
                                         {i18n.language === 'ky' && (
                                             <>
@@ -156,11 +156,11 @@ export const Enroll = () => {
                     ))}
             </Swiper>
                 <div
-                    className="prev absolute top-[129px] left-[-140px]"
+                    className="prev absolute top-[129px] left-[-60px]"
                     onClick={() => swiperRef.current.slidePrev()}
                 ></div>
                 <div
-                    className="next absolute top-[129px] right-[-135px]"
+                    className="next absolute top-[129px] right-[-60px]"
                     onClick={() => swiperRef.current.slideNext()}
                 ></div>
         </div>

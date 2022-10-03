@@ -86,13 +86,13 @@ export const InternationOrganization = () => {
                     {response && response.map(i => (
                         <div key={i.id} className="flex flex-wrap items-center">
                             {i.intorganizationmemb.map( item => (
-                                <div className="flex flex-wrap items-center shadow-enroll py-[10px] px-[30px] my-[5px] rounded-[12px] mb-[23px] w-[1230px] cursor-pointer hover:shadow-2xl"
+                                <div className="flex items-center shadow-enroll py-[10px] px-[30px] my-[5px] rounded-[12px] mb-[23px] w-[1230px] cursor-pointer hover:shadow-2xl"
                                      onClick={() => openModal(item.id)}>
-                                    <div className="flex justify-center shadow-org py-[13px] px-[10px] rounded-[12px]  mr-[32px] w-[120px] h-[70px]">
-                                        <img src={uri + item.org_image} alt='organization' className='w-auto h-[100%]'/>
+                                    <div className="flex justify-center py-[13px] pr-[10px] mr-[12px] w-auto h-[80px]">
+                                        <img src={uri + item.org_image} alt='organization' className='w-auto h-auto'/>
                                     </div>
                                     {i18n.language === "ky" &&
-                                        <p className="font-normal text-base w-[1000px]">{item.annotation_ky}</p>
+                                        <span className="font-normal text-base">{item.annotation_ky}</span>
                                     }
                                     {i18n.language === "ru" &&
                                         <p className="font-normal text-base w-[1000px]">{item.annotation_ru}</p>

@@ -12,8 +12,8 @@ const Volunter = () => {
           {i18n.language === 'ky' && response &&
                response.map(item => (
                   item.id % 2 ?
-                      <div className=" flex w-full h-[283px] justify-center  bg-white shadow-lg" key={item.id}>
-                          <div className='w-[675px] h-[283px] overflow-hidden'>
+                      <div className=" flex w-full h-[283px] justify-center  bg-white " key={item.id}>
+                          <div className='w-[674px] h-[283px] overflow-hidden'>
                               <img src={uri + item.corresponding_image} alt='volunter' className='w-[100%] h-auto'/>
                           </div>
                           <div className="m-auto text-center bg-gradient-volunter">
@@ -27,14 +27,14 @@ const Volunter = () => {
                           </div>
                       </div>
                       :
-                      <div className=" flex w-full h-[283px] justify-center  bg-white shadow-lg" key={item.id}>
+                      <div className=" flex w-full h-[283px] justify-center  bg-white " key={item.id}>
                           <div className="m-auto text-center bg-gradient-volunter">
                               <img src={uri + item.logo_image} alt='icon' className='w-[60px] h-[60px] mb-4 m-auto'/>
                               <p className='text-[22px] font-semibold mb-3'>{item.title_ky}</p>
                               <div
                                   className="font-normal text-base max-w-[422px] leading-5 text-grey">{item.desc_ky}</div>
                           </div>
-                          <div className='w-[675px] h-[283px] overflow-hidden'>
+                          <div className='w-[674px] h-[283px] overflow-hidden'>
                           <img src={uri + item.corresponding_image} alt='volunter' className='w-[100%] h-auto'/>
                           </div>
                       </div>

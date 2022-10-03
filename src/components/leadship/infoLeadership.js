@@ -13,6 +13,11 @@ const InfoLeadership = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + `/staff/${id}/`);
     const {t, i18n} = useTranslation()
 
+    if(window.scrollY){
+        window.scrollTo(0,0)
+    }
+
+
     const [crumbs] = useState([
         t("about"),
         '❯',
@@ -33,7 +38,7 @@ const InfoLeadership = () => {
     }
 
     return (
-        <div className="w-full relative pb-[63px]">
+        <div className="w-full relative pb-[63px] h-[100vh]]">
             <div className='h-[310px] w-[32.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
             <div className="wrapper">
                 <div className="container mb-8 mt-16">
@@ -42,7 +47,7 @@ const InfoLeadership = () => {
                 {response &&
                     i18n.language === 'ky' &&
                     <div>
-                        <div className='flex mb-8 w-full justify-between '>
+                        <div className='flex mb-8 w-full justify-between h-[100%]'>
                             <div className="h-[390px] w-[320px] mr-[42px] overflow-y-hidden z-10 rounded-md shadow-2xl">
                             <img src={uri + response.cropped_image} className='w-[100%] h-auto m-0 p-0 rounded-md' alt='about'/>
                             </div>

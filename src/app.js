@@ -10,10 +10,10 @@ document.body.style.overflow = "";
 
 function App() {
     return (
-        <div className="m-auto font-inter text-black bg-white relative min-h-[100%] max-w-[1440px]">
+        <div className="m-auto font-inter text-black bg-white relative min-h-[100%]">
             <Header/>
             <Menu/>
-            <Routes>
+            <Routes >
                 {publicRoutes.map((route) => (
                     <Route
                         key={route.path}

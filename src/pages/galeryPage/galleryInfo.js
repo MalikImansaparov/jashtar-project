@@ -50,13 +50,10 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                             }}
                                             spaceBetween={0}
                                             slidesPerView={1}
-                                            navigation={{
-                                                nextEl: '.info-next',
-                                                prevEl: '.info-prev',
-                                            }}
-                                            onSwiper={(swiper) => {
-                                                swiperRef.current = swiper;
-                                            }}
+                                            navigation={true}
+                                            // onSwiper={(swiper) => {
+                                            //     swiperRef.current = swiper;
+                                            // }}
                                             modules={[Pagination, Navigation]}
                                         >
                                         {response.gallery.map(i => (
@@ -67,17 +64,17 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                             </SwiperSlide>
                                         ))}
                                         </Swiper>
-                                        { response.gallery.length > 1 &&
-                                        <div className="flex justify-center mt-8 ">
-                                            <div
-                                                className="info-prev"
-                                                onClick={() => swiperRef.current.slidePrev()}
-                                            ></div>
-                                            <div
-                                                className="info-next"
-                                                onClick={() => swiperRef.current.slideNext()}
-                                            ></div>
-                                        </div>}
+                                        {/*{ response.gallery.length > 1 &&*/}
+                                        {/*<div className="flex justify-center mt-8 ">*/}
+                                        {/*    <div*/}
+                                        {/*        className="info-prev"*/}
+                                        {/*        onClick={() => swiperRef.current.slidePrev()}*/}
+                                        {/*    ></div>*/}
+                                        {/*    <div*/}
+                                        {/*        className="info-next"*/}
+                                        {/*        onClick={() => swiperRef.current.slideNext()}*/}
+                                        {/*    ></div>*/}
+                                        {/*</div>}*/}
                                         { i18n.language === "ky" &&
                                         <>
                                         <div className='block text-base text-blue font-medium mb-2 mt-4'>{response.title_ky}</div>
