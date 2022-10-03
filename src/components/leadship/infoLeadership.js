@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import about from "../../assets/image/main/news.png"
 import {useParams} from "react-router-dom";
 import {aboutUrl, base, lead, uri} from "../../api/const";
@@ -12,11 +12,12 @@ const InfoLeadership = () => {
     const {id} = useParams()
     const { isLoading, response } = useFetch(base + aboutUrl + `/staff/${id}/`);
     const {t, i18n} = useTranslation()
+    const topRef = useRef(null);
 
-    if(window.scrollY){
+
+    useEffect(() => {
         window.scrollTo(0,0)
-    }
-
+    }, [id]);
 
     const [crumbs] = useState([
         t("about"),
@@ -38,7 +39,7 @@ const InfoLeadership = () => {
     }
 
     return (
-        <div className="w-full relative pb-[63px] h-[100vh]]">
+        <div className="w-full relative pb-[63px]">
             <div className='h-[310px] w-[32.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
             <div className="wrapper">
                 <div className="container mb-8 mt-16">
@@ -47,7 +48,7 @@ const InfoLeadership = () => {
                 {response &&
                     i18n.language === 'ky' &&
                     <div>
-                        <div className='flex mb-8 w-full justify-between h-[100%]'>
+                        <div className='flex mb-8 w-full justify-between '>
                             <div className="h-[390px] w-[320px] mr-[42px] overflow-y-hidden z-10 rounded-md shadow-2xl">
                             <img src={uri + response.cropped_image} className='w-[100%] h-auto m-0 p-0 rounded-md' alt='about'/>
                             </div>
