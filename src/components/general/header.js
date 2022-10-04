@@ -15,7 +15,7 @@ const Header = () => {
     const swiperRef = useRef();
 
     return (
-        <div className='bg-white'>
+        <div className='bg-white font-inter'>
         <div className='wrapper flex justify-between items-center'>
             <div className='flex'>
                 <NavLink to='/'><img className="w-[54px] h-[54px] my-[8px] mr-3 cursor-pointer" src={logo} alt='logo'/></NavLink>
@@ -24,13 +24,13 @@ const Header = () => {
                     <p className="text-sm text-blue font-semibold mt-1 text-blue leading-[14px]">{t("name")}</p>
                 </div>
             </div>
-            <div className="flex w-379 h-[78px] items-center">
-                {project.map( item => (
-                    <div key={item.id} className="text-sm font-bold mx-[16px] underline cursor-pointer" onClick={() => window.open(item.url, '_blank')}>
-                        {item.title}
-                    </div>
-                ))}
-            </div>
+            {/*<div className="flex w-379 h-[78px] items-center">*/}
+            {/*    {project.map( item => (*/}
+            {/*        <div key={item.id} className="text-sm font-bold mx-[16px] underline cursor-pointer" onClick={() => window.open(item.url, '_blank')}>*/}
+            {/*            {item.title}*/}
+            {/*        </div>*/}
+            {/*    ))}*/}
+            {/*</div>*/}
             <div className="w-[350px]">
             <Quotes/>
             </div>

@@ -24,7 +24,7 @@ const InfoInternationalProject = ({openRegisterModal, setOpenRegisterModal }) =>
     return (
         <div>
             <Popup open={openRegisterModal}>
-                <div className='w-[1236px] h-auto bg-white rounded-[12px] p-[37px]' ref={ref}>
+                <div className='w-[1236px] h-auto bg-white rounded-[12px] p-[37px] font-inter' ref={ref}>
                     { isLoading &&
                         <div role="status" className='flex justify-center my-28 pb-24'>
                             <ClipLoader

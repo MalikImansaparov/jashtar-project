@@ -56,7 +56,7 @@ const NewsPage = () => {
     }
 
     return (
-        <div className='wrapper'>
+        <div className='wrapper font-inter'>
             <div className="container">
                 <BreadCrumb />
             </div>

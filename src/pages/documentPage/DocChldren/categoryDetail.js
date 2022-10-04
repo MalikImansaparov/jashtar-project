@@ -55,10 +55,6 @@ const DocumentDetail = () => {
                             <p className="text-[13px] font-normal mb-3 ">{response.doc.map(item => item.file_name)}</p>
                         </div>
                         <div className='flex'>
-                            {/*<div className='w-[152px] cursor-pointer'>*/}
-                            {/*    <img src={pdf} alt='pdf'/>*/}
-                            {/*    <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item.file))}/>*/}
-                            {/*</div>*/}
                             <div className='w-[152px] cursor-pointer' onClick={() => downloadFile(response.doc.map(item => item.file))}>
                                 <img src={doc} alt='pdf'/>
                                 <img src={download} alt='pdf' className="ml-3"/>
@@ -73,16 +69,13 @@ const DocumentDetail = () => {
                                     <div dangerouslySetInnerHTML={createMarkup(response.body_en)}></div>
                                 </div>
                                 <p className="text-base font-medium text-blue mb-[28px]">{t('download')}</p>
+                                <div className="w-[400px]">
+                                    <p className="text-[13px] font-normal mb-3 ">{response.doc.map(item => item.file_name)}</p>
+                                </div>
                                 <div className='flex'>
-                                    <div className='w-[152px] cursor-pointer'>
-                                        <img src={pdf} alt='pdf'/>
-                                        {/*<p className="text-[13px] font-normal mb-3 ">{response.doc.map(item => item.file_name)}</p>*/}
-                                        <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item.file))}/>
-                                    </div>
-                                    <div className='w-[152px]'>
+                                    <div className='w-[152px] cursor-pointer' onClick={() => downloadFile(response.doc.map(item => item.file))}>
                                         <img src={doc} alt='pdf'/>
-                                        {/*<p className="text-[13px] font-normal mb-3">{response.doc.map(item => item.file_name)}</p>*/}
-                                        <img src={download} alt='pdf' onClick={() => downloadFile(response.doc.map(item => item.file))}/>
+                                        <img src={download} alt='pdf' className="ml-3"/>
                                     </div>
                                 </div>
                             </>

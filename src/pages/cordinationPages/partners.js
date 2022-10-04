@@ -42,7 +42,7 @@ export const PartnersList = () => {
     }
 
     return (
-        <div className='wrapper w-full pb-16'>
+        <div className='wrapper w-full pb-16 font-inter'>
             <div className="container w-[1196px]">
                 <BreadCrumb/>
             </div>

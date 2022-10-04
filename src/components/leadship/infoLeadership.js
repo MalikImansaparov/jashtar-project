@@ -70,11 +70,13 @@ const InfoLeadership = () => {
                 {response &&
                     i18n.language === 'ru' &&
                     <div>
-                        <div className='flex mb-8 w-full'>
-                            <img src={uri + response.avatar_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
-                            <div className="w-[742px]">
+                        <div className='flex mb-8 w-full justify-between '>
+                            <div className="h-[390px] w-[320px] mr-[42px] overflow-y-hidden z-10 rounded-md shadow-2xl">
+                                <img src={uri + response.cropped_image} className='w-[100%] h-auto m-0 p-0 rounded-md' alt='about'/>
+                            </div>
+                            <div className="w-[800px]">
                                 <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_ru}</p>
-                                <p className="font-base text-grey text-base mb-8">{response.annotation_ru}
+                                <p className="font-base text-grey text-base mb-8 w-[500px]">{response.annotation_ru}
                                 </p>
                                 <p>
                                     <Sanitized html={response.biography_ru}/>
@@ -90,11 +92,13 @@ const InfoLeadership = () => {
                 {response &&
                     i18n.language === 'en' &&
                     <div>
-                        <div className='flex mb-8 w-full'>
-                            <img src={uri + response.avatar_image} className='h-[287px] w-[432px] mr-[62px] z-10' alt='about'/>
-                            <div className="w-[742px]">
+                        <div className='flex mb-8 w-full justify-between'>
+                            <div className="h-[390px] w-[320px] mr-[42px] overflow-y-hidden z-10 rounded-md shadow-2xl">
+                                <img src={uri + response.cropped_image} className='w-[100%] h-auto m-0 p-0 rounded-md' alt='about'/>
+                            </div>
+                            <div className="w-[800px] ml-[70px]">
                                 <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_en}</p>
-                                <p className="font-base text-grey text-base mb-8">{response.annotation_en}
+                                <p className="font-base text-grey text-base mb-8 w-[500px]">{response.annotation_en}
                                 </p>
                                 <p>
                                     <Sanitized html={response.biography_en}/>
@@ -102,7 +106,7 @@ const InfoLeadership = () => {
                             </div>
                         </div>
                         <p className="w-full text-base font-semibold mb-[22px]">{t('work')}</p>
-                        <p className='font-normal text-base w-full '>
+                        <p className='font-normal text-base w-full'>
                             <Sanitized html={response.employment_en}/>
                         </p>
                     </div>

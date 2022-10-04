@@ -39,7 +39,7 @@ const SearchPage = () => {
     }
 
     return (
-        <div className="wrapper py-[62px]">
+        <div className="wrapper py-[62px] font-inter">
             {/*{items && items.events.length <= 0 && items.managment.length <= 0 && items.news.length <= 0 && items.partner.length <= 0 && items.project.length <= 0 && items.docs.length <= 0 &&*/}
             {/*    <div className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white">*/}
             {/*        <p className="my-16 text-[20px]">{t('notFound')}</p>*/}

@@ -23,7 +23,7 @@ export const YoungOrganization = () => {
     }
 
     return (
-        <div className='wrapper'>
+        <div className='wrapper font-inter'>
             {response && response.map((item) => (
                 <div>
                     <div className="container w-[1196px]">
@@ -84,13 +84,19 @@ export const YoungOrganization = () => {
                                     <img src={emblem} alt='organization' className='w-[100%] h-auto'/>
                                 </div>
                                 {i18n.language === "ky" &&
-                                    <p className="font-normal text-base w-[1000px]">{item.annotation_ky}</p>
+                                    <p className="font-normal text-base w-[1000px]">
+                                        {item.annotation_ky}
+                                    </p>
                                 }
                                 {i18n.language === "ru" &&
-                                    <p className="font-normal text-base w-[1000px]">{item.annotation_ru}</p>
+                                    <p className="font-normal text-base w-[1000px]">
+                                        {item.annotation_ru}
+                                    </p>
                                 }
                                 {i18n.language === "en" &&
-                                    <p className="font-normal text-base w-[1000px]">{item.annotation_en}</p>
+                                    <p className="font-normal text-base w-[1000px]">
+                                        {item.annotation_en}
+                                    </p>
                                 }
                             </div>
                             ))}

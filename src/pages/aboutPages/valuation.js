@@ -24,7 +24,7 @@ const Valuation = () => {
     }
 
     return (
-      <div className="h-[100vh]">
+      <div className="h-[100vh] font-inter">
         <div className="wrapper">
           <BreadCrumb />
         </div>

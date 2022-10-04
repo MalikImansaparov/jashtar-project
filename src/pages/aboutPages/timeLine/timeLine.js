@@ -26,7 +26,7 @@ const TimeLine = () => {
     }
 
     return (
-        <div className="pb-[104px]">
+        <div className="pb-[104px] font-inter">
             <div className="wrapper">
                 <BreadCrumb/>
             </div>

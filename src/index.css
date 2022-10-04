@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+.links {
+    color: #007aff;
+    padding-left: 0;
+}
+
 html, body {
     margin-bottom: 0;
     padding: 0;

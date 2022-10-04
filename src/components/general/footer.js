@@ -13,7 +13,7 @@ const Footer = () => {
     const { response } = useFetch(base + aboutUrl + '/contacts/');
 
     return (
-        <div className=" bg-blueLight relative bottom-0">
+        <div className=" bg-blueLight relative bottom-0 font-inter">
         <div className='wrapper py-[16px] justify-between relative'>
             <div className='flex'>
                 <NavLink to='/'><img className="w-[54px] h-[54px] my-[8px] mr-3 cursor-pointer" src={logo} alt='logo'/></NavLink>

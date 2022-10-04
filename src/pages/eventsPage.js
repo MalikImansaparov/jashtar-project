@@ -37,7 +37,7 @@ const EventsPage = () => {
     }
 
     return (
-        <div className="wrapper">
+        <div className="wrapper font-inter">
             <div className="container w-[1196px]">
                 <BreadCrumb />
             </div>

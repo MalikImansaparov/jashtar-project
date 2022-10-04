@@ -10,7 +10,7 @@ document.body.style.overflow = "";
 
 function App() {
     return (
-        <div className="m-auto font-inter text-black bg-white relative min-h-[100%]">
+        <div className="m-auto text-black bg-white relative min-h-[100%]" >
             <Header/>
             <Menu/>
             <Routes >

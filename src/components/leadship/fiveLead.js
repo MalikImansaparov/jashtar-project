@@ -17,8 +17,9 @@ export const FivthLead = () => {
                 </div>
                 {response &&
                     response.filter(i => i.floor === 5 ).map( item => (
+                        <Link to={`${item.id}`}>
                         <div
-                            className="block shadow-sm w-[234px] h-[196px] bg-white rounded-2xl text-center shadow-2xl relative"
+                            className="block shadow-xl cursor-pointer w-[234px] h-[196px] bg-white rounded-2xl text-center hover:shadow-2xl relative"
                             key={item.id}
                         >
                             <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px]">
@@ -55,12 +56,11 @@ export const FivthLead = () => {
                                         {item.annotation_en}
                                     </p>
                                 </div>}
-                            <Link to={`${item.id}`} className="">
                                 <button className="absolute bottom-0 left-0 h-6 w-full bg-btnLight text-[11px] font-medium text-orange rounded-b-2xl">
                                     {t("biography")}
                                 </button>
-                            </Link>
                         </div>
+                    </Link>
                     ))}
                 <div className="wrapper justify-center">
                     <RenderArrow angle={230} lenght={130} width={'120px'} line={2} />

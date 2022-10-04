@@ -23,7 +23,7 @@ export const UniversitySoviet = () => {
     }
 
     return (
-        <div className='wrapper'>
+        <div className='wrapper font-inter'>
             {response && response.map((item) => (
                 <div>
                     <div className="container w-[1196px]">
@@ -44,7 +44,7 @@ export const UniversitySoviet = () => {
                             {item.title_en}
                         </div>
                     }
-                    <div className="flex w-full  text-justify">
+                    <div className="flex w-full text-justify">
                         <div dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
                     </div>
                 </div>
@@ -79,7 +79,8 @@ export const UniversitySoviet = () => {
                     {response && response.map(i => (
                         <div key={i.id} className="flex flex-wrap items-center">
                             {i.universitymemb.map( item => (
-                                <div className="flex flex-wrap items-center shadow-enroll py-[13px] px-[30px] my-[5px] rounded-[12px] mb-[23px] w-[1230px]">
+                                <div className="flex flex-wrap items-center shadow-enroll py-[13px] px-[30px] my-[5px] rounded-[12px] mb-[23px] w-[1230px] cursor-pointer"
+                                onClick={() => window.open(item.url)}>
                                     <div className="flex justify-center shadow-org py-[13px] px-[10px] rounded-[12px]  mr-[32px] w-[64px] h-[64px]">
                                         <img src={emblem} alt='organization' className='w-[100%] h-auto'/>
                                     </div>
@@ -90,7 +91,7 @@ export const UniversitySoviet = () => {
                                     {i18n.language === "ru" &&
                                         <p className="font-normal text-base w-[1000px]">{item.annotation_ru}</p>
                                     }
-                                    {i18n.language === "en" &&
+                                       {i18n.language === "en" &&
                                         <p className="font-normal text-base w-[1000px]">{item.annotation_en}</p>
                                     }
                                 </div>

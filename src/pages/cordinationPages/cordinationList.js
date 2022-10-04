@@ -20,7 +20,7 @@ const CordinationList = () => {
     }
 
     return (
-        <div className='wrapper'>
+        <div className='wrapper font-inter'>
             <div className='block text-base font-semibold mb-[36px]'>{t("listCoordination")}</div>
             <div className="flex items-center mb-[62px] flex-wrap">
                 {response?.map(item => (

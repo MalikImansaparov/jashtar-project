@@ -33,7 +33,7 @@ const GaleryPage = () => {
     }
 
     return (
-        <div className='wrapper h-auto'>
+        <div className='wrapper h-auto font-inter'>
             <div className="container w-full mt-[62px]">
                 {tabs.map((tab, i) =>
                     <div key={i}>

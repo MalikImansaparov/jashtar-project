@@ -8,7 +8,7 @@ import Partners from "../components/main/partners";
 
 const MainPage = () => {
     return (
-        <div className="m-auto">
+        <div className="m-auto font-inter">
             <Banner/>
             <News/>
             <Enroll/>

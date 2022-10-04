@@ -11,9 +11,9 @@ import ShareSocial from "../components/general/share-social";
 import {ImagesSlider} from "../components/general/photoSlider";
 
 const DetailNews = () => {
+    window.scroll(0,0)
     const {id} = useParams()
     const { isLoading, response } = useFetch(base + newsUrl + `/news/${id}/`);
-    window.scroll(0,0)
     const {t, i18n} = useTranslation()
 
     const [crumbs] = useState([
@@ -35,7 +35,7 @@ const DetailNews = () => {
     }
 
     return (
-        <div className="wrapper w-full relative mb-[63px] text-justify">
+        <div className="wrapper w-full font-inter relative mb-[63px] text-justify">
             <div className='h-[212px] w-[47%] absolute top-[170px] left-[-100px] rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
             {response && <>
             {i18n.language === "ky" &&

@@ -30,7 +30,7 @@ export const InternationOrganization = () => {
     }
 
     return (
-        <div className='wrapper'>
+        <div className='wrapper font-inter'>
             {response && response.map((item) => (
                 <div>
                     <div className="container w-[1196px]">

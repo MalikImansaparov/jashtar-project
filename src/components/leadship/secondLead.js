@@ -16,8 +16,9 @@ const SecondLead = () => {
       <div className="wrapper justify-between align-middle">
           {response &&
               response.filter(i => i.floor === 2 ).map( item => (
+                  <Link to={`${item.id}`}>
                   <div
-                      className="relative block shadow-sm w-[234px] h-[196px] bg-white rounded-2xl text-center shadow-2xl"
+                      className="relative block shadow-xl cursor-pointer w-[234px] h-[196px] bg-white rounded-2xl text-center hover:shadow-2xl"
                       key={item.id}
                   >
                       <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[13px]">
@@ -54,12 +55,11 @@ const SecondLead = () => {
                                   {item.annotation_en}
                               </p>
                           </div>}
-                      <Link to={`${item.id}`}>
                           <button className="absolute bottom-0 left-0 h-6 w-full bg-btnLight text-[11px] font-medium text-orange rounded-b-2xl">
                               {t("biography")}
                           </button>
-                      </Link>
                   </div>
+                  </Link>
               ))}
       </div>
         {isDesktop && (

@@ -23,22 +23,22 @@ export const JashtarProject = () => {
     }
 
   return (
-    <div className="w-full relative pb-[63px]">
+    <div className="w-full relative pb-[63px] font-inter">
       <div className="wrapper text-[16px] font-normal leading-5">
         <div className="">
           <BreadCrumb />
         </div>
         {response &&
           response.map((item) => (
-            <div className="flex mb-8 w-full flex-wrap text-justify"  key={item.id}>
+            <div className="flex mb-8 w-full flex-wrap text-justify" key={item.id}>
                 {i18n.language === "ky" &&
                     <div className="text-justify" dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
                 }
                 {i18n.language === "ru" &&
-                    <div dangerouslySetInnerHTML={createMarkup(item.desc_ru)}></div>
+                    <div className="text-justify" dangerouslySetInnerHTML={createMarkup(item.desc_ru)}></div>
                 }
                 {i18n.language === "en" &&
-                    <div dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
+                    <div className="text-justify" dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
                 }
             </div>
           ))}

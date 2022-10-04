@@ -31,7 +31,7 @@ const Menu = () => {
     }
 
         return (
-            <div className="relative mb-0">
+            <div className="relative mb-0 font-inter">
                 {!openModal ? (
                     <div className="bg-blue">
                         <div className='wrapper h-[78px] flex justify-between items-center font-inter'>

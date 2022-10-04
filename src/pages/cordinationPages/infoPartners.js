@@ -25,7 +25,7 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
     }
 
         return (
-            <div className="text-justify">
+            <div className="text-justify font-inter">
                 <Popover open={openRegisterModal}>
                     <div className='w-[1236px] h-[1059px] bg-white rounded-[12px] p-[62px] shadow-org' ref={ref} >
                         { isLoading &&
@@ -42,33 +42,33 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                         {response &&
                             <div>
                         <div className="flex" key={response.id}>
-                            <div className='w-[332px] h-[276px] rounded shadow-partner flex justify-center items-center mb-[10px]'>
+                            <div className='w-[312px] h-[266px] rounded shadow-2xl flex justify-center items-center mb-[15px]'>
                                 <img src={uri + response.org_image} alt='img' className="w-[245px]"/>
                             </div>
                             {i18n.language === "ky" &&
-                            <div className='ml-[106px]'>
+                            <div className='ml-[45px]'>
                                 <p className='text-blue text-base font-semibold mb-8'>
                                     {response.title_ky}
                                 </p>
-                                <p className="w-[718px] text-base font-normal leading-[19.3px]">
+                                <p className="w-[750px] text-base font-normal leading-[19.3px]">
                                     <div dangerouslySetInnerHTML={createMarkup(response.desc_ky)}></div>
                                 </p>
                             </div>}
                             {i18n.language === "ru" &&
-                                <div className='ml-[106px]'>
+                                <div className='ml-[45px]'>
                                     <p className='text-blue text-base font-semibold mb-8'>
                                         {response.title_ru}
                                     </p>
-                                    <p className="w-[718px] text-base font-normal leading-[19.3px]">
+                                    <p className="w-[750px] text-base font-normal leading-[19.3px]">
                                         <div dangerouslySetInnerHTML={createMarkup(response.desc_ru)}></div>
                                     </p>
                                 </div>}
                             {i18n.language === "en" &&
-                                <div className='ml-[106px]'>
+                                <div className='ml-[25px]'>
                                     <p className='text-blue text-base font-semibold mb-8'>
                                         {response.title_en}
                                     </p>
-                                    <p className="w-[718px] text-base font-normal leading-[19.3px]">
+                                    <p className="w-[770px] text-base font-normal leading-[19.3px]">
                                         <div dangerouslySetInnerHTML={createMarkup(response.desc_en)}></div>
                                     </p>
                                 </div>}
