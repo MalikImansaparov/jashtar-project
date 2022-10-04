@@ -35,7 +35,7 @@ const DetailNews = () => {
     }
 
     return (
-        <div className="wrapper w-full relative mb-[63px]">
+        <div className="wrapper w-full relative mb-[63px] text-justify">
             <div className='h-[212px] w-[47%] absolute top-[170px] left-[-100px] rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
             {response && <>
             {i18n.language === "ky" &&
@@ -43,7 +43,7 @@ const DetailNews = () => {
             <div className="container mb-8 mt-16 ">
                     <BreadCrumbs crumbs={crumbs} title={response.title_ky}/>
             </div>
-            <div className='mb-8'>
+            <div className='mb-8 '>
                 <div className="w-[432px] h-auto mr-[62px] mb-2  float-left">
                     <ImagesSlider images={response.news_slider}/>
                 </div>

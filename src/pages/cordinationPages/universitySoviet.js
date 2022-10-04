@@ -44,7 +44,7 @@ export const UniversitySoviet = () => {
                             {item.title_en}
                         </div>
                     }
-                    <div className="flex w-full">
+                    <div className="flex w-full  text-justify">
                         <div dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
                     </div>
                 </div>

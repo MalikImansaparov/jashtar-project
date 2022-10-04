@@ -37,7 +37,7 @@ const Ministry = () => {
                     <div className="text-white">
                         <BreadCrumb/>
                     </div>
-                    <p className="my-16 leading-[19.3px] relative z-10">
+                    <p className="my-16 leading-[19.3px] relative z-10 text-justify">
                         {i18n.language === "ky" &&
                             <Sanitized html={item.desc_ky}/>
                         }

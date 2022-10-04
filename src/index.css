@@ -24,8 +24,8 @@ html, body {
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center !important;
-    width: 6px !important;
-    height: 12px !important;
+    width: 10px !important;
+    height: 16px !important;
     cursor: pointer;
     z-index: 99!important;
     margin-left: 16px;
@@ -36,14 +36,14 @@ html, body {
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center !important;
-    width: 6px !important;
-    height: 12px !important;
+    width: 10px !important;
+    height: 16px !important;
     cursor: pointer;
     z-index: 99!important;
 }
 
 .info-next {
-    background-image: url(assets/image/main/rigth.png);
+    background-image: url(assets/image/main/arrow-left.png);
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center !important;

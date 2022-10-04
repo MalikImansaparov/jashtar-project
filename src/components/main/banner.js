@@ -39,7 +39,7 @@ const Banner = () => {
     }
 
     return (
-        <div className="relative max-w-[1440px] m-auto">
+        <div className="relative max-w-[1440px] m-auto text-justify">
             <Swiper
                 hashNavigation={{
                     watchState: true,

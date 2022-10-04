@@ -24,9 +24,8 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
         document.body.style.overflow = "";
     }
 
-
         return (
-            <div>
+            <div className="text-justify">
                 <Popover open={openRegisterModal}>
                     <div className='w-[1236px] h-[1059px] bg-white rounded-[12px] p-[62px] shadow-org' ref={ref} >
                         { isLoading &&

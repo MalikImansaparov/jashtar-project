@@ -37,17 +37,17 @@ const InfoProject = ({openRegisterModal, setOpenRegisterModal }) => {
                     </div>
                     {response &&
                         <div className="flex" key={response.id}>
-                            <div className='w-[332px] h-[276px] rounded shadow-partner flex justify-center items-center mb-[10px] p-8 shadow-xl'>
-                                <div className="flex items-center w-[245px] h-[250px] m-auto">
+                            <div className='w-[332px] h-[276px] rounded shadow-partner flex justify-start items-center mb-[10px] p-8 shadow-xl'>
+                                <div className="flex items-center w-[245px] h-[250px]">
                                 <img src={uri + response.proj_image} alt='img' className="h-auto w-[100%]"/>
                                 </div>
                             </div>
                             {i18n.language === "ky" &&
-                                <div className='ml-[76px]'>
-                                    <p className='text-blue text-base font-semibold my-4'>
+                                <div className='ml-[26px] w-[808px]'>
+                                    <p className='text-blue text-base font-semibold my-4 text-justify'>
                                         {response.title_ky}
                                     </p>
-                                    <p className="w-[808px] text-base font-normal leading-[19.3px]">
+                                    <p className=" text-base font-normal leading-[19.3px] text-justify">
                                         <div dangerouslySetInnerHTML={createMarkup(response.desc_ky)}></div>
                                     </p>
                                 </div>}
@@ -56,7 +56,7 @@ const InfoProject = ({openRegisterModal, setOpenRegisterModal }) => {
                                     <p className='text-blue text-base font-semibold my-4'>
                                         {response.title_ru}
                                     </p>
-                                    <p className="w-[800px] text-base font-normal leading-[19.3px]">
+                                    <p className="w-[800px] text-base font-normal leading-[19.3px] text-justify">
                                         <div dangerouslySetInnerHTML={createMarkup(response.desc_ru)}></div>
                                     </p>
                                 </div>}
@@ -65,7 +65,7 @@ const InfoProject = ({openRegisterModal, setOpenRegisterModal }) => {
                                     <p className='text-blue text-base font-semibold my-4'>
                                         {response.title_en}
                                     </p>
-                                    <p className="w-[800px] text-base font-normal leading-[19.3px]">
+                                    <p className="w-[800px] text-base font-normal leading-[19.3px] text-justify">
                                         <div dangerouslySetInnerHTML={createMarkup(response.desc_en)}></div>
                                     </p>
                                 </div>}

@@ -41,7 +41,7 @@ const InfoLeadership = () => {
     return (
         <div className="w-full relative pb-[63px]">
             <div className='h-[310px] w-[32.7%] absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
-            <div className="wrapper">
+            <div className="wrapper text-justify">
                 <div className="container mb-8 mt-16">
                         <BreadCrumbs crumbs={crumbs} title={""}/>
                 </div>

@@ -29,7 +29,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
     return (
         <div>
             <Modal open={openRegisterModal}>
-                <div className='w-[1236px] bg-white rounded-[12px] px-8'>
+                <div className='w-[1236px] bg-white rounded-[12px] px-8 text-justify'>
                     { isLoading &&
                         <div role="status" className='flex justify-center my-28 pb-24'>
                             <ClipLoader

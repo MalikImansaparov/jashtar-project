@@ -37,7 +37,7 @@ const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                         </div>
                     }
                         {response &&
-                                    <div className="">
+                                    <div className="text-justify">
                                         <div className="flex justify-end mt-[37px] mb-[27px] cursor-pointer">
                                             <img src={close} alt="close icon" onClick={onClose}/>
                                         </div>

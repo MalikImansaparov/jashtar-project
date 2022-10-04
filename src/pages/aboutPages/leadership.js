@@ -8,7 +8,6 @@ import { FivthLead } from '../../components/leadship/fiveLead';
 import { SixthLead } from '../../components/leadship/sixLead';
 
 const Leadership = () => {
-
   return (
     <div className="pb-32">
       <div className="container w-[1196px] m-auto ">

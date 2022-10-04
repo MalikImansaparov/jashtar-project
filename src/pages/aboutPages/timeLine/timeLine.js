@@ -55,16 +55,16 @@ const TimeLine = () => {
                                                     />
                                                 </div>
                                                 {i18n.language === "ky" &&
-                                                    <div className="w-[275px] m-auto">
+                                                    <div className="w-[275px] ">
                                                         <p className="text-[12px] mb-1 fo t-normal text-blue">
                                                             {item.full_name_ky}
                                                         </p>
-                                                        <p className="text-[11px] font-light text-justify">
+                                                        <p className="text-[11px] font-light">
                                                             {item.annotation_ky}
                                                         </p>
                                                     </div> }
                                                 {i18n.language === "ru" &&
-                                                    <div className="w-[275px] m-auto text-justify">
+                                                    <div className="w-[275px] ">
                                                         <p className="text-[12px] mb-1 fo t-normal text-blue">
                                                             {item.full_name_ru}
                                                         </p>
@@ -73,7 +73,7 @@ const TimeLine = () => {
                                                         </p>
                                                     </div> }
                                                 {i18n.language === "en" &&
-                                                    <div className="w-[275px] m-auto text-justify">
+                                                    <div className="w-[275px] m-auto ">
                                                         <p className="text-[12px] mb-1 fo t-normal text-blue">
                                                             {item.full_name_en}
                                                         </p>
@@ -84,7 +84,7 @@ const TimeLine = () => {
                                             </div>
                                         ))}
                                             </div>
-                                                <div dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
+                                                <div className="text-justify" dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
                                             </div>
                                     </TabPanel>
                                 ))}

@@ -1,10 +1,11 @@
-import {useState} from "react";
+import React, {useRef, useState} from "react";
 import {Autoplay, Navigation, Thumbs} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {uri} from "../../api/const";
 
 export const ImagesSlider = props => {
     const [activeThumb, setActiveThumb] = useState()
+    const swiperRef = useRef();
 
     return <>
         <Swiper
@@ -37,16 +38,20 @@ export const ImagesSlider = props => {
             }
         </Swiper>
         {props.images.length > 1 &&
-        <div className="flex m-auto w-[300px]">
+        <div className="flex m-auto w-[300px] relative">
         <Swiper
+            hashNavigation={{
+                watchState: true,
+            }}
+            loop={true}
+            speed={700}
+            spaceBetween={10}
+            slidesPerView={5}
             onSwiper={setActiveThumb}
             navigation={{
                 nextEl: '.detail-next',
                 prevEl: '.detail-prev',
             }}
-            loop={true}
-            spaceBetween={10}
-            slidesPerView={5}
             modules={[Navigation, Thumbs]}
         >
             {
@@ -61,6 +66,14 @@ export const ImagesSlider = props => {
                 ))
             }
         </Swiper>
+            <div
+                className="detail-prev absolute top-[30px] left-[-30px]"
+                onClick={() => swiperRef.current.slidePrev()}
+            ></div>
+            <div
+                className="detail-next absolute top-[30px] right-[-25px]"
+                onClick={() => swiperRef.current.slideNext()}
+            ></div>
         </div>
         }
     </>

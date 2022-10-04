@@ -40,7 +40,7 @@ const DocumentDetail = () => {
     };
 
     return (
-        <div className='w-full flex'>
+        <div className='w-full flex text-justify'>
             <div className="ml-[63px] mb-[62px] max-w-[1220px] mt-16">
                 {response &&
                     <>

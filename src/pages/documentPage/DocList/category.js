@@ -15,7 +15,7 @@ const CategoryList = () => {
     return (
         <div className="flex">
             <DocSidebar/>
-            <div className="pl-[67px] min-h-screen mb-[62px]">
+            <div className="pl-[37px] min-h-screen mb-[62px]">
                 <div className="container mb-8">
                     <BreadCrumb />
                 </div>

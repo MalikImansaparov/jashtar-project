@@ -24,6 +24,7 @@ const Quotes = () => {
                     swiperRef.current = swiper;
                 }}
                 loop={true}
+                spaceBetween={10}
                 slidesPerView={1}
                 speed={600}
                 modules={[Autoplay, Pagination, Navigation]}

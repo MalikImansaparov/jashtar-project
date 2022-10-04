@@ -54,7 +54,7 @@ const VideoPanel = () => {
     }
 
     return (
-        <div className="wrapper">
+        <div className="wrapper text-justify">
         <div className='flex flex-wrap justify-between mt-[62px]'>
             {response.results && response.results.map((item) => (
                 <div className='mb-[62px] shadow-md rounded-md w-[580px]' onClick={() => openModal(item.id)} key={item.id}>
