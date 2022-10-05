@@ -20,8 +20,12 @@ const DetailNews = () => {
         t("news"),
         '❯',
         t("allNews"),
-        '❯',
+        // '❯',
     ]);
+
+    useEffect(() => {
+
+    },[i18n])
 
     if (isLoading) {
         return (
@@ -41,7 +45,7 @@ const DetailNews = () => {
             {i18n.language === "ky" &&
                 <div className="wrapper">
             <div className="container mb-8 mt-16 ">
-                    <BreadCrumbs crumbs={crumbs} title={response.title_ky}/>
+                    <BreadCrumbs crumbs={crumbs}/>
             </div>
             <div className='mb-8 '>
                 <div className="w-[432px] h-auto mr-[62px] mb-2  float-left">

@@ -46,7 +46,7 @@ const DocumentDetail = () => {
                     <>
                     {i18n.language === "ky" &&
                     <>
-                        <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
+                        {/*<BreadCrumbs crumbs={crumbs} title={response.title_ky} />*/}
                         <div className="flex text-center justify-center items-center">
                          <div dangerouslySetInnerHTML={createMarkup(response.body_ky)}></div>
                         </div>
@@ -64,7 +64,7 @@ const DocumentDetail = () => {
                     }
                         {i18n.language === "en" &&
                             <>
-                                <BreadCrumbs crumbs={crumbs} title={response.title_en} />
+                                {/*<BreadCrumbs crumbs={crumbs} title={response.title_en} />*/}
                                 <div className="flex text-center justify-center items-center">
                                     <div dangerouslySetInnerHTML={createMarkup(response.body_en)}></div>
                                 </div>
@@ -82,7 +82,7 @@ const DocumentDetail = () => {
                         }
                         {i18n.language === "ru" &&
                             <>
-                                <BreadCrumbs crumbs={crumbs} title={response.title_ru} />
+                                {/*<BreadCrumbs crumbs={crumbs} title={response.title_ru} />*/}
                                 <div className="flex text-center justify-center items-center">
                                     <div dangerouslySetInnerHTML={createMarkup(response.body_ru)}></div>
                                 </div>

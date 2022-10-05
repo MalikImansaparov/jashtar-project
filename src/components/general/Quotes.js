@@ -41,13 +41,13 @@ const Quotes = () => {
                                     </div>}
                                 { i18n.language === 'ru' &&
                                     <div>
-                                        <p className="text-[11px] w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_ru}</p>
-                                        <div className="text-[10px] text-right font-normal mt-[10px] text-grey mr-2">{item.annotation_ru}</div>
+                                        <p className="text-[12px] text-center w-[284px] font-medium flex-wrap text-blue leading-[11px]">{item.quote_ru}</p>
+                                        <div className="text-[11px] text-right w-[284px] font-normal mt-[10px] text-grey mr-2">{item.annotation_ru}</div>
                                     </div>}
                                 { i18n.language === 'en' &&
                                     <div>
-                                        <p className=" text-[11px] w-[284px] font-medium flex-wrap text-blue leading-[13px]">{item.quote_en}</p>
-                                        <div className="text-[10px] text-right font-normal mt-[10px] text-grey mr-2">{item.annotation_en}</div>
+                                        <p className=" text-[12px] text-center w-[284px] font-medium flex-wrap text-blue leading-[11px]">{item.quote_en}</p>
+                                        <div className="text-[11px] text-right w-[284px] font-normal mt-[10px] text-grey mr-2">{item.annotation_en}</div>
                                     </div>}
                                 <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px] ">
                                     <img

@@ -39,7 +39,7 @@ const Popover = ({ open, children }) => {
             <div style={OVERLAY_STYLE}>
                 <div style={MODAL_STYLES}>{children}</div>
             </div>
-            <div className={WRAPPER}></div>
+            <div ></div>
         </>
     );
 };

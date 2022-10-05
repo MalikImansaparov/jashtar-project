@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import close from "../../assets/image/about/close.png";
 import Modal from './modal'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper';
+import {Autoplay, Navigation, Pagination} from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -45,16 +45,23 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                         { response &&
                                     <div>
                                         <Swiper
+                                            autoplay={{
+                                                delay: 6000,
+                                                disableOnInteraction: false,
+                                            }}
                                             hashNavigation={{
                                                 watchState: true,
                                             }}
-                                            spaceBetween={0}
+                                            grabCursor={true}
+                                            speed={700}
+                                            loop={true}
+                                            spaceBetween={10}
                                             slidesPerView={1}
                                             navigation={true}
                                             // onSwiper={(swiper) => {
                                             //     swiperRef.current = swiper;
                                             // }}
-                                            modules={[Pagination, Navigation]}
+                                            modules={[Autoplay, Pagination, Navigation]}
                                         >
                                         {response.gallery.map(i => (
                                             <SwiperSlide key={i.id}>
