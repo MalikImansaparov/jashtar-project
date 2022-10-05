@@ -11,17 +11,17 @@ const DocSidebar = () => {
     return (
         <div className="w-[320px] bg-blueLight pt-[32px] text-grey active:border-b-2 border-fuchsia-600 font-inter">
             {response && response.map( item => (
-                <div className="w-[220px]" key={item.id}>
+                <div className="w-[250px]" key={item.id}>
                     {i18n.language === "ky" &&
-                        <NavLink to={`/category/${item.id}`} className={({isActive}) =>
+                        <NavLink to={`/category/${item.order_id}`} className={({isActive}) =>
                             isActive ? 'activity link' : 'link'}>{item.title_ky}</NavLink>
                     }
                     {i18n.language === "ru" &&
-                        <NavLink to={`/category/${item.id}`} className={({isActive}) =>
+                        <NavLink to={`/category/${item.order_id}`} className={({isActive}) =>
                             isActive ? 'activity link' : 'link'}>{item.title_ru}</NavLink>
                     }
                     {i18n.language === "en" &&
-                        <NavLink to={`/category/${item.id}`} className={({isActive}) =>
+                        <NavLink to={`/category/${item.order_id}`} className={({isActive}) =>
                             isActive ? 'activity link' : 'link'}>{item.title_en}</NavLink>
                     }
                 </div>

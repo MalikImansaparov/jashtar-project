@@ -41,7 +41,7 @@ const Menu = () => {
                                      className="text-white text-[14px] font-semibold">
                                 <span className="text-sm font-normal">{t("news")}</span>
                             </NavLink>
-                            <NavLink to="/category/4"
+                            <NavLink to="/category/1"
                                      className="text-white text-[14px] font-semibold">
                                 <span className="text-sm font-normal">{t("documents")}</span>
                             </NavLink>
