@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import pdf from "../../../assets/image/general/pdf.png";
 import doc from "../../../assets/image/general/doc.png";
 import download from "../../../assets/image/general/download.png";
@@ -16,10 +16,21 @@ const DocumentDetail = () => {
     const {isLoading, response} = useFetch(base + docsUrl + `/document/${id}/`);
     const {t, i18n} = useTranslation()
 
-    const [crumbs] = useState([
-        t('documents'),
-        '❯',
-    ]);
+    const crumb = [
+        t("documents"),
+        '❯'
+    ]
+
+    const [crumbs, setCrumbs] = useState(crumb);
+    const crumbSet = () => {
+        setCrumbs(crumb)
+    }
+
+    useEffect(() => {
+        crumbSet()
+    }, [i18n.language]);
+
+
 
 
     if (isLoading) {

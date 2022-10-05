@@ -5,6 +5,7 @@ import React from "react";
 import {publicRoutes} from "./routes/routes";
 import Footer from "./components/general/footer";
 import Header from "./components/general/header";
+import {useTranslation} from "react-i18next";
 
 document.body.style.overflow = "";
 

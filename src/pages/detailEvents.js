@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import dots from "../assets/image/main/Ellipse 1.png";
 import {BreadCrumbs} from "../components/modules/breadcrumbs";
 import {useParams} from "react-router-dom";
@@ -16,12 +16,20 @@ const DetailEvents = () => {
     const { isLoading, response } = useFetch(base + eventsUrl + `/events/${id}/`);
     const {t, i18n} = useTranslation()
 
-    const [crumbs] = useState([
+    const crumb = [
         t("events"),
         '❯',
         t("allEvents"),
         '❯',
-    ]);
+    ]
+
+    const [crumbs, setCrumbs] = useState(crumb);
+    const crumbSet = () => {
+        setCrumbs(crumb)
+    }
+    useEffect(() => {
+        crumbSet()
+    }, [i18n.language]);
 
     if (isLoading) {
         return (

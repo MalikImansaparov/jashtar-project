@@ -16,16 +16,20 @@ const DetailNews = () => {
     const { isLoading, response } = useFetch(base + newsUrl + `/news/${id}/`);
     const {t, i18n} = useTranslation()
 
-    const [crumbs] = useState([
+    const crumb = [
         t("news"),
         '❯',
         t("allNews"),
         '❯',
-    ]);
+    ]
 
+    const [crumbs, setCrumbs] = useState(crumb);
+    const crumbSet = () => {
+        setCrumbs(crumb)
+    }
     useEffect(() => {
-
-    },[i18n])
+        crumbSet()
+    }, [i18n.language]);
 
     if (isLoading) {
         return (
