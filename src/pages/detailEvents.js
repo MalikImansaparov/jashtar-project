@@ -20,7 +20,7 @@ const DetailEvents = () => {
         t("events"),
         '❯',
         t("allEvents"),
-        // '❯',
+        '❯',
     ]);
 
     if (isLoading) {
@@ -41,8 +41,7 @@ const DetailEvents = () => {
                 {i18n.language === "ky" &&
             <div className="wrapper">
                 <div className="container mb-8 mt-16">
-                    {/*title={response.title_ky}*/}
-                    <BreadCrumbs crumbs={crumbs} />
+                        <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
                 </div>
                 <div className='mb-8'>
                         <div className="w-[432px] h-auto mr-[62px] mb-2 z-10 overflow-hidden float-left">
