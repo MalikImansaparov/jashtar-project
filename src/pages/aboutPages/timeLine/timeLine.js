@@ -84,7 +84,18 @@ const TimeLine = () => {
                                             </div>
                                         ))}
                                             </div>
-                                                <div className="text-justify" dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
+                                                {i18n.language === "ky" &&
+                                                    <div className="text-justify"
+                                                         dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
+                                                }
+                                                {i18n.language === "ru" &&
+                                                    <div className="text-justify"
+                                                         dangerouslySetInnerHTML={createMarkup(item.desc_ru)}></div>
+                                                }
+                                                {i18n.language === "ky" &&
+                                                    <div className="text-justify"
+                                                         dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
+                                                }
                                             </div>
                                     </TabPanel>
                                 ))}

@@ -36,24 +36,33 @@ export const InternationOrganization = () => {
                     <div className="container w-[1196px]">
                         <BreadCrumb/>
                     </div>
-                    {i18n.language === "ky" &&
+                    {i18n.language === "ky" && <>
                         <div className='text-blue text-base font-semibold mb-8'>
                             {item.title_ky}
                         </div>
+                        <div className="flex w-full text-justify">
+                            <div dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
+                        </div>
+                    </>
                     }
-                    {i18n.language === "ru" &&
+                    {i18n.language === "ru" && <>
                         <div className='text-blue text-base font-semibold mb-8'>
                             {item.title_ru}
                         </div>
+                        <div className="flex w-full text-justify">
+                            <div dangerouslySetInnerHTML={createMarkup(item.desc_ru)}></div>
+                        </div>
+                    </>
                     }
-                    {i18n.language === "en" &&
+                    {i18n.language === "en" && <>
                         <div className='text-blue text-base font-semibold mb-8'>
                             {item.title_en}
                         </div>
+                        <div className="flex w-full text-justify">
+                            <div dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
+                        </div>
+                    </>
                     }
-                    <div className="flex w-full text-justify">
-                        <div dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
-                    </div>
                 </div>
             ))}
             <div className="mt-[32px] mb-[62px]">

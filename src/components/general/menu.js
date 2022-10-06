@@ -23,11 +23,8 @@ const Menu = () => {
     }
 
     const handleChange = () => {
-        if( window.location.pathname !== "/search"){
             navigate('/search')
-        } else {
            dispatch(asyncSearch())
-        }
     }
 
         return (

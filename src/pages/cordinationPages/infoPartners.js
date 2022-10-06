@@ -80,11 +80,12 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                         <div className="mt-[62px]">
                             <div className='block text-base font-semibold mb-[36px]'>{t("listProject")}</div>
                             <div className="flex items-center mb-[62px] flex-wrap">
-                                {res && res.map(item => (
+                                {response && response.joint_project.map(item => (
                                     <div key={item.id} className="flex items-center w-[100%] cursor-pointer" >
                                         <img src={uri + item.proj_image} alt='organization' className='shadow-org py-[13px] px-[30px] rounded-[12px] w-[130px] h-[86px] mr-[62px]'/>
-                                        <p className="font-normal text-base">{item.title_ky}</p>
-                                        {/*onClick={() => window.open(link, '_blank')}*/}
+                                        {i18n.language === "ky" && <p className="font-normal text-base">{item.title_ky}</p>}
+                                        {i18n.language === "ru" && <p className="font-normal text-base">{item.title_ru}</p>}
+                                        {i18n.language === "en" && <p className="font-normal text-base">{item.title_en}</p>}
                                     </div>
                                 ))}
                             </div>

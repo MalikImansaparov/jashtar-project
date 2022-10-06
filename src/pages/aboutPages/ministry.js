@@ -11,7 +11,6 @@ import {createMarkup} from "../../components/general/dompurify";
 const Ministry = () => {
     const {i18n} = useTranslation()
     const { isLoading, response } = useFetch(base + aboutUrl + '/ministry/');
-    const config = { ALLOWED_TAGS: ['p', 'a'], KEEP_CONTENT: false };
 
     const bgImageStyle = {
         backgroundImage: `url('${bg}')`,

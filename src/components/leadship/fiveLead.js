@@ -70,7 +70,6 @@ export const FivthLead = () => {
                     <RenderArrow angle={129} lenght={130} width={'120px'} line={2} />
                 </div>
             </div>
-
         </div>
     );
 };

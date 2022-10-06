@@ -34,32 +34,93 @@ const Valuation = () => {
               className="flex w-[1236px] m-auto shadow-xl rounded px-8 py-4 bg-white"
               key={item.id}
             >
-              <div className="m-auto w-[231px] h-[131px] overflow-hidden">
-                <img
-                  src={uri + item.image}
-                  alt="values"
-                  className=" h-auto w-[100%] mb-[10px] shadow-xl"
-                />
-                <p className="name">
-                    {item.full_name_ky}
-                </p>
-                <p className="text-[11px] font-normal text-center px-[20px]">
-                    {item.annotation_ky}
-                </p>
-              </div>
-              <div className="ml-[32px] pt-[33px]">
-                <div className="flex w-[857px] justify-center mb-4 min-h-[88px]">
-                  <img src={left} alt="quotes" className="w-[27px] h-[24px]"/>
-                  <p className="text-lg font-normal text-center mx-4 w-[709px]">
-                      {item.quote_ky}
-                  </p>
-                  <img
+                {i18n.language === "ky" && <>
+                    <div className="m-auto w-[231px] h-[131px] overflow-hidden">
+                        <img
+                            src={uri + item.image}
+                            alt="values"
+                            className=" h-auto w-[100%] mb-[10px] shadow-xl"
+                        />
+                        <p className="name">
+                            {item.full_name_ky}
+                        </p>
+                        <p className="text-[11px] font-normal text-center px-[20px]">
+                            {item.annotation_ky}
+                        </p>
+                    </div>
+                    <div className="ml-[32px] pt-[33px]">
+                    <div className="flex w-[857px] justify-center mb-4 min-h-[88px]">
+                    <img src={left} alt="quotes" className="w-[27px] h-[24px]"/>
+                    <p className="text-lg font-normal text-center mx-4 w-[709px]">
+                {item.quote_ky}
+                    </p>
+                    <img
                     src={rigth}
                     alt="quotes"
                     className="w-[27px] h-[24px] self-end"
-                  />
-                </div>
-              </div>
+                    />
+                    </div>
+                    </div>
+                    </>
+                }
+                {i18n.language === "ru" && <>
+                    <div className="m-auto w-[231px] h-[131px] overflow-hidden">
+                        <img
+                            src={uri + item.image}
+                            alt="values"
+                            className=" h-auto w-[100%] mb-[10px] shadow-xl"
+                        />
+                        <p className="name">
+                            {item.full_name_ru}
+                        </p>
+                        <p className="text-[11px] font-normal text-center px-[20px]">
+                            {item.annotation_ru}
+                        </p>
+                    </div>
+                    <div className="ml-[32px] pt-[33px]">
+                        <div className="flex w-[857px] justify-center mb-4 min-h-[88px]">
+                            <img src={left} alt="quotes" className="w-[27px] h-[24px]"/>
+                            <p className="text-lg font-normal text-center mx-4 w-[709px]">
+                                {item.quote_ru}
+                            </p>
+                            <img
+                                src={rigth}
+                                alt="quotes"
+                                className="w-[27px] h-[24px] self-end"
+                            />
+                        </div>
+                    </div>
+                </>
+                }
+                {i18n.language === "en" && <>
+                    <div className="m-auto w-[231px] h-[131px] overflow-hidden">
+                        <img
+                            src={uri + item.image}
+                            alt="values"
+                            className=" h-auto w-[100%] mb-[10px] shadow-xl"
+                        />
+                        <p className="name">
+                            {item.full_name_en}
+                        </p>
+                        <p className="text-[11px] font-normal text-center px-[20px]">
+                            {item.annotation_en}
+                        </p>
+                    </div>
+                    <div className="ml-[32px] pt-[33px]">
+                        <div className="flex w-[857px] justify-center mb-4 min-h-[88px]">
+                            <img src={left} alt="quotes" className="w-[27px] h-[24px]"/>
+                            <p className="text-lg font-normal text-center mx-4 w-[709px]">
+                                {item.quote_en}
+                            </p>
+                            <img
+                                src={rigth}
+                                alt="quotes"
+                                className="w-[27px] h-[24px] self-end"
+                            />
+                        </div>
+                    </div>
+                </>
+                }
             </div>
           ))}
           <div className="h-[62px]"></div>

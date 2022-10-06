@@ -44,4 +44,5 @@ export const publicRoutes = [
     { path: '/document/:id', component: DocumentDetail},
     { path: '/management/:id', component: InfoLeadership},
     { path: '/search', component: SearchPage},
+    // { path: '/search', component: Council},
 ];

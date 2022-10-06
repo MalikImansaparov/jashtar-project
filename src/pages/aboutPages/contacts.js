@@ -60,7 +60,7 @@ export const Contacts = () => {
                     <img src={pattern} alt="pattern" className="absolute top-0 right-[20px] w-[200px] h-[200px]"/>
                     <div className="">
                     { response && response.map( item => (
-                        <div key={item.id} className="text-white">
+                        <div key={item.id} className="text-black w-[400px]">
                             {i18n.language === "ky" &&
                                 <p className="text-base font-medium mb-[22px]">{t('address')}<span
                                     className="text-blue">{item.address_ky}</span></p>

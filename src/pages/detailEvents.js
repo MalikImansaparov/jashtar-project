@@ -52,7 +52,7 @@ const DetailEvents = () => {
                         <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
                 </div>
                 <div className='mb-8'>
-                        <div className="w-[432px] h-auto mr-[62px] mb-2 z-10 overflow-hidden float-left">
+                        <div className="w-[432px] h-auto mr-[72px] mb-2 z-10 overflow-hidden float-left">
                             <ImagesSlider images={response.events_slider}/>
                         </div>
                     <p className="mb-6 font-semibold text-[18px]">{response.title_ky}</p>
@@ -73,7 +73,7 @@ const DetailEvents = () => {
                                 <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
                             </div>
                             <div className='mb-8'>
-                                <div className="w-[432px] mr-[62px] mb-2 z-10 overflow-hidden float-left">
+                                <div className="w-[432px] mr-[72px] mb-2 z-10 overflow-hidden float-left">
                                     <ImagesSlider images={response.events_slider}/>
                                 </div>
                                 <p className="mb-6 font-semibold text-[18px]">{response.title_ky}</p>
@@ -94,7 +94,7 @@ const DetailEvents = () => {
                                 <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
                             </div>
                             <div className='mb-8'>
-                                <div className="w-[432px] mr-[62px] mb-2 z-10 overflow-hidden float-left">
+                                <div className="w-[432px] mr-[72px] mb-2 z-10 overflow-hidden float-left">
                                     <ImagesSlider images={response.events_slider}/>
                                 </div>
                                 <p className="mb-6 font-semibold text-[18px]">{response.title_ky}</p>

@@ -52,9 +52,9 @@ const InfoLeadership = () => {
                             <div className="h-[390px] w-[320px] mr-[42px] overflow-y-hidden z-10 rounded-md shadow-2xl">
                             <img src={uri + response.cropped_image} className='w-[100%] h-auto m-0 p-0 rounded-md' alt='about'/>
                             </div>
-                                <div className="w-[800px]">
+                                <div className="w-[800px] ml-[70px]">
                                 <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_ky}</p>
-                                <p className="font-base text-grey text-base mb-8 w-[500px]">{response.annotation_ky}
+                                <p className="font-base text-grey text-base mb-8">{response.annotation_ky}
                                 </p>
                                 <p>
                                   <Sanitized html={response.biography_ky}/>
@@ -74,9 +74,9 @@ const InfoLeadership = () => {
                             <div className="h-[390px] w-[320px] mr-[42px] overflow-y-hidden z-10 rounded-md shadow-2xl">
                                 <img src={uri + response.cropped_image} className='w-[100%] h-auto m-0 p-0 rounded-md' alt='about'/>
                             </div>
-                            <div className="w-[800px]">
+                            <div className="w-[800px] ml-[70px]">
                                 <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_ru}</p>
-                                <p className="font-base text-grey text-base mb-8 w-[500px]">{response.annotation_ru}
+                                <p className="font-base text-grey text-base mb-8">{response.annotation_ru}
                                 </p>
                                 <p>
                                     <Sanitized html={response.biography_ru}/>
@@ -98,7 +98,7 @@ const InfoLeadership = () => {
                             </div>
                             <div className="w-[800px] ml-[70px]">
                                 <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_en}</p>
-                                <p className="font-base text-grey text-base mb-8 w-[500px]">{response.annotation_en}
+                                <p className="font-base text-grey text-base mb-8">{response.annotation_en}
                                 </p>
                                 <p>
                                     <Sanitized html={response.biography_en}/>

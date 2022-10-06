@@ -52,7 +52,7 @@ const DetailNews = () => {
                     <BreadCrumbs crumbs={crumbs} title={response.title_ky}/>
             </div>
             <div className='mb-8 '>
-                <div className="w-[432px] h-auto mr-[62px] mb-2  float-left">
+                <div className="w-[432px] h-auto mr-[72px] mb-2  float-left">
                     <ImagesSlider images={response.news_slider}/>
                 </div>
                     <p className="mb-4 font-semibold text-[20px]">{response.title_ky}</p>
@@ -65,7 +65,7 @@ const DetailNews = () => {
                             <BreadCrumbs crumbs={crumbs} title={response.title_ru}/>
                         </div>
                         <div className='mb-8'>
-                            <div className="w-[432px] mr-[62px] mb-2 z-10 overflow-hidden float-left">
+                            <div className="w-[432px] mr-[72px] mb-2 z-10 overflow-hidden float-left">
                                 <ImagesSlider images={response.news_slider}/>
                             </div>
                                 <p className="mb-8 font-semibold text-[20px]">{response.title_ru}</p>
@@ -79,7 +79,7 @@ const DetailNews = () => {
                         <BreadCrumbs crumbs={crumbs} title={response.title_en}/>
                     </div>
                     <div className='mb-8'>
-                        <div className="w-[432px] mr-[62px] mb-2 z-10 overflow-hidden float-left">
+                        <div className="w-[432px] mr-[72px] mb-2 z-10 overflow-hidden float-left">
                             <ImagesSlider images={response.news_slider}/>
                         </div>
                             <p className="mb-8 font-semibold text-[20px]">{response.title_en}</p>

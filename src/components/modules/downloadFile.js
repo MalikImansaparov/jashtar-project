@@ -11,7 +11,7 @@ export const downloadFile = async (url) => {
             const url = window.URL.createObjectURL(new Blob([blob]));
             const link = document.createElement('a');
             link.href = url;
-            link.download = 'Kyrgyz-Republic.document.docx';
+            link.download = "a.docx";
             document.body.appendChild(link);
             link.click();
             link.parentNode.removeChild(link);

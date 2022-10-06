@@ -29,24 +29,34 @@ export const YoungOrganization = () => {
                     <div className="container w-[1196px]">
                         <BreadCrumb/>
                     </div>
-                    {i18n.language === "ky" &&
+                    {i18n.language === "ky" && <>
                         <div className='text-blue text-base font-semibold mb-8'>
                             {item.title_ky}
                         </div>
+                        <div className="flex w-full text-justify">
+                            <div dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
+                        </div>
+                    </>
                     }
-                    {i18n.language === "ru" &&
+                    {i18n.language === "ru" && <>
                         <div className='text-blue text-base font-semibold mb-8'>
                             {item.title_ru}
                         </div>
+                        <div className="flex w-full text-justify">
+                        <div dangerouslySetInnerHTML={createMarkup(item.desc_ru)}></div>
+                        </div>
+                        </>
                     }
-                    {i18n.language === "en" &&
+                    {i18n.language === "en" && <>
                         <div className='text-blue text-base font-semibold mb-8'>
                             {item.title_en}
                         </div>
+                        <div className="flex w-full text-justify">
+                            <div dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
+                        </div>
+                    </>
                     }
-                    <div className="flex w-full text-justify">
-                        <div dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
-                    </div>
+
                 </div>
             ))}
         <div className="mt-[32px] mb-[62px]">
@@ -54,7 +64,7 @@ export const YoungOrganization = () => {
             <div className="flex" key={i.id}>
                 {i.yorganizationpart.map( item => (
                     <div key={item.id} className="flex w-[371px] shadow-sm p-2 rounded-[12px]">
-                        <div className="h-[62px] w-[62px] z-10 m-auto flex self-center">
+                        <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px]">
                             <img
                                 src={uri + item.avatar_image}
                                 alt="cart-img"

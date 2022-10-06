@@ -80,7 +80,7 @@ export const Events = () => {
                                     {i18n.language === "ru" &&
                                         <>
                                             <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
-                                                {item.title_ru.length > 60 ? item.title_ky.slice(0, 60) + "..." : item.title_ky}
+                                                {item.title_ru.length > 60 ? item.title_ru.slice(0, 60) + "..." : item.title_ru}
                                             </p>
                                             <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
                                                 <Sanitized html={item.desc_ru}/>
@@ -89,7 +89,7 @@ export const Events = () => {
                                     {i18n.language === "en" &&
                                         <>
                                             <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
-                                                {item.title_en.length > 60 ? item.title_ky.slice(0, 60) + "..." : item.title_ky}
+                                                {item.title_en.length > 60 ? item.title_en.slice(0, 60) + "..." : item.title_en}
                                             </p>
                                             <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
                                                 <Sanitized html={item.desc_en}/>

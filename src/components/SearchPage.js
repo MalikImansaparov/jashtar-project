@@ -1,31 +1,26 @@
 import React, {useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
-import {asyncSearch} from "../store/asyncAction";
-import axios from "axios";
-import {base, searchUrl} from "../api/const";
 import {ClipLoader} from "react-spinners";
 
 const SearchPage = () => {
-    const value = localStorage.getItem('search')
     const {t, i18n} = useTranslation()
-    const item = useSelector(state => state.search.data)
-    const dispatch = useDispatch()
-    const [items, setItems] = useState()
+    const items = useSelector(state => state.search.data)
+    // const [items, setItems] = useState()
 
-    const Search = async () => {
-        const response = await axios({
-            method: 'post',
-            url: base + searchUrl + "/search/",
-            data: {
-                "body": `${value}`,
-            }})
-        setItems(response.data)
-    }
+    // const Search = async () => {
+    //     const response = await axios({
+    //         method: 'post',
+    //         url: base + searchUrl + "/search/",
+    //         data: {
+    //             "body": `${value}`,
+    //         }})
+    //     setItems(response.data)
+    // }
 
-    useEffect( () => {
-        Search()
-    },[])
+    // useEffect( () => {
+    //     AssyncSearch()
+    // },[])
 
     if (!items) {
         return (
@@ -73,6 +68,23 @@ const SearchPage = () => {
                                                </div>}
                                        </div>
                                     ))}
+                                {items.management && items.management.length > 0 && <p className="font-semibold font-medium">{t('documents')}<span className="ml-1">({items.docs.length})</span></p>}
+                                { items.management && items.management.map((item, idx) => (
+                                    <div key={idx} className="mb-4">
+                                        {i18n.language === 'ky' &&
+                                            <div onClick={() => window.location.replace(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">
+                                                {item.title_ky}
+                                            </div>}
+                                        {i18n.language === 'ru' &&
+                                            <div onClick={() => window.location.replace(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">
+                                                {item.title_ru}
+                                            </div>}
+                                        {i18n.language === 'en' &&
+                                            <div onClick={() => window.location.replace(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">
+                                                {item.title_en}
+                                            </div>}
+                                    </div>
+                                ))}
                                 {items.events && items.events.length > 0 && <p className="font-semibold font-medium">{t('events')}<span className="ml-1">({items.events.length})</span></p>}
                                 { items.events &&  items.events.map((item, idx) => (
                                     <div key={idx} className="mb-4">
@@ -90,8 +102,8 @@ const SearchPage = () => {
                                             </div>}
                                     </div>
                                 ))}
-                                {items.managment && items.managment.length > 0 && <p className="font-semibold font-medium">{t('leadship')}<span className="ml-1">({items.managment.length})</span></p>}
-                                { items.managment &&   items.managment.map((item, idx) => (
+                                {items.management && items.management.length > 0 && <p className="font-semibold font-medium">{t('leadship')}<span className="ml-1">({items.management.length})</span></p>}
+                                { items.management &&   items.management.map((item, idx) => (
                                     <div key={idx} className="mb-4">
                                         {i18n.language === 'ky' &&
                                             <div onClick={() => window.location.replace(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">
