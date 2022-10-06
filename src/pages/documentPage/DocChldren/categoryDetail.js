@@ -61,7 +61,7 @@ const DocumentDetail = () => {
                 {/*    <>*/}
 
                         {/*<BreadCrumbs crumbs={crumbs} title={response.title_ky} />*/}
-                        <div className="text-center">
+                        <div className="">
                          <div dangerouslySetInnerHTML={createMarkup(response.body_ky)}></div>
                         </div>
                         <p className="text-base font-medium text-blue mb-[28px]">{t('download')}</p>
