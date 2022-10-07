@@ -2,10 +2,18 @@ import React, {useRef, useState} from "react";
 import {Autoplay, Navigation, Thumbs} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {uri} from "../../api/const";
+import InfoImage from "../../pages/imageModal/infoImage";
 
 export const ImagesSlider = props => {
     const [activeThumb, setActiveThumb] = useState()
     const swiperRef = useRef();
+    const [openRegisterModal, setOpenRegisterModal] = useState(false);
+
+    const openModal = (id) => {
+        setOpenRegisterModal(true)
+        localStorage.setItem("image", id)
+    }
+    // onClick={() => openModal(item.id)}
 
     return <>
         <Swiper
@@ -15,7 +23,6 @@ export const ImagesSlider = props => {
             slidesPerView={1}
             loop={true}
             modules={[Autoplay, Navigation, Thumbs]}
-            grabCursor={true}
             thumbs={{ swiper: activeThumb }}
             autoplay={{
                 delay: 6000,
@@ -25,15 +32,18 @@ export const ImagesSlider = props => {
         >
             {
                 props.images.map((item, index) => (
-                    <SwiperSlide key={index}>
-                        <div className="w-[432px] h-[247px] mr-[62px] mb-2 z-10 overflow-hidden float-left">
+                    <div key={index}>
+                    <SwiperSlide >
+                        <div className="w-[432px] h-[247px] mr-[62px] mb-2 z-10 overflow-hidden float-left" >
                         <img
                             src={uri + item.image}
                             alt="cart-img"
                             className="h-auto w-[100%] rounded-t"
+                            width="500"
                         />
                         </div>
                     </SwiperSlide>
+                    </div>
                 ))
             }
         </Swiper>
@@ -74,7 +84,14 @@ export const ImagesSlider = props => {
                 className="detail-next absolute top-[30px] right-[-25px]"
                 onClick={() => swiperRef.current.slideNext()}
             ></div>
+            {openRegisterModal && openRegisterModal && (
+                <InfoImage
+                    openRegisterModal={openRegisterModal}
+                    setOpenRegisterModal={() => setOpenRegisterModal(false)}
+                />
+            )}
         </div>
         }
+
     </>
 }

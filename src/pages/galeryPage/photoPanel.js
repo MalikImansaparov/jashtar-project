@@ -29,7 +29,7 @@ const PhotoPanel = () => {
 
 
     return (
-        <div className="wrapper text-justify">
+        <div className="wrapper">
             <div className="grid grid-cols-3 gap-[32px] px-8 mt-8">
             {response && response.results.map((item) => (
                 <div key={item.id} className="relative top-0 left-0 right-0 bottom-0 w-[379px] cursor-pointer" onClick={() =>  openModal(item.id)}>
@@ -39,15 +39,15 @@ const PhotoPanel = () => {
                         </div>
                             <div className="h-[52px] w-full bg-[#3b82f6] absolute bottom-1.5 left-0">
                     {i18n.language === 'ky' &&
-                        <p className="p-4 font-semibold text-base text-white">{item.title_ky.length > 30 ? item.title_ky.split('').splice(0, 35) : item.title_ky}
+                        <p className="p-4 font-semibold text-base text-white">{item.title_ky.length > 31 ? item.title_ky.slice(0, 31) + "..." : item.title_ky}
                             </p>
                     }
                     {i18n.language === 'ru' &&
-                        <p className="p-4 font-semibold text-base text-white">{item.title_ru.length > 35 ? item.title_ru.split('').splice(0, 35)  : item.title_ru}
+                        <p className="p-4 font-semibold text-base text-white">{item.title_ru.length > 31 ? item.title_ru.slice(0, 31) + "..." : item.title_ru}
                         </p>
                     }
                     {i18n.language === 'en' &&
-                        <p className="p-4 font-semibold text-base text-white">{item.title_en.length > 35 ? item.title_en.split('').splice(0, 35)  : item.title_en}
+                        <p className="p-4 font-semibold text-base text-white">{item.title_en.length > 31 ? item.title_en.slice(0, 31) + "..."  : item.title_en}
                          </p>
                     }
                 </div>

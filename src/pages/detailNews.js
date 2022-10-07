@@ -9,6 +9,8 @@ import {Sanitized} from "../components/general/sanitize";
 import {ClipLoader} from "react-spinners";
 import ShareSocial from "../components/general/share-social";
 import {ImagesSlider} from "../components/general/photoSlider";
+import InfoPartners from "./cordinationPages/infoPartners";
+import InfoImage from "./imageModal/infoImage";
 
 const DetailNews = () => {
     window.scroll(0,0)
@@ -30,6 +32,7 @@ const DetailNews = () => {
     useEffect(() => {
         crumbSet()
     }, [i18n.language]);
+
 
     if (isLoading) {
         return (

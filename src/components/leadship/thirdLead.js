@@ -15,7 +15,7 @@ export const ThirdLead = () => {
         <div>
             <div className="wrapper justify-center align-middle relative">
                 <img src={line} alt='' className='absolute left-[-23px] top-[93px]'/>
-                <img src={line2} alt='' className='absolute left-[-23px] top-[95px]'/>
+                <img src={line2} alt='' className='absolute left-[-23px] top-[95px] h-[630px]'/>
                 <div className="mt-[70px] absolute top-[10%] left-[10.5%]">
                     <RenderArrow angle={239} lenght={800} width={'355px'} line={4} />
                 </div>
@@ -67,7 +67,7 @@ export const ThirdLead = () => {
                         </Link>
                     ))}
                 <div className="mt-[70px] absolute top-[10%] right-[11.0%]">
-                    <RenderArrow angle={121.5} lenght={800} width={'350px'} line={4} />
+                    <RenderArrow angle={121.5} lenght={900} width={'350px'} line={4} />
                 </div>
             </div>
             <div className="wrapper justify-center">

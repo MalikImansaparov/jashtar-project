@@ -7,7 +7,7 @@ import {createMarkup} from "../../components/general/dompurify";
 import {ClipLoader} from "react-spinners";
 import emblem from "../../assets/image/general/200px-Emblem_of_Kyrgyzstan 1.svg"
 
-export const YoungOrganization = () => {
+export const YoungCouncil = () => {
     const { isLoading, response } = useFetch(base + councilUrl + '/yorganization/');
     const {t, i18n} = useTranslation()
 
@@ -31,7 +31,7 @@ export const YoungOrganization = () => {
                     </div>
                     {i18n.language === "ky" && <>
                         <div className='text-blue text-base font-semibold mb-8'>
-                            Жаштар уюмдары
+                            {item.title_ky}
                         </div>
                         <div className="flex w-full text-justify">
                             <div dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
@@ -40,7 +40,7 @@ export const YoungOrganization = () => {
                     }
                     {i18n.language === "ru" && <>
                         <div className='text-blue text-base font-semibold mb-8'>
-                            Молодежная политика
+                            {item.title_ru}
                         </div>
                         <div className="flex w-full text-justify">
                         <div dangerouslySetInnerHTML={createMarkup(item.desc_ru)}></div>
@@ -49,7 +49,7 @@ export const YoungOrganization = () => {
                     }
                     {i18n.language === "en" && <>
                         <div className='text-blue text-base font-semibold mb-8'>
-                           Youth policy
+                            {item.title_en}
                         </div>
                         <div className="flex w-full text-justify">
                             <div dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
@@ -83,37 +83,37 @@ export const YoungOrganization = () => {
             </div>
         ))}
            </div>
-            {/*<div>*/}
-            {/*<div className='block text-base font-semibold mb-[36px]'>{t("listCoordination")}</div>*/}
-            {/*<div className=" mb-[62px]">*/}
-            {/*    {response && response.map(i => (*/}
-            {/*        <div key={i.id} className="flex flex-wrap items-center">*/}
-            {/*            {i.yorganizationmemb.map( item => (*/}
-            {/*                <div className="flex flex-wrap items-center shadow-enroll py-[10px] px-[30px] my-[5px] rounded-[12px] mb-[23px] w-[1230px]">*/}
-            {/*                    <div className="flex justify-center shadow-org py-[13px] px-[10px] rounded-[12px]  mr-[32px] w-[64px] h-[64px]">*/}
-            {/*                        <img src={emblem} alt='organization' className='w-[100%] h-auto'/>*/}
-            {/*                    </div>*/}
-            {/*                    {i18n.language === "ky" &&*/}
-            {/*                        <p className="font-normal text-base w-[1000px]">*/}
-            {/*                            {item.annotation_ky}*/}
-            {/*                        </p>*/}
-            {/*                    }*/}
-            {/*                    {i18n.language === "ru" &&*/}
-            {/*                        <p className="font-normal text-base w-[1000px]">*/}
-            {/*                            {item.annotation_ru}*/}
-            {/*                        </p>*/}
-            {/*                    }*/}
-            {/*                    {i18n.language === "en" &&*/}
-            {/*                        <p className="font-normal text-base w-[1000px]">*/}
-            {/*                            {item.annotation_en}*/}
-            {/*                        </p>*/}
-            {/*                    }*/}
-            {/*                </div>*/}
-            {/*                ))}*/}
-            {/*        </div>*/}
-            {/*    ))}*/}
-            {/*</div>*/}
-            {/*</div>*/}
+            <div>
+            <div className='block text-base font-semibold mb-[36px]'>{t("listCoordination")}</div>
+            <div className=" mb-[62px]">
+                {response && response.map(i => (
+                    <div key={i.id} className="flex flex-wrap items-center">
+                        {i.yorganizationmemb.map( item => (
+                            <div className="flex flex-wrap items-center shadow-enroll py-[10px] px-[30px] my-[5px] rounded-[12px] mb-[23px] w-[1230px]">
+                                <div className="flex justify-center shadow-org py-[13px] px-[10px] rounded-[12px]  mr-[32px] w-[64px] h-[64px]">
+                                    <img src={emblem} alt='organization' className='w-[100%] h-auto'/>
+                                </div>
+                                {i18n.language === "ky" &&
+                                    <p className="font-normal text-base w-[1000px]">
+                                        {item.annotation_ky}
+                                    </p>
+                                }
+                                {i18n.language === "ru" &&
+                                    <p className="font-normal text-base w-[1000px]">
+                                        {item.annotation_ru}
+                                    </p>
+                                }
+                                {i18n.language === "en" &&
+                                    <p className="font-normal text-base w-[1000px]">
+                                        {item.annotation_en}
+                                    </p>
+                                }
+                            </div>
+                            ))}
+                    </div>
+                ))}
+            </div>
+            </div>
         </div>
     );
 };

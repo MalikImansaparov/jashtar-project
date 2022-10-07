@@ -226,6 +226,7 @@ module.exports = {
 			display: ['Product Sans'],
 			monserrat: ['Montserrat'],
 			inter: ['Inter'],
+			arial: ['Arial'],
 			dm: ['DM Sans'],
 		},
 		fontSize: {

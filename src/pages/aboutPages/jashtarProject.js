@@ -32,7 +32,7 @@ export const JashtarProject = () => {
           response.map((item) => (
             <div className="flex mb-8 w-full flex-wrap text-justify" key={item.id}>
                 {i18n.language === "ky" &&
-                    <div className="text-justify" dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
+                    <div className="text-justify" dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
                 }
                 {i18n.language === "ru" &&
                     <div className="text-justify" dangerouslySetInnerHTML={createMarkup(item.desc_ru)}></div>

@@ -1,7 +1,7 @@
 
 
 export const downloadFile = async (url) => {
-    fetch(`https://jashtar.prosoft.kg${url}`, {
+    fetch(`https://jashtar.info${url}`, {
         headers: {
             accept: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
         },

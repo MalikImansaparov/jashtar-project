@@ -85,7 +85,7 @@ const TimeLine = () => {
                                         ))}
                                             </div>
                                                 {i18n.language === "ky" &&
-                                                    <div className="text-justify"
+                                                    <div className="text-justify font-inter"
                                                          dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
                                                 }
                                                 {i18n.language === "ru" &&

@@ -22,7 +22,7 @@ export const FourthLead = () => {
                                 <img
                                     src={uri + item.cropped_image}
                                     alt="cart-img"
-                                    className=" h-auto w-[100%] "
+                                    className=" h-auto w-[100%]"
                                 />
                             </div>
                             {i18n.language === 'ky' &&

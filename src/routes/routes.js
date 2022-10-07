@@ -20,6 +20,7 @@ import InfoLeadership from "../components/leadship/infoLeadership";
 import SearchPage from "../components/SearchPage";
 import CategoryList from "../pages/documentPage/DocList/category";
 import DocumentDetail from "../pages/documentPage/DocChldren/categoryDetail";
+import {YoungCouncil} from "../pages/cordinationPages/youthCouncil";
 
 export const publicRoutes = [
     { path: '/', component: MainPage },
@@ -44,5 +45,5 @@ export const publicRoutes = [
     { path: '/document/:id', component: DocumentDetail},
     { path: '/management/:id', component: InfoLeadership},
     { path: '/search', component: SearchPage},
-    // { path: '/search', component: Council},
+    { path: '/community', component: YoungCouncil},
 ];
