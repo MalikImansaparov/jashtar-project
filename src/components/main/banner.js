@@ -70,18 +70,15 @@ const Banner = () => {
                                 />
                                 {/*<div className='w-full h-[624px] bg-gradient-banner opacity-[40%] absolute top-0 left-0 z-0'></div>*/}
                                 {/*<div className='w-[4.3%] h-[624px] absolute bg-gradient-banner opacity-[40%] top-0 right-0 z-100'></div>*/}
-                                <div className="container w-[1236px] h-[624px] m-auto text-white bg-gradient-banner absolute top-0 flex items-center z-1000">
+                                <div className="container w-[1236px] h-[624px] m-auto text-white bg-gradient-banner absolute top-0 flex items-center  z-1000">
                                     {i18n.language === 'ky' &&
                                         <div className="ml-[52px] items-center">
                                             <p className="text-[32px] font-bold">
                                                 <SanitizedHTML html={item.title_ky}/>
                                             </p>
-                                            <p className="text-[32px] font-normal">
+                                            <p className="mt-[26px] font-normal text-[26px]">
+                                                <SanitizedHTML html={(item.subtitle_ky)}/>
                                             </p>
-                                            <p className="text-[32px] font-normal"></p>
-                                            {/*<p className="mt-[26px] font-normal text-[26px]">*/}
-                                            {/*    <SanitizedHTML html={(item.subtitle_ky)}/>*/}
-                                            {/*</p>*/}
                                         </div>
                                     }
                                     {i18n.language === 'ru' &&
@@ -89,12 +86,9 @@ const Banner = () => {
                                             <p className="text-[32px] font-bold">
                                                 <SanitizedHTML html={item.title_ru}/>
                                             </p>
-                                            <p className="text-[32px] font-normal">
+                                            <p className="mt-[26px] font-normal text-[26px]">
+                                                <SanitizedHTML html={(item.subtitle_ru)}/>
                                             </p>
-                                            <p className="text-[32px] font-normal"></p>
-                                            {/*<p className="mt-[26px] font-normal text-[26px]">*/}
-                                            {/*    <SanitizedHTML html={(item.subtitle_ru)}/>*/}
-                                            {/*</p>*/}
                                         </div>
                                     }
                                     {i18n.language === 'en' &&
@@ -102,12 +96,9 @@ const Banner = () => {
                                             <p className="text-[32px] font-bold">
                                                 <SanitizedHTML html={item.title_en}/>
                                             </p>
-                                            <p className="text-[32px] font-normal">
+                                            <p className="mt-[26px] font-normal text-[26px]">
+                                                <SanitizedHTML html={(item.subtitle_en)}/>
                                             </p>
-                                            <p className="text-[32px] font-normal"></p>
-                                            {/*<p className="mt-[26px] font-normal text-[26px]">*/}
-                                            {/*    <SanitizedHTML html={(item.subtitle_en)}/>*/}
-                                            {/*</p>*/}
                                         </div>
                                     }
                                 </div>

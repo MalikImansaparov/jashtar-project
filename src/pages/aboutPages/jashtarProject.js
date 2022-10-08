@@ -2,10 +2,9 @@ import React from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
 import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, uri} from "../../api/const";
-import {createMarkup} from "../../components/general/dompurify";
 import {useTranslation} from "react-i18next";
 import {ClipLoader} from "react-spinners";
-import ShareSocial from "../../components/general/share-social";
+import {createTemplate} from "../../components/general/purifydom";
 
 export const JashtarProject = () => {
   const { isLoading, response } = useFetch(base + aboutUrl + '/youthpolicy/');
@@ -32,13 +31,13 @@ export const JashtarProject = () => {
           response.map((item) => (
             <div className="flex mb-8 w-full flex-wrap text-justify" key={item.id}>
                 {i18n.language === "ky" &&
-                    <div className="text-justify" dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
+                    <div className="text-justify" dangerouslySetInnerHTML={createTemplate(item.desc_en)}></div>
                 }
                 {i18n.language === "ru" &&
-                    <div className="text-justify" dangerouslySetInnerHTML={createMarkup(item.desc_ru)}></div>
+                    <div className="text-justify" dangerouslySetInnerHTML={createTemplate(item.desc_ru)}></div>
                 }
                 {i18n.language === "en" &&
-                    <div className="text-justify" dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
+                    <div className="text-justify" dangerouslySetInnerHTML={createTemplate(item.desc_en)}></div>
                 }
             </div>
           ))}

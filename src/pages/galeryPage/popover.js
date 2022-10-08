@@ -27,10 +27,6 @@ const OVERLAY_STYLE = {
     backgroundColor: "rgba(0, 0, 0, 0.75)",
 };
 
-const WRAPPER = {
-    height: "100px !important",
-    width: "100%",
-}
 
 const Popover = ({ open, children }) => {
     if (!open) return null;

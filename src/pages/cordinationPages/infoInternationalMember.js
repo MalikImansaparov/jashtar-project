@@ -38,13 +38,13 @@ const InfoInternationalProject = ({openRegisterModal, setOpenRegisterModal }) =>
                     </div>
                     {response &&
                         <div className="flex text-justify" key={response.id}>
-                            <div className='w-[332px] h-[276px] rounded shadow-partner flex justify-center items-center mb-[10px] p-8 shadow-xl'>
+                            <div className='w-[332px] h-[276px] rounded shadow-2xl flex justify-center items-center mb-[10px] p-8'>
                                 <div className="flex items-center w-[245px] h-[250px] m-auto">
                                     <img src={uri + response.org_image} alt='img' className="h-auto w-[100%]"/>
                                 </div>
                             </div>
                             {i18n.language === "ky" &&
-                                <div className='ml-[26px] w-[808px]'>
+                                <div className='ml-[26px] w-[800px]'>
                                     <p className='text-blue text-base font-semibold my-4'>
                                         {response.annotation_ky}
                                     </p>
@@ -53,7 +53,7 @@ const InfoInternationalProject = ({openRegisterModal, setOpenRegisterModal }) =>
                                     </p>
                                 </div>}
                             {i18n.language === "ru" &&
-                                <div className='ml-[76px]'>
+                                <div className='ml-[26px] w-[800px]'>
                                     <p className='text-blue text-base font-semibold my-4'>
                                         {response.annotation_ru}
                                     </p>
@@ -62,7 +62,7 @@ const InfoInternationalProject = ({openRegisterModal, setOpenRegisterModal }) =>
                                     </p>
                                 </div>}
                             {i18n.language === "en" &&
-                                <div className='ml-[76px]'>
+                                <div className='ml-[26px] w-[800px]'>
                                     <p className='text-blue text-base font-semibold my-4'>
                                         {response.annotation_en}
                                     </p>

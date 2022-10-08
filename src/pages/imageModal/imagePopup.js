@@ -3,16 +3,15 @@ import React from "react";
 const MODAL_STYLES = {
     position: "absolute",
     zIndex: "9999",
-    top: "400px",
+    top: "350px",
     left: "50%",
     bottom: "500px",
     transform: "translate(-50%, -50%)",
-    height: "100%",
+    height: "72%",
     background: "#fff",
     overflow: "auto",
     borderRadius: "4px",
     outline: "none",
-    paddingBottom: '30px'
 
 };
 const OVERLAY_STYLE = {

@@ -9,11 +9,10 @@ export const ImagesSlider = props => {
     const swiperRef = useRef();
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
 
-    const openModal = (id) => {
+    const openModal = (image) => {
         setOpenRegisterModal(true)
-        localStorage.setItem("image", id)
+        localStorage.setItem("image", image)
     }
-    // onClick={() => openModal(item.id)}
 
     return <>
         <Swiper
@@ -31,10 +30,10 @@ export const ImagesSlider = props => {
             speed={800}
         >
             {
-                props.images.map((item, index) => (
-                    <div key={index}>
+                props.images.map((item, i) => (
+                    <div key={i}>
                     <SwiperSlide >
-                        <div className="w-[432px] h-[247px] mr-[62px] mb-2 z-10 overflow-hidden float-left" >
+                        <div className="w-[432px] h-[247px] mr-[62px] mb-2 z-10 overflow-hidden float-left" onClick={() => openModal(item.image)}>
                         <img
                             src={uri + item.image}
                             alt="cart-img"
@@ -65,8 +64,8 @@ export const ImagesSlider = props => {
             modules={[Navigation, Thumbs]}
         >
             {
-                props.images.map((item, index) => (
-                    <SwiperSlide key={index} className="">
+                props.images.map((item) => (
+                    <SwiperSlide className="">
                         <img
                             src={uri + item.image}
                             alt="cart-img"

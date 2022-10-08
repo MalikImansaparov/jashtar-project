@@ -52,7 +52,7 @@ const DocumentDetail = () => {
 
     return (
         <div className='w-full flex text-justify'>
-            <div className="ml-[63px] mb-[62px] max-w-[1220px] mt-16">
+            <div className="m-auto mb-[62px] max-w-[1220px] mt-16">
                 {/*{response &&*/}
                 {/*    <>*/}
                     {i18n.language === "ky" && <BreadCrumbs crumbs={crumbs} title={response.title_ky} />}

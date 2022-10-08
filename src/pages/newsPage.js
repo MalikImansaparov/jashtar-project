@@ -1,48 +1,50 @@
 import React, {useEffect, useState} from 'react';
 import {BreadCrumb} from "../components/general/breadcrumb";
-import {SwiperSlide} from "swiper/react";
 import {useFetch} from "../api/useFetch";
-import {base, docsUrl, mainUrl, newsUrl, uri, url} from "../api/const";
+import {base, docsUrl, galeryUrl, mainUrl, newsUrl, uri, url} from "../api/const";
 import {ClipLoader} from "react-spinners";
 import {Link} from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import {useTranslation} from "react-i18next";
-import axios from "axios";
 import {Sanitized} from "../components/general/sanitize";
 
 const NewsPage = () => {
+    const {isLoading} = useFetch(base + newsUrl + `/news/`);
+    const [response, setResponse] = useState([])
     const [pageCount, setpageCount] = useState(0);
-    const {isLoading, response} = useFetch(base + newsUrl + `/news/`);
     const {t, i18n} = useTranslation()
-    // const [response, setResponse] = useState([])
-    // console.log(response)
-    //
-    // const getData = async () => {
-    //     const res = await axios.get(base + newsUrl + '/news/')
-    //     setResponse(res.data)
-    // }
-    //
-    // useEffect(() => {
-    //     getData()
-    // },[])
+    const limit = 9
 
-    // const fetchComments = async (currentPage) => {
-    //     const res = await fetch(
-    //         `${baseURL}work?limit=${limit}&offset=${currentPage}`
-    //     );
-    //     const data = await res.json();
-    //     return data.results;
-    // };
-    //
-    // const handlePageClick = async (data) => {
-    //     if( data.selected > 0 ){
-    //         let currentPage = data.selected + 11;
-    //         const commentsFormServer = await fetchComments(currentPage);
-    //         setResponse(commentsFormServer);
-    //     } else {
-    //         getComments()
-    //     }
-    // };
+    const getData = async () => {
+        const res = await fetch(
+            `${base}${newsUrl}/news/`
+        );
+        const data = await res.json();
+        setpageCount(Math.ceil(data.count / limit));
+        setResponse(data);
+    }
+
+    useEffect(() => {
+        getData()
+    },[limit])
+
+    const paginateData = async (count) => {
+        const res = await fetch(
+            `${base}${newsUrl}/news/?page=${count}`
+        );
+        const data = await res.json();
+        return data;
+    };
+
+    const handlePageClick = async (data) => {
+        if( data.selected > 0 ){
+            let currentPage = data.selected + 1;
+            const paginateServer = await paginateData(currentPage);
+            setResponse(paginateServer);
+        } else {
+            paginateData()
+        }
+    };
 
     if (isLoading) {
         return (
@@ -61,7 +63,7 @@ const NewsPage = () => {
                 <BreadCrumb />
             </div>
                 <div className="flex flex-wrap">
-                    {response &&
+                    {response.results &&
                         response.results.map((item) => (
                                 <Link to={`${item.id}`} className="max-w-[384px] m-auto shadow-lg rounded bg-white pb-4 mb-[62px] leading-5 cursor-pointer mx-3 hover:shadow-2xl" key={item.id}>
                                     <div className="mb-3 h-[247px] w-[384px] overflow-hidden rounded-t">
@@ -110,12 +112,13 @@ const NewsPage = () => {
                         ))}
                 </div>
             <div className="paginate">
+                {response.results && response.results.length >= 9 && (
             <ReactPaginate
                 nextLabel="❯"
-                // onPageChange={handlePageClick}
+                onPageChange={handlePageClick}
                 pageRangeDisplayed={3}
                 marginPagesDisplayed={2}
-                pageCount={1}
+                pageCount={pageCount}
                 previousLabel="❮"
                 pageClassName="page-item"
                 pageLinkClassName="page-link"
@@ -127,6 +130,7 @@ const NewsPage = () => {
                 activeClassName="active"
                 renderOnZeroPageCount={null}
             />
+                    )}
                 </div>
             </div>
     );

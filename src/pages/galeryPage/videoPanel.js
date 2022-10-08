@@ -2,29 +2,26 @@ import React, {useEffect, useState} from 'react';
 import {useFetch} from "../../api/useFetch";
 import {base, galeryUrl, uri, url} from "../../api/const";
 import point from '../../assets/image/general/point.png'
-import GalleryInfo from "./galleryInfo";
 import VideoInfo from "./videoInfo";
 import ReactPaginate from "react-paginate";
-import {useClickOutside} from "../../hooks/useOutside";
-import axios from "axios";
 import {useTranslation} from "react-i18next";
 import {ClipLoader} from "react-spinners";
 
-
 const VideoPanel = () => {
+    window.scroll(0,0)
     const [openRegisterModal, setOpenRegisterModal] = useState(false);
-    // const { isLoading, response} = useFetch(base + galeryUrl + '/video/');
+    const { isLoading} = useFetch(base + galeryUrl + '/video/');
     const [response, setResponse] = useState([])
     const [pageCount, setpageCount] = useState(0);
     const {t, i18n} = useTranslation()
-    const limit = 3
+    const limit = 6
 
     const getData = async () => {
             const res = await fetch(
-             'https://jashtar.prosoft.kg/ce387d5e0a2972dea9e5129a52ac3b8d58a4d180fc9eece5946d926643a3d2c0/video/'
+                `${base}${galeryUrl}/video/`
             );
             const data = await res.json();
-            const total = res.headers.get('x-total-count');
+            const total = data.count
             setpageCount(Math.ceil(total / limit));
             setResponse(data);
     }
@@ -33,24 +30,38 @@ const VideoPanel = () => {
         getData()
     },[limit])
 
-    const fetchComments = async (count) => {
+    const paginateData = async (count) => {
         const res = await fetch(
-            `https://jashtar.prosoft.kg/ce387d5e0a2972dea9e5129a52ac3b8d58a4d180fc9eece5946d926643a3d2c0/video/?page=${count}`
+            `${base}${galeryUrl}/video/?page=${count}`
         );
         const data = await res.json();
-        return data.results;
+        return data;
     };
 
     const handlePageClick = async (data) => {
+        if( data.selected > 0 ){
             let currentPage = data.selected + 1;
-            const commentsFormServer = await fetchComments(currentPage);
-            setResponse(commentsFormServer);
-
+            const paginateServer = await paginateData(currentPage);
+            setResponse(paginateServer);
+        } else {
+            paginateData()
+        }
     };
 
     const openModal = (id) => {
         setOpenRegisterModal(true)
         localStorage.setItem('id', id)
+    }
+
+    if (isLoading) {
+        return (
+            <div role="status" className='flex justify-center my-28 pb-24'>
+                <ClipLoader
+                    color="#1985A1"
+                    size={300}
+                />
+            </div>
+        )
     }
 
     return (
@@ -68,7 +79,15 @@ const VideoPanel = () => {
                         title="Embedded youtube"
                     />
                     <div className="p-4 cursor-pointer">
-                   <p className='text-[18px] font-normal'>{item.title_ky}</p>
+                        {i18n.language === "ky" &&
+                            <p className='text-[18px] font-normal'>{item.title_ky}</p>
+                        }
+                        {i18n.language === "ru" &&
+                            <p className='text-[18px] font-normal'>{item.title_ru}</p>
+                        }
+                        {i18n.language === "en" &&
+                            <p className='text-[18px] font-normal'>{item.title_en}</p>
+                        }
                     <div className="flex items-center mt-2">
                         <img src={point} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
                         <span>{t('date')}</span><span className='text-black '>&nbsp;{item.date.split('-').reverse().join('-')}</span>
@@ -84,12 +103,13 @@ const VideoPanel = () => {
             )}
         </div>
             <div className="paginate">
+                {response.results.length >= 6 && (
                 <ReactPaginate
                     nextLabel="❯"
                     onPageChange={handlePageClick}
                     pageRangeDisplayed={3}
                     marginPagesDisplayed={2}
-                    pageCount={1}
+                    pageCount={pageCount}
                     previousLabel="❮"
                     pageClassName="page-item"
                     pageLinkClassName="page-link"
@@ -101,6 +121,7 @@ const VideoPanel = () => {
                     activeClassName="active"
                     renderOnZeroPageCount={null}
                 />
+                    )}
             </div>
         </div>
     );
