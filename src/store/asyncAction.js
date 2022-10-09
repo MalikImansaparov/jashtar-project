@@ -1,11 +1,12 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 import {base, searchUrl} from "../api/const";
-const value = localStorage.getItem("search")
+
 
 export const asyncSearch = createAsyncThunk(
+
     'search/fetchMaterial',
-    async (_, {rejectWithValue}) => {
+    async (value, {rejectWithValue}) => {
         try {
             const response = await axios({
                 method: 'post',

@@ -33,24 +33,23 @@ const SearchPage = () => {
         )
     }
 
+    if(items.docs.length === 0 || items.management.length === 0 || items.news.length === 0 ||
+    items.events.length === 0 || items.project.length === 0 || items.partner.length === 0){
+        return (
+            <div className="flex w-[1236px] m-auto shadow-md rounded px-8 my-8 bg-white">
+                <p className="my-16 text-[20px]">{t('notFound')}</p>
+            </div>
+            )
+    }
+
     return (
         <div className="wrapper py-[62px] font-inter">
-            {/*{items && items.events.length <= 0 && items.managment.length <= 0 && items.news.length <= 0 && items.partner.length <= 0 && items.project.length <= 0 && items.docs.length <= 0 &&*/}
-            {/*    <div className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white">*/}
-            {/*        <p className="my-16 text-[20px]">{t('notFound')}</p>*/}
-            {/*    </div>*/}
-            {/*}*/}
-            {/*{items && items.length === 0 &&*/}
-            {/*    <div className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white">*/}
-            {/*        <p className="my-16 text-[20px]">{t('notFound')}</p>*/}
-            {/*    </div>*/}
-            {/*}*/}
             {items &&
                     <div
                         className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white"
                     >
                         <div className="ml-[32px] py-6">
-                            <div className="w-[1100px] mb-4 min-h-[88px]">
+                            <div className="w-[1100px] mb-4">
                                 {items.docs && items.docs.length > 0 && <p className="font-semibold font-medium">{t('documents')}<span className="ml-1">({items.docs.length})</span></p>}
                                    { items.docs && items.docs.map((item, idx) => (
                                        <div key={idx} className="mb-4">
@@ -68,42 +67,25 @@ const SearchPage = () => {
                                                </div>}
                                        </div>
                                     ))}
-                                {items.management && items.management.length > 0 && <p className="font-semibold font-medium">{t('documents')}<span className="ml-1">({items.docs.length})</span></p>}
+                                {items.management && items.management.length > 0 && <p className="font-semibold font-medium">{t('leadship')}<span className="ml-1">({items.management.length})</span></p>}
                                 { items.management && items.management.map((item, idx) => (
                                     <div key={idx} className="mb-4">
                                         {i18n.language === 'ky' &&
                                             <div onClick={() => window.location.replace(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">
-                                                {item.title_ky}
+                                                {item.full_name_ky}
                                             </div>}
                                         {i18n.language === 'ru' &&
                                             <div onClick={() => window.location.replace(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">
-                                                {item.title_ru}
+                                                {item.full_name_ru}
                                             </div>}
                                         {i18n.language === 'en' &&
                                             <div onClick={() => window.location.replace(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">
-                                                {item.title_en}
+                                                {item.full_name_en}
                                             </div>}
                                     </div>
                                 ))}
                                 {items.events && items.events.length > 0 && <p className="font-semibold font-medium">{t('events')}<span className="ml-1">({items.events.length})</span></p>}
                                 { items.events &&  items.events.map((item, idx) => (
-                                    <div key={idx} className="mb-4">
-                                        {i18n.language === 'ky' &&
-                                            <div onClick={() => window.location.replace(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">
-                                                {item.title_ky}
-                                            </div>}
-                                        {i18n.language === 'ru' &&
-                                            <div onClick={() => window.location.replace(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">
-                                                {item.title_ru}
-                                            </div>}
-                                        {i18n.language === 'en' &&
-                                            <div onClick={() => window.location.replace(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">
-                                                {item.title_en}
-                                            </div>}
-                                    </div>
-                                ))}
-                                {items.management && items.management.length > 0 && <p className="font-semibold font-medium">{t('leadship')}<span className="ml-1">({items.management.length})</span></p>}
-                                { items.management &&   items.management.map((item, idx) => (
                                     <div key={idx} className="mb-4">
                                         {i18n.language === 'ky' &&
                                             <div onClick={() => window.location.replace(item.next)} className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer">

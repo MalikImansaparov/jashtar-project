@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from "../../assets/image/main/logotip.png";
-import Social from "./social";
 import {NavLink} from "react-router-dom";
 import FooterSocial from "./footerSocial";
 import {useTranslation} from "react-i18next";

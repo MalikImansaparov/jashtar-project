@@ -70,7 +70,7 @@ export const Events = () => {
                                 <div className="px-2.5">
                                     {i18n.language === "ky" &&
                                         <>
-                                    <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
+                                    <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] overflow-y-hidden leading-[19px]">
                                         {item.title_ky.length > 60 ? item.title_ky.slice(0, 60) + "..." : item.title_ky}
                                     </p>
                                     <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
@@ -79,7 +79,7 @@ export const Events = () => {
                                     </>}
                                     {i18n.language === "ru" &&
                                         <>
-                                            <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
+                                            <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] overflow-y-hidden leading-[19px]">
                                                 {item.title_ru.length > 60 ? item.title_ru.slice(0, 60) + "..." : item.title_ru}
                                             </p>
                                             <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
@@ -88,7 +88,7 @@ export const Events = () => {
                                         </>}
                                     {i18n.language === "en" &&
                                         <>
-                                            <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
+                                            <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] overflow-y-hidden leading-[19px]">
                                                 {item.title_en.length > 60 ? item.title_en.slice(0, 60) + "..." : item.title_en}
                                             </p>
                                             <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
@@ -103,9 +103,12 @@ export const Events = () => {
                                         <p className="text-grey flex">
                                             <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1.5" alt='dots'/>
                                             {t('location')}
-                                            {i18n.language === "ky" && <span className='text-black'>&nbsp;{item.location_ky}</span>}
-                                            {i18n.language === "ru" && <span className='text-black'>&nbsp;{item.location_ru}</span>}
-                                            {i18n.language === "en" && <span className='text-black'>&nbsp;{item.location_en}</span>}
+                                            {i18n.language === "ky" && <span className='text-black'>&nbsp;{item.location_ky.length > 20
+                                                ? item.location_ky.slice(0, 20) + "..." : item.location_ky}</span>}
+                                            {i18n.language === "ru" && <span className='text-black'>&nbsp;{item.location_ru.length > 20
+                                                ? item.location_ru.slice(0, 20) + "..." : item.location_ru}}</span>}
+                                            {i18n.language === "en" && <span className='text-black'>&nbsp;{item.location_en.length > 20
+                                                ? item.location_en.slice(0, 20) + "..." : item.location_en}}</span>}
                                         </p>
                                     </div>
                                 </div>

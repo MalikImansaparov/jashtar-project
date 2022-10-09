@@ -7,12 +7,13 @@ const CoreAdvice = () => {
     const { t } = useTranslation();
     return (
         <div className="group relative">
-            <NavLink to="/" className="flex text-white text-[14px] font-semibold">
+            <NavLink to="/" className={({isActive}) =>
+                isActive ? 'hovers menu' : 'menu'}>
                 <img src={arr} className='mr-[5px]' alt='lang'/>
-                <span className="text-sm font-normal">{t("coordination")}</span>
+                {t("coordination")}
             </NavLink>
             <ul className="absolute hidden group-hover:block z-20">
-                    <Link to='/community' className="btn-blue mt-[27px]">{t("community")}</Link>
+                    <Link to='/community' className="btn-blue mt-[25px]">{t("community")}</Link>
                     <Link to='/international' className="btn-blue">{t("internalization")}</Link>
                     <Link to='/young' className="btn-blue">{t("young")}</Link>
                     <Link to='/university' className="btn-blue">{t("university")}</Link>

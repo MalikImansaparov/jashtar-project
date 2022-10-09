@@ -12,11 +12,6 @@ const Ministry = () => {
     const {i18n} = useTranslation()
     const { isLoading, response } = useFetch(base + aboutUrl + '/ministry/');
 
-    // const bgImageStyle = {
-    //     backgroundImage: `url('${bg}')`,
-    //     // backgroundImage: `url('${uri + response.map(i => i.background_image)}')`,
-    //     backgroundSize: 'cover'
-    // }
 
     if (isLoading) {
         return (
@@ -32,7 +27,7 @@ const Ministry = () => {
     return (
         <>
             {response && response.map(item => (
-        <div className="w-full h-[604px] relative z-0 pb-8 font-inter" key={item.id} style="background-image: url('https://cdn.searchenginejournal.com/wp-content/uploads/2022/06/image-search-1600-x-840-px-62c6dc4ff1eee-sej-1280x720.png');">
+        <div className="w-full h-[604px] relative z-0 pb-8 font-inter" key={item.id}>
             <div className="absolute top-0 left-0 bg-gradient-ministry w-full h-[624px] z-0" ></div>
                 <div className='container w-[1196px] m-auto text-white text-base font-normal' key={item.id}>
                     <div className="text-white">

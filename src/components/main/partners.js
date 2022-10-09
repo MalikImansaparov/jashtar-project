@@ -5,7 +5,7 @@ import {useTranslation} from "react-i18next";
 const Partners = () => {
     const {t} = useTranslation()
     return (
-        <div className='w-full min-h-[264px] bg-blue mt-[62px] flex align-middle mb-[62px]'>
+        <div className='w-full min-h-[264px] bg-blue mt-[62px] flex align-middle'>
            <div className="wrapper flex align-middle justify-between">
                <div className='h-[160px] w-[226px] rounded bg-white py-4 cursor-pointer hover:scale-110' onClick={() => window.open('http://www.president.kg/kg/', '_blank')}>
                    <img src={partn} alt='partners' className='w-[62px] h-[62px] mb-[10px] m-auto'/>

@@ -76,29 +76,9 @@ const EventsPage = () => {
                                         className="h-auto w-[100%] rounded-t"
                                     />
                                 </div>
-                                {i18n.language === "ru" &&
-                                    <div className="px-2.5">
-                                        <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
-                                            {item.title_ru.length > 60 ? item.title_ru.slice(0, 60) + "..." : item.title_ru}
-                                        </p>
-                                        <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
-                                            <Sanitized html={item.desc_ru}/>
-                                        </p>
-                                        <div className="w-[324px] my-4 text-sm font-medium">
-                                            <p className="text-grey flex">
-                                                <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                                <span>{t('date')}</span><span className='text-black '>&nbsp;{item.event_date.split('-').reverse().join('-')}</span>
-                                            </p>
-                                            <p className="text-grey flex">
-                                                <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                                {t('location')}<span className='text-black'>&nbsp;{item.location_ru}</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                }
                                 {i18n.language === "ky" &&
                                     <div className="px-2.5">
-                                        <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
+                                        <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] overflow-y-hidden leading-[19px]">
                                             {item.title_ky.length > 60 ? item.title_ky.slice(0, 60) + "..." : item.title_ky}
                                         </p>
                                         <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
@@ -111,14 +91,36 @@ const EventsPage = () => {
                                             </p>
                                             <p className="text-grey flex">
                                                 <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                                {t('location')}<span className='text-black'>&nbsp;{item.location_ky}</span>
+                                                {t('location')}<span className='text-black'>&nbsp;{item.location_ky.length > 20
+                                                ? item.location_ky.slice(0, 20) + "..." : item.location_ky}}</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                }
+                                {i18n.language === "ru" &&
+                                    <div className="px-2.5">
+                                        <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] overflow-y-hidden leading-[19px]">
+                                            {item.title_ru.length > 60 ? item.title_ru.slice(0, 60) + "..." : item.title_ru}
+                                        </p>
+                                        <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
+                                            <Sanitized html={item.desc_ru}/>
+                                        </p>
+                                        <div className="w-[324px] my-4 text-sm font-medium">
+                                            <p className="text-grey flex">
+                                                <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
+                                                <span>{t('date')}</span><span className='text-black '>&nbsp;{item.event_date.split('-').reverse().join('-')}</span>
+                                            </p>
+                                            <p className="text-grey flex">
+                                                <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
+                                                {t('location')}<span className='text-black'>&nbsp;{item.location_ru.length > 20
+                                                ? item.location_ru.slice(0, 20) + "..." : item.location_ru}}</span>
                                             </p>
                                         </div>
                                     </div>
                                 }
                                 {i18n.language === "en" &&
                                     <div className="px-2.5">
-                                        <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] leading-[19px]">
+                                        <p className="text-base mb-3 font-extrabold max-h-[38px] w-[324px] overflow-y-hidden leading-[19px]">
                                             {item.title_en.length > 60 ? item.title_en.slice(0, 60) + "..." : item.title_en}
                                         </p>
                                         <p className="text-base font-normal w-[324px] max-h-[38px] grey overflow-y-hidden leading-[19px]">
@@ -131,7 +133,8 @@ const EventsPage = () => {
                                             </p>
                                             <p className="text-grey flex">
                                                 <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>
-                                                {t('location')}<span className='text-black'>&nbsp;{item.location_en}</span>
+                                                {t('location')}<span className='text-black'>&nbsp;{item.location_en.length > 20
+                                                ? item.location_en.slice(0, 20) + "..." : item.location_en}}</span>
                                             </p>
                                         </div>
                                     </div>

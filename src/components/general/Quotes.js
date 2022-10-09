@@ -20,6 +20,7 @@ const Quotes = () => {
                     delay: 6000,
                     disableOnInteraction: false,
                 }}
+                // effect="fade"
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
                 }}
@@ -56,7 +57,6 @@ const Quotes = () => {
                                         className=" h-auto w-[100%]"
                                     />
                                 </div>
-
                                 </>
                         </SwiperSlide>
                     ))}

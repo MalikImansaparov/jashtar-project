@@ -225,6 +225,42 @@ html, body {
     color: gray;
 }
 
+.hover {
+    --s: 2px;   /* the thickness of the line */
+    --c: #ffffff; /* the color */
+    --_p: 100%;
+    color: #0000;
+    padding-bottom: var(--s);
+    background: white;
+    background:
+            linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+            linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+
+}
+
+.hovers {
+    --s: 2px;   /* the thickness of the line */
+    --c: #ffffff; /* the color */
+
+    color: #0000;
+    padding-bottom: var(--s);
+    background: white;
+    background:
+            linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+            linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+
+}
+
+.hovers:hover {
+    --_p: 100%;
+}
+
+.hover:hover {
+    --_p: 100%;
+}
+
 /* @media (max-width: 1440px){
     .news {
         margin-left: 24px !important;

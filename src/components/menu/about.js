@@ -8,12 +8,13 @@ const About = () => {
 
     return (
         <div className="group relative">
-            <NavLink to="/" className="flex text-white text-[14px] font-semibold">
+            <NavLink to="/" className={({isActive}) =>
+                isActive ? 'hovers menus' : 'menus'}>
                 <img src={arr} className='mr-[5px]' alt='lang'/>
-                <span className="text-sm font-normal">{t("about")}</span>
+                {t("about")}
             </NavLink>
             <ul className="absolute hidden group-hover:block z-20">
-                    <Link to='/valuation' className="btn-blue mt-[27px]">{t("valuation")}</Link>
+                    <Link to='/valuation' className="btn-blue mt-[25px]">{t("valuation")}</Link>
                     <Link to='/management' className="btn-blue">{t("leadship")}</Link>
                     <Link to='/timeline' className="btn-blue">{t("timeline")}</Link>
                     <Link to='/ministry' className="btn-blue">{t("ministry")}</Link>
