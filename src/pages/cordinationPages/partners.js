@@ -1,9 +1,5 @@
 import React, {useState} from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
-import lotte from "../../assets/image/about/partners/롯데.png";
-import p2 from "../../assets/image/partners/모드=정상 1 (1).png";
-import p3 from "../../assets/image/partners/모드=정상 (1).png";
-import p4 from "../../assets/image/partners/모드=정상-8 (1).png";
 import {useFetch} from "../../api/useFetch";
 import {base, councilUrl, uri, url} from '../../api/const'
 import InfoPartners from "./infoPartners";
@@ -53,7 +49,7 @@ export const PartnersList = () => {
                               >
                                 <div className='w-full h-[160px] rounded shadow-partner flex justify-center items-center mb-[10px] cursor-pointer shadow-lg' key={item.id} >
                                     <div className="w-[100%] h-[100%] overflow-hidden flex justify-center">
-                                    <img src={uri + item.org_image} alt='img' className="h-auto h-[120px] w-[150px] self-center"/>
+                                    <img src={uri + item.org_image} alt='img' className="h-auto h-[120px] w-[14g0px] self-center"/>
                                     </div>
                                 </div>
                                 {i18n.language === "ky" &&

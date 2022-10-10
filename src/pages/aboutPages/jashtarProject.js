@@ -1,13 +1,16 @@
 import React from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
 import {useFetch} from "../../api/useFetch";
-import {aboutUrl, base, uri} from "../../api/const";
+import {aboutUrl, base, eventsUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
 import {ClipLoader} from "react-spinners";
 import {createTemplate} from "../../components/general/purifydom";
+import {ImagesSlider} from "../../components/general/photoSlider";
+import {Sanitized} from "../../components/general/sanitize";
+import dots from "../../assets/image/main/Ellipse 1.png";
 
 export const JashtarProject = () => {
-  const { isLoading, response } = useFetch(base + aboutUrl + '/youthpolicy/');
+  const { isLoading, response } = useFetch(base + eventsUrl + '/events/3/');
   const {i18n} = useTranslation()
 
     if (isLoading) {
@@ -27,39 +30,34 @@ export const JashtarProject = () => {
         <div className="">
           <BreadCrumb />
         </div>
-        {response &&
-          response.map((item) => (
-            <div className="flex mb-8 w-full flex-wrap text-justify" key={item.id}>
-                {i18n.language === "ky" &&
-                    <div className="text-justify" dangerouslySetInnerHTML={createTemplate(item.desc_en)}></div>
-                }
-                {i18n.language === "ru" &&
-                    <div className="text-justify" dangerouslySetInnerHTML={createTemplate(item.desc_ru)}></div>
-                }
-                {i18n.language === "en" &&
-                    <div className="text-justify" dangerouslySetInnerHTML={createTemplate(item.desc_en)}></div>
-                }
-            </div>
-          ))}
+        {response && <>
+        {i18n.language === "ky" &&
+              <div className='mb-8'>
+                  <div className="w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left ">
+                      <ImagesSlider images={response.events_slider}/>
+                  </div>
+                  <Sanitized html={response.desc_ky}/>
+              </div>
+         }
+            {i18n.language === "ru" &&
+                <div className='mb-8'>
+                    <div className="w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left">
+                        <ImagesSlider images={response.events_slider}/>
+                    </div>
+                    <Sanitized html={response.desc_ru}/>
+                </div>
+            }
+            {i18n.language === "en" &&
+                <div className='mb-8'>
+                    <div className="w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left">
+                        <ImagesSlider images={response.events_slider}/>
+                    </div>
+                    <Sanitized html={response.desc_en}/>
+                </div>
+            }
+         </>}
       </div>
-
     </div>
   );
 };
-
-{
-  /*<img src={about} className='h-[287px] w-[about432px] mr-[62px] z-10' alt='about'/>*/
-}
-{
-  /*<div className="flex flex-wrap">*/
-}
-{
-  /*  */
-}
-{
-  /*</div>*/
-}
-{
-  /*<img src={about2} className='h-[287px] w-[432px] mr-[62px] mt-[32px] pl-[62px] z-10 bg' alt='about'/>*/
-}
 

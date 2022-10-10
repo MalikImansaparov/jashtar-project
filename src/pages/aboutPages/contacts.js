@@ -1,6 +1,5 @@
 import React from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
-import bg from "../../assets/image/about/contacts-bg.png";
 import pattern from "../../assets/image/main/Looper-1.png"
 import {aboutUrl, base, uri} from "../../api/const";
 import {useFetch} from "../../api/useFetch";
@@ -10,11 +9,6 @@ import {ClipLoader} from "react-spinners";
 export const Contacts = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/contacts/');
     const {t, i18n} = useTranslation()
-
-    const bgImageStyle = {
-        backgroundImage: `url('${bg}')`,
-        backgroundSize: 'cover'
-    }
 
     if (isLoading) {
         return (
@@ -27,12 +21,10 @@ export const Contacts = () => {
         )
     }
 
-    // backgroundImage: `url('${uri + response.map(i => i.background_image)}')`,
-
     return (
         <>
             {response && response.map(item => (
-        <div className="w-full h-[655px]  mb-[62px] relative font-inter" style={bgImageStyle} key={item.id}>
+        <div className="w-full h-[655px]  mb-[62px] relative font-inter" style={{backgroundImage:`url(${uri}/${item.background_image})`}} key={item.id}>
             <div className='h-[232px] w-[70%] absolute top-[170px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar z-0'></div>
         <div className='wrapper'>
             <div className="container w-[1196px] m-auto">
