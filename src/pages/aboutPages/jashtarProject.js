@@ -8,9 +8,10 @@ import {createTemplate} from "../../components/general/purifydom";
 import {ImagesSlider} from "../../components/general/photoSlider";
 import {Sanitized} from "../../components/general/sanitize";
 import dots from "../../assets/image/main/Ellipse 1.png";
+import {PolicySlider} from "./policySlider";
 
 export const JashtarProject = () => {
-  const { isLoading, response } = useFetch(base + eventsUrl + '/events/3/');
+  const { isLoading, response } = useFetch(base + aboutUrl + '/youthpolicy/');
   const {i18n} = useTranslation()
 
     if (isLoading) {
@@ -25,37 +26,39 @@ export const JashtarProject = () => {
     }
 
   return (
-    <div className="w-full relative pb-[63px] font-inter">
-      <div className="wrapper text-[16px] font-normal leading-5">
+    <div className="w-full relative pb-[63px] font-inter text-justify">
+      <div className="wrapper text-[16px] font-normal leading-5 ">
         <div className="">
           <BreadCrumb />
         </div>
-        {response && <>
-        {i18n.language === "ky" &&
-              <div className='mb-8'>
-                  <div className="w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left ">
-                      <ImagesSlider images={response.events_slider}/>
-                  </div>
-                  <Sanitized html={response.desc_ky}/>
-              </div>
-         }
-            {i18n.language === "ru" &&
-                <div className='mb-8'>
-                    <div className="w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left">
-                        <ImagesSlider images={response.events_slider}/>
+        {response && response.map( item => (
+            <div key={item.id}>
+                {i18n.language === "ky" &&
+                    <div className='mb-8'>
+                        <div className="w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left ">
+                            <PolicySlider images={item.youth_slider}/>
+                        </div>
+                        <Sanitized html={item.desc_ky}/>
                     </div>
-                    <Sanitized html={response.desc_ru}/>
-                </div>
-            }
-            {i18n.language === "en" &&
-                <div className='mb-8'>
-                    <div className="w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left">
-                        <ImagesSlider images={response.events_slider}/>
+                }
+                {i18n.language === "ru" &&
+                    <div className='mb-8'>
+                        <div className="w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left">
+                            <PolicySlider images={item.youth_slider}/>
+                        </div>
+                        <Sanitized html={item.desc_ru}/>
                     </div>
-                    <Sanitized html={response.desc_en}/>
-                </div>
-            }
-         </>}
+                }
+                {i18n.language === "en" &&
+                    <div className='mb-8'>
+                        <div className="w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left">
+                            <PolicySlider images={item.youth_slider}/>
+                        </div>
+                        <Sanitized html={item.desc_en}/>
+                    </div>
+                }
+            </div>
+            ))}
       </div>
     </div>
   );

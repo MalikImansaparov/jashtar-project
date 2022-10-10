@@ -43,7 +43,7 @@ const DetailEvents = () => {
     }
 
     return (
-        <div className="wrapper w-full relative h-auto font-inter">
+        <div className="wrapper w-full relative h-auto font-inter text-justify">
             <div className='h-[212px] w-[47%] absolute top-[173px] left-[-100px] rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
                 {response && <>
                 {i18n.language === "ky" &&

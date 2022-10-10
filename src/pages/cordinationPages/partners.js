@@ -48,8 +48,8 @@ export const PartnersList = () => {
                             <div className="w-[192px] h-[218px] mb-8 cursor-pointer transition-all hover:scale-125 even: mx-[26px] hover:scale-110" onClick={() =>  openModal(item.id)}
                               >
                                 <div className='w-full h-[160px] rounded shadow-partner flex justify-center items-center mb-[10px] cursor-pointer shadow-lg' key={item.id} >
-                                    <div className="w-[100%] h-[100%] overflow-hidden flex justify-center">
-                                    <img src={uri + item.org_image} alt='img' className="h-auto h-[120px] w-[14g0px] self-center"/>
+                                    <div className="h-auto w-[140px] overflow-hidden flex justify-center">
+                                    <img src={uri + item.org_image} alt='img' className="w-[100%] h-auto self-center"/>
                                     </div>
                                 </div>
                                 {i18n.language === "ky" &&
