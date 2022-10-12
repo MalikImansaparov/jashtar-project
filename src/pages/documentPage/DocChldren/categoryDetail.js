@@ -9,7 +9,7 @@ import {useTranslation} from "react-i18next";
 import {useParams} from "react-router-dom";
 import {downloadFile, openPDFFile} from "../../../components/modules/downloadFile";
 import {ClipLoader} from "react-spinners";
-import DOMPurify from 'dompurify'
+import {createMarkup} from "../../../components/general/dompurify";
 
 const DocumentDetail = () => {
     const {id} = useParams()
@@ -44,11 +44,6 @@ const DocumentDetail = () => {
         )
     }
 
-    const createMarkup = (html) => {
-        return {
-            __html: DOMPurify.sanitize(html)
-        };
-    };
 
     return (
         <div className='w-full flex text-justify'>

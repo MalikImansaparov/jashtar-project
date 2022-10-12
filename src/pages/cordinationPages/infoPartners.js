@@ -59,7 +59,7 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                                     <p className='text-blue text-base font-semibold mb-8'>
                                         {response.title_ru}
                                     </p>
-                                    <p className="w-[750px] text-base font-normal leading-[19.3px]">
+                                    <p className="w-[750px] text-base font-normal font-inter leading-[19.3px]">
                                         <div dangerouslySetInnerHTML={createMarkup(response.desc_ru)}></div>
                                     </p>
                                 </div>}

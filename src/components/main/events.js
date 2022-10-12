@@ -15,12 +15,20 @@ const settings = {
             spaceBetween: 20,
         },
         768: {
-            slidesPerView: 3,
+            slidesPerView: 2,
             spaceBetween: 40,
         },
         1024: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+        },
+        1280: {
             slidesPerView: 3,
             spaceBetween: 40,
+        },
+        1380: {
+            slidesPerView: 3,
+            spaceBetween: 10,
         },
     }
 }
@@ -31,7 +39,7 @@ export const Events = () => {
     const swiperRef = useRef();
 
     return (
-        <div className="container m-auto w-[1236px] pt-[62px] relative mb-[62px] z-10">
+        <div className="container m-auto max-w-[1236px] pt-[62px] relative mb-[62px] z-10">
             <div className="flex justify-between">
                 <p className="title">{t('events')}</p>
                 <Link to="/events" className="all-view">{t('all')}</Link>
@@ -58,9 +66,9 @@ export const Events = () => {
                         response.results.map((item) => (
                             <SwiperSlide key={item.id}>
                             <Link to={`events/${item.id}`}
-                                className="w-[384px] h-[419px] m-auto shadow-lg rounded bg-white pb-4 mb-4 leading-5 block hover:shadow-2xl"
+                                className="w-[384px] h-[419px] m-auto shadow-lg rounded bg-white mr-0 pb-4 mb-4 leading-5 block hover:shadow-2xl xl:w-[360px]"
                             >
-                                <div className="mb-3 h-[247px] w-[384px] overflow-hidden rounded-t">
+                                <div className="mb-3 h-[247px] w-[384px] overflow-hidden rounded-t xl:w-[360px]">
                                     <img
                                         src={uri + item.preview_image}
                                         alt="cart-img"
@@ -120,11 +128,11 @@ export const Events = () => {
                 </Swiper>
 
             <div
-                className="button-prev absolute top-[299px] left-[-35px]"
+                className="button-prev absolute top-[299px] left-[-35px] ml-[5px]"
                 onClick={() => swiperRef.current.slidePrev()}
             ></div>
             <div
-                className="button-next absolute top-[299px] right-[-40px]"
+                className="button-next absolute top-[299px] right-[-40px] mr-[10px]"
                 onClick={() => swiperRef.current.slideNext()}
             ></div>
         </div>

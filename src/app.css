@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 .wrapper {
-    @apply container w-[1236px] m-auto flex flex-wrap
+    @apply container max-w-[1236px] m-auto flex flex-wrap xl:max-w-[1136px] 2lg:max-w-[1036px]
+    lg:max-w-[956px] 2md:max-w-[836px] md:max-w-[716px] sm:max-w-[656px] xs:max-w-[540px]
 }
 
 .wrap {
@@ -12,6 +13,10 @@
 
 .btn-blue {
     @apply block bg-blue text-white text-xs font-medium py-[10px] px-[10px] whitespace-nowrap hover:bg-layer;
+}
+
+.menu-list {
+    @apply block bg-blue text-white text-xs font-medium my-[10px] px-[10px] whitespace-nowrap;
 }
 
 .crumbs {
@@ -47,7 +52,7 @@ btn-blue:hover {
 }
 
 .button {
-    @apply m-auto w-[189px] h-[34px] flex justify-center items-center bg-orange rounded text-white mt-[22px] text-[15px] font-medium ;
+    @apply m-auto w-[189px] h-[34px] flex justify-center items-center bg-orange rounded text-white mt-[22px] text-[15px] font-medium xl:mt-[12px] lg:text-sm font-normal w-[169px] h-[28px];
 }
 
 .btn {

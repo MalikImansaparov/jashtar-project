@@ -11,7 +11,7 @@ const Quotes = () => {
     const swiperRef = useRef();
 
     return (
-        <div>
+        <div className="sm:justify-end">
             <Swiper
                 hashNavigation={{
                     watchState: true,
@@ -50,7 +50,7 @@ const Quotes = () => {
                                         <p className=" text-[12px] text-center w-[284px] font-medium flex-wrap text-blue leading-[11px]">{item.quote_en}</p>
                                         <div className="text-[11px] text-right w-[284px] font-normal mt-[10px] text-grey mr-2">{item.annotation_en}</div>
                                     </div>}
-                                <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px] ">
+                                <div className="h-[50px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px]">
                                     <img
                                         src={uri + item.avatar_image}
                                         alt="cart-img"

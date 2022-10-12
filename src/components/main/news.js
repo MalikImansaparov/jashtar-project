@@ -22,40 +22,37 @@ export const News = () => {
                 spaceBetween: 20,
             },
             768: {
-                slidesPerView: 3,
+                slidesPerView: 2,
                 spaceBetween: 20,
             },
             900: {
-                slidesPerView: 3,
-                spaceBetween: 10,
+                slidesPerView: 2,
+                spaceBetween: 0,
             },
             1200: {
                 slidesPerView: 3,
-                spaceBetween: 10,
+                spaceBetween: 40,
             },
             1300: {
                 slidesPerView: 3,
-                spaceBetween: 20,
+                spaceBetween: 0,
             },
         }
     }
 
   return (
-    <div className="container m-auto w-[1236px] pt-[62px] relative mb-[62px] z-10">
+    <div className="container m-auto max-w-[1236px] pt-[62px] relative mb-[62px] z-10">
       <div className="flex justify-between">
         <p className="title">{t('news')}</p>
         <Link to='/news' className="all-view">{t('all')}</Link>
       </div>
         <div className='block justify-center m-auto'>
       <Swiper
-
+          {...settings}
         hashNavigation={{
           watchState: true,
         }}
-
-        spaceBetween={50}
           loop={true}
-          slidesPerView={3}
           speed={400}
         navigation={{
           nextEl: '.swiper-next',
@@ -70,8 +67,8 @@ export const News = () => {
           {response &&
             response.results.map((item) => (
               <SwiperSlide key={item.id}>
-                <Link to={`news/${item.id}`} className=" block w-[384px] mr-0 shadow-lg rounded bg-white pb-4 mb-4 leading-5 cursor-pointer hover:shadow-2xl ">
-                    <div className="mb-3 h-[247px] w-[384px] overflow-hidden rounded-t">
+                <Link to={`news/${item.id}`} className="block w-[384px] mr-0 shadow-lg rounded bg-white pb-4 mb-4 leading-5 cursor-pointer hover:shadow-2xl xl:w-[350px]">
+                    <div className="mb-3 h-[247px] w-[384px] overflow-hidden rounded-t xl:w-[350px]">
                         <img
                             src={uri + item.preview_image}
                             alt="cart-img"
@@ -120,11 +117,11 @@ export const News = () => {
       </Swiper>
         </div>
       <div
-        className="swiper-prev absolute top-[299px] left-[-35px]"
+        className="swiper-prev absolute top-[299px] left-[-35px] ml-[5px]"
         onClick={() => swiperRef.current.slidePrev()}
       ></div>
       <div
-        className="swiper-next absolute top-[299px] right-[-40px]"
+        className="swiper-next absolute top-[299px] right-[-10px] "
         onClick={() => swiperRef.current.slideNext()}
       ></div>
     </div>

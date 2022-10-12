@@ -34,7 +34,7 @@ const FirstLead = () => {
           </div>
                 {response &&
                     response.filter(i => i.floor === 1 ).map( item => (
-                        <Link to={`${item.id}`} >
+                        <Link to={`${item.id}`} key={item.id}>
                         <div
                             className=" relative block shadow-xl w-[234px] h-[196px] bg-white rounded-2xl text-center hover:shadow-2xl"
                             key={item.id}

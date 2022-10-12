@@ -1,38 +1,35 @@
-import {React, useRef} from 'react';
+import {React} from 'react';
 import logo from "../../assets/image/main/logotip.png"
 import {project} from "../statiic/data";
-import {Link, NavLink} from "react-router-dom";
-import {useFetch} from "../../api/useFetch";
-import {base, mainUrl, uri} from "../../api/const";
+import {NavLink} from "react-router-dom";
 import {useTranslation} from "react-i18next";
-import {Autoplay, Navigation, Pagination, } from "swiper";
-import {SwiperSlide, Swiper} from "swiper/react";
 import Quotes from "./Quotes";
 
 const Header = () => {
-    const { response } = useFetch(base + mainUrl + '/quote/');
-    const { t, i18n} = useTranslation();
-    const swiperRef = useRef();
+    const {t} = useTranslation();
 
     return (
         <div className='bg-white font-inter'>
-        <div className='wrapper flex justify-between items-center'>
+        <div className='wrapper flex justify-between items-center sm:relative'>
             <div className='flex'>
-                <NavLink to='/'><img className="w-[54px] h-[54px] my-[8px] mr-3 cursor-pointer" src={logo} alt='logo'/></NavLink>
+                <NavLink to='/'><img className="w-[54px] h-[54px] my-[8px] mr-3 cursor-pointer md:w-[46px] h-[46px] mr-1 sm:ml-2" src={logo} alt='logo'/></NavLink>
                 <div className="mt-2.5 pt-1">
                     <p className="text-[11px] font-monserrat w-[284px] flex-wrap leading-[13px]">{t("main")}</p>
                     <p className="text-sm text-blue font-semibold mt-1 text-blue leading-[14px]">{t("name")}</p>
                 </div>
             </div>
-            <div className="flex w-379 h-[78px] items-center">
+            <div className="max-w-[400px] justify-center flex flex-wrap lg:hidden">
                 {project.map( item => (
-                    <div key={item.id} className="text-sm font-bold mx-[16px] underline cursor-pointer" onClick={() => window.open(item.url, '_blank')}>
+                    <div key={item.id} className="text-sm font-bold mx-[16px] underline cursor-pointer xl:mx-[14px] lg:mx-[8px]"
+                         onClick={() => window.open(item.url,'_blank')}>
                         {item.title}
                     </div>
                 ))}
             </div>
-            <div className="w-[350px]">
+            <div className="md:w-full h-[65px]">
+            <div className="max-w-[340px] sm:absolute top-[55px] right-0 mr-2">
             <Quotes/>
+            </div>
             </div>
         </div>
         </div>

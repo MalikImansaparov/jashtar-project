@@ -4,7 +4,6 @@ import { useFetch } from '../../api/useFetch';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation, Pagination} from "swiper";
 import {ClipLoader} from "react-spinners";
-import SanitizedHTML from 'react-sanitized-html';
 import {useTranslation} from "react-i18next";
 import axios from "axios";
 import {Sanitized} from "../general/sanitize";
@@ -44,7 +43,7 @@ export const Enroll = () => {
     return (
         <div className="bg-gradient-enroll w-screen h-[216px] m-auto justify-center relative max-w-[1440px]">
             <img src={pattern} alt="" className="absolute top-0 left-[25px]" />
-            <div className="max-w-[1032px] m-auto flex bg-enroll shadow-enroll rounded pl-[42px] absolute top-[-24px] left-[12%]">
+            <div className="max-w-[1032px] m-auto flex bg-enroll shadow-enroll rounded pl-[42px] absolute top-[-24px] left-[12%] lg:left-[6%] md:left-[2%] sn:left-[1%]">
             <Swiper
                 hashNavigation={{
                     watchState: true,

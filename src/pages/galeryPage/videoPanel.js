@@ -103,7 +103,6 @@ const VideoPanel = () => {
             )}
         </div>
             <div className="paginate">
-                {response.results.length >= 6 && (
                 <ReactPaginate
                     nextLabel="❯"
                     onPageChange={handlePageClick}
@@ -121,7 +120,6 @@ const VideoPanel = () => {
                     activeClassName="active"
                     renderOnZeroPageCount={null}
                 />
-                    )}
             </div>
         </div>
     );

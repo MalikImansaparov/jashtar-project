@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import about from "../assets/image/main/about.png";
 import {useFetch} from "../api/useFetch";
 import {aboutUrl, base, lead, newsUrl, uri, url} from "../api/const";
 import {BreadCrumbs} from "../components/modules/breadcrumbs";

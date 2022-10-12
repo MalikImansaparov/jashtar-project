@@ -68,7 +68,7 @@ export const ImagesSlider = props => {
                         <img
                             src={uri + item.image}
                             alt="cart-img"
-                            className="h-[40px] w-[62px] rounded-t mt-5 mb-2 m-auto  cursor-pointer"
+                            className="h-[40px] w-[62px] rounded-t mt-5 mb-2 m-auto cursor-pointer"
                         />
                     </SwiperSlide>
                 ))

@@ -16,7 +16,7 @@ const SecondLead = () => {
       <div className="wrapper justify-between align-middle">
           {response &&
               response.filter(i => i.floor === 2 ).map( item => (
-                  <Link to={`${item.id}`}>
+                  <Link to={`${item.id}`} key={item.id}>
                   <div
                       className="relative block shadow-xl cursor-pointer w-[234px] h-[196px] bg-white rounded-2xl text-center hover:shadow-2xl"
                       key={item.id}

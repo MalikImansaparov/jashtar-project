@@ -16,7 +16,7 @@ const Social = () => {
             <div  className='social ml-[10px]' onClick={() => window.open('https://instagram.com/jashtar.gov.kg?igshid=MTA0ZTI1NzA=')}>
                 <img src={insta} alt="social" className="w-[12px] h-[12px] "/>
             </div>
-            <div className='social ml-[10px]' onClick={() => window.open('https://www.facebook.com/jashtar.gov')}>
+            <div className='social ml-[10px] md:mr-2' onClick={() => window.open('https://www.facebook.com/jashtar.gov')}>
                 <img src={meta} alt="social" className="w-[7px] h-[11px] "/>
             </div>
         </div>

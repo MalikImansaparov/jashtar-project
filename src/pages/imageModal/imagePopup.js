@@ -7,6 +7,7 @@ const MODAL_STYLES = {
     left: "50%",
     bottom: "500px",
     transform: "translate(-50%, -50%)",
+    width: "836px",
     height: "72%",
     background: "#fff",
     overflow: "auto",

@@ -10,9 +10,9 @@ const MainPage = () => {
     return (
         <div className="m-auto font-inter">
             <Banner/>
-            <News/>
-            <Enroll/>
-            <Events/>
+            {/*<News/>*/}
+            {/*<Enroll/>*/}
+            {/*<Events/>*/}
             <Volunter/>
             <Partners/>
 

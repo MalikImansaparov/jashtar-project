@@ -1,5 +1,4 @@
 import React from 'react';
-import {RenderArrow} from "../../utils/arrow";
 import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, lastLead, uri, url} from "../../api/const";
 import {Link} from "react-router-dom";
@@ -12,10 +11,9 @@ export const SixthLead = () => {
     return (
         <div className='mt-4'>
             <div className="wrapper justify-center align-middle">
-                {/*md: jc*/}
                 {response &&
                     response.filter(i => i.floor === 6 ).map( item => (
-                        <Link to={`${item.id}`}>
+                        <Link to={`${item.id}`} key={item.id}>
                         <div
                             className="relative block shadow-xl cursor-pointer w-[234px] h-[196px] bg-white rounded-2xl text-center mx-2 hover:shadow-2xl"
                             key={item.id}

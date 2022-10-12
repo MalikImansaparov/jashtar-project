@@ -8,18 +8,15 @@ module.exports = {
 	theme: {
 		screens:  {
 			'2xl': {'max': '1535px'},
-			'xl': {'max': '1279px'},
-			'lg': {'max': '1023px'},
+			'xl': {'max': '1289px'},
+			'2lg': {'max': '1129px'},
+			'lg': {'max': '1043px'},
+			'2md': {'max': '967px'},
 			'md': {'max': '767px'},
-			'sm': {'max': '639px'},
+			'sm': {'max': '720px'},
+			'1sm': {'max': '630px'},
+			'xs': {'max': '599px'},
 		},
-		// screens: {
-		// 	sm: '640px',
-		// 	md: '768px',
-		// 	lg: '1024px',
-		// 	xl: '1280px',
-		// 	'2xl': '1536px',
-		// },
 		colors: {
 			black: '#424242',
 			white: '#FFFFFF',

@@ -38,8 +38,8 @@ const Projects = () => {
                     <div key={item.id}>
                         <div className="w-[192px] h-[180px] mb-8 cursor-pointer shadow-lg transition-all hover:scale-125 even: mx-[26px]" onClick={() => openModal(item.id)}
                         >
-                            <div className="w-[100%] h-[100%] overflow-hidden flex justify-center mb-2">
-                                <img src={uri + item.proj_image} alt='img' className="h-auto h-[120px] w-[140px] self-center"/>
+                            <div className="h-[120px] w-[140px] overflow-hidden m-auto flex mb-2 p-2.5">
+                                <img src={uri + item.proj_image} alt='img' className="h-auto w-[100%] self-center"/>
                             </div>
                             {i18n.language === "ky" &&
                                 <p className='text-[13px] font-medium leading-[16px] text-blue text-center w-[182px]'>{item.title_ky.length > 70 ? item.title_ky.slice(0, 70) + "..." : item.title_ky}</p>

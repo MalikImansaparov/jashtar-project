@@ -167,7 +167,6 @@ html, body {
     border-bottom: 2px solid #3070B6;
 }
 
-
 .paginate {
     display: flex;
     width: 100%;
@@ -260,6 +259,22 @@ html, body {
 .hover:hover {
     --_p: 100%;
 }
+
+/*.swiper-container {*/
+/*    width: 680px;*/
+/*}*/
+
+/*@media screen and (min-width: 640px) {*/
+/*    .swiper-container {*/
+/*        width: 640px;*/
+/*    }*/
+/*}*/
+
+/*@media screen and (min-width: 768px) {*/
+/*    .swiper-container {*/
+/*        width: 768px;*/
+/*    }*/
+/*}*/
 
 /* @media (max-width: 1440px){
     .news {

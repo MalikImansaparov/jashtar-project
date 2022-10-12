@@ -63,17 +63,17 @@ const PhotoPanel = () => {
                         <div className="cursor-pointer w-[100%] h-[269px] inline-block pointer-events-none overflow-hidden">
                             <img src={uri + item.gallery[0].image} alt="" className="h-[100%] w-[100%]" />
                         </div>
-                            <div className="h-[52px] w-full bg-[#3b82f6] absolute bottom-1.5 left-0">
+                            <div className="h-[52px] w-full overflow-hidden bg-[#3b82f6] absolute bottom-1.5 left-0 p-3">
                     {i18n.language === 'ky' &&
-                        <p className="p-4 font-semibold text-base text-white">{item.title_ky.length > 31 ? item.title_ky.slice(0, 31) + "..." : item.title_ky}
+                        <p className="font-semibold text-base text-white">{item.title_ky.length > 31 ? item.title_ky.slice(0, 31) + "..." : item.title_ky}
                             </p>
                     }
                     {i18n.language === 'ru' &&
-                        <p className="p-4 font-semibold text-base text-white">{item.title_ru.length > 31 ? item.title_ru.slice(0, 31) + "..." : item.title_ru}
+                        <p className="font-semibold text-base text-white">{item.title_ru.length > 31 ? item.title_ru.slice(0, 31) + "..." : item.title_ru}
                         </p>
                     }
                     {i18n.language === 'en' &&
-                        <p className="p-4 font-semibold text-base text-white">{item.title_en.length > 31 ? item.title_en.slice(0, 31) + "..."  : item.title_en}
+                        <p className="font-semibold text-base text-white">{item.title_en.length > 31 ? item.title_en.slice(0, 31) + "..."  : item.title_en}
                          </p>
                     }
                 </div>
@@ -87,8 +87,7 @@ const PhotoPanel = () => {
                     />
                 )}
             </div>
-            <div className="paginate">
-                {response.results && response.results.length >= 6 && (
+            <div className="paginate mt-8">
                     <ReactPaginate
                         nextLabel="❯"
                         onPageChange={handlePageClick}
@@ -106,7 +105,6 @@ const PhotoPanel = () => {
                         activeClassName="active"
                         renderOnZeroPageCount={null}
                     />
-                )}
             </div>
         </div>
     );
