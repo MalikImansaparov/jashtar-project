@@ -14,7 +14,7 @@ const About = () => {
                 {t("about")}
             </NavLink>
             <ul className="absolute hidden group-hover:block z-20">
-                    <Link to='/valuation' className="btn-blue mt-[25px]">{t("valuation")}</Link>
+                    <Link to='/valuation' className="btn-blue mt-[22px]">{t("valuation")}</Link>
                     <Link to='/management' className="btn-blue">{t("leadship")}</Link>
                     <Link to='/timeline' className="btn-blue">{t("timeline")}</Link>
                     <Link to='/ministry' className="btn-blue">{t("ministry")}</Link>

@@ -13,7 +13,7 @@ const CoreAdvice = () => {
                 {t("coordination")}
             </NavLink>
             <ul className="absolute hidden group-hover:block z-20">
-                    <Link to='/community' className="btn-blue mt-[25px]">{t("community")}</Link>
+                    <Link to='/community' className="btn-blue mt-[22px]">{t("community")}</Link>
                     <Link to='/international' className="btn-blue">{t("internalization")}</Link>
                     <Link to='/young' className="btn-blue">{t("young")}</Link>
                     <Link to='/university' className="btn-blue">{t("university")}</Link>
