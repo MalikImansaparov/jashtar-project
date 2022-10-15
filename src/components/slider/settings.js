@@ -1,24 +1,22 @@
 export const settings = {
     breakpoints: {
-        640: {
+        300: {
+            slidesPerView: 1,
+        },
+        810: {
+            slidesPerView: 1,
+        },
+        900: {
             slidesPerView: 2,
-            spaceBetween: 20,
         },
-        768: {
-            slidesPerView: 4,
-            spaceBetween: 40,
+        1100: {
+            slidesPerView: 2,
         },
-        968: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-        },
-        1068: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-        },
-        1300: {
+        1200: {
             slidesPerView: 3,
-            spaceBetween: 20,
+        },
+        1460: {
+            slidesPerView: 3,
         },
     }
 }

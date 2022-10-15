@@ -260,19 +260,37 @@ html, body {
     --_p: 100%;
 }
 
+.menu-hover {
+    --s: 2px;   /* the thickness of the line */
+    --c: #ffffff; /* the color */
+
+    color: #0000;
+    padding-bottom: var(--s);
+    background: white;
+    background:
+            linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+            linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text,padding-box;
+
+}
+
+.menu-hover:hover {
+    --_p: 100%;
+}
+
 /*.swiper-container {*/
-/*    width: 680px;*/
+/*    width: 1240px;*/
 /*}*/
 
-/*@media screen and (min-width: 640px) {*/
+/*@media screen and (max-width: 640px) {*/
 /*    .swiper-container {*/
 /*        width: 640px;*/
 /*    }*/
 /*}*/
 
-/*@media screen and (min-width: 768px) {*/
+/*@media screen and (max-width: 1068px) {*/
 /*    .swiper-container {*/
-/*        width: 768px;*/
+/*        width: 1008px;*/
 /*    }*/
 /*}*/
 

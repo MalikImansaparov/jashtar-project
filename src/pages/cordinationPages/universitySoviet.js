@@ -60,7 +60,7 @@ export const UniversitySoviet = () => {
             ))}
             <div className="mt-[32px] mb-[62px]">
                 {response && response.map(i => (
-                    <div className="flex" key={i.id}>
+                    <div className="flex flex-wrap justify-center" key={i.id}>
                         {i.universitypart.map( item => (
                             <div key={item.id} className="flex w-[371px] shadow-sm p-3 rounded-[12px]">
                                 <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px]">

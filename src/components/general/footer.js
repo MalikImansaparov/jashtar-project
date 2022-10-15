@@ -15,7 +15,7 @@ const Footer = () => {
         <div className=" bg-blueLight relative bottom-0 font-inter">
         <div className='wrapper py-[16px] justify-between relative'>
             <div className='flex md:ml-2 xs:block'>
-                <div className="flex">
+                <div className="flex 1sm:hidden">
                 <NavLink to='/'><img className="w-[54px] h-[54px] my-[8px] mr-3 cursor-pointer md:w-[46px] h-[46px] mr-1" src={logo} alt='logo'/></NavLink>
                 <div className="mt-3 mr-[102px] lg:mr-[60px] md:mr-[10px]">
                     <p className="text-[11px] font-monserrat w-[284px] flex-wrap leading-[13px]">{t('main')}</p>
@@ -23,7 +23,7 @@ const Footer = () => {
                 </div>
                 </div>
                 { response && response.map( item => (
-                    <div className='pt-[8px]  md:ml-2 xs:flex' key={item.id}>
+                    <div className='pt-[8px]  md:ml-2' key={item.id}>
                         {i18n.language === "ky" &&
                     <div className="font-medium text-xs mb-1.5">{item.address_ky}</div>}
                         {i18n.language === "ru" &&
@@ -39,7 +39,7 @@ const Footer = () => {
                 </div>
                 ))}
             </div>
-            <div className="absolute right-0 bottom-5 md:mr-2 1sm:hidden"><FooterSocial/></div>
+            <div className="absolute right-0 bottom-5 md:mr-2"><FooterSocial/></div>
         </div>
         </div>
     );

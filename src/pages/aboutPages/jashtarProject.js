@@ -4,10 +4,7 @@ import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, eventsUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
 import {ClipLoader} from "react-spinners";
-import {createTemplate} from "../../components/general/purifydom";
-import {ImagesSlider} from "../../components/general/photoSlider";
 import {Sanitized} from "../../components/general/sanitize";
-import dots from "../../assets/image/main/Ellipse 1.png";
 import {PolicySlider} from "./policySlider";
 
 export const JashtarProject = () => {

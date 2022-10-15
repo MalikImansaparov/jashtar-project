@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {b, base, mainUrl, uri, url} from '../../api/const';
+import {base, mainUrl, uri, url} from '../../api/const';
 import { useFetch } from '../../api/useFetch';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation, Pagination} from "swiper";
@@ -41,10 +41,14 @@ export const Enroll = () => {
     }
 
     return (
-        <div className="bg-gradient-enroll w-screen h-[216px] m-auto justify-center relative max-w-[1440px]">
-            <img src={pattern} alt="" className="absolute top-0 left-[25px]" />
-            <div className="max-w-[1032px] m-auto flex bg-enroll shadow-enroll rounded pl-[42px] absolute top-[-24px] left-[12%] lg:left-[6%] md:left-[2%] sn:left-[1%]">
-            <Swiper
+        <div className="w-[100%] max-h-[320px] ">
+            <div className="relative">
+            <div className="bg-gradient-enroll h-[216px] m-auto justify-center absolute top-[25px] 2md:h-[180px] 2md:top-[10px]">
+                <img src={pattern} alt="" className="absolute top-0 left-[25px] 2md:h-[180px]"/>
+            </div>
+            <div className="max-w-[1032px] m-auto flex bg-enroll shadow-enroll rounded pl-[42px]
+             my-[62px] left-[12%] 2lg:max-w-[900px] 2md:pl-[20px] 2md:max-w-[760px] 2md:max-h-[300px] 1sm:h-[200px]" >
+                <Swiper
                 hashNavigation={{
                     watchState: true,
                 }}
@@ -72,10 +76,10 @@ export const Enroll = () => {
                         <SwiperSlide key={item.id}>
                             <div className="h-[100%] w-[100%] flex justify-between">
                                 <div className="mt-[35px] max-w-[815px] m-auto">
-                                    <div className="w-[561px]">
+                                    <div className="max-w-[561px]">
                                         {i18n.language === 'ky' && (
                                             <>
-                                                <p className="text-[22px] text-semibold text-white w-[461px] mb-[18px]">
+                                                <p className="text-[22px] text-semibold text-white max-w-[461px] mb-[18px] 2md:text-[18px] sm:text-[16px] sm:mb-[0px] text-bold h-[58px] overflow-hidden">
                                                     <Sanitized
                                                         html={
                                                             item.title_ky.length > 62
@@ -84,66 +88,66 @@ export const Enroll = () => {
                                                         }
                                                     />
                                                 </p>
-                                                <p className="text-[16px] text-normal max-h-[38px] grey overflow-y-hidden leading-[19px]">
+                                                <p className="text-[16px] text-normal max-h-[38px] grey overflow-y-hidden leading-[19px] 2md:text-[14px] sm:text-[12px]">
                                                     <Sanitized html={item.desc_ky} />
                                                 </p>
                                             </>
                                         )}
                                         {i18n.language === 'ru' && (
                                             <>
-                                                <p className="text-[22px] text-semibold text-white w-[461px] mb-[22px]">
+                                                <p className="text-[22px] text-semibold text-white max-w-[461px] mb-[18px] 2md:text-[18px] sm:text-[16px] sm:mb-[0px] text-bold h-[58px] overflow-hidden">
                                                     <Sanitized
                                                         html={
                                                             item.title_ru.length > 62
-                                                                ? item.title_ky.slice(0, 62) + '...'
-                                                                : item.title_ky
+                                                                ? item.title_ru.slice(0, 62) + '...'
+                                                                : item.title_ru
                                                         }
                                                     />
                                                 </p>
-                                                <p className="text-[16px] text-normal max-h-[38px] grey overflow-y-hidden leading-[19px]">
+                                                <p className="text-[16px] text-normal max-h-[38px] grey overflow-y-hidden leading-[19px] 2md:text-[14px] sm:text-[12px]">
                                                     <Sanitized html={item.desc_ru} />
                                                 </p>
                                             </>
                                         )}
                                         {i18n.language === 'en' && (
                                             <>
-                                                <p className="text-[22px] text-semibold text-white w-[461px] mb-[22px]">
+                                                <p className="text-[22px] text-semibold text-white max-w-[461px] mb-[18px] 2md:text-[18px] sm:text-[16px] sm:mb-[0px] text-bold h-[58px] overflow-hidden">
                                                     <Sanitized
                                                         html={
                                                             item.title_en.length > 62
-                                                                ? item.title_ky.slice(0, 62) + '...'
-                                                                : item.title_ky
+                                                                ? item.title_en.slice(0, 62) + '...'
+                                                                : item.title_en
                                                         }
                                                     />
                                                 </p>
-                                                <p className="text-[16px] text-normal max-h-[38px] grey overflow-y-hidden leading-[19px]">
+                                                <p className="text-[16px] text-normal max-h-[38px] grey overflow-y-hidden leading-[19px] 2md:text-[14px] sm:text-[12px]">
                                                     <Sanitized html={item.desc_en} />
                                                 </p>
                                             </>
                                         )}
-                                        <div className="flex mt-8 justify-between">
-                                            <p className="text-grey flex">
+                                        <div className="flex mt-8 justify-between 2md:mt-4 sm:mt-2">
+                                            <p className="text-grey flex 2md:text-[14px] items-center">
                                                 <img
                                                     src={dots}
-                                                    className="mr-[10px] w-[8px] h-[8px] mt-2"
+                                                    className="mr-[10px] w-[8px] h-[8px]"
                                                     alt="dots"
                                                 />
                                                 <span>{t('date')}</span>
-                                                <span className="text-black ">
+                                                <span className="text-black">
                             &nbsp;
                                                     {item.event_date.split('-').reverse().join('-')}
                           </span>
                                             </p>
                                             <Link
                                                 to={`events/${item.id}`}
-                                                className="btn pointer-events-auto mr-8"
+                                                className="btn pointer-events-auto mr-8 2md:text-[14px]"
                                             >
                                                 {t('more')}
                                             </Link>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="w-[416px] max-h-[264px] items-end overflow-hidden rounded-t">
+                                <div className="max-w-[416px] max-h-[264px] items-end overflow-hidden rounded-t 2md:max-w-[316px] 2md:max-h-[200px] 1sm:hidden">
                                     <img
                                         src={uri + item.preview_image}
                                         alt="person"
@@ -155,13 +159,14 @@ export const Enroll = () => {
                     ))}
             </Swiper>
                 <div
-                    className="prev absolute top-[129px] left-[-60px]"
+                    className="prev absolute top-[129px] left-[60px] xl:left-[20px] ml-[0px] z-1000 2md:top-[90px] 1md:hidden"
                     onClick={() => swiperRef.current.slidePrev()}
                 ></div>
                 <div
-                    className="next absolute top-[129px] right-[-60px]"
+                    className="next absolute top-[129px] right-[60px] xl:right-[20px] mr-[0px] z-1000 2md:top-[90px] 1md:hidden"
                     onClick={() => swiperRef.current.slideNext()}
                 ></div>
+        </div>
         </div>
         </div>
     );

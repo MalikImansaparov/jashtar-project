@@ -8,14 +8,18 @@ module.exports = {
 	theme: {
 		screens:  {
 			'2xl': {'max': '1535px'},
+			'3xl': {'max': '1389px'},
 			'xl': {'max': '1289px'},
+			'3lg': {'max': '1200px'},
 			'2lg': {'max': '1129px'},
-			'lg': {'max': '1043px'},
+			'lg': {'max': '1042px'},
 			'2md': {'max': '967px'},
+			'3md': {'max' : '898px'},
+			'1md': {'max': '850px'},
 			'md': {'max': '767px'},
 			'sm': {'max': '720px'},
-			'1sm': {'max': '630px'},
-			'xs': {'max': '599px'},
+			'1sm': {'max': '640px'},
+			'xs': {'max': '450px'},
 		},
 		colors: {
 			black: '#424242',
@@ -32,7 +36,7 @@ module.exports = {
 			arrow: '#EAF1F8',
 			brown: '#FFFFFF33',
 			banner: 'rgba(255, 255, 255, 0.2)',
-
+			blues: '#3188ec'
 		},
 		backgroundImage: {
 			'bg-banner': "url('./src/assets/images/about.png')",

@@ -12,13 +12,13 @@ const Header = () => {
         <div className='bg-white font-inter'>
         <div className='wrapper flex justify-between items-center sm:relative'>
             <div className='flex'>
-                <NavLink to='/'><img className="w-[54px] h-[54px] my-[8px] mr-3 cursor-pointer md:w-[46px] h-[46px] mr-1 sm:ml-2" src={logo} alt='logo'/></NavLink>
+                <NavLink to='/'><img className="w-[54px] h-[54px] my-[8px] mr-3 cursor-pointer md:w-[46px] md:h-[46px] mr-1 sm:ml-2" src={logo} alt='logo'/></NavLink>
                 <div className="mt-2.5 pt-1">
                     <p className="text-[11px] font-monserrat w-[284px] flex-wrap leading-[13px]">{t("main")}</p>
                     <p className="text-sm text-blue font-semibold mt-1 text-blue leading-[14px]">{t("name")}</p>
                 </div>
             </div>
-            <div className="max-w-[400px] justify-center flex flex-wrap lg:hidden">
+            <div className="max-w-[400px] justify-center flex flex-wrap 2lg:max-w-[250px] lg:hidden">
                 {project.map( item => (
                     <div key={item.id} className="text-sm font-bold mx-[16px] underline cursor-pointer xl:mx-[14px] lg:mx-[8px]"
                          onClick={() => window.open(item.url,'_blank')}>
@@ -26,11 +26,12 @@ const Header = () => {
                     </div>
                 ))}
             </div>
-            <div className="md:w-full h-[65px]">
-            <div className="max-w-[340px] sm:absolute top-[55px] right-0 mr-2">
+            {/*<div className="md:w-full h-[65px]">*/}
+            <div className="max-w-[340px] sm:hidden">
+                {/*absolute top-[55px] right-0 mr-2*/}
             <Quotes/>
             </div>
-            </div>
+            {/*</div>*/}
         </div>
         </div>
     );

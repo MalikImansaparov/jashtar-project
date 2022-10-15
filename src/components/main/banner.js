@@ -49,7 +49,6 @@ const Banner = () => {
                     disableOnInteraction: false,
                 }}
                 grabCursor={true}
-                spaceBetween={50}
                 loop={true}
                 slidesPerView={1}
                 speed={800}
