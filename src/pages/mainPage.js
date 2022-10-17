@@ -15,7 +15,6 @@ const MainPage = () => {
             <Events/>
             <Volunter/>
             <Partners/>
-
         </div>
     );
 };

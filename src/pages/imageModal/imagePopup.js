@@ -7,8 +7,8 @@ const MODAL_STYLES = {
     left: "50%",
     bottom: "500px",
     transform: "translate(-50%, -50%)",
-    width: "836px",
-    height: "72%",
+    width: "800px",
+    height: "450px",
     background: "#fff",
     overflow: "auto",
     borderRadius: "4px",
@@ -27,6 +27,7 @@ const OVERLAY_STYLE = {
     overflowY: "auto",
     backgroundColor: "rgba(0, 0, 0, 0.75)",
 };
+
 const Modal = ({ open, children }) => {
     if (!open) return null;
     return (

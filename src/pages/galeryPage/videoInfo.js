@@ -10,6 +10,7 @@ import {useClickOutside} from "../../hooks/useOutside";
 import {Sanitized} from "../../components/general/sanitize";
 import {useTranslation} from "react-i18next";
 import {ClipLoader} from "react-spinners";
+import "./gallery.css"
 
 const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
     const id = localStorage.getItem('id')
@@ -27,7 +28,8 @@ const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
     return (
         <div>
             <Modal open={openRegisterModal}>
-                <div className='w-[1236px] bg-white rounded-[12px] px-8' ref={ref}>
+                <div className='max-w-[1236px] bg-white rounded-[12px] px-8 xl:max-w-[1090px] 2lg:max-w-[900px]
+                2md:max-w-[750px] md:max-w-[600px] 1sm:max-w-[500px] 1xs:max-w-[450px] xs:max-w-[380px]' ref={ref}>
                     { isLoading &&
                         <div role="status" className='flex justify-center my-28 pb-24'>
                             <ClipLoader
@@ -42,6 +44,7 @@ const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                             <img src={close} alt="close icon" onClick={onClose}/>
                                         </div>
                                         <iframe
+                                            className="infoVideo"
                                             width="1178"
                                             height="555"
                                             src={response.video}

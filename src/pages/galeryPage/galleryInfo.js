@@ -29,7 +29,8 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
     return (
         <div>
             <Modal open={openRegisterModal}>
-                <div className='w-[1236px] bg-white rounded-[12px] px-8 text-justify'>
+                <div className='max-w-[1236px] bg-white rounded-[12px] px-8 text-justify xl:max-w-[1090px] 2lg:max-w-[900px]
+                2md:max-w-[750px] md:max-w-[600px] 1sm:max-w-[500px] 1xs:max-w-[450px] xs:max-w-[380px]'>
                     { isLoading &&
                         <div role="status" className='flex justify-center my-28 pb-24'>
                             <ClipLoader
@@ -52,12 +53,12 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                             hashNavigation={{
                                                 watchState: true,
                                             }}
+                                            navigation={true}
                                             grabCursor={true}
                                             speed={700}
                                             loop={true}
                                             spaceBetween={10}
                                             slidesPerView={1}
-                                            navigation={true}
                                             // onSwiper={(swiper) => {
                                             //     swiperRef.current = swiper;
                                             // }}
@@ -65,7 +66,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                         >
                                         {response.gallery.map(i => (
                                             <SwiperSlide key={i.id}>
-                                                <div className="w- h-[600px] overflow-hidden shadow-2xl">
+                                                <div className="w-full h-[600px] overflow-hidden shadow-2xl">
                                                     <img src={uri + i.image} alt='img' className="w-[100%] h-auto shadow-2xl" />
                                                 </div>
                                             </SwiperSlide>

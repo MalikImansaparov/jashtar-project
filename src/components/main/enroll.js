@@ -43,7 +43,7 @@ export const Enroll = () => {
     return (
         <div className="w-[100%] max-h-[320px] ">
             <div className="relative">
-            <div className="bg-gradient-enroll h-[216px] m-auto justify-center absolute top-[25px] 2md:h-[180px] 2md:top-[10px]">
+            <div className="bg-gradient-enroll w-full h-[216px] m-auto justify-center absolute top-[25px] 2md:h-[180px] 2md:top-[10px]">
                 <img src={pattern} alt="" className="absolute top-0 left-[25px] 2md:h-[180px]"/>
             </div>
             <div className="max-w-[1032px] m-auto flex bg-enroll shadow-enroll rounded pl-[42px]

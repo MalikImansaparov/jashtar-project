@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .wrapper {
-    @apply container max-w-[1236px] m-auto flex flex-wrap xl:max-w-[1136px] 2lg:max-w-[1036px]
-    lg:max-w-[956px] 2md:max-w-[836px] md:max-w-[716px] sm:max-w-[656px] xs:max-w-[540px]
+    @apply container max-w-[1236px] m-auto flex flex-wrap xl:max-w-[1136px] 3lg:max-w-[1090px] 2lg:max-w-[1036px]
+    lg:max-w-[956px] 2md:max-w-[836px] 3md:max-w-[780px] 1md:max-w-[750px] md:max-w-[716px] sm:max-w-[656px] xs:max-w-[540px]
 }
 
 .wrap {
@@ -64,7 +64,7 @@ btn-blue:hover {
 }
 
 .name {
-    @apply text-[12px] mb-1 font-medium text-blue text-center
+    @apply text-[12px] mb-1 font-medium text-blue text-center sm:text-[10px] sm:font-normal
 }
 
 .description {

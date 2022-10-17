@@ -6,6 +6,7 @@ import VideoInfo from "./videoInfo";
 import ReactPaginate from "react-paginate";
 import {useTranslation} from "react-i18next";
 import {ClipLoader} from "react-spinners";
+import './gallery.css'
 
 const VideoPanel = () => {
     window.scroll(0,0)
@@ -68,8 +69,10 @@ const VideoPanel = () => {
         <div className="wrapper text-justify">
         <div className='flex flex-wrap justify-between mt-[62px]'>
             {response.results && response.results.map((item) => (
-                <div className='mb-[62px] shadow-md rounded-md w-[580px]' onClick={() => openModal(item.id)} key={item.id}>
+                <div className='shadow-md rounded-md max-w-[580px] xl:max-w-[390px] xl:max-w-[500px]
+                lg:max-w-[450px] 2md:max-w-[580px] 2md:mb-[50px] 2md:m-auto 2sm:max-w-[450px] mb-[62px] xs:max-w-[400px]' onClick={() => openModal(item.id)} key={item.id}>
                     <iframe
+                        className='iframe'
                         width="580"
                         height="326"
                         src={item.video}
@@ -80,7 +83,7 @@ const VideoPanel = () => {
                     />
                     <div className="p-4 cursor-pointer">
                         {i18n.language === "ky" &&
-                            <p className='text-[18px] font-normal'>{item.title_ky}</p>
+                            <p className='text-[18px] font-normal lg:text-[16px]'>{item.title_ky}</p>
                         }
                         {i18n.language === "ru" &&
                             <p className='text-[18px] font-normal'>{item.title_ru}</p>
@@ -102,7 +105,7 @@ const VideoPanel = () => {
                 />
             )}
         </div>
-            <div className="paginate">
+            <div className="paginate mt-4">
                 <ReactPaginate
                     nextLabel="❯"
                     onPageChange={handlePageClick}

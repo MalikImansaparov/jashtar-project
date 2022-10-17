@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 * {
     box-sizing: border-box;
 }
@@ -278,15 +279,6 @@ html, body {
     --_p: 100%;
 }
 
-/*.swiper-container {*/
-/*    width: 1240px;*/
-/*}*/
-
-/*@media screen and (max-width: 640px) {*/
-/*    .swiper-container {*/
-/*        width: 640px;*/
-/*    }*/
-/*}*/
 
 /*@media screen and (max-width: 1068px) {*/
 /*    .swiper-container {*/

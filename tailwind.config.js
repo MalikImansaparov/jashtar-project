@@ -17,8 +17,10 @@ module.exports = {
 			'3md': {'max' : '898px'},
 			'1md': {'max': '850px'},
 			'md': {'max': '767px'},
-			'sm': {'max': '720px'},
+			'sm': {'max': '730px'},
+			'2sm': {'max': '685px'},
 			'1sm': {'max': '640px'},
+			'1xs': {'max': '520px'},
 			'xs': {'max': '450px'},
 		},
 		colors: {

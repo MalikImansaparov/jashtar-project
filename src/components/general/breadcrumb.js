@@ -12,7 +12,7 @@ export const BreadCrumb = () => {
     const {t} = useTranslation()
 
     return (
-        <div className='pt-[62px] mb-8 font-inter'>
+        <div className='pt-[62px] mb-8 font-inter w-[100%] sm:ml-4'>
             {pathname && (
                 <>
                 <div className='text-lg font-medium text-grey'>

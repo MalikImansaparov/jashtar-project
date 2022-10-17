@@ -46,7 +46,7 @@ const DocumentDetail = () => {
 
 
     return (
-        <div className='w-full flex text-justify'>
+        <div className='wrapper text-justify'>
             <div className="m-auto mb-[62px] max-w-[1220px] mt-16">
                 {/*{response &&*/}
                 {/*    <>*/}
@@ -56,19 +56,21 @@ const DocumentDetail = () => {
                 {/*    <>*/}
 
                         {/*<BreadCrumbs crumbs={crumbs} title={response.title_ky} />*/}
-                        <div className="">
+                        <div className=" flex flex-wrap sm:mx-4">
                          <div dangerouslySetInnerHTML={createMarkup(response.body_ky)}></div>
                         </div>
+                        <div className="sm:mx-4">
                         <p className="text-base font-medium text-blue mb-[28px]">{t('download')}</p>
                         <div className="w-[400px]">
                             <p className="text-[13px] font-normal mb-3 ">{response.doc.map(item => item.file_name)}</p>
                         </div>
-                        <div className='flex'>
-                            <div className='w-[152px] cursor-pointer' onClick={() => downloadFile(response.doc.map(item => item.file))}>
+                        <div className='flex '>
+                            <div className='w-[152px] cursor-pointer ' onClick={() => downloadFile(response.doc.map(item => item.file))}>
                                 <img src={doc} alt='pdf'/>
                                 <img src={download} alt='pdf' className="ml-3"/>
                             </div>
                         </div>
+            </div>
                     {/*</>*/}
                     {/*}*/}
                     {/*    {i18n.language === "en" &&*/}

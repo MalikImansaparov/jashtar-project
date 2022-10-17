@@ -68,7 +68,7 @@ const Menu = () => {
                                  className="w-[91px] h-[34px] bg-orange rounded font-normal mt-[-8px] text-white text-[14px] py-1.5 px-[22px] cursor-pointer">Y-Map
                             </div>
                             </div>
-                            <div className="flex justify-between w-[25%] lg:w-[30%] 2md:w-[35%] xs:w-[60%]">
+                            <div className="flex justify-between w-[25%] lg:w-[30%] 2md:w-[35%] xs:w-[60%] 1sm:w-[50%]">
                             <Language/>
                             <img src={search} alt="search" className='w-[20px] h-[20px] cursor-pointer'
                                  onClick={toggleModal}/>

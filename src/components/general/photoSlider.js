@@ -33,11 +33,11 @@ export const ImagesSlider = props => {
                 props.images.map((item, i) => (
                     <div key={i}>
                     <SwiperSlide >
-                        <div className="w-[432px] h-[245px] mr-[62px] mb-2 z-10 overflow-hidden float-left" onClick={() => openModal(item.image)}>
+                        <div className="w-[432px] h-[245px] mr-[62px] mb-2 z-10 overflow-hidden float-left cursor-pointer" onClick={() => openModal(item.image)}>
                         <img
                             src={uri + item.image}
                             alt="cart-img"
-                            className="h-auto w-[100%] rounded-t "
+                            className="h-auto w-[100%] rounded-t"
                         />
                         </div>
                     </SwiperSlide>

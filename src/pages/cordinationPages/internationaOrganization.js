@@ -98,7 +98,7 @@ export const InternationOrganization = () => {
                                 <div className="flex items-center shadow-enroll py-[10px] px-[30px] my-[5px] rounded-[12px] mb-[23px] w-[1230px] cursor-pointer hover:shadow-2xl"
                                      onClick={() => openModal(item.id)}>
                                     <div className="flex justify-center py-[13px] pr-[10px] mr-[12px] w-auto h-[80px] overflow-hidden">
-                                        <img src={uri + item.org_image} alt='organization' className='w-[100%] h-auto'/>
+                                        <img src={uri + item.org_image} alt='organization' className='w-auto h-[100%]'/>
                                     </div>
                                     {i18n.language === "ky" &&
                                         <span className="font-normal text-base">{item.annotation_ky}</span>

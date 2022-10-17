@@ -1,14 +1,8 @@
 import React, {useState} from 'react';
-import close from "../../assets/image/about/close.png"
-import Popover from "../galeryPage/popover";
+import close from "../../assets/image/general/icons8-close-48.png"
 import {useClickOutside} from "../../hooks/useOutside";
-import {useFetch} from "../../api/useFetch";
-import {aboutUrl, base, councilUrl, newsUrl, uri, url} from "../../api/const";
-import {useTranslation} from "react-i18next";
-import {createMarkup} from "../../components/general/dompurify";
-import {ClipLoader} from "react-spinners";
-import {useFetches} from "../../api/getFetch";
-import {useParams} from "react-router-dom";
+import {uri} from "../../api/const";
+
 import Modal from "./imagePopup";
 
 
@@ -21,16 +15,22 @@ const InfoImage = ({openRegisterModal, setOpenRegisterModal}) => {
     }
 
         return (
-            <div className="text-justify font-inter cursor-pointer" >
-                <Modal open={openRegisterModal}>
-                            <div className="flex items-center flex-wrap" ref={ref}>
-                                    <div className="flex items-center w-[836px] h-[500px] overflow-hidden"
-                                         onClick={onClose}>
-                                        <img src={uri + img} alt='organization' className='shadow-org w-[100%] h-auto'/>
-                                    </div>
+            <div className="relative">
+                <div className=" text-justify font-inter cursor-pointer">
+                    <Modal open={openRegisterModal}>
+                        <div className="relative">
+                        <div className="flex items-center flex-wrap" ref={ref}>
+                            <div className="flex items-center w-[800px] h-[450px] overflow-hidden">
+                                <img src={uri + img} alt='organization' className='shadow-org w-[100%] h-auto'/>
                             </div>
-                </Modal>
+                        </div>
+                            <img src={close} alt="close" className="cursor-pointer absolute top-2 right-2 z-100" onClick={onClose}/>
+                        </div>
+                        </Modal>
+                </div>
+
             </div>
+
     );
 };
 

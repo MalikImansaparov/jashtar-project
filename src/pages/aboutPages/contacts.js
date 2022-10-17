@@ -27,11 +27,11 @@ export const Contacts = () => {
         <div className="w-full h-[655px]  mb-[62px] relative font-inter" style={{backgroundImage:`url(${uri}/${item.background_image})`}} key={item.id}>
             <div className='h-[232px] w-[70%] absolute top-[170px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar z-0'></div>
         <div className='wrapper'>
-            <div className="container w-[1196px] m-auto">
+            <div className="container max-w-[1196px] m-auto">
                 <BreadCrumb/>
             </div>
-            <div className='flex'>
-                <div className="flex justify-center items-center w-[443px]">
+            <div className='flex justify-between'>
+                <div className="flex justify-center items-center max-w-[443px]">
                     {i18n.language === "ky" &&
                         <p className="font-semibold text-[18px] text-white leading-[23px]">
                             {item.title_ky}
@@ -48,11 +48,12 @@ export const Contacts = () => {
                         </p>
                     }
                 </div>
-                <div className="relative rounded w-[532px] h-[322px] bg-white flex justify-center items-center ml-[261px]">
-                    <img src={pattern} alt="pattern" className="absolute top-0 right-[20px] w-[200px] h-[200px]"/>
+
+                <div className=" rounded w-[532px] h-[322px] bg-white flex justify-center items-center ">
+                    {/*<img src={pattern} alt="pattern" className="absolute top-0 right-[20px] w-[200px] h-[200px] z-9999"/>*/}
                     <div className="">
                     { response && response.map( item => (
-                        <div key={item.id} className="text-black w-[400px]">
+                        <div key={item.id} className="text-black max-w-[400px]">
                             {i18n.language === "ky" &&
                                 <p className="text-base font-medium mb-[22px]">{t('address')}<span
                                     className="text-blue">{item.address_ky}</span></p>

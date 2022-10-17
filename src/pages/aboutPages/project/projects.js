@@ -29,14 +29,14 @@ const Projects = () => {
     }
 
     return (
-        <div className='wrapper w-full h-[80vh] pb-40 font-inter'>
+        <div className='wrapper w-full h-[100%] pb-40 font-inter'>
             <div className="container w-[1196px] mb-0">
                 <BreadCrumb/>
             </div>
-            <div className='w-full flex flex-row flex-wrap'>
+            <div className='w-full flex flex-row flex-wrap 1sm:justify-center'>
                 {response && response.map(item => (
                     <div key={item.id}>
-                        <div className="w-[192px] h-[180px] mb-8 cursor-pointer shadow-lg transition-all hover:scale-125 even: mx-[26px]" onClick={() => openModal(item.id)}
+                        <div className="w-[192px] m-auto h-[180px] mb-8 cursor-pointer shadow-lg transition-all hover:scale-125 even: mx-[26px]" onClick={() => openModal(item.id)}
                         >
                             <div className="h-[120px] w-[140px] overflow-hidden m-auto flex mb-2 p-2.5">
                                 <img src={uri + item.proj_image} alt='img' className="h-auto w-[100%] self-center"/>

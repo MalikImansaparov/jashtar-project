@@ -53,12 +53,11 @@ const PhotoPanel = () => {
         localStorage.setItem('id', id)
     }
 
-
     return (
         <div className="wrapper">
             <div className="grid grid-cols-3 gap-[32px] px-8 mt-8">
             {response.results && response.results.map((item) => (
-                <div key={item.id} className="relative top-0 left-0 right-0 bottom-0 w-[379px] cursor-pointer" onClick={() =>  openModal(item.id)}>
+                <div key={item.id} className="relative top-0 left-0 right-0 bottom-0 max-w-[379px] cursor-pointer " onClick={() =>  openModal(item.id)}>
                     <div className="w-[100%] inline-block relative">
                         <div className="cursor-pointer w-[100%] h-[269px] inline-block pointer-events-none overflow-hidden">
                             <img src={uri + item.gallery[0].image} alt="" className="h-[100%] w-[100%]" />

@@ -18,7 +18,7 @@ const Header = () => {
                     <p className="text-sm text-blue font-semibold mt-1 text-blue leading-[14px]">{t("name")}</p>
                 </div>
             </div>
-            <div className="max-w-[400px] justify-center flex flex-wrap 2lg:max-w-[250px] lg:hidden">
+            <div className="max-w-[400px] justify-center flex flex-wrap xl:max-w-[300px] 2lg:max-w-[250px] lg:hidden">
                 {project.map( item => (
                     <div key={item.id} className="text-sm font-bold mx-[16px] underline cursor-pointer xl:mx-[14px] lg:mx-[8px]"
                          onClick={() => window.open(item.url,'_blank')}>
