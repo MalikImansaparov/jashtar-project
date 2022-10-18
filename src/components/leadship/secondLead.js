@@ -11,6 +11,7 @@ const SecondLead = () => {
   const { isMobile, isTablet, isDesktop } = useMatchMedia();
   const {t, i18n} = useTranslation()
 
+
   return (
     <div className="grid justify-center m-auto">
       <div className="wrapper justify-between align-middle">

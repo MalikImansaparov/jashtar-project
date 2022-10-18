@@ -68,7 +68,7 @@ const Menu = () => {
                                  className="w-[91px] h-[34px] bg-orange rounded font-normal mt-[-8px] text-white text-[14px] py-1.5 px-[22px] cursor-pointer">Y-Map
                             </div>
                             </div>
-                            <div className="flex justify-between w-[25%] lg:w-[30%] 2md:w-[35%] xs:w-[60%] 1sm:w-[50%]">
+                            <div className="flex justify-between w-[25%] lg:w-[30%] 2md:w-[35%] xs:w-[60%] 1sm:w-[50%] 2xs:w-[70%]">
                             <Language/>
                             <img src={search} alt="search" className='w-[20px] h-[20px] cursor-pointer'
                                  onClick={toggleModal}/>
@@ -135,13 +135,13 @@ const Menu = () => {
                                 <Link to='/partners' className="menu-list">{t("partners")}</Link>
                             </div>
                         )}
-                        <NavLink to="/news" className="menu-list menu-list ml-8">
+                        <NavLink to="/news" className="menu-list menu-list ml-8" onClick={toggleMenu}>
                             {t("news")}
                         </NavLink>
-                        <NavLink to="/category/1" className="menu-list menu-list ml-8">
+                        <NavLink to="/category/1" className="menu-list menu-list ml-8" onClick={toggleMenu}>
                             {t("documents")}
                         </NavLink>
-                        <NavLink to="/gallery" className="menu-list menu-list ml-8">
+                        <NavLink to="/gallery" className="menu-list menu-list ml-8" onClick={toggleMenu}>
                             {t("gallery")}
                         </NavLink>
                         <div onClick={() => window.open("https://jashtar.info/ymap/", "_blank")}

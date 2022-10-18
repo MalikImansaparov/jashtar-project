@@ -26,12 +26,9 @@ const Header = () => {
                     </div>
                 ))}
             </div>
-            {/*<div className="md:w-full h-[65px]">*/}
             <div className="max-w-[340px] sm:hidden">
-                {/*absolute top-[55px] right-0 mr-2*/}
             <Quotes/>
             </div>
-            {/*</div>*/}
         </div>
         </div>
     );

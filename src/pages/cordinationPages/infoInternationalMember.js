@@ -24,7 +24,8 @@ const InfoInternationalProject = ({openRegisterModal, setOpenRegisterModal }) =>
     return (
         <div>
             <Popup open={openRegisterModal}>
-                <div className='w-[1236px] h-auto bg-white rounded-[12px] p-[37px] font-inter' ref={ref}>
+                <div className='max-w-[1236px] h-auto bg-white rounded-[12px] p-[37px] font-inter xl:max-w-[1090px] 2lg:max-w-[900px]
+                2md:max-w-[750px] md:max-w-[600px] 1sm:max-w-[500px] 1xs:max-w-[450px] xs:max-w-[380px]' ref={ref}>
                     { isLoading &&
                         <div role="status" className='flex justify-center my-28 pb-24'>
                             <ClipLoader
@@ -44,7 +45,7 @@ const InfoInternationalProject = ({openRegisterModal, setOpenRegisterModal }) =>
                                 </div>
                             </div>
                             {i18n.language === "ky" &&
-                                <div className='ml-[26px] w-[800px]'>
+                                <div className='ml-[26px] max-w-[800px]'>
                                     <p className='text-blue text-base font-semibold my-4'>
                                         {response.annotation_ky}
                                     </p>

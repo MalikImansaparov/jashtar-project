@@ -27,7 +27,8 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
         return (
             <div className="text-justify font-inter">
                 <Popover open={openRegisterModal}>
-                    <div className='w-[1236px] h-[1059px] bg-white rounded-[12px] p-[62px] shadow-org' ref={ref} >
+                    <div className='max-w-[1236px] h-[1059px] bg-white rounded-[12px] p-[62px] shadow-org xl:max-w-[1090px] 2lg:max-w-[900px]
+                     2md:max-w-[750px] md:max-w-[600px] 1sm:max-w-[500px] 1xs:max-w-[450px] xs:max-w-[380px]' ref={ref} >
                         { isLoading &&
                             <div role="status" className='flex justify-center my-28 pb-24'>
                                 <ClipLoader

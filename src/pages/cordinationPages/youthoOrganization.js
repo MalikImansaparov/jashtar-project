@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
 import {useFetch} from "../../api/useFetch";
 import {base, councilUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
 import {createMarkup} from "../../components/general/dompurify";
 import {ClipLoader} from "react-spinners";
-import emblem from "../../assets/image/general/200px-Emblem_of_Kyrgyzstan 1.svg"
 
 export const YoungOrganization = () => {
     const { isLoading, response } = useFetch(base + councilUrl + '/yorganization/');

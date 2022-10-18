@@ -22,6 +22,7 @@ module.exports = {
 			'1sm': {'max': '640px'},
 			'1xs': {'max': '520px'},
 			'xs': {'max': '450px'},
+			'2xs': {'max': '400px'},
 		},
 		colors: {
 			black: '#424242',

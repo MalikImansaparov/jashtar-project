@@ -72,5 +72,5 @@ btn-blue:hover {
 }
 
 .link {
-    @apply font-semibold py-4 flex pl-12
+    @apply font-semibold py-4 flex pl-12 3md:pl-3 3md:py-2 3md:font-normal sm:text-[14px]
 }

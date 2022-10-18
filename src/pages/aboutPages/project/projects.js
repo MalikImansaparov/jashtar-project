@@ -30,7 +30,7 @@ const Projects = () => {
 
     return (
         <div className='wrapper w-full h-[100%] pb-40 font-inter'>
-            <div className="container w-[1196px] mb-0">
+            <div className="container max-w-[1196px] mb-0">
                 <BreadCrumb/>
             </div>
             <div className='w-full flex flex-row flex-wrap 1sm:justify-center'>

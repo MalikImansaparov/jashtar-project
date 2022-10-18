@@ -52,7 +52,7 @@ const DetailNews = () => {
                     <BreadCrumbs crumbs={crumbs} title={response.title_ky}/>
             </div>
             <div className='mb-8 '>
-                <div className="w-[432px] h-auto mr-[72px] mb-2  float-left">
+                <div className="max-w-[432px] h-auto mr-[72px] mb-2  float-left">
                     <ImagesSlider images={response.news_slider}/>
                 </div>
                     <p className="mb-4 font-semibold text-[20px]">{response.title_ky}</p>

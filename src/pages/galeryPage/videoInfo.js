@@ -45,8 +45,6 @@ const VideoInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                         </div>
                                         <iframe
                                             className="infoVideo"
-                                            width="1178"
-                                            height="555"
                                             src={response.video}
                                             frameBorder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

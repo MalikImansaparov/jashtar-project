@@ -66,20 +66,20 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                         >
                                         {response.gallery.map(i => (
                                             <SwiperSlide key={i.id}>
-                                                <div className="w-full h-[600px] overflow-hidden shadow-2xl">
+                                                <div className="w-full max-h-[600px] overflow-hidden shadow-2xl">
                                                     <img src={uri + i.image} alt='img' className="w-[100%] h-auto shadow-2xl" />
                                                 </div>
                                             </SwiperSlide>
                                         ))}
                                         </Swiper>
                                         { i18n.language === "ky" &&
-                                        <>
-                                        <div className='block text-base text-blue font-medium mb-2 mt-4'>{response.title_ky}</div>
+                                        <div>
+                                        <div className='block text-base text-blue font-medium mb-2 mt-4 '>{response.title_ky}</div>
                                         <div className="flex items-center mb-[26px]">
-                                            <p className="font-normal text-base">
+                                            <p className="font-normal text-base w-[312px]">
                                                 <Sanitized html={response.desc_ky}/></p>
                                         </div>
-                                        </>}
+                                        </div>}
                                         { i18n.language === "ru" &&
                                             <>
                                                 <div className='block text-base text-blue font-medium mb-2 mt-4'>{response.title_ru}</div>

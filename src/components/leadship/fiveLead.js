@@ -4,10 +4,12 @@ import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, lead, uri} from "../../api/const";
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import {useMatchMedia} from "../../hooks/useMatchMedia";
 
 export const FivthLead = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
     const {t, i18n} = useTranslation()
+    const { isMobile, isTablet, isDesktop } = useMatchMedia();
 
     return (
         <div>

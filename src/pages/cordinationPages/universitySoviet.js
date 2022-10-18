@@ -1,7 +1,7 @@
 import React from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
 import {useFetch} from "../../api/useFetch";
-import {base, councilUrl, mainUrl, uri} from "../../api/const";
+import {base, councilUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
 import {createMarkup} from "../../components/general/dompurify";
 import {ClipLoader} from "react-spinners";

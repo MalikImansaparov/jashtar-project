@@ -33,7 +33,7 @@ const SearchPage = () => {
         )
     }
 
-    if(items.docs.length === 0 || items.management.length === 0 || items.news.length === 0 ||
+    if(items && items.docs.length === 0 || items.management.length === 0 || items.news.length === 0 ||
     items.events.length === 0 || items.project.length === 0 || items.partner.length === 0){
         return (
             <div className="flex w-[1236px] m-auto shadow-md rounded px-8 my-8 bg-white">

@@ -1,16 +1,17 @@
 import React, {useEffect, useRef, useState} from 'react';
-import about from "../../assets/image/main/news.png"
 import {useParams} from "react-router-dom";
-import {aboutUrl, base, lead, uri} from "../../api/const";
+import {aboutUrl, base, uri} from "../../api/const";
 import {useFetch} from "../../api/useFetch";
 import {BreadCrumbs} from "../modules/breadcrumbs";
 import {useTranslation} from "react-i18next";
 import {Sanitized} from "../general/sanitize";
 import {ClipLoader} from "react-spinners";
+import {useMatchMedia} from "../../hooks/useMatchMedia";
 
 const InfoLeadership = () => {
     const {id} = useParams()
     const { isLoading, response } = useFetch(base + aboutUrl + `/staff/${id}/`);
+    const { isMobile, isTablet, isDesktop } = useMatchMedia();
     const {t, i18n} = useTranslation()
     const topRef = useRef(null);
 
@@ -52,7 +53,7 @@ const InfoLeadership = () => {
                             <div className="h-[390px] w-[320px] mr-[42px] overflow-y-hidden z-10 rounded-md shadow-2xl">
                             <img src={uri + response.cropped_image} className='w-[100%] h-auto m-0 p-0 rounded-md' alt='about'/>
                             </div>
-                                <div className="w-[800px] ml-[70px]">
+                                <div className="max-w-[800px] ml-[70px]">
                                 <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_ky}</p>
                                 <p className="font-base text-grey text-base mb-8">{response.annotation_ky}
                                 </p>
@@ -74,7 +75,7 @@ const InfoLeadership = () => {
                             <div className="h-[390px] w-[320px] mr-[42px] overflow-y-hidden z-10 rounded-md shadow-2xl">
                                 <img src={uri + response.cropped_image} className='w-[100%] h-auto m-0 p-0 rounded-md' alt='about'/>
                             </div>
-                            <div className="w-[800px] ml-[70px]">
+                            <div className="max-w-[800px] ml-[70px]">
                                 <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_ru}</p>
                                 <p className="font-base text-grey text-base mb-8">{response.annotation_ru}
                                 </p>
@@ -96,7 +97,7 @@ const InfoLeadership = () => {
                             <div className="h-[390px] w-[320px] mr-[42px] overflow-y-hidden z-10 rounded-md shadow-2xl">
                                 <img src={uri + response.cropped_image} className='w-[100%] h-auto m-0 p-0 rounded-md' alt='about'/>
                             </div>
-                            <div className="w-[800px] ml-[70px]">
+                            <div className="max-w-[800px] ml-[70px]">
                                 <p className="font-base text-[18px] mb-[22px] text-blue">{response.full_name_en}</p>
                                 <p className="font-base text-grey text-base mb-8">{response.annotation_en}
                                 </p>

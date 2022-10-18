@@ -5,11 +5,13 @@ import {aboutUrl, base, lead, uri} from "../../api/const";
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 import {ClipLoader} from "react-spinners";
+import {useMatchMedia} from "../../hooks/useMatchMedia";
 
 const FirstLead = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
     const [state, setState] = useState(response)
     const {t, i18n} = useTranslation()
+    const { isMobile, isTablet, isDesktop } = useMatchMedia();
 
     useEffect(() => {
         setState(response)
@@ -30,7 +32,7 @@ const FirstLead = () => {
       <div>
         <div className="wrapper justify-center align-middle relative">
           <div className="mt-[70px] absolute top-[10%] left-[10.5%]">
-            <RenderArrow angle={239} lenght={800} width={'355px'} line={4} />
+            <RenderArrow angle={239} lenght={800} width={'355px'} line={4}/>
           </div>
                 {response &&
                     response.filter(i => i.floor === 1 ).map( item => (

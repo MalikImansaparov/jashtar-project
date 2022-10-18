@@ -6,10 +6,12 @@ import line from "../../assets/image/about/Line 1.png"
 import line2 from "../../assets/image/about/Line 2.png"
 import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import {useMatchMedia} from "../../hooks/useMatchMedia";
 
 export const ThirdLead = () => {
     const { isLoading, response } = useFetch(base + aboutUrl + '/staff/');
     const {t, i18n} = useTranslation()
+    const { isMobile, isTablet, isDesktop } = useMatchMedia();
 
     return (
         <div>

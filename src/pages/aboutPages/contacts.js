@@ -1,6 +1,5 @@
 import React from 'react';
 import {BreadCrumb} from "../../components/general/breadcrumb";
-import pattern from "../../assets/image/main/Looper-1.png"
 import {aboutUrl, base, uri} from "../../api/const";
 import {useFetch} from "../../api/useFetch";
 import {useTranslation} from "react-i18next";

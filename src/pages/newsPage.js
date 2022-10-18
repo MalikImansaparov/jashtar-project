@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {BreadCrumb} from "../components/general/breadcrumb";
 import {useFetch} from "../api/useFetch";
-import {base, docsUrl, galeryUrl, mainUrl, newsUrl, uri, url} from "../api/const";
+import {base, newsUrl, uri} from "../api/const";
 import {ClipLoader} from "react-spinners";
 import {Link} from "react-router-dom";
 import ReactPaginate from "react-paginate";
@@ -62,53 +62,53 @@ const NewsPage = () => {
             <div className="container">
                 <BreadCrumb />
             </div>
-                <div className="flex flex-wrap">
+                <div className="flex justify-center flex-wrap">
                     {response.results &&
                         response.results.map((item) => (
-                                <Link to={`${item.id}`} className="max-w-[384px] m-auto shadow-lg rounded bg-white pb-4 mb-[62px] leading-5 cursor-pointer mx-3 hover:shadow-2xl" key={item.id}>
-                                    <div className="mb-3 h-[247px] w-[384px] overflow-hidden rounded-t">
-                                        <img
-                                            src={uri + item.preview_image}
-                                            alt="cart-img"
-                                            className="h-auto w-[100%] rounded-t"
-                                        />
-                                    </div>
-                                    <div className="px-2.5">
-                                        {i18n.language === "ky" &&
+                            <Link to={`news/${item.id}`} className="block mb-12 w-[384px] h-[419px] m-auto shadow-lg rounded bg-white pb-4 leading-5 cursor-pointer hover:shadow-2xl 3lg:w-[384px] xl:w-[340px] 1sm:w-[384px] xs:w-[300px]">
+                                <div className="mb-3 h-[247px] overflow-hidden rounded-t xl:w-[340px] 2lg:w-[340px] 1sm:w-full xs:w-[300px] xs:h-[230px] xs:mb-0 3lg:w-full 2lg:w-full">
+                                    <img
+                                        src={uri + item.preview_image}
+                                        alt="cart-img"
+                                        className="h-auto w-[100%] rounded-t"
+                                    />
+                                </div>
+                                <div className="px-2.5">
+                                    {i18n.language === "ky" &&
                                         <>
-                                            <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-y-hidden leading-[19px]">
-                                                {item.title_ky.length > 60 ? item.title_ky.slice(0, 60) +"..." : item.title_ky }
+                                            <p className="text-base mb-3 font-semibold w-[100%] h-[38px] text-black overflow-hidden leading-[19px]">
+                                                {item.title_ky.length > 60 ? item.title_ky.slice(0, 60) + "..." : item.title_ky }
                                             </p>
-                                            <p className="text-base font-normal w-[324px] h-[38px] grey overflow-y-hidden leading-[19px]">
+                                            <p className="text-base font-normal w-[100%] h-[38px] grey overflow-hidden leading-[19px]">
                                                 <Sanitized html={item.desc_ky}/>
                                             </p>
                                         </>}
-                                        {i18n.language === "ru" &&
-                                            <>
-                                                <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-y-hidden leading-[19px]">
-                                                    {item.title_ru.length > 60 ? item.title_ru.slice(0, 60)+"..."  : item.title_ru}
-                                                </p>
-                                                <p className="text-base font-normal w-[324px] h-[38px] grey overflow-y-hidden leading-[19px]">
-                                                    <Sanitized html={item.desc_ru}/>
-                                                </p>
-                                            </>}
-                                        {i18n.language === "en" &&
-                                            <>
-                                                <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-y-hidden leading-[19px]">
-                                                    {item.title_en.length > 60 ? item.title_en.slice(0, 60)+"..." : item.title_en }
-                                                </p>
-                                                <p className="text-base font-normal w-[324px] h-[38px] grey overflow-y-hidden leading-[19px]">
-                                                    <Sanitized html={item.desc_en}/>
-                                                </p>
-                                            </>}
-                                        <div className="flex justify-between w-[324px] mt-4">
-                                            <p className="text-sm font-medium text-grey">{item.news_date.split('-').reverse().join('-')}</p>
-                                            <div className="text-blue underline cursor-pointer text-sm">
-                                                {t("more")}
-                                            </div>
+                                    {i18n.language === "ru" &&
+                                        <>
+                                            <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-hidden leading-[19px]">
+                                                {item.title_ru.length > 60 ? item.title_ru.slice(0, 60) + "..."  : item.title_ru}
+                                            </p>
+                                            <p className="text-base font-normal w-[324px] h-[38px] grey overflow-hidden leading-[19px]">
+                                                <Sanitized html={item.desc_ru}/>
+                                            </p>
+                                        </>}
+                                    {i18n.language === "en" &&
+                                        <>
+                                            <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-hidden leading-[19px]">
+                                                {item.title_en.length > 60 ? item.title_en.slice(0, 60) + "..."  : item.title_en}
+                                            </p>
+                                            <p className="text-base font-normal w-[324px] h-[38px] grey overflow-hidden leading-[19px]">
+                                                <Sanitized html={item.desc_en}/>
+                                            </p>
+                                        </>}
+                                    <div className="flex justify-between w-[100%] mt-4">
+                                        <p className="text-sm font-medium text-grey" >{item.news_date.split('-').reverse().join('-')}</p>
+                                        <div className="text-blue underline cursor-pointer text-sm">
+                                            {t('more')}
                                         </div>
                                     </div>
-                                </Link>
+                                </div>
+                            </Link>
                         ))}
                 </div>
             <div className="paginate">

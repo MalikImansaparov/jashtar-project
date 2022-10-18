@@ -20,7 +20,7 @@ const InfoImage = ({openRegisterModal, setOpenRegisterModal}) => {
                     <Modal open={openRegisterModal}>
                         <div className="relative">
                         <div className="flex items-center flex-wrap" ref={ref}>
-                            <div className="flex items-center w-[800px] h-[450px] overflow-hidden">
+                            <div className="flex items-center max-w-[800px] max-h-[450px] overflow-hidden">
                                 <img src={uri + img} alt='organization' className='shadow-org w-[100%] h-auto'/>
                             </div>
                         </div>

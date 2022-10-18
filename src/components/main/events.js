@@ -19,7 +19,7 @@ export const Events = () => {
         <div className="container m-auto max-w-[1236px] pt-[62px] relative mb-[62px] z-10">
             <div className="flex wrapper justify-between">
                 <p className="title ml-2">{t('events')}</p>
-                <Link to='/news' className="all-view mr-2">{t('all')}</Link>
+                <Link to='/events' className="all-view mr-2 sm:mr-8">{t('all')}</Link>
             </div>
                 <Swiper
                     {...settings}
