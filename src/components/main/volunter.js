@@ -18,7 +18,7 @@ const Volunter = () => {
                               <img src={uri + item.corresponding_image} alt='volunter' className='w-[100%] h-auto 2md:h-[100%] '/>
                           </div>
                           <div className="m-auto text-center bg-gradient-volunter 1sm:mb-4">
-                              <img src={uri + item.logo_image} alt='icon' className='w-[60px] h-[60px] m-auto lg:w-[48px] h-[45px]'/>
+                              <img src={uri + item.logo_image} alt='icon' className='w-[60px] h-[60px] m-auto lg:w-[48px] lg:h-[45px]'/>
                               <p className='text-[22px] font-semibold mb-2 xl:mb-1 text-[20px] lg:text-[18px]'>{item.title_ky}</p>
                               <div
                                   className="flex justify-center font-normal text-base max-w-[422px] leading-5 text-grey lg:text-[16px] 2md:text-[14px]">{item.desc_ky}</div>
@@ -30,7 +30,7 @@ const Volunter = () => {
                       :
                       <div className=" flex w-full max-h-[259px] justify-center shadow-xl bg-white" key={item.id}>
                           <div className="m-auto text-center bg-gradient-volunter 1sm:mb-4">
-                              <img src={uri + item.logo_image} alt='icon' className='w-[60px] h-[60px] m-auto lg:w-[48px] h-[45px]'/>
+                              <img src={uri + item.logo_image} alt='icon' className='w-[60px] h-[60px] m-auto lg:w-[48px] lg:h-[45px]'/>
                               <p className='text-[22px] font-semibold mb-2 xl:mb-1 text-[20px] lg:text-[18px]'>{item.title_ky}</p>
                               <div
                                   className="flex justify-center font-normal text-base max-w-[422px] leading-5 text-grey lg:text-[16px] 2md:text-[14px]">{item.desc_ky}</div>

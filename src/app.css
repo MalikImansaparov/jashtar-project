@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 .wrapper {
-    @apply container max-w-[1236px] m-auto flex flex-wrap xl:max-w-[1136px] 3lg:max-w-[1090px] 2lg:max-w-[1036px]
-    lg:max-w-[956px] 2md:max-w-[836px] 3md:max-w-[780px] 1md:max-w-[750px] md:max-w-[716px] sm:max-w-[656px] xs:max-w-[540px]
+    @apply container max-w-[1236px] m-auto flex flex-wrap xl:max-w-[1136px] 3lg:max-w-[1090px] 2lg:max-w-[1000px]
+    lg:max-w-[930px] 2md:max-w-[836px] 3md:max-w-[780px] 1md:max-w-[730px] md:max-w-[716px] sm:max-w-[656px]
+    2sm:max-w-[600px] 3xs:max-w-[510px] 1sm:max-w-[560px] 3sm:max-w-[430px] 1xs:max-w-[470px]  xs:max-w-[360px] 2xs:max-w-[330px]
 }
 
 .wrap {

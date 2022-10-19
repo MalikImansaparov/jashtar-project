@@ -11,10 +11,10 @@ export const BreadCrumb = () => {
     const {t} = useTranslation()
 
     return (
-        <div className='pt-[62px] mb-8 font-inter sm:ml-4'>
+        <div className='pt-[62px] mb-8 font-inter sm:ml-4 1xs:pt-0'>
             {pathname && (
                 <>
-                <div className='text-lg font-medium text-grey xs:text-[16px]'>
+                <div className='text-lg font-medium text-grey xs:text-[16px] 1xs:hidden'>
                     {pathname === '/valuation' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("valuation")}</span> : null}
                     {pathname === '/management' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("leadship")}</span> : null}
                     {pathname === '/timeline' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("timeline")}</span> : null}

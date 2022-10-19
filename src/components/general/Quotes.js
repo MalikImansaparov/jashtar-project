@@ -20,7 +20,6 @@ const Quotes = () => {
                     delay: 6000,
                     disableOnInteraction: false,
                 }}
-                // effect="fade"
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
                 }}
@@ -29,7 +28,6 @@ const Quotes = () => {
                 slidesPerView={1}
                 speed={600}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
             >
                 {response &&
                     response.map((item) => (

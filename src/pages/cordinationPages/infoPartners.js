@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+ import React, {useState} from 'react';
 import close from "../../assets/image/about/close.png"
 import Popover from "../galeryPage/popover";
 import {useClickOutside} from "../../hooks/useOutside";
@@ -27,8 +27,8 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
         return (
             <div className="text-justify font-inter">
                 <Popover open={openRegisterModal}>
-                    <div className='max-w-[1236px] h-[1059px] bg-white rounded-[12px] p-[62px] shadow-org xl:max-w-[1090px] 2lg:max-w-[900px]
-                     2md:max-w-[750px] md:max-w-[600px] 1sm:max-w-[500px] 1xs:max-w-[450px] xs:max-w-[380px]' ref={ref} >
+                    <div className='w-[1236px] h-[1059px] bg-white rounded-[12px] p-[62px] shadow-org xl:w-[1090px] 2lg:w-[900px]
+                     2md:w-[750px] md:w-[600px] 1sm:w-[500px] 1xs:w-[450px] xs:w-[380px]' ref={ref} >
                         { isLoading &&
                             <div role="status" className='flex justify-center my-28 pb-24'>
                                 <ClipLoader
@@ -42,16 +42,16 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                         </div>
                         {response &&
                             <div>
-                        <div className="flex" key={response.id}>
-                            <div className='w-[312px] h-[266px] rounded shadow-2xl flex justify-center items-center mb-[15px]'>
-                                <img src={uri + response.org_image} alt='img' className="w-[245px]"/>
+                        <div className="flex float-left" key={response.id}>
+                            <div className='float-left mr-[45px] max-w-[312px] max-h-[266px] rounded shadow-2xl flex justify-center items-center mb-[15px]'>
+                                <img src={uri + response.org_image} alt='img' className="max-w-[245px] h-auto"/>
                             </div>
                             {i18n.language === "ky" &&
-                            <div className='ml-[45px]'>
+                            <div>
                                 <p className='text-blue text-base font-semibold mb-8'>
                                     {response.title_ky}
                                 </p>
-                                <p className="w-[750px] text-base font-normal leading-[19.3px]">
+                                <p className="max-w-[750px] text-base font-normal leading-[19.3px]">
                                     <div dangerouslySetInnerHTML={createMarkup(response.desc_ky)}></div>
                                 </p>
                             </div>}

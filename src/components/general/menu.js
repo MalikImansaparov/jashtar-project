@@ -92,7 +92,7 @@ const Menu = () => {
                     <div className=" pb-1">
                         <div className="flex items-center" active={showProject ? showProject : false} onClick={changeAccordion}>
                             {showProject ? <img src={arr2} className='mr-[5px]' alt='lang'/> : <img src={arr} className='mr-[5px]' alt='lang'/> }
-                            <div className="menu-list">{t("projects")}</div>
+                            <div className="menu-list">{t("subsite")}</div>
                         </div>
                         {showProject && (
                             <div className="pl-8" onClick={toggleMenu}>

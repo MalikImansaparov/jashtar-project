@@ -42,7 +42,7 @@ export const Events = () => {
                         {response &&
                             response.results.map((item) => (
                                 <SwiperSlide key={item.id}>
-                                    <Link to={`events/${item.id}`} className="block w-[384px] h-[419px] m-auto shadow-lg rounded bg-white pb-4 mb-4 leading-5 cursor-pointer hover:shadow-2xl 3lg:w-[384px] xl:w-[340px] 1sm:w-[384px] xs:w-[300px]">
+                                    <Link to={`events/${item.id}`} className="block w-[384px] h-[419px] m-auto shadow-lg rounded bg-white mb-4 leading-5 cursor-pointer hover:shadow-2xl 3lg:w-[384px] xl:w-[340px] 1sm:w-[384px] xs:w-[300px]">
                                         <div className="mb-3 h-[247px] overflow-hidden rounded-t xl:w-[340px] 2lg:w-[340px] 1sm:w-full xs:w-[300px] xs:h-[230px] xs:mb-0 3lg:w-full 2lg:w-full">
                                             <img
                                                 src={uri + item.preview_image}
@@ -53,10 +53,10 @@ export const Events = () => {
                                         <div className="px-2.5">
                                             {i18n.language === "ky" &&
                                                 <>
-                                                    <p className="text-base mb-3 font-semibold w-[100%] h-[38px] text-black overflow-hidden leading-[19px]">
+                                                    <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-hidden leading-[19px]">
                                                         {item.title_ky.length > 60 ? item.title_ky.slice(0, 60) + "..." : item.title_ky }
                                                     </p>
-                                                    <p className="text-base font-normal w-[100%] h-[38px] grey overflow-hidden leading-[19px]">
+                                                    <p className="text-base font-normal w-[324px] h-[38px] grey overflow-hidden leading-[19px]">
                                                         <Sanitized html={item.desc_ky}/>
                                                     </p>
                                                 </>}

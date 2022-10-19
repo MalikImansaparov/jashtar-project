@@ -11,9 +11,9 @@ const Header = () => {
     return (
         <div className='bg-white font-inter'>
         <div className='wrapper flex justify-between items-center sm:relative'>
-            <div className='flex'>
-                <NavLink to='/'><img className="w-[54px] h-[54px] my-[8px] mr-3 cursor-pointer md:w-[46px] md:h-[46px] mr-1 sm:ml-2" src={logo} alt='logo'/></NavLink>
-                <div className="mt-2.5 pt-1">
+            <div className='flex '>
+                <NavLink to='/'><img className="w-[54px] h-[54px] my-[8px] mr-3 cursor-pointer md:w-[46px] md:h-[46px] mr-1 sm:ml-2 1xs:ml-0 1xs:w-[40px] 1xs:h-[40px] items-center" src={logo} alt='logo'/></NavLink>
+                <div className="self-center">
                     <p className="text-[11px] font-monserrat w-[284px] flex-wrap leading-[13px]">{t("main")}</p>
                     <p className="text-sm text-blue font-semibold mt-1 text-blue leading-[14px]">{t("name")}</p>
                 </div>

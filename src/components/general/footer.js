@@ -15,10 +15,10 @@ const Footer = () => {
         <div className=" bg-blueLight relative bottom-0 font-inter">
         <div className='wrapper py-[16px] justify-between relative'>
             <div className='flex md:ml-2 xs:block'>
-                <div className="flex 1sm:hidden">
-                <NavLink to='/'><img className="w-[46px] h-[54px] my-[8px] mr-3 cursor-pointer md:w-[46px] h-[46px] mr-1" src={logo} alt='logo'/></NavLink>
+                <div className="flex 2sm:hidden">
+                <NavLink to='/'><img className="w-[46px] h-[54px] my-[8px] mr-3 cursor-pointer md:w-[46px] h-[46px] mr-1 md:my-[14px]" src={logo} alt='logo'/></NavLink>
                 <div className="mt-3 mr-[102px] lg:mr-[60px] md:mr-[10px]">
-                    <p className="text-[11px] font-monserrat w-[284px] flex-wrap leading-[13px]">{t('main')}</p>
+                    <p className="text-[11px] font-monserrat max-w-[284px] md:max-w-[254px] flex-wrap leading-[13px]">{t('main')}</p>
                     <p className="text-sm text-blue font-semibold mt-1 text-blue leading-[14px]">{t('name')}</p>
                 </div>
                 </div>
