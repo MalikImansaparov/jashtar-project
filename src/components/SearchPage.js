@@ -33,14 +33,14 @@ const SearchPage = () => {
         )
     }
 
-    if(items && items.docs.length === 0 || items.management.length === 0 || items.news.length === 0 ||
-    items.events.length === 0 || items.project.length === 0 || items.partner.length === 0){
-        return (
-            <div className="flex w-[1236px] m-auto shadow-md rounded px-8 my-8 bg-white">
-                <p className="my-16 text-[20px]">{t('notFound')}</p>
-            </div>
-            )
-    }
+    // if(items && items.docs.length === 0 || items.management.length === 0 || items.news.length === 0 ||
+    // items.events.length === 0 || items.project.length === 0 || items.partner.length === 0){
+    //     return (
+    //         <div className="flex w-[1236px] m-auto shadow-md rounded px-8 my-8 bg-white">
+    //             <p className="my-16 text-[20px]">{t('notFound')}</p>
+    //         </div>
+    //         )
+    // }
 
     return (
         <div className="wrapper py-[62px] font-inter">
