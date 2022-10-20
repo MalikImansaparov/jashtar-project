@@ -8,9 +8,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import '../../index.css';
 import {ClipLoader} from "react-spinners";
-import SanitizedHTML from 'react-sanitized-html';
 import {useTranslation} from "react-i18next";
 import axios from "axios";
+import {Sanitized} from "../general/sanitize";
 
 const Banner = () => {
     const swiperRef = useRef();
@@ -76,30 +76,30 @@ const Banner = () => {
                     {i18n.language === 'ky' && (
                       <div className="mx-[50px] items-center 2lg:mx-[40px] lg:mx-[30px] 2md:mx-[20px] md:mx-[15px]">
                         <p className="text-[32px] font-bold xl:text-[28px] lg:text-[24px] md:text-[20px]">
-                          <SanitizedHTML html={item.title_ky} />
+                          <Sanitized html={item.title_ky} />
                         </p>
                         <p className="mt-[26px] font-normal text-[26px] xl:text-[20px] md:text-[18px]">
-                          <SanitizedHTML html={item.subtitle_ky} />
+                          <Sanitized html={item.subtitle_ky} />
                         </p>
                       </div>
                     )}
                     {i18n.language === 'ru' && (
                       <div className="mx-[50px] items-center 2lg:mx-[40px] lg:mx-[30px] 2md:mx-[20px] md:mx-[15px]">
                         <p className="text-[32px] font-bold">
-                          <SanitizedHTML html={item.title_ru} />
+                          <Sanitized html={item.title_ru} />
                         </p>
                         <p className="mt-[26px] font-normal text-[26px]">
-                          <SanitizedHTML html={item.subtitle_ru} />
+                          <Sanitized html={item.subtitle_ru} />
                         </p>
                       </div>
                     )}
                     {i18n.language === 'en' && (
                       <div className="mx-[50px] items-center 2lg:mx-[40px] lg:mx-[30px] 2md:mx-[20px] md:mx-[15px]">
                         <p className="text-[32px] font-bold">
-                          <SanitizedHTML html={item.title_en} />
+                          <Sanitized html={item.title_en} />
                         </p>
                         <p className="mt-[26px] font-normal text-[26px]">
-                          <SanitizedHTML html={item.subtitle_en} />
+                          <Sanitized html={item.subtitle_en} />
                         </p>
                       </div>
                     )}
