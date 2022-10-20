@@ -89,7 +89,7 @@ export const YoungCouncil = () => {
                         <div key={i.id} className="flex flex-wrap w-full">
                             {i.yorganizationmemb.map( item => (
                                 <div className="flex items-center shadow-enroll py-[10px] px-[30px] my-4 align-middle rounded-[12px] w-full cursor-pointer hover:shadow-2xl sm:px-[10px]"
-                                     onClick={() => openModal(item.id)}>
+                                     >
                                         <img src={emblem} alt='organization' className='w-[40px] h-[40px] self-center mr-[12px] xs:pr-0'/>
                                     {i18n.language === "ky" &&
                                         <span className="font-normal text-base 1sm:text-sm xs:text-[12px] max-w-[1100px]">{item.annotation_ky}</span>

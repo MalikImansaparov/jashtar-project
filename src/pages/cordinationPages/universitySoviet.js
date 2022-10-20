@@ -89,7 +89,7 @@ export const UniversitySoviet = () => {
                         <div key={i.id} className="flex flex-wrap w-full">
                             {i.universitymemb.map( item => (
                                 <div className="flex items-center shadow-enroll py-[10px] px-[30px] my-4 align-middle rounded-[12px] cursor-pointer hover:shadow-2xl sm:px-[10px] w-full"
-                                     onClick={() => openModal(item.id)}>
+                                     >
                                     <div className="flex justify-center items-center pr-[10px] mr-[12px] w-auto h-[80px] overflow-hidden xs:pr-0">
                                         <img src={uri + item.org_image} alt='organization' className='w-auto h-[100%] self-center'/>
                                     </div>
