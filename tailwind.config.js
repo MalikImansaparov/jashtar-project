@@ -4,9 +4,11 @@ module.exports = {
 		'./src/**/*.js'
 	],
 	presets: [],
+	important: true,
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		screens:  {
+			'4xl': {'max': '2200px'},
 			'2xl': {'max': '1535px'},
 			'3xl': {'max': '1389px'},
 			'xl': {'max': '1289px'},

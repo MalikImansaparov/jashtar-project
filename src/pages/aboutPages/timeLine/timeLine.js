@@ -30,24 +30,23 @@ const TimeLine = () => {
             <div className="wrapper">
                 <BreadCrumb/>
             </div>
-            <div className="w-[1236px] m-auto">
+            <div className="max-w-[1236px] m-auto">
                 <Tabs>
                     <TabList>
                         {
                             response?.map(item => (
                                 <Tab key={item.id}>
-                                    <p>{item.start_date.split("-").reverse().join("-")} : {item.finish_date.split("-").reverse().join("-")}</p>
-                                    <p></p>
+                                    <p className="xl:pl-10">{item.start_date.split("-").reverse().join("-")} : {item.finish_date.split("-").reverse().join("-")}</p>
                                 </Tab>
                             ))}
                     </TabList>
                                     {response && response.map(item => (
                                         <TabPanel key={item.id}>
-                                            <div className='w-[900px] mx-[2px]'>
+                                            <div className='max-w-[975px] '>
                                             <div className="flex flex-wrap justify-around ">
                                         {item.chrono.map( item => (
-                                            <div className="flex w-[370px] mb-4 shadow-sm p-3 rounded-[12px]" key={item.id}>
-                                                <div className="h-[62px] w-[62px] overflow-hidden z-10 rounded-[50%] my-[14px] mr-4">
+                                            <div className="flex max-w-[370px] mb-4 shadow-sm p-2 rounded-[12px] 3xs:max-w-[350px] 3xs:p-1 3sm:max-w-[340px]" key={item.id}>
+                                                <div className="h-[62px] w-[62px] overflow-hidden z-10 rounded-[50%] my-[14px] mr-2 3xs:h-[48px] 3xs:w-[48px] 3sm:mr-1">
                                                     <img
                                                         src={uri + item.avatar_image}
                                                         alt="cart-img"
@@ -55,7 +54,7 @@ const TimeLine = () => {
                                                     />
                                                 </div>
                                                 {i18n.language === "ky" &&
-                                                    <div className="w-[275px] ">
+                                                    <div className="max-w-[250px] ">
                                                         <p className="text-[12px] mb-1 fo t-normal text-blue">
                                                             {item.full_name_ky}
                                                         </p>
@@ -85,15 +84,15 @@ const TimeLine = () => {
                                         ))}
                                             </div>
                                                 {i18n.language === "ky" &&
-                                                    <div className="text-justify font-inter"
+                                                    <div className="text-justify font-inter lg:text-[14px] mr-[20px]"
                                                          dangerouslySetInnerHTML={createMarkup(item.desc_ky)}></div>
                                                 }
                                                 {i18n.language === "ru" &&
-                                                    <div className="text-justify"
+                                                    <div className="text-justify font-inter lg:text-[14px] mr-[20px]"
                                                          dangerouslySetInnerHTML={createMarkup(item.desc_ru)}></div>
                                                 }
                                                 {i18n.language === "ky" &&
-                                                    <div className="text-justify"
+                                                    <div className="text-justify font-inter lg:text-[14px] mr-[20px]"
                                                          dangerouslySetInnerHTML={createMarkup(item.desc_en)}></div>
                                                 }
                                             </div>

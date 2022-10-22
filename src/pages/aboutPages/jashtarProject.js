@@ -25,15 +25,15 @@ export const JashtarProject = () => {
   return (
     <div className="w-full relative pb-[63px] font-inter text-justify">
         <div className='h-[210px] max-w-[47%] absolute top-[140px] left-[-100px] rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
-      <div className="wrapper text-[16px] font-normal leading-5 ">
+      <div className="wrapper text-[16px] font-normal leading-5">
         <div className="">
           <BreadCrumb />
         </div>
         {response && response.map( item => (
             <div key={item.id}>
                 {i18n.language === "ky" &&
-                    <div className='mb-8 sm:mx-4'>
-                        <div className="w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left md:w-[350px] sm:float-none sm:w-[432px] sm:m-auto">
+                    <div className='mb-8'>
+                        <div className="max-w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left sm:float-none sm:max-w-[432px] sm:m-auto 1xs:max-w-[320px] ">
                             <PolicySlider images={item.youth_slider}/>
                         </div>
                         <Sanitized html={item.desc_ky}/>

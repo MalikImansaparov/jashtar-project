@@ -44,18 +44,18 @@ const DetailEvents = () => {
 
     return (
         <div className="wrapper w-full relative h-auto font-inter text-justify">
-            <div className='h-[212px] w-[47%] absolute top-[173px] left-[-100px] rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
+            <div className='h-[212px] w-[47%] absolute top-[173px] left-[-100px] rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl xl:hidden'></div>
                 {response && <>
                 {i18n.language === "ky" &&
             <div className="wrapper">
-                <div className="container mb-8 mt-16">
+                <div className="container mb-8 mt-16 md:mt-8">
                         <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
                 </div>
                 <div className='mb-8'>
-                        <div className="w-[432px] h-auto mr-[72px] mb-2 z-10 overflow-hidden float-left">
+                        <div className="max-w-[432px] h-auto mr-[72px] mb-2 z-10 overflow-hidden float-left sm:float-none sm:max-w-[432px] sm:m-auto 1xs:max-w-[320px] xl:mr-[32px]">
                             <ImagesSlider images={response.events_slider}/>
                         </div>
-                    <p className="mb-6 font-semibold text-[18px]">{response.title_ky}</p>
+                    <p className="mb-6 font-semibold text-[18px] lg:text-[18px] 3md:text-[16px] sm:mt-2">{response.title_ky}</p>
                     <Sanitized html={response.desc_ky}/>
                     <p className="text-grey mt-8 flex">
                         <img src={dots} className="mr-[10px] w-[8px] h-[8px] mt-1" alt='dots'/>

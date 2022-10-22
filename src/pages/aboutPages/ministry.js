@@ -28,7 +28,7 @@ const Ministry = () => {
         <div className="w-full h-[604px] relative z-0 pb-8 font-inter xs:h-[664px]" key={item.id} style={{backgroundImage:`url(${uri}${item.background_image})`}}>
             <div className="absolute top-0 left-0 bg-gradient-ministry w-full h-[624px] xs:h-[664px] z-0" ></div>
                 <div className='container max-w-[1196px] m-auto text-white text-base font-normal' key={item.id}>
-                    <div className=" wrapper text-white">
+                    <div className="1xs:pt-[32px] wrapper text-white">
                         <BreadCrumb/>
                     </div>
                     <p className="my-16 leading-[19.3px] relative z-10 text-justify mx-4 1sm:my-8 xs:my-0">

@@ -13,16 +13,16 @@ const SecondLead = () => {
 
 
   return (
-    <div className="grid justify-center m-auto">
-      <div className="wrapper justify-between align-middle">
+    <div>
+      <div className="wrapper justify-center align-middle">
           {response &&
               response.filter(i => i.floor === 2 ).map( item => (
-                  <Link to={`${item.id}`} key={item.id}>
+                  <Link to={`${item.id}`} key={item.id} className>
                   <div
-                      className="relative block shadow-xl cursor-pointer w-[234px] h-[196px] bg-white rounded-2xl text-center hover:shadow-2xl"
+                      className="relative block  shadow-xl cursor-pointer w-[226px] h-[190px] bg-white rounded-2xl text-center hover:shadow-2xl mb-4 mx-2 pt-[1px]"
                       key={item.id}
                   >
-                      <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[13px]">
+                      <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[7px]">
                       <img
                           src={uri + item.cropped_image}
                           alt="cart-img"
@@ -63,11 +63,9 @@ const SecondLead = () => {
                   </Link>
               ))}
       </div>
-        {isDesktop && (
-            <div className="m-auto mt-6">
+            <div className="flex justify-center">
             <RenderArrow angle={180} lenght={50} width={'35px'} line={1.2}/>
             </div>
-        )}
     </div>
   );
 };

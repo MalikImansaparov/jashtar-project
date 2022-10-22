@@ -6,6 +6,7 @@
 .react-tabs__tab-list {
     display: flex;
     flex-direction: column;
+    width: 290px;
 }
 
 .react-tabs__tab {
@@ -22,7 +23,9 @@
     width: 326px;
     position: relative;
     left: -59px;
-    padding: 61px 60px;
+    padding-top: 61px;
+    padding-bottom: 61px;
+    padding-left: 60px;
     background: rgba(48, 112, 182, 0.2);
     mix-blend-mode: darken;
     box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.1);
@@ -31,21 +34,41 @@
 
 .react-tabs__tab-panel {
     display: none;
-    width: 800px;
+
 }
 
 .react-tabs__tab-panel--selected {
     display: block;
 }
 
-/*.react-tabs__tab {*/
-/*    padding-left: 4px;*/
-/*}*/
-
-/*.react-tabs__tab--selected {*/
-/*    padding-left: 21px;*/
-/*}*/
-
 .panel-content {
     text-align: center;
+}
+
+/*@media (max-width: 1289px){*/
+/*    react-tabs__tab {*/
+/*        width: 250px;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 1129px){*/
+/*    react-tabs__tab {*/
+/*        width: 250px;*/
+/*    }*/
+/*}*/
+
+@media (max-width: 1050px){
+    .react-tabs__tab-list {
+        width: 140px;
+        font-size: 13px;
+    }
+    .react-tabs__tab {
+        width: 130px;
+        padding: 31px 0px;
+    }
+    .react-tabs__tab--selected {
+        width: 190px;
+        padding-left: 60px;
+    }
+
 }

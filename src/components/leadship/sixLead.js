@@ -17,10 +17,10 @@ export const SixthLead = () => {
                     response.filter(i => i.floor === 6 ).map( item => (
                         <Link to={`${item.id}`} key={item.id}>
                         <div
-                            className="relative block shadow-xl cursor-pointer w-[234px] h-[196px] bg-white rounded-2xl text-center mx-2 hover:shadow-2xl"
+                            className="relative block shadow-xl cursor-pointer w-[226px] h-[190px] pt-[1px] bg-white rounded-2xl text-center mx-2 hover:shadow-2xl mb-4"
                             key={item.id}
                         >
-                            <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px]">
+                            <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[7px]">
                                 <img
                                     src={uri + item.cropped_image}
                                     alt="cart-img"
@@ -61,8 +61,6 @@ export const SixthLead = () => {
                         </Link>
                     ))}
             </div>
-            {/*<div className="wrapper justify-center w-[262px]">*/}
-            {/*</div>*/}
         </div>
     );
 };

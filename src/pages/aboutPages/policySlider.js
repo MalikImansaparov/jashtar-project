@@ -33,7 +33,7 @@ export const PolicySlider = props => {
                 props.images.map((item, i) => (
                     <div key={i}>
                     <SwiperSlide >
-                        <div className="max-w-[432px] h-[245px] mr-[62px] mb-2 z-10 overflow-hidden float-left" onClick={() => openModal(item.image)}>
+                        <div className="w-[432px] h-[245px] 1xs:h-[200px] mr-[62px] mb-2 z-10 overflow-hidden sm:w-[432px]" onClick={() => openModal(item.image)}>
                         <img
                             src={uri + item.image}
                             alt="cart-img"
@@ -46,7 +46,7 @@ export const PolicySlider = props => {
             }
         </Swiper>
         {props.images.length > 1 &&
-        <div className="flex m-auto w-[300px] relative">
+        <div className="flex m-auto max-w-[300px] relative">
         <Swiper
             hashNavigation={{
                 watchState: true,

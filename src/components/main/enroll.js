@@ -159,11 +159,11 @@ export const Enroll = () => {
                     ))}
             </Swiper>
                 <div
-                    className="prev absolute top-[129px] left-[60px] xl:left-[20px] ml-[0px] z-1000 2md:top-[90px] 1md:hidden"
+                    className="prev absolute top-[129px] left-[120px] xl:left-[20px] ml-[0px] z-1000 2md:top-[90px] 1md:hidden"
                     onClick={() => swiperRef.current.slidePrev()}
                 ></div>
                 <div
-                    className="next absolute top-[129px] right-[60px] xl:right-[20px] mr-[0px] z-1000 2md:top-[90px] 1md:hidden"
+                    className="next absolute top-[129px] right-[120px] xl:right-[20px] mr-[0px] z-1000 2md:top-[90px] 1md:hidden"
                     onClick={() => swiperRef.current.slideNext()}
                 ></div>
         </div>

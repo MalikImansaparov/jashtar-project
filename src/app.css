@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/*.style {*/
+/*  @apply absolute z-9999 top-[350px] left-[50%] bottom-[500px] bg-white w-[800px] h-[500px]*/
+/*  overflow-auto border-r-1 outline-none translate-y-[-50%] translate-x-[-50%]*/
+/*}*/
+
+/*.overlay {*/
+/*    @apply fixed flex flex-center top-0 left-0 w-[100%] h-[100%] z-1000 overflow-y-auto bg-black*/
+/*}*/
+
 .wrapper {
     @apply container max-w-[1236px] m-auto flex flex-wrap xl:max-w-[1136px] 3lg:max-w-[1090px] 2lg:max-w-[1000px]
     lg:max-w-[930px] 2md:max-w-[836px] 3md:max-w-[780px] 1md:max-w-[730px] md:max-w-[716px] sm:max-w-[656px]
@@ -53,7 +62,8 @@ btn-blue:hover {
 }
 
 .button {
-    @apply m-auto w-[189px] h-[34px] flex justify-center items-center bg-orange rounded text-white mt-[22px] text-[15px] font-medium xl:mt-[12px] lg:text-sm lg:font-normal lg:w-[169px] lg:mt-[4px] lg:h-[28px];
+    @apply m-auto w-[189px] h-[34px] flex justify-center items-center bg-orange rounded text-white mt-[20px] mb-2 text-[15px]
+    font-medium xl:mt-[12px] lg:text-sm lg:font-normal lg:w-[169px] lg:mt-[4px] lg:h-[28px] md:mt-[12px] md:text-[14px];
 }
 
 .btn {
@@ -69,7 +79,7 @@ btn-blue:hover {
 }
 
 .description {
-    @apply text-[11px] font-light mb-3 text-center px-[0px] leading-[13.31px]
+    @apply text-[11px] font-light text-center px-[0px] leading-[13.31px] h-[53.19px] overflow-hidden
 }
 
 .link {
