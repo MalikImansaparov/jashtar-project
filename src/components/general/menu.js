@@ -21,6 +21,7 @@ const Menu = () => {
         const [openModal, setOpenModal] = useState(false);
         const [openBurger, setOpenBurger] = useState(false)
         const [show, setShow] = useState(false);
+        const [arrow, setArrow] = useState(false);
         const [isShow, setIsShow] = useState(false);
         const [showProject, setIsProject] = useState(false);
         const {t} = useTranslation()
@@ -30,6 +31,7 @@ const Menu = () => {
         setOpenModal(!openModal);
     }
     const toggleAccordion = () => {setShow(!show);};
+    const toggleArrow = () => {setArrow(!arrow);};
     const switchAccordion = () => {setIsShow(!isShow);};
     const changeAccordion = () => {setIsProject(!showProject);};
 
@@ -104,7 +106,7 @@ const Menu = () => {
                                 ))}
                             </div>
                         )}
-                        <div className="flex items-center" active={isShow ? isShow : false} onClick={switchAccordion}>
+                        <div className="flex items-center" active={arrow ? arrow : false} onClick={toggleArrow}>
                             <div onClick={toggleAccordion}>
                                 {show ? <img src={arr2} className='mr-[5px]' alt='lang'/> : <img src={arr} className='mr-[5px]' alt='lang'/> }
                             </div>

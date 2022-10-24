@@ -64,7 +64,7 @@ export const ImagesSlider = props => {
         >
             {
                 props.images.map((item) => (
-                    <SwiperSlide className="">
+                    <SwiperSlide>
                         <img
                             src={uri + item.image}
                             alt="cart-img"

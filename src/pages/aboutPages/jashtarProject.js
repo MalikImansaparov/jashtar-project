@@ -26,7 +26,7 @@ export const JashtarProject = () => {
     <div className="w-full relative pb-[63px] font-inter text-justify">
         <div className='h-[210px] max-w-[47%] absolute top-[140px] left-[-100px] rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl'></div>
       <div className="wrapper text-[16px] font-normal leading-5">
-        <div className="">
+        <div>
           <BreadCrumb />
         </div>
         {response && response.map( item => (

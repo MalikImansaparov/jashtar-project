@@ -2,6 +2,7 @@ import React from 'react';
 import {useFetch} from "../../api/useFetch";
 import {base, mainUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
+import {Link} from "react-router-dom";
 
 const Volunter = () => {
     const { response } = useFetch(base + mainUrl + '/subprojects/');
@@ -23,9 +24,9 @@ const Volunter = () => {
                               <div
                                   className="flex justify-center font-normal text-base max-w-[422px] leading-5 text-grey lg:text-[14px]
                                   2md:text-[14px] md:text-[12px] md:leading-3 md:mx-0.5">{item.desc_ky}</div>
-                              <button className='button' onClick={() => window.open(item.apply_link)}>
+                              <Link to="/volunteer" className='button'>
                                   {t('volunteer')}
-                              </button>
+                              </Link>
                           </div>
                       </div>
                       :
@@ -56,9 +57,9 @@ const Volunter = () => {
                               <p className='text-[22px] font-semibold mb-2'>{item.title_ru}</p>
                               <div
                                   className="flex justify-center font-normal text-base max-w-[422px] leading-5 text-grey">{item.desc_ky}</div>
-                              <button className='button' onClick={() => window.open(item.apply_link)}>
+                              <Link to="/volunteer" className='button'>
                                   {t('volunteer')}
-                              </button>
+                              </Link>
                           </div>
                       </div>
                       :
@@ -87,9 +88,9 @@ const Volunter = () => {
                               <p className='text-[22px] font-semibold mb-2'>{item.title_en}</p>
                               <div
                                   className="flex justify-center font-normal text-base max-w-[422px] leading-5 text-grey">{item.desc_ky}</div>
-                              <button className='button' onClick={() => window.open(item.apply_link)}>
+                              <Link to="/volunteer" className='button'>
                                   {t('volunteer')}
-                              </button>
+                              </Link>
                           </div>
                       </div>
                       :

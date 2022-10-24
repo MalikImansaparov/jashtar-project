@@ -1,8 +1,10 @@
 import React from "react";
 import {useNavigate} from "react-router";
+import {useMatchMedia} from "../../hooks/useMatchMedia";
 
 
 export const BreadCrumbs = (props) => {
+    const { isMobile, isTablet, isDesktop } = useMatchMedia();
     const navigate = useNavigate()
 
     const isLast = (index) => {
@@ -20,9 +22,16 @@ export const BreadCrumbs = (props) => {
                     </div>
                 );
             })}
-            <span className="ml-1.5 text-lg font-medium text-grey 2md:hidden">{props.title.length > 20 ?
-                props.title.split('').splice(0, 50) : props.title}
-                {props.title.length > 25 && <span> ... </span>}</span>
+            {isDesktop &&
+            <span className="ml-1.5 text-lg font-medium sm:text-base xs:text-sm text-grey">{props.title.length > 20 ?
+                props.title.split('').splice(0, 30) : props.title}
+                {props.title.length > 25 && <span> ... </span>}</span>}
+            {isTablet &&
+                <span className="ml-1.5 text-lg font-medium sm:text-base xs:text-sm text-grey">{props.title}
+                    {props.title.length > 25 && <span> ... </span>}</span>}
+            {isMobile &&
+                <span className="ml-1.5 text-lg sm:text-base xs:text-sm font-medium text-grey">{props.title}
+                    {props.title.length > 25 && <span> ... </span>}</span>}
         </div>
     );
 };

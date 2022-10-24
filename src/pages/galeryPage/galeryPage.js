@@ -34,7 +34,7 @@ const GaleryPage = () => {
 
     return (
         <div className='wrapper h-auto font-inter'>
-            <div className="container w-full mt-[62px]">
+            <div className="container w-full mt-[62px] md:mb-8">
                 {tabs.map((tab, i) =>
                     <div key={i}>
                         {currentTab === `${tab.id}` &&  <BreadCrumbs crumbs={crumbs} title={tab.tab} key={tab.id}/>}

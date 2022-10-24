@@ -31,7 +31,7 @@ export const InternationOrganization = () => {
     return (
         <div className='wrapper font-inter'>
             {response && response.map((item) => (
-                <div>
+                <div key={item.id}>
                     <div className="container max-w-[1196px]">
                         <BreadCrumb/>
                     </div>

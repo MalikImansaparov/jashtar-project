@@ -60,10 +60,17 @@
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 510px) {
     .iframe {
-        width: 400px;
-        height: 250px;
+        width: 350px;
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .iframe {
+        width: 300px;
+        height: 180px;
     }
 }
 

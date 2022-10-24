@@ -21,6 +21,7 @@ import SearchPage from "../components/SearchPage";
 import CategoryList from "../pages/documentPage/DocList/category";
 import DocumentDetail from "../pages/documentPage/DocChldren/categoryDetail";
 import {YoungCouncil} from "../pages/cordinationPages/youthCouncil";
+import {VolunterForm} from "../components/main/FormPage/VolunterForm";
 
 export const publicRoutes = [
     { path: '/', component: MainPage },
@@ -46,4 +47,5 @@ export const publicRoutes = [
     { path: '/management/:id', component: InfoLeadership},
     { path: '/search', component: SearchPage},
     { path: '/community', component: YoungCouncil},
+    { path: '/volunteer', component: VolunterForm},
 ];

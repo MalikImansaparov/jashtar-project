@@ -1,10 +1,9 @@
 import { useState, useLayoutEffect } from 'react';
 
 const queries = [
-  '(min-width : 360px)',
-  '(min-width 540px)',
-  '(min-width: 767px)',
-  '(min-width: 1289px)',
+  '(min-width: 300px) and (max-width: 540px)',
+  '(min-width: 540px) and (max-width: 767px)',
+  '(min-width: 767px) and (max-width: 1766px)',
 ];
 
 export const useMatchMedia = () => {
@@ -25,7 +24,7 @@ export const useMatchMedia = () => {
       );
   }, []);
 
-  return ['isExtra', 'isMobile', 'isTablet', 'isDesktop'].reduce(
+  return ['isMobile', 'isTablet', 'isDesktop'].reduce(
     (acc, screen, index) => ({
       ...acc,
       [screen]: values[index],

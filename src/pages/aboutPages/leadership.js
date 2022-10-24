@@ -9,7 +9,7 @@ import { SixthLead } from '../../components/leadship/sixLead';
 
 const Leadership = () => {
   return (
-    <div className="pb-32 font-inter xl:max-w-[904px] m-auto">
+    <div className="pb-32 font-inter xl:max-w-[904px] m-auto md:pb-16">
       <div className="container wrapper m-auto">
         <BreadCrumb />
       </div>

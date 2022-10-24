@@ -9,7 +9,6 @@ export const useClickOutside = handler => {
             if (!ref.current || ref.current.contains(event.target)) {
                 return;
             }
-
             handler(event);
         };
 

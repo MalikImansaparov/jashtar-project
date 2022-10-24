@@ -2,13 +2,15 @@ import {React, useRef} from 'react';
 import {useFetch} from "../../api/useFetch";
 import {base, mainUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
-import {Autoplay, Navigation, Pagination, } from "swiper";
-import {SwiperSlide, Swiper} from "swiper/react";
+import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
+import { SwiperSlide, Swiper } from 'swiper/react';
+import 'swiper/css/autoplay';
 
 const Quotes = () => {
     const { response } = useFetch(base + mainUrl + '/quote/');
     const { t, i18n} = useTranslation();
     const swiperRef = useRef();
+
 
     return (
         <div className="sm:justify-end">
@@ -24,7 +26,7 @@ const Quotes = () => {
                     swiperRef.current = swiper;
                 }}
                 loop={true}
-                spaceBetween={10}
+
                 slidesPerView={1}
                 speed={600}
                 modules={[Autoplay, Pagination, Navigation]}
@@ -55,7 +57,7 @@ const Quotes = () => {
                                         className=" h-auto w-[100%]"
                                     />
                                 </div>
-                                </>
+                            </>
                         </SwiperSlide>
                     ))}
             </Swiper>

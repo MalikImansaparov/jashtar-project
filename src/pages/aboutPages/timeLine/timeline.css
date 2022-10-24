@@ -45,18 +45,6 @@
     text-align: center;
 }
 
-/*@media (max-width: 1289px){*/
-/*    react-tabs__tab {*/
-/*        width: 250px;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 1129px){*/
-/*    react-tabs__tab {*/
-/*        width: 250px;*/
-/*    }*/
-/*}*/
-
 @media (max-width: 1050px){
     .react-tabs__tab-list {
         width: 140px;

@@ -2,23 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/*.style {*/
-/*  @apply absolute z-9999 top-[350px] left-[50%] bottom-[500px] bg-white w-[800px] h-[500px]*/
-/*  overflow-auto border-r-1 outline-none translate-y-[-50%] translate-x-[-50%]*/
-/*}*/
-
-/*.overlay {*/
-/*    @apply fixed flex flex-center top-0 left-0 w-[100%] h-[100%] z-1000 overflow-y-auto bg-black*/
-/*}*/
-
 .wrapper {
-    @apply container max-w-[1236px] m-auto flex flex-wrap xl:max-w-[1136px] 3lg:max-w-[1090px] 2lg:max-w-[1000px]
-    lg:max-w-[930px] 2md:max-w-[836px] 3md:max-w-[780px] 1md:max-w-[730px] md:max-w-[716px] sm:max-w-[656px]
-    2sm:max-w-[600px] 3xs:max-w-[510px] 1sm:max-w-[560px] 3sm:max-w-[430px] 1xs:max-w-[470px]  xs:max-w-[360px] 2xs:max-w-[330px]
+    @apply container max-w-[1236px] m-auto flex flex-wrap xl:max-w-[1136px] 3lg:max-w-[1090px] 2lg:max-w-[1000px] lg:max-w-[930px] 2md:max-w-[836px] 3md:max-w-[780px] 1md:max-w-[730px] md:max-w-[716px] sm:max-w-[656px] 2sm:max-w-[600px] 3xs:max-w-[510px] 1sm:max-w-[560px] 3sm:max-w-[430px] 1xs:max-w-[470px]  xs:max-w-[360px] 2xs:max-w-[330px]
 }
 
 .wrap {
-    @apply container w-[1236px] block m-auto;
+    @apply container max-w-[1236px] block m-auto;
 }
 
 .btn-blue {
@@ -38,11 +27,11 @@ btn-blue:hover {
 }
 
 .menu {
-    @apply flex text-white text-[14px] font-semibold text-sm font-normal pb-1.5;
+    @apply flex text-white text-[14px] text-sm font-normal pb-1.5;
 }
 
 .menus {
-    @apply flex text-white text-[14px] font-semibold text-sm font-normal pb-1.5;
+    @apply flex text-white text-[14px] text-sm font-normal pb-1.5;
 }
 
 .title {
@@ -62,8 +51,7 @@ btn-blue:hover {
 }
 
 .button {
-    @apply m-auto w-[189px] h-[34px] flex justify-center items-center bg-orange rounded text-white mt-[20px] mb-2 text-[15px]
-    font-medium xl:mt-[12px] lg:text-sm lg:font-normal lg:w-[169px] lg:mt-[4px] lg:h-[28px] md:mt-[12px] md:text-[14px];
+    @apply m-auto w-[189px] h-[34px] flex justify-center items-center bg-orange rounded text-white mt-[20px] mb-2 text-[15px] font-medium xl:mt-[12px] lg:text-sm lg:font-normal lg:w-[169px] lg:mt-[4px] lg:h-[28px] md:mt-[12px] md:text-[14px];
 }
 
 .btn {
@@ -83,5 +71,5 @@ btn-blue:hover {
 }
 
 .link {
-    @apply font-semibold py-4 flex pl-12 3md:pl-3 3md:py-2 3md:font-normal sm:text-[14px]
+    @apply font-semibold py-4 flex pl-12 3md:pl-3 3md:py-2 3md:font-normal sm:text-[14px] pr-4
 }
