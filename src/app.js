@@ -10,7 +10,7 @@ document.body.style.overflow = "";
 
 function App() {
     return (
-        <div className="m-auto text-black bg-white relative" >
+        <div className="m-auto text-black bg-white h-[100%]" >
             <Header/>
             <Menu/>
             <Routes >
@@ -22,8 +22,8 @@ function App() {
                     />
                 ))}
             </Routes>
-            <div className="w-full h-[98px]"></div>
-            <div className="absolute w-full left-0 right-0 bottom-0">
+            <div className="box-border min-h-[100%] pb-[90px]"></div>
+            <div className="h-[80px] mt-[-80px]">
                 <Footer />
             </div>
         </div>

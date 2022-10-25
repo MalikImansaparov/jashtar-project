@@ -25,11 +25,11 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
     }
 
         return (
-          <div className="text-justify font-inter">
+          <div className="font-inter">
             <Popover open={openRegisterModal}>
               <div
                 className="w-[1236px] h-[1059px] bg-white rounded-[12px] p-[62px] shadow-org xl:w-[1090px] 2lg:w-[900px]
-                     2md:w-[750px] md:w-[600px] 1sm:w-[500px] 1xs:w-[450px] xs:w-[380px]"
+                     2md:w-[750px] md:w-[600px] 1sm:w-[500px] 1xs:w-[450px] xs:w-[380px] 2md:p-[32px]"
                 ref={ref}
               >
                 {isLoading && (
@@ -40,33 +40,33 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                     <ClipLoader color="#1985A1" size={300} />
                   </div>
                 )}
-                <div className="flex justify-end cursor-pointer">
+                <div className="flex justify-end cursor-pointer mb-4">
                   <img src={close} alt="close icon" onClick={onClose} />
                 </div>
                 {response && (
                   <div>
-                    <div className="flex float-left" key={response.id}>
-                      <div className="float-left mr-[45px] max-w-[312px] max-h-[266px] rounded shadow-2xl flex justify-center items-center mb-[15px]">
+                    <div className="" key={response.id}>
+                        {i18n.language === 'ky' && ( <>
+                      <div className="float-left mr-[45px] w-[312px] h-[266px] md:w-[250px] md:h-[200px]
+                       1sm:w-[300px] 1sm:h-[200px] 1sm:ml-20 1xs:ml-10 xs:ml-0 md:mr-[30px] rounded shadow-2xl flex mb-[15px]">
                         <img
                           src={uri + response.org_image}
                           alt="img"
-                          className="max-w-[245px] h-auto"
+                          className="w-[100%] h-auto"
                         />
                       </div>
-                      {i18n.language === 'ky' && (
-                        <div>
-                          <p className="text-blue text-base font-semibold mb-8">
+                          <p className="text-blue text-base font-semibold mb-8 ">
                             {response.title_ky}
                           </p>
-                          <p className="max-w-[750px] text-base font-normal leading-[19.3px]">
+                          <p className="text-justify text-base font-normal leading-[19.3px]">
                             <div
                               dangerouslySetInnerHTML={createMarkup(
                                 response.desc_ky
                               )}
                             ></div>
                           </p>
-                        </div>
-                      )}
+                        </>
+                        )}
                       {i18n.language === 'ru' && (
                         <div className="ml-[45px]">
                           <p className="text-blue text-base font-semibold mb-8">
@@ -112,11 +112,8 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                   <div className="flex items-center mb-[62px] flex-wrap">
                     {response &&
                       response.joint_project.map((item) => (
-                        <div
-                          key={item.id}
-                          className="flex items-center w-[100%]"
-                        >
-                          <div className="w-[130px] h-[86px] overflow-hidden flex items-center px-[30px] mr-[62px] cursor-pointer self-center">
+                          <div key={item.id} className="flex items-center shadow-enroll py-[10px] px-[30px] my-4 rounded-[12px] cursor-pointer hover:shadow-2xl sm:px-[10px] ">
+                              <div className="flex items-center pr-[10px] mr-[12px] w-[104px] h-[104px] overflow-hidden xs:pr-0">
                             <img
                               src={uri + item.proj_image}
                               alt="organization"

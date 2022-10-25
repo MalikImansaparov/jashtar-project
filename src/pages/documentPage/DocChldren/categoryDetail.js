@@ -51,9 +51,6 @@ const DocumentDetail = () => {
             <div className="m-auto mb-[62px] max-w-[1220px] mt-16">
                 {response &&
                     <>
-                    {i18n.language === "ky" && <BreadCrumbs crumbs={crumbs} title={response.title_ky} />}
-                {i18n.language === "ru" && <BreadCrumbs crumbs={crumbs} title={response.title_ru} />}
-                {i18n.language === "en" && <BreadCrumbs crumbs={crumbs} title={response.title_en} />}
                     <>
                         <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
                         <div className=" flex flex-wrap sm:mx-4">

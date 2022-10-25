@@ -8,7 +8,7 @@ import {ClipLoader} from "react-spinners";
 import emblem from "../../assets/image/main/200px-Emblem_of_Kyrgyzstan 1.png"
 
 export const YoungOrganization = () => {
-    const { isLoading, response } = useFetch(base + councilUrl + '/yorganization/');
+    const { isLoading, response } = useFetch(base + councilUrl + '/councilorganization/');
     const {t, i18n} = useTranslation()
 
     if (isLoading) {
@@ -75,7 +75,7 @@ export const YoungOrganization = () => {
                 className="flex flex-wrap w-[760px] md:w-[378px] xs:w-[340px]"
                 key={i.id}
               >
-                {i.yorganizationpart.map((item) => (
+                {i.councilorganizationpart.map((item) => (
                   <div
                     key={item.id}
                     className="flex w-[371px] shadow-sm p-3 rounded-[12px] mb-4 2xs:w-[350px] xs:p-1"
@@ -108,7 +108,7 @@ export const YoungOrganization = () => {
             {response &&
               response.map((i) => (
                 <div key={i.id} className="flex flex-wrap w-full">
-                  {i.yorganizationmemb.map((item) => (
+                  {i.councilorganizationmemb.map((item) => (
                     <div className="flex items-center shadow-enroll py-[10px] px-[30px] my-4 align-middle rounded-[12px] w-full cursor-pointer hover:shadow-2xl sm:px-[10px]">
                       <img
                         src={emblem}

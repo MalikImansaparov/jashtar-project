@@ -15,11 +15,15 @@ export const BreadCrumb = () => {
             {pathname && (
                 <>
                 <div className='text-lg font-medium text-grey xs:text-[16px] 1xs:hidden'>
+
                     {pathname === '/valuation' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("valuation")}</span> : null}
                     {pathname === '/management' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("leadship")}</span> : null}
                     {pathname === '/timeline' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("timeline")}</span> : null}
                     {pathname === '/policy' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("policy")}</span> : null}
                     <div className='text-lg font-medium text-white' onClick={() => navigate(-1)}>
+                        {pathname === '/volunteer/3' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("home")}<img src={arrow2} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("insan")}</span> : null}
+                        {pathname === '/volunteer/1' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("home")}<img src={arrow2} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("kelecheck")}</span> : null}
+                        {pathname === '/volunteer/5' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("home")}<img src={arrow2} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("volunter")}</span> : null}
                     {pathname === '/contacts' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow2} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("contacts")}</span>  : null}
                     </div>
                         {pathname === '/projects' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="mx-4 w-2 h-4 xs:mx-2"/>{t("projects")}</span>  : null}

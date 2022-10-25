@@ -37,21 +37,22 @@ const InfoProject = ({openRegisterModal, setOpenRegisterModal }) => {
                         <img src={close} alt="close icon" onClick={onClose}/>
                     </div>
                     {response &&
-                        <div className="flex" key={response.id}>
-                            <div className='w-[312px] h-[276px] rounded shadow-2lg flex justify-start items-center mb-[10px] p-8 shadow-xl'>
-                                <div className="flex items-center w-[245px] h-[250px]">
-                                <img src={uri + response.proj_image} alt='img' className="h-auto w-[100%]"/>
-                                </div>
-                            </div>
+                        <div key={response.id}>
                             {i18n.language === "ky" &&
-                                <div className='ml-[26px] w-[808px]'>
+                                <>
+                            <div className='flex justify-center w-[312px] h-[276px] md:w-[180px] md:h-[180px] 1sm:w-[120px] 1sm:h-[120px] float-left rounded mb-[10px] shadow-xl mr-6'>
+                                <img src={uri + response.proj_image} alt='img' className="w-[270px]  h-auto"/>
+                            </div>
+                                <div>
                                     <p className='text-blue text-base font-semibold my-4 text-justify'>
                                         {response.title_ky}
                                     </p>
                                     <p className=" text-base font-normal leading-[19.3px] text-justify">
                                         <div dangerouslySetInnerHTML={createMarkup(response.desc_ky)}></div>
                                     </p>
-                                </div>}
+                                </div>
+                                </>
+                            }
                             {i18n.language === "ru" &&
                                 <div className='ml-[26px] w-[808px]'>
                                     <p className='text-blue text-base font-semibold my-4 text-justify'>

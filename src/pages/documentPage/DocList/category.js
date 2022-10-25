@@ -29,14 +29,14 @@ const CategoryList = () => {
                             }
                             {i18n.language === "ru" &&
                                 <NavLink to={`/document/${item.id}`}
-                                         className='flex ml-[11px] font-medium text-base text-blue'>
+                                         className='flex ml-[11px] font-medium text-base text-blue 2md:font-normal 2md:text-sm'>
                                     <img src={arrow} alt='arrow' className='w-[5px] h-[10px] self-start mr-3 mt-2'/>
                                     {item.title_ru}
                                 </NavLink>
                             }
                             {i18n.language === "en" &&
                                 <NavLink to={`/document/${item.id}`}
-                                         className='flex ml-[11px] font-medium text-base text-blue'>
+                                         className='flex ml-[11px] font-medium text-base text-blue 2md:font-normal 2md:text-sm'>
                                     <img src={arrow} alt='arrow' className='w-[5px] h-[10px] self-start mr-3 mt-2'/>
                                     {item.title_en}
                                 </NavLink>

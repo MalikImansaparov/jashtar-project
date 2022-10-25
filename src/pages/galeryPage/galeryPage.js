@@ -47,7 +47,7 @@ const GaleryPage = () => {
                      className="w-[50%]" onClick={(handleTabClick)}>{tab.tabTitle}</button>
                 )}
             </div>
-            <div className='content w-[100%] mb-[62px] h-[1700px]'>
+            <div className='content w-[100%] mb-[62px]'>
                 {tabs.map((tab, i) =>
                 <div key={i}>
                     {currentTab === `${tab.id}` && <div className="w-full">{tab.component}</div>}

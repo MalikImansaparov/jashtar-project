@@ -11,7 +11,6 @@ const Quotes = () => {
     const { t, i18n} = useTranslation();
     const swiperRef = useRef();
 
-
     return (
         <div className="sm:justify-end">
             <Swiper

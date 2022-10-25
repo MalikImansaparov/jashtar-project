@@ -7,6 +7,15 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    height: 100%;
+}
+
+.content {
+    min-height: calc(100vh - 80px);
+}
+
 .links {
     color: #08ecd9;
     padding-left: 0;

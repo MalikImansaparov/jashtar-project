@@ -47,5 +47,5 @@ export const publicRoutes = [
     { path: '/management/:id', component: InfoLeadership},
     { path: '/search', component: SearchPage},
     { path: '/community', component: YoungCouncil},
-    { path: '/volunteer', component: VolunterForm},
+    { path: '/volunteer/:id', component: VolunterForm},
 ];
