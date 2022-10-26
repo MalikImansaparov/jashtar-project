@@ -106,8 +106,8 @@ const Menu = () => {
                                 ))}
                             </div>
                         )}
-                        <div className="flex items-center" active={arrow ? arrow : false} onClick={toggleArrow}>
-                            <div onClick={toggleAccordion}>
+                        <div className="flex items-center" active={arrow ? arrow : false} onClick={toggleAccordion}>
+                            <div>
                                 {show ? <img src={arr2} className='mr-[5px]' alt='lang'/> : <img src={arr} className='mr-[5px]' alt='lang'/> }
                             </div>
                             <div className="menu-list">{t("about")}</div>

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {useFetch} from "../../api/useFetch";
 import {aboutUrl, base, uri, url} from "../../api/const";
@@ -23,8 +24,8 @@ const Valuation = () => {
     }
 
     return (
-      <div className="h-auto font-inter">
-        <div className="wrapper">
+      <div className="h-auto font-inter h-[100vh]">
+        <div className="wrapper ">
           <BreadCrumb />
         </div>
         {response &&
@@ -143,7 +144,6 @@ const Valuation = () => {
               )}
             </div>
           ))}
-        <div className="h-[62px]"></div>
       </div>
     );
 };

@@ -44,7 +44,8 @@ const PhotoPanel = () => {
             const paginateServer = await paginateData(currentPage);
             setResponse(paginateServer);
         } else {
-            paginateData()
+            const paginateServer = await paginateData(1);
+            setResponse(paginateServer);
         }
     };
 

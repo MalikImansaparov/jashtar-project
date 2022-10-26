@@ -25,7 +25,7 @@ export const Contacts = () => {
         {response &&
           response.map((item) => (
             <div
-              className="w-full h-[655px] mb-[62px] relative font-inter 1xs:h-[455px] 1xs:mb-[0px]"
+              className="w-full h-[655px] mb-[62px] relative font-inter 1xs:h-[555px] 1xs:mb-[0px]"
               style={{
                 backgroundImage: `url(${uri}/${item.background_image})`,
               }}
@@ -37,7 +37,8 @@ export const Contacts = () => {
                   <BreadCrumb />
                 </div>
                 <div className="flex md:block">
-                  <div className="flex items-center max-w-[70%] h-[232px] bg-[#3070B633] pl-14 mt-12 xl:pl-6 xl:max-w-[90%] md:h-[52px] md:bg-none md:mb-[30px] md:pl-0 m-auto">
+                  <div className="flex items-center max-w-[70%] h-[232px] bg-[#3070B633] pl-14 mt-12 md:mt-6 xl:pl-6 xl:max-w-[90%] md:h-[52px]
+                   md:bg-none md:mb-[30px] md:py-12 md:pl-3 m-auto">
                     {i18n.language === 'ky' && (
                       <p className="font-semibold text-[18px] text-white leading-[23px] w-[65%] 3lg:w-[100%] 3xs:text-[14px]">
                         {item.title_ky}

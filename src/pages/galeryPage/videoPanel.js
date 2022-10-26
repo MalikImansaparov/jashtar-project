@@ -35,17 +35,20 @@ const VideoPanel = () => {
         const res = await fetch(
             `${base}${galeryUrl}/video/?page=${count}`
         );
+
         const data = await res.json();
         return data;
     };
 
     const handlePageClick = async (data) => {
+
         if( data.selected > 0 ){
             let currentPage = data.selected + 1;
             const paginateServer = await paginateData(currentPage);
             setResponse(paginateServer);
         } else {
-            paginateData()
+            const paginateServer = await paginateData(1);
+            setResponse(paginateServer);
         }
     };
 

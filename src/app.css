@@ -22,6 +22,10 @@
     @apply flex items-center cursor-pointer;
 }
 
+.arrow {
+   @apply mx-4 w-2 h-4 sm:w-1 sm:h-1 xs:mx-2
+}
+
 btn-blue:hover {
     @apply btn-blue;
 }

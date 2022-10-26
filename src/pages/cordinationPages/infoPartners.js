@@ -47,8 +47,8 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                   <div>
                     <div className="" key={response.id}>
                         {i18n.language === 'ky' && ( <>
-                      <div className="float-left mr-[45px] w-[312px] h-[266px] md:w-[250px] md:h-[200px]
-                       1sm:w-[300px] 1sm:h-[200px] 1sm:ml-20 1xs:ml-10 xs:ml-0 md:mr-[30px] rounded shadow-2xl flex mb-[15px]">
+                      <div className="float-left mr-[45px] w-[312px] h-auto md:w-[250px]
+                       1sm:w-[150px] xs:ml-0 md:mr-[30px] rounded shadow-2xl flex mb-[15px]">
                         <img
                           src={uri + response.org_image}
                           alt="img"

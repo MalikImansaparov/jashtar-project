@@ -6,21 +6,6 @@ import {ClipLoader} from "react-spinners";
 const SearchPage = () => {
     const {t, i18n} = useTranslation()
     const items = useSelector(state => state.search.data)
-    // const [items, setItems] = useState()
-
-    // const Search = async () => {
-    //     const response = await axios({
-    //         method: 'post',
-    //         url: base + searchUrl + "/search/",
-    //         data: {
-    //             "body": `${value}`,
-    //         }})
-    //     setItems(response.data)
-    // }
-
-    // useEffect( () => {
-    //     AssyncSearch()
-    // },[])
 
     if (!items) {
         return (
@@ -43,13 +28,13 @@ const SearchPage = () => {
     // }
 
     return (
-        <div className="wrapper py-[62px] font-inter">
+        <div className="wrapper py-[62px] font-inter sm:py-[48px] xs:py-[24px]">
             {items &&
                     <div
-                        className="flex w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white"
+                        className="flex max-w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white 3xs:px-4 2xs:px-2"
                     >
-                        <div className="ml-[32px] py-6">
-                            <div className="w-[1100px] mb-4">
+                        <div className="ml-[32px] py-6 1xs:py-2 2xs:py-2">
+                            <div className="max-w-[1100px] mb-4">
                                 {items.docs && items.docs.length > 0 && <p className="font-semibold font-medium">{t('documents')}<span className="ml-1">({items.docs.length})</span></p>}
                                    { items.docs && items.docs.map((item, idx) => (
                                        <div key={idx} className="mb-4">

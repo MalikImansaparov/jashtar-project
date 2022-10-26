@@ -51,14 +51,15 @@ const DocumentDetail = () => {
             <div className="m-auto mb-[62px] max-w-[1220px] mt-16">
                 {response &&
                     <>
+                        {i18n.language === "ky" &&
                     <>
                         <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
-                        <div className=" flex flex-wrap sm:mx-4">
+                        <div className=" flex flex-wrap">
                          <div dangerouslySetInnerHTML={createMarkupDoc(response.body_ky)}></div>
                         </div>
                         <div className="sm:mx-4">
                         <p className="text-base font-medium text-blue mb-[28px]">{t('download')}</p>
-                        <div className="w-[400px]">
+                        <div className="max-w-[400px]">
                             <p className="text-[13px] font-normal mb-3 ">{response.doc.map(item => item.file_name)}</p>
                         </div>
                         <div className='flex '>

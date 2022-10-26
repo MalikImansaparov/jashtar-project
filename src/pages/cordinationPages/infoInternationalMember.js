@@ -24,69 +24,57 @@ const InfoInternationalProject = ({openRegisterModal, setOpenRegisterModal }) =>
     return (
       <div>
         <Popup open={openRegisterModal}>
-          <div
-            className="max-w-[1236px] h-auto bg-white rounded-[12px] p-[37px] font-inter xl:max-w-[1090px] 2lg:max-w-[900px]
-                2md:max-w-[750px] md:max-w-[600px] 1sm:max-w-[500px] 1xs:max-w-[450px] xs:max-w-[380px]"
-            ref={ref}
-          >
-            {isLoading && (
-              <div role="status" className="flex justify-center my-28 pb-24">
-                <ClipLoader color="#1985A1" size={300} />
-              </div>
-            )}
-            <div className="flex justify-end cursor-pointer">
-              <img src={close} alt="close icon" onClick={onClose} />
-            </div>
-            {response && (
-              <div className="flex text-justify">
-                <div className="w-[332px] h-[276px] rounded shadow-2xl flex justify-center items-center mb-[10px] p-8">
-                  <div className="flex items-center w-[245px] h-[250px] m-auto">
-                    <img
-                      src={uri + response.org_image}
-                      alt="img"
-                      className="h-auto w-[100%]"
-                    />
-                  </div>
+            <div className='w-[1236px] h-auto bg-white rounded-[12px] p-[37px] font-inter xl:max-w-[1090px] 2lg:max-w-[900px]
+                2md:max-w-[750px] md:max-w-[600px] 1sm:max-w-[500px] 1xs:max-w-[450px] xs:max-w-[380px]' ref={ref}>
+                { isLoading &&
+                    <div role="status" className='flex justify-center my-28 pb-24'>
+                        <ClipLoader
+                            color="#1985A1"
+                            size={300}
+                        />
+                    </div>
+                }
+                <div className="flex justify-end cursor-pointer">
+                    <img src={close} alt="close icon" onClick={onClose}/>
                 </div>
-                {i18n.language === 'ky' && (
-                  <div className="ml-[26px] max-w-[800px]">
-                    <p className="text-blue text-base font-semibold my-4">
-                      {response.annotation_ky}
-                    </p>
-                    <p className=" text-base font-normal leading-[19.3px]">
-                      <div
-                        dangerouslySetInnerHTML={createMarkup(response.desc_ky)}
-                      ></div>
-                    </p>
-                  </div>
-                )}
-                {i18n.language === 'ru' && (
-                  <div className="ml-[26px] w-[800px]">
-                    <p className="text-blue text-base font-semibold my-4">
-                      {response.annotation_ru}
-                    </p>
-                    <p className="w-[800px] text-base font-normal leading-[19.3px]">
-                      <div
-                        dangerouslySetInnerHTML={createMarkup(response.desc_ru)}
-                      ></div>
-                    </p>
-                  </div>
-                )}
-                {i18n.language === 'en' && (
-                  <div className="ml-[26px] w-[800px]">
-                    <p className="text-blue text-base font-semibold my-4">
-                      {response.annotation_en}
-                    </p>
-                    <p className="w-[800px] text-base font-normal leading-[19.3px]">
-                      <div
-                        dangerouslySetInnerHTML={createMarkup(response.desc_en)}
-                      ></div>
-                    </p>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
+                {response &&
+                    <div key={response.id}>
+                        {i18n.language === "ky" &&
+                            <>
+                                <div className='flex justify-center w-[312px] h-[276px] md:w-[180px] md:h-[180px] 1sm:w-[120px] 1sm:h-[120px] float-left rounded mb-[10px] shadow-xl mr-6'>
+                                    <img src={uri + response.org_image} alt='img' className="w-[270px] h-auto"/>
+                                </div>
+                                <div>
+                                    <p className='text-blue text-base font-semibold my-4 text-justify'>
+                                        {response.annotation_ky}
+                                    </p>
+                                    <p className=" text-base font-normal leading-[19.3px] text-justify">
+                                        <div dangerouslySetInnerHTML={createMarkup(response.desc_ky)}></div>
+                                    </p>
+                                </div>
+                            </>
+                        }
+                        {i18n.language === "ru" &&
+                            <div className='ml-[26px] w-[808px]'>
+                                <p className='text-blue text-base font-semibold my-4 text-justify'>
+                                    {response.annotation_ru}
+                                </p>
+                                <p className=" text-base font-normal leading-[19.3px] text-justify">
+                                    <div dangerouslySetInnerHTML={createMarkup(response.desc_ru)}></div>
+                                </p>
+                            </div>}
+                        {i18n.language === "en" &&
+                            <div className='ml-[26px] w-[808px]'>
+                                <p className='text-blue text-base font-semibold my-4 text-justify'>
+                                    {response.annotation_en}
+                                </p>
+                                <p className=" text-base font-normal leading-[19.3px] text-justify">
+                                    <div dangerouslySetInnerHTML={createMarkup(response.desc_en)}></div>
+                                </p>
+                            </div>}
+                    </div>
+                }
+            </div>
         </Popup>
       </div>
     );

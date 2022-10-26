@@ -38,7 +38,6 @@ i18n
                 translations: translationRu
             },
         },
-        // have a common namespace used around the full app
         ns: ["translations"],
         defaultNS: "translations"
     });

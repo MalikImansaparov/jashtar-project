@@ -1,15 +1,10 @@
 import React from "react";
 import {useNavigate} from "react-router";
-import {useMatchMedia} from "../../hooks/useMatchMedia";
+import {useMatchMedia} from "../hooks/useMatchMedia";
 
-
-export const BreadCrumbs = (props) => {
+export const Crumbs = (props) => {
     const { isMobile, isTablet, isDesktop } = useMatchMedia();
     const navigate = useNavigate()
-
-    const isLast = (index) => {
-        return index === props.crumbs.length - 1;
-    };
 
     return (
         <div className='flex mb-8 font-inter items-center md:mb-0'>
@@ -28,10 +23,10 @@ export const BreadCrumbs = (props) => {
                 {props.title.length > 25 && <span> ... </span>}</span>}
             {isTablet &&
                 <span className="ml-1.5 text-lg font-medium sm:text-base xs:text-sm text-grey">{props.title.length> 10 ?
-                    props.title.split('').splice(0, 30) : props.title}
+                    props.title.split('').splice(0, 15) : props.title}
                     {props.title.length > 25 && <span> ... </span>}</span>}
             {isMobile &&
-                <span className="ml-1.5 text-lg sm:text-base xs:text-sm font-medium text-grey">{props.title.length> 10 ?
+                <span className="ml-1.5 text-lg sm:text-base xs:text-sm font-medium text-grey hidden">{props.title.length> 10 ?
                     props.title.split('').splice(0, 20) : props.title}
                     {props.title.length > 25 && <span> ... </span>}</span>}
         </div>

@@ -9,6 +9,7 @@ import {Sanitized} from "../components/general/sanitize";
 import {ClipLoader} from "react-spinners";
 import ShareSocial from "../components/general/share-social";
 import {ImagesSlider} from "../components/general/photoSlider";
+import {Crumbs} from "./crumbs";
 
 const DetailEvents = () => {
     window.scroll(0,0)
@@ -49,7 +50,7 @@ const DetailEvents = () => {
                 {i18n.language === "ky" &&
             <div className="wrapper">
                 <div className="container mb-8 mt-16 md:mt-8">
-                        <BreadCrumbs crumbs={crumbs} title={response.title_ky} />
+                        <Crumbs crumbs={crumbs} title={response.title_ky} />
                 </div>
                 <div className='mb-8'>
                         <div className="max-w-[432px] h-auto mr-[72px] mb-2 z-10 overflow-hidden float-left sm:float-none sm:max-w-[432px] sm:m-auto 1xs:max-w-[320px] xl:mr-[32px]">
