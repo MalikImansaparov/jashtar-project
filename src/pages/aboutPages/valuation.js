@@ -58,7 +58,7 @@ const Valuation = () => {
                         alt="quotes"
                         className="w-[27px] h-[24px] sm:w-[17px] sm:h-[14px]"
                       />
-                      <p className="text-lg font-normal text-center mx-4 max-w-[709px] 2md:text-sm 2md:mx-1 sm:text-xs">
+                      <p className="text-lg font-normal text-center mx-4 w-full 2md:text-sm 2md:mx-1 sm:text-xs">
                         {item.quote_ky}
                       </p>
                       <img

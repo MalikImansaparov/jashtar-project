@@ -2,7 +2,7 @@ import React, {useRef, useState} from "react";
 import {Autoplay, Navigation, Thumbs} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {uri} from "../../api/const";
-import InfoImage from "../../pages/imageModal/infoImage";
+import InfoImage from '../imageModal/infoImage';
 
 export const PolicySlider = props => {
     const [activeThumb, setActiveThumb] = useState()

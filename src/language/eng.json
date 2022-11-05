@@ -4,6 +4,7 @@
   "ru": "Russian",
   "en": "English",
   "home": "Main",
+  "search": "Search",
   "insan": "Insan",
   "kelechek": "Kelecheck",
   "volunter": "Volunteer",
@@ -58,5 +59,7 @@
   "share": "Share a post",
   "url": "Official page",
   "community": "Community of the youth council",
-  "subsite": "subsite"
+  "subsite": "Subsite",
+  "form": "Fill in the form",
+  "join": "If you want to do something really important and useful, join us!"
 }

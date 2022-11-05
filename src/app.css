@@ -23,7 +23,7 @@
 }
 
 .arrow {
-   @apply mx-4 w-2 h-4 sm:w-1 sm:h-1 xs:mx-2
+   @apply mx-4 w-2 h-4 sm:w-1.5 sm:h-3 xs:mx-2
 }
 
 btn-blue:hover {

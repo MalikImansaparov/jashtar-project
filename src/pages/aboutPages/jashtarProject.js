@@ -5,7 +5,7 @@ import {aboutUrl, base, eventsUrl, uri} from "../../api/const";
 import {useTranslation} from "react-i18next";
 import {ClipLoader} from "react-spinners";
 import {Sanitized} from "../../components/general/sanitize";
-import {PolicySlider} from "./policySlider";
+import { PolicySlider } from '../../components/general/policySlider';
 
 export const JashtarProject = () => {
   const { isLoading, response } = useFetch(base + aboutUrl + '/youthpolicy/');
@@ -33,7 +33,7 @@ export const JashtarProject = () => {
             <div key={item.id}>
                 {i18n.language === "ky" &&
                     <div className='mb-8'>
-                        <div className="max-w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left sm:float-none sm:max-w-[432px] sm:m-auto 1xs:max-w-[320px] ">
+                        <div className="max-w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left sm:float-none sm:max-w-[432px] sm:m-auto 1xs:max-w-[320px]">
                             <PolicySlider images={item.youth_slider}/>
                         </div>
                         <Sanitized html={item.desc_ky}/>
@@ -41,7 +41,7 @@ export const JashtarProject = () => {
                 }
                 {i18n.language === "ru" &&
                     <div className='mb-8'>
-                        <div className="w-[432px] h-auto mr-[72px] mb-2 z-10 overflow-hidden float-left">
+                        <div className="max-w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left sm:float-none sm:max-w-[432px] sm:m-auto 1xs:max-w-[320px]">
                             <PolicySlider images={item.youth_slider}/>
                         </div>
                         <Sanitized html={item.desc_ru}/>
@@ -49,7 +49,7 @@ export const JashtarProject = () => {
                 }
                 {i18n.language === "en" &&
                     <div className='mb-8'>
-                        <div className="w-[432px] h-auto mr-[72px] mb-2 z-10 overflow-hidden float-left">
+                        <div className="max-w-[432px] h-auto mr-[32px] mb-2 z-10 overflow-hidden float-left sm:float-none sm:max-w-[432px] sm:m-auto 1xs:max-w-[320px]">
                             <PolicySlider images={item.youth_slider}/>
                         </div>
                         <Sanitized html={item.desc_en}/>

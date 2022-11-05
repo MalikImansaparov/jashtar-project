@@ -108,7 +108,10 @@ export const UniversitySoviet = () => {
               response.map((i) => (
                 <div key={i.id} className="flex flex-wrap w-full">
                   {i.universitymemb.map((item) => (
-                    <div key={item.id} className="flex items-center shadow-enroll py-[10px] px-[30px] my-4 align-middle rounded-[12px] cursor-pointer hover:shadow-2xl sm:px-[10px] ">
+                    <div
+                      key={item.id}
+                      className="flex items-center shadow-enroll py-[10px] w-full my-4 align-middle rounded-[12px] cursor-pointer hover:shadow-2xl sm:px-[10px] "
+                    >
                       <div className="flex justify-center items-center pr-[10px] mr-[12px] w-[64px] h-[64px] overflow-hidden xs:pr-0">
                         <img
                           src={uri + item.org_image}

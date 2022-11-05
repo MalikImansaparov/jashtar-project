@@ -1,12 +1,13 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 import {base, searchUrl} from "../api/const";
+import {getSearchSuccess} from "./searchSlice";
 
 
 export const asyncSearch = createAsyncThunk(
 
     'search/fetchMaterial',
-    async (value, {rejectWithValue}) => {
+    async (value, {rejectWithValue,dispatch}) => {
         try {
             const response = await axios({
                 method: 'post',
@@ -15,11 +16,11 @@ export const asyncSearch = createAsyncThunk(
                     "body": `${value}`,
                 }
             })
-            console.log(response)
-            return response.data;
+            dispatch(getSearchSuccess(response.data))
         } catch (error) {
             return rejectWithValue(error.message);
         }
+
     }
 );
 

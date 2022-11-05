@@ -42,7 +42,8 @@ const NewsPage = () => {
             const paginateServer = await paginateData(currentPage);
             setResponse(paginateServer);
         } else {
-            paginateData()
+             const paginateServer = await paginateData(1);
+             setResponse(paginateServer);
         }
     };
 
@@ -88,7 +89,7 @@ const NewsPage = () => {
                                             <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-hidden leading-[19px]">
                                                 {item.title_ru.length > 60 ? item.title_ru.slice(0, 60) + "..."  : item.title_ru}
                                             </p>
-                                            <p className="text-base font-normal w-[324px] h-[38px] grey overflow-hidden leading-[19px]">
+                                            <p className="text-base font-normal w-[100%] h-[38px] grey overflow-hidden leading-[19px]">
                                                 <Sanitized html={item.desc_ru}/>
                                             </p>
                                         </>}
@@ -97,7 +98,7 @@ const NewsPage = () => {
                                             <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-hidden leading-[19px]">
                                                 {item.title_en.length > 60 ? item.title_en.slice(0, 60) + "..."  : item.title_en}
                                             </p>
-                                            <p className="text-base font-normal w-[324px] h-[38px] grey overflow-hidden leading-[19px]">
+                                            <p className="text-base font-normal w-[100%] h-[38px] grey overflow-hidden leading-[19px]">
                                                 <Sanitized html={item.desc_en}/>
                                             </p>
                                         </>}

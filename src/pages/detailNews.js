@@ -66,10 +66,10 @@ const DetailNews = () => {
                             <BreadCrumbs crumbs={crumbs} title={response.title_ru}/>
                         </div>
                         <div className='mb-8'>
-                            <div className="w-[432px] mr-[72px] mb-2 z-10 overflow-hidden float-left">
+                            <div className="max-w-[432px] h-auto mr-[72px] mb-2 z-10 overflow-hidden float-left sm:float-none sm:max-w-[432px] sm:m-auto 1xs:max-w-[320px] xl:mr-[32px]">
                                 <ImagesSlider images={response.news_slider}/>
                             </div>
-                                <p className="mb-8 font-semibold text-[20px]">{response.title_ru}</p>
+                                <p className="mb-4 font-semibold text-[20px] lg:text-[18px] 3md:text-[16px] sm:mt-2">{response.title_ru}</p>
                                 <Sanitized html={response.desc_ru}/>
                         </div>
                     </div>}
@@ -80,10 +80,10 @@ const DetailNews = () => {
                         <BreadCrumbs crumbs={crumbs} title={response.title_en}/>
                     </div>
                     <div className='mb-8'>
-                        <div className="w-[432px] mr-[72px] mb-2 z-10 overflow-hidden float-left">
+                        <div className="max-w-[432px] h-auto mr-[72px] mb-2 z-10 overflow-hidden float-left sm:float-none sm:max-w-[432px] sm:m-auto 1xs:max-w-[320px] xl:mr-[32px]">
                             <ImagesSlider images={response.news_slider}/>
                         </div>
-                            <p className="mb-8 font-semibold text-[20px]">{response.title_en}</p>
+                            <p className="mb-4 font-semibold text-[20px] lg:text-[18px] 3md:text-[16px] sm:mt-2">{response.title_en}</p>
                             <Sanitized html={response.desc_en}/>
                     </div>
                 </div>}
