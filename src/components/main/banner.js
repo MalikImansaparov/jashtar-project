@@ -84,24 +84,24 @@ const Banner = () => {
                       </div>
                     )}
                     {i18n.language === 'ru' && (
-                      <div className="mx-[50px] items-center 2lg:mx-[40px] lg:mx-[30px] 2md:mx-[20px] md:mx-[15px]">
-                        <p className="text-[32px] font-bold">
-                          <Sanitized html={item.title_ru} />
-                        </p>
-                        <p className="mt-[26px] font-normal text-[26px]">
-                          <Sanitized html={item.subtitle_ru} />
-                        </p>
-                      </div>
+                        <div className="mx-[50px] items-center 2lg:mx-[40px] lg:mx-[30px] 2md:mx-[20px] md:mx-[15px]">
+                            <p className="text-[32px] font-bold xl:text-[28px] lg:text-[24px] md:text-[20px]">
+                                <Sanitized html={item.title_ru} />
+                            </p>
+                            <p className="mt-[26px] font-normal text-[26px] xl:text-[20px] md:text-[18px]">
+                                <Sanitized html={item.subtitle_ru} />
+                            </p>
+                        </div>
                     )}
                     {i18n.language === 'en' && (
-                      <div className="mx-[50px] items-center 2lg:mx-[40px] lg:mx-[30px] 2md:mx-[20px] md:mx-[15px]">
-                        <p className="text-[32px] font-bold">
-                          <Sanitized html={item.title_en} />
-                        </p>
-                        <p className="mt-[26px] font-normal text-[26px]">
-                          <Sanitized html={item.subtitle_en} />
-                        </p>
-                      </div>
+                        <div className="mx-[50px] items-center 2lg:mx-[40px] lg:mx-[30px] 2md:mx-[20px] md:mx-[15px]">
+                            <p className="text-[32px] font-bold xl:text-[28px] lg:text-[24px] md:text-[20px]">
+                                <Sanitized html={item.title_en} />
+                            </p>
+                            <p className="mt-[26px] font-normal text-[26px] xl:text-[20px] md:text-[18px]">
+                                <Sanitized html={item.subtitle_en} />
+                            </p>
+                        </div>
                     )}
                   </div>
                 </div>
