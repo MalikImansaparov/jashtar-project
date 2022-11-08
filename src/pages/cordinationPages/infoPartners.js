@@ -46,15 +46,18 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                 {response && (
                   <div>
                     <div className="" key={response.id}>
-                        {i18n.language === 'ky' && ( <>
-                      <div className="float-left mr-[45px] w-[312px] h-auto md:w-[250px]
-                       1sm:w-[150px] xs:ml-0 md:mr-[30px] rounded shadow-2xl flex mb-[15px]">
-                        <img
-                          src={uri + response.org_image}
-                          alt="img"
-                          className="w-[100%] h-auto"
-                        />
-                      </div>
+                      {i18n.language === 'ky' && (
+                        <>
+                          <div
+                            className="float-left mr-[45px] w-[312px] h-auto md:w-[250px]
+                       1sm:w-[150px] xs:ml-0 md:mr-[30px] rounded shadow-2xl flex mb-[15px]"
+                          >
+                            <img
+                              src={uri + response.org_image}
+                              alt="img"
+                              className="w-[100%] h-auto"
+                            />
+                          </div>
                           <p className="text-blue text-base font-semibold mb-8 ">
                             {response.title_ky}
                           </p>
@@ -66,38 +69,58 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                             ></div>
                           </p>
                         </>
-                        )}
+                      )}
                       {i18n.language === 'ru' && (
-                        <div className="ml-[45px]">
-                          <p className="text-blue text-base font-semibold mb-8">
+                        <>
+                          <div
+                            className="float-left mr-[45px] w-[312px] h-auto md:w-[250px]
+                       1sm:w-[150px] xs:ml-0 md:mr-[30px] rounded shadow-2xl flex mb-[15px]"
+                          >
+                            <img
+                              src={uri + response.org_image}
+                              alt="img"
+                              className="w-[100%] h-auto"
+                            />
+                          </div>
+                          <p className="text-blue text-base font-semibold mb-8 ">
                             {response.title_ru}
                           </p>
-                          <p className="w-[750px] text-base font-normal font-inter leading-[19.3px]">
+                          <p className="text-justify text-base font-normal leading-[19.3px]">
                             <div
                               dangerouslySetInnerHTML={createMarkup(
                                 response.desc_ru
                               )}
                             ></div>
                           </p>
-                        </div>
+                        </>
                       )}
                       {i18n.language === 'en' && (
-                        <div className="ml-[25px]">
+                        <>
+                          <div
+                            className="float-left mr-[45px] w-[312px] h-auto md:w-[250px]
+                       1sm:w-[150px] xs:ml-0 md:mr-[30px] rounded shadow-2xl flex mb-[15px]"
+                          >
+                            <img
+                              src={uri + response.org_image}
+                              alt="img"
+                              className="w-[100%] h-auto"
+                            />
+                          </div>
                           <p className="text-blue text-base font-semibold mb-8">
                             {response.title_en}
                           </p>
-                          <p className="w-[770px] text-base font-normal leading-[19.3px]">
+                          <p className="text-justify text-base font-normal leading-[19.3px]">
                             <div
                               dangerouslySetInnerHTML={createMarkup(
                                 response.desc_en
                               )}
                             ></div>
                           </p>
-                        </div>
+                        </>
                       )}
                     </div>
                     <p
-                      className="bt-4 text-blue text-right cursor-pointer"
+                      className="mt-4 text-blue text-right cursor-pointer"
                       onClick={() => window.open(response.url)}
                     >
                       {t('url')}
@@ -112,8 +135,11 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                   <div className="flex items-center mb-[62px] flex-wrap">
                     {response &&
                       response.joint_project.map((item) => (
-                          <div key={item.id} className="flex items-center shadow-enroll py-[10px] px-[30px] my-4 rounded-[12px] cursor-pointer hover:shadow-2xl sm:px-[10px] ">
-                              <div className="flex items-center pr-[10px] mr-[12px] w-[104px] h-[104px] overflow-hidden xs:pr-0">
+                        <div
+                          key={item.id}
+                          className="flex items-center shadow-enroll w-full py-[10px] px-[30px] my-4 rounded-[12px] cursor-pointer hover:shadow-2xl sm:px-[10px] "
+                        >
+                          <div className="flex items-center pr-[10px] mr-[12px] w-[104px] h-[104px] overflow-hidden xs:pr-0">
                             <img
                               src={uri + item.proj_image}
                               alt="organization"

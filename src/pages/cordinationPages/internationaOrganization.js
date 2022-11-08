@@ -126,17 +126,17 @@ export const InternationOrganization = () => {
                       />
                     </div>
                     {i18n.language === 'ky' && (
-                      <span className="font-normal text-base 1sm:text-sm xs:text-[12px]">
+                      <span className="font-normal text-base 1sm:text-sm xs:text-[12px] max-w-[1100px]">
                         {item.annotation_ky}
                       </span>
                     )}
                     {i18n.language === 'ru' && (
-                      <p className="font-normal text-base 1sm:text-sm xs:text-[12px]">
+                      <p className="font-normal text-base 1sm:text-sm xs:text-[12px] max-w-[1100px]">
                         {item.annotation_ru}
                       </p>
                     )}
                     {i18n.language === 'en' && (
-                      <p className="font-normal text-base 1sm:text-sm xs:text-[12px]">
+                      <p className="font-normal text-base 1sm:text-sm xs:text-[12px] max-w-[1100px]">
                         {item.annotation_en}
                       </p>
                     )}

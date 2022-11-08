@@ -37,7 +37,7 @@ const DocSidebar = () => {
                 <NavLink
                   to={`/category/${item.order_id}`}
                   className={({ isActive }) =>
-                    isActive ? 'activity link' : 'link '
+                    isActive ? 'activity link' : 'link'
                   }
                 >
                   {item.title_en}
