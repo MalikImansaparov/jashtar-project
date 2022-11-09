@@ -28,8 +28,8 @@ export const BreadCrumb = () => {
                         {pathname === '/projects' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("about")}<img src={arrow} alt="" className="arrow"/>{t("projects")}</span>  : null}
 
                     {pathname === '/international' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("coordination")}<img src={arrow} alt="" className="arrow"/>{t("internalization")}</span> : null}
-                    {pathname === '/community' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("coordination")}<img src={arrow} alt="" className="arrow"/>{t("community")}</span> : null}
-                    {pathname === '/young' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("coordination")}<img src={arrow} alt="" className="arrow"/>{t("young")}</span> : null}
+                    {pathname === '/community' ? <span className="crumbs 3lg:text-[11px] 2xs:text-[10px]" onClick={() => navigate(-1)}>{t("coordination")}<img src={arrow} alt="" className="arrow "/>{t("community")}</span> : null}
+                    {pathname === '/young' ? <span className="crumbs 3xs:text-[10px]" onClick={() => navigate(-1)}>{t("coordination")}<img src={arrow} alt="" className="arrow"/>{t("young")}</span> : null}
                     {pathname === '/university' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("coordination")}<img src={arrow} alt="" className="arrow"/>{t("university")}</span> : null}
                             {pathname === '/partners' ? <span className="crumbs" onClick={() => navigate(-1)}>{t("coordination")}<img src={arrow} alt="" className="arrow"/>{t("partners")}</span> : null}
 
