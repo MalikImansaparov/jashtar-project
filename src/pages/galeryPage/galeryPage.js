@@ -33,28 +33,39 @@ const GaleryPage = () => {
     }
 
     return (
-        <div className='wrapper h-auto font-inter'>
-            <div className="container w-full mt-[62px] md:mb-8">
-                {tabs.map((tab, i) =>
-                    <div key={i}>
-                        {currentTab === `${tab.id}` &&  <BreadCrumbs crumbs={crumbs} title={tab.tab} key={tab.id}/>}
-                    </div>
-                )}
+      <div className="wrapper h-auto font-inter">
+        <div className="container w-full mt-[62px] md:mb-8">
+          {tabs.map((tab, i) => (
+            <div key={i}>
+              {currentTab === `${tab.id}` && (
+                <BreadCrumbs crumbs={crumbs} title={tab.tab} key={tab.id} />
+              )}
             </div>
-            <div className='tabs w-[100%] mb-8 '>
-                {tabs.map((tab, i) =>
-                    <button key={i} id={tab.id} disabled={currentTab === `${tab.id}`}
-                     className="w-[50%]" onClick={(handleTabClick)}>{tab.tabTitle}</button>
-                )}
-            </div>
-            <div className='content w-[100%] mb-[62px]'>
-                {tabs.map((tab, i) =>
-                <div key={i}>
-                    {currentTab === `${tab.id}` && <div className="w-full">{tab.component}</div>}
-                </div>
-                )}
-            </div>
+          ))}
         </div>
+        <div className="tabs w-[100%] mb-8">
+          {tabs.map((tab, i) => (
+            <button
+              key={i}
+              id={tab.id}
+              disabled={currentTab === `${tab.id}`}
+              className="w-[50%]"
+              onClick={handleTabClick}
+            >
+              {tab.tabTitle}
+            </button>
+          ))}
+        </div>
+        <div className="content w-[100%] mb-[62px]">
+          {tabs.map((tab, i) => (
+            <div key={i}>
+              {currentTab === `${tab.id}` && (
+                <div className="w-full">{tab.component}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     );
 }
 

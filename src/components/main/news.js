@@ -71,7 +71,7 @@ export const News = () => {
                     )}
                     {i18n.language === 'ru' && (
                       <>
-                        <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-hidden leading-[19px]">
+                        <p className="text-base mb-3 font-semibold w-[100%] h-[38px] text-black overflow-hidden leading-[19px]">
                           {item.title_ru.length > 60
                             ? item.title_ru.slice(0, 60) + '...'
                             : item.title_ru}
@@ -83,7 +83,7 @@ export const News = () => {
                     )}
                     {i18n.language === 'en' && (
                       <>
-                        <p className="text-base mb-3 font-semibold w-[324px] h-[38px] text-black overflow-hidden leading-[19px]">
+                        <p className="text-base mb-3 font-semibold w-[100%] h-[38px] text-black overflow-hidden leading-[19px]">
                           {item.title_en.length > 60
                             ? item.title_en.slice(0, 60) + '...'
                             : item.title_en}

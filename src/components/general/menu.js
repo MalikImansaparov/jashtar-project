@@ -112,7 +112,7 @@ const Menu = () => {
                   <input
                     type="text"
                     autoFocus={true}
-                    className="bg-blueLight border-none outline-none w-[98.5%] h-[24px] font-medium text-[15px] 2md:w-[96.5%] xs:2md:w-[94.5%]"
+                    className="bg-blueLight border-none outline-none w-[98.5%] h-[24px] font-medium text-[15px] lg:w-[96.5%] 2md:w-[94.5%]"
                     placeholder={t('search')}
                     onKeyDown={(e) =>
                       e.key === 'Enter' && handleChange(e.target.value)

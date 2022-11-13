@@ -39,6 +39,12 @@
     }
 }
 
+@media screen and (max-width: 1229px) {
+    .iframe {
+        width: 450px;
+    }
+}
+
 @media screen and (max-width: 1042px) {
     .iframe {
         width: 450px;

@@ -110,9 +110,9 @@ export const UniversitySoviet = () => {
                   {i.universitymemb.map((item) => (
                     <div
                       key={item.id}
-                      className="flex items-center shadow-enroll py-[10px] w-full my-4 align-middle rounded-[12px] cursor-pointer hover:shadow-2xl sm:px-[10px] "
+                      className="flex items-center shadow-enroll p-[10px] w-full my-4 align-middle rounded-[12px] cursor-pointer hover:shadow-2xl sm:px-[10px] "
                     >
-                      <div className="flex justify-center items-center pr-[10px] mr-[12px] w-[64px] h-[64px] overflow-hidden xs:pr-0">
+                      <div className="flex justify-center items-center mr-[12px] w-[54px] h-[64px] overflow-hidden xs:pr-0">
                         <img
                           src={uri + item.org_image}
                           alt="organization"
