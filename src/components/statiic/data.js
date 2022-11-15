@@ -1,5 +1,5 @@
 export const project = [
-  { id: 0, title: 'Kelechek', url: 'https://kelecheck.jashtar.info/' },
+  { id: 0, title: 'Kelechek', url: 'https://kelechek.jashtar.info/' },
   { id: 1, title: 'Bilim', url: 'https://bilim.jashtar.info/' },
   { id: 2, title: 'Insan', url: 'https://insan.jashtar.info/' },
   { id: 3, title: 'Elbook', url: 'https://elbook.jashtar.info/' },

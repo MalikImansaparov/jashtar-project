@@ -10,12 +10,15 @@ export const asyncSearch = createAsyncThunk(
     async (value, {rejectWithValue,dispatch}) => {
         try {
             const response = await axios({
-                method: 'post',
-                url: base + searchUrl + "/search/",
-                data: {
-                    "body": `${value}`,
-                }
-            })
+              method: 'post',
+              url: base + searchUrl + '/search/',
+              data: {
+                body: `${value}`,
+              },
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
             dispatch(getSearchSuccess(response.data))
         } catch (error) {
             return rejectWithValue(error.message);
