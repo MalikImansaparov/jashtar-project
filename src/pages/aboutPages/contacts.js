@@ -25,7 +25,7 @@ export const Contacts = () => {
         {response &&
           response.map((item) => (
             <div
-              className="w-full h-[655px] mb-[62px] relative font-inter 1xs:h-[555px] 1xs:mb-[0px]"
+              className="w-full h-[655px] relative font-inter 1xs:h-[555px] 1xs:mb-[0px]"
               style={{
                 backgroundImage: `url(${uri}/${item.background_image})`,
               }}

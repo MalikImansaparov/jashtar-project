@@ -76,7 +76,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
                                         <div>
                                         <div className='block text-base text-blue font-medium mb-2 mt-4 '>{response.title_ky}</div>
                                         <div className="flex items-center mb-[26px]">
-                                            <p className="font-normal text-base w-[312px]">
+                                            <p className="font-normal text-base">
                                                 <Sanitized html={response.desc_ky}/></p>
                                         </div>
                                         </div>}

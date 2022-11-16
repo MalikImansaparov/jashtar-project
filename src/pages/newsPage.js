@@ -9,10 +9,12 @@ import {useTranslation} from "react-i18next";
 import {Sanitized} from "../components/general/sanitize";
 
 const NewsPage = () => {
+
     const {isLoading} = useFetch(base + newsUrl + `/news/`);
     const [response, setResponse] = useState([])
     const [pageCount, setpageCount] = useState(0);
     const {t, i18n} = useTranslation()
+    window.scrollTo(0, 0);
     const limit = 9
 
     const getData = async () => {
@@ -59,7 +61,7 @@ const NewsPage = () => {
     }
 
     return (
-      <div className="wrapper font-inter">
+      <div className="wrapper font-inter min-h-[100vh]">
         <div className="container">
           <BreadCrumb />
         </div>
@@ -127,7 +129,6 @@ const NewsPage = () => {
             ))}
         </div>
         <div className="paginate">
-          {response.results && response.results.length >= 9 && (
             <ReactPaginate
               nextLabel="❯"
               onPageChange={handlePageClick}
@@ -145,7 +146,6 @@ const NewsPage = () => {
               activeClassName="active"
               renderOnZeroPageCount={null}
             />
-          )}
         </div>
       </div>
     );
