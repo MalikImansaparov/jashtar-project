@@ -19,6 +19,8 @@ export const asyncSearch = createAsyncThunk(
                 body: `${value}`,
               },
               headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json',
                   'X-CSRFToken': csrfToken,
               },
             });

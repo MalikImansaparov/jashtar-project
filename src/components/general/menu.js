@@ -17,17 +17,23 @@ import arr2 from "../../assets/image/general/chevron-up (1).png";
 import {project} from "../statiic/data";
 
 const Menu = () => {
+    const {t} = useTranslation()
+    const dispatch = useDispatch()
+    const location = useLocation();
         const navigate = useNavigate()
         const [openModal, setOpenModal] = useState(true);
-        const [openSearch, setOpenSearch] = useState(false);
+
+    const searches = location.pathname === "/search"
+    // const home = location.pathname === "/"
+
+
+        const [openSearch, setOpenSearch] = useState(searches ? true : false);
         const [openBurger, setOpenBurger] = useState(false)
         const [show, setShow] = useState(false);
         const [arrow, setArrow] = useState(false);
         const [isShow, setIsShow] = useState(false);
         const [showProject, setIsProject] = useState(false);
-        const {t} = useTranslation()
-        const dispatch = useDispatch()
-        const location = useLocation();
+
 
 
     const toggleModal = () => {
@@ -42,34 +48,44 @@ const Menu = () => {
     const switchAccordion = () => {setIsShow(!isShow);};
     const changeAccordion = () => {setIsProject(!showProject);};
 
-    const searches = location.pathname === "/search"
-    const home = location.pathname === "/"
+        // const searches = location.pathname === "/search"
+        // const home = location.pathname === "/"
 
+    useEffect(() => {
+        console.log('search modal home page', openSearch)
+        console.log('header modal home page', openModal)
+        setOpenSearch(false)
+        setOpenModal(true);
+        return () => {
 
-    // useEffect(() => {
-    //   setOpenModal(false)
-    // },[searches])
+        }
+    },[home])
 
     useEffect(() => {
         setOpenSearch(true)
         setOpenModal(false);
+        console.log('header modal search page', openModal)
+        console.log('search modal searchPage', openSearch)
     },[searches])
 
-    useEffect(() => {
-        setOpenSearch(false)
-        setOpenModal(true);
-    },[home])
 
-    const handleChange = (val) => {
+
+    const handleChange = (e) => {
+        const val = e.target.value
+            e.preventDefault()
             navigate('/search')
            dispatch(asyncSearch(val))
     }
 
-    const toggleMenu = () => { setOpenBurger(!openBurger)}
 
+    console.log('------------------------------------')
+    console.log('search modal OUT OF US ', openSearch)
+    console.log('header modal OUT OF US', openModal)
+
+    const toggleMenu = () => { setOpenBurger(!openBurger)}
         return (
           <div className="relative mb-0 font-inter">
-            {openModal && (
+            {!openSearch && openModal && (
               <div className="bg-blue">
                 <div className="wrapper justify-between h-[78px] flex items-center font-inter">
                   <div
@@ -131,7 +147,7 @@ const Menu = () => {
                 </div>
               </div>
             )}
-              { openSearch && (
+              {openSearch && !openModal && (
               <div className="w-full h-[78px] bg-blueLight z-10">
                 <div className="wrapper py-[22px] px-2">
                   <input
@@ -140,7 +156,7 @@ const Menu = () => {
                     className="bg-blueLight border-none outline-none w-[98.5%] h-[24px] font-medium text-[15px] lg:w-[96.5%] 2md:w-[94.5%]"
                     placeholder={t('search')}
                     onKeyDown={(e) =>
-                      e.key === 'Enter' && handleChange(e.target.value)
+                      e.key === 'Enter' && handleChange(e)
                     }
                   />
                   <img
