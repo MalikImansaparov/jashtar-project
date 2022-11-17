@@ -6,7 +6,7 @@ import About from "../menu/about";
 import CoreAdvice from "../menu/coreAdvice";
 import {Language} from "../menu/Language";
 import close from '../../assets/image/main/close.png'
-import {useNavigate} from "react-router";
+import {useLocation, useNavigate} from "react-router";
 import {useTranslation} from "react-i18next";
 import {useDispatch} from "react-redux";
 import {asyncSearch} from "../../store/asyncAction";
@@ -18,7 +18,8 @@ import {project} from "../statiic/data";
 
 const Menu = () => {
         const navigate = useNavigate()
-        const [openModal, setOpenModal] = useState(false);
+        const [openModal, setOpenModal] = useState(true);
+        const [openSearch, setOpenSearch] = useState(false);
         const [openBurger, setOpenBurger] = useState(false)
         const [show, setShow] = useState(false);
         const [arrow, setArrow] = useState(false);
@@ -26,15 +27,38 @@ const Menu = () => {
         const [showProject, setIsProject] = useState(false);
         const {t} = useTranslation()
         const dispatch = useDispatch()
+        const location = useLocation();
+
 
     const toggleModal = () => {
         setOpenModal(!openModal);
+        setOpenSearch(!openSearch)
+    }
+    const toggleSearch = () => {
+        setOpenSearch(!openSearch);
     }
     const toggleAccordion = () => {setShow(!show);};
     const toggleArrow = () => {setArrow(!arrow);};
     const switchAccordion = () => {setIsShow(!isShow);};
     const changeAccordion = () => {setIsProject(!showProject);};
 
+    const searches = location.pathname === "/search"
+    const home = location.pathname === "/"
+
+
+    // useEffect(() => {
+    //   setOpenModal(false)
+    // },[searches])
+
+    useEffect(() => {
+        setOpenSearch(true)
+        setOpenModal(false);
+    },[searches])
+
+    useEffect(() => {
+        setOpenSearch(false)
+        setOpenModal(true);
+    },[home])
 
     const handleChange = (val) => {
             navigate('/search')
@@ -45,7 +69,7 @@ const Menu = () => {
 
         return (
           <div className="relative mb-0 font-inter">
-            {!openModal ? (
+            {openModal && (
               <div className="bg-blue">
                 <div className="wrapper justify-between h-[78px] flex items-center font-inter">
                   <div
@@ -106,7 +130,8 @@ const Menu = () => {
                   </div>
                 </div>
               </div>
-            ) : (
+            )}
+              { openSearch && (
               <div className="w-full h-[78px] bg-blueLight z-10">
                 <div className="wrapper py-[22px] px-2">
                   <input

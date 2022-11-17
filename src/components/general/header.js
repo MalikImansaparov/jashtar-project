@@ -11,7 +11,7 @@ const Header = () => {
     return (
       <div className="bg-white font-inter">
         <div className="wrapper flex justify-between items-center sm:relative">
-          <div className="flex ">
+          <div className="flex">
             <NavLink to="/">
               <img
                 className="w-[54px] h-[54px] my-[8px] mr-3 cursor-pointer md:w-[46px] md:h-[46px] md:mr-1 sm:ml-2 1xs:ml-0 1xs:w-[40px] 1xs:h-[40px] items-center"

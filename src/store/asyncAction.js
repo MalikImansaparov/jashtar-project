@@ -15,9 +15,9 @@ export const asyncSearch = createAsyncThunk(
               data: {
                 body: `${value}`,
               },
-              headers: {
-                'Content-Type': 'application/json',
-              },
+              // headers: {
+              //   'Content-Type': 'application/json',
+              // },
             });
             dispatch(getSearchSuccess(response.data))
         } catch (error) {
