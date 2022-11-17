@@ -2,7 +2,10 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 import {base, searchUrl} from "../api/const";
 import {getSearchSuccess} from "./searchSlice";
+import {getCookie} from "react-use-cookie";
 
+const csrfToken = getCookie('csrftoken');
+console.log('c', csrfToken)
 
 export const asyncSearch = createAsyncThunk(
 
@@ -15,10 +18,11 @@ export const asyncSearch = createAsyncThunk(
               data: {
                 body: `${value}`,
               },
-              // headers: {
-              //   'Content-Type': 'application/json',
-              // },
+              headers: {
+                  'X-CSRFToken': csrfToken,
+              },
             });
+            console.log(csrfToken)
             dispatch(getSearchSuccess(response.data))
         } catch (error) {
             return rejectWithValue(error.message);
