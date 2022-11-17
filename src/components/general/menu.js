@@ -20,21 +20,15 @@ const Menu = () => {
     const {t} = useTranslation()
     const dispatch = useDispatch()
     const location = useLocation();
-        const navigate = useNavigate()
-        const [openModal, setOpenModal] = useState(true);
-
+    const navigate = useNavigate()
+    const [openModal, setOpenModal] = useState(true);
+    const [openSearch, setOpenSearch] = useState(false)
     const searches = location.pathname === "/search"
-    // const home = location.pathname === "/"
-
-
-        const [openSearch, setOpenSearch] = useState(searches ? true : false);
         const [openBurger, setOpenBurger] = useState(false)
         const [show, setShow] = useState(false);
         const [arrow, setArrow] = useState(false);
         const [isShow, setIsShow] = useState(false);
         const [showProject, setIsProject] = useState(false);
-
-
 
     const toggleModal = () => {
         setOpenModal(!openModal);
@@ -48,27 +42,15 @@ const Menu = () => {
     const switchAccordion = () => {setIsShow(!isShow);};
     const changeAccordion = () => {setIsProject(!showProject);};
 
-        // const searches = location.pathname === "/search"
-        // const home = location.pathname === "/"
-
     useEffect(() => {
-        console.log('search modal home page', openSearch)
-        console.log('header modal home page', openModal)
-        setOpenSearch(false)
-        setOpenModal(true);
-        return () => {
-
-        }
-    },[home])
-
-    useEffect(() => {
-        setOpenSearch(true)
-        setOpenModal(false);
-        console.log('header modal search page', openModal)
-        console.log('search modal searchPage', openSearch)
-    },[searches])
-
-
+       if(searches){
+           setOpenSearch(true)
+           setOpenModal(false);
+       } else {
+           setOpenSearch(false)
+           setOpenModal(true);
+       }
+    },[location])
 
     const handleChange = (e) => {
         const val = e.target.value
@@ -77,15 +59,10 @@ const Menu = () => {
            dispatch(asyncSearch(val))
     }
 
-
-    console.log('------------------------------------')
-    console.log('search modal OUT OF US ', openSearch)
-    console.log('header modal OUT OF US', openModal)
-
     const toggleMenu = () => { setOpenBurger(!openBurger)}
         return (
           <div className="relative mb-0 font-inter">
-            {!openSearch && openModal && (
+            { openModal && (
               <div className="bg-blue">
                 <div className="wrapper justify-between h-[78px] flex items-center font-inter">
                   <div
@@ -147,7 +124,7 @@ const Menu = () => {
                 </div>
               </div>
             )}
-              {openSearch && !openModal && (
+              {openSearch && (
               <div className="w-full h-[78px] bg-blueLight z-10">
                 <div className="wrapper py-[22px] px-2">
                   <input

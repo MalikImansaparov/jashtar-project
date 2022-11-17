@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {useTranslation} from "react-i18next";
 import {useDispatch, useSelector} from "react-redux";
 import {ClipLoader} from "react-spinners";
-import { getSearchSuccess } from '../store/searchSlice';
-import { asyncSearch } from '../store/asyncAction';
 
 const SearchPage = () => {
   const { t, i18n } = useTranslation();
@@ -19,14 +17,14 @@ const SearchPage = () => {
   }
 
   return (
-    <div className="wrapper py-[62px] font-inter sm:py-[48px] xs:py-[24px]">
+    <div className="wrapper py-8 font-inter sm:py-[48px] xs:py-[24px] min-h-[63vh]">
       {isEmpty && (
         <div className="flex w-[1236px] m-auto shadow-md rounded px-8 my-8 bg-white">
           <p className="my-16 text-[20px]">{t('notFound')}</p>
         </div>
       )}
       {items && (
-        <div className="flex max-w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white 3xs:px-4 2xs:px-2">
+        <div className="flex items-center max-w-[1236px] m-auto shadow-md rounded px-8 mb-8 bg-white 3xs:px-4 2xs:px-2">
           <div className="ml-[32px] py-6 1xs:py-2 2xs:py-2">
             <div className="max-w-[1100px] mb-4">
               {items.docs && items.docs.length > 0 && (
