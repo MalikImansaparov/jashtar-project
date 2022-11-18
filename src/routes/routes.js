@@ -44,7 +44,7 @@ export const publicRoutes = [
     { path: '/gallery', component: GalleryPage },
     { path: '/category/:id', component: CategoryList},
     { path: '/document/:id', component: DocumentDetail},
-    { path: '/management/:id', component: InfoLeadership},
+    { path: '/leadership/:id', component: InfoLeadership},
     { path: '/search', component: SearchPage},
     { path: '/community', component: YoungCouncil},
     { path: '/volunteer/:id', component: VolunterForm},
