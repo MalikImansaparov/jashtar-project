@@ -16,7 +16,9 @@ const InfoTimeLine = () => {
     const {id} = useParams()
     const navigate = useNavigate()
     window.scroll(0,0)
-    const { isLoading, response } = useFetch(base + aboutUrl + `/chronology/${id}`);
+    const { isLoading, response } = useFetch(
+      base + aboutUrl + `/chronology/${id}/`
+    );
 
     if (isLoading) {
         return (

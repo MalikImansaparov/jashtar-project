@@ -2,9 +2,7 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 import {base, searchUrl} from "../api/const";
 import {getSearchSuccess} from "./searchSlice";
-import {getCookie} from "react-use-cookie";
-
-const csrfToken = getCookie('csrftoken');
+n;
 
 export const asyncSearch = createAsyncThunk(
   'search/fetchMaterial',
