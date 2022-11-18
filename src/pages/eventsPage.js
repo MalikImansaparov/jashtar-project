@@ -10,7 +10,7 @@ import {useTranslation} from "react-i18next";
 import {Sanitized} from "../components/general/sanitize";
 
 const EventsPage = () => {
-    const { isLoading} = useFetch(base + eventsUrl + `/events/`);
+    const { isLoading} = useFetch(base + eventsUrl + `/events/src/jashtar/`);
     window.scroll(0,0)
     const [response, setResponse] = useState([])
     const [pageCount, setpageCount] = useState(0);
@@ -19,7 +19,7 @@ const EventsPage = () => {
 
     const getData = async () => {
         const res = await fetch(
-            `${base}${eventsUrl}/events/`
+            `${base}${eventsUrl}/events/src/jashtar/`
         );
         const data = await res.json();
         setpageCount(Math.ceil(data.count / limit));
@@ -32,7 +32,7 @@ const EventsPage = () => {
 
     const paginateData = async (count) => {
         const res = await fetch(
-            `${base}${eventsUrl}/events/?page=${count}`
+            `${base}${eventsUrl}/events/src/jashtar/?page=${count}`
         );
         const data = await res.json();
         return data;

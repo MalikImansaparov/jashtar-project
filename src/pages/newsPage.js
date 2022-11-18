@@ -10,7 +10,7 @@ import {Sanitized} from "../components/general/sanitize";
 
 const NewsPage = () => {
 
-    const {isLoading} = useFetch(base + newsUrl + `/news/`);
+    const {isLoading} = useFetch(base + newsUrl + `/news/src/jashtar/`);
     const [response, setResponse] = useState([])
     const [pageCount, setpageCount] = useState(0);
     const {t, i18n} = useTranslation()
@@ -19,7 +19,7 @@ const NewsPage = () => {
 
     const getData = async () => {
         const res = await fetch(
-            `${base}${newsUrl}/news/`
+            `${base}${newsUrl}/news/src/jashtar/`
         );
         const data = await res.json();
         setpageCount(Math.ceil(data.count / limit));
@@ -32,7 +32,7 @@ const NewsPage = () => {
 
     const paginateData = async (count) => {
         const res = await fetch(
-            `${base}${newsUrl}/news/?page=${count}`
+            `${base}${newsUrl}/news/src/jashtar/?page=${count}`
         );
         const data = await res.json();
         return data;

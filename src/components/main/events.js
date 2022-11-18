@@ -11,7 +11,7 @@ import {settings} from "../slider/settings";
 
 
 export const Events = () => {
-  const { isLoading, response } = useFetch(base + eventsUrl + '/events/');
+  const { isLoading, response } = useFetch(base + eventsUrl + '/events/src/jashtar/');
   const { t, i18n } = useTranslation();
   const swiperRef = useRef();
 

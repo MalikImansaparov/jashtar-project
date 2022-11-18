@@ -12,7 +12,7 @@ import {Sanitized} from "../general/sanitize";
 import {settings} from "../slider/settings";
 
 export const News = () => {
-  const { response } = useFetch(base + newsUrl + '/news/');
+  const { response } = useFetch(base + newsUrl + '/news/src/jashtar/');
   const swiperRef = useRef();
   const { t, i18n } = useTranslation();
 
