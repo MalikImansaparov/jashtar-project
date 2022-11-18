@@ -246,30 +246,13 @@ const SearchPage = () => {
               {items.chronology &&
                   items.chronology.map((item, idx) => (
                       <div key={idx} className="mb-4">
-                        {i18n.language === 'ky' && (
                             <div
                                 onClick={() => window.location.replace(item.next)}
                                 className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
                             >
-                              {item.title_ky}
+                              {item.start_time.split('-').reverse().join('.')} - {' '}
+                              {item.finish_time.split('-').reverse().join('.')}
                             </div>
-                        )}
-                        {i18n.language === 'ru' && (
-                            <div
-                                onClick={() => window.location.replace(item.next)}
-                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
-                            >
-                              {item.title_ru}
-                            </div>
-                        )}
-                        {i18n.language === 'en' && (
-                            <div
-                                onClick={() => window.location.replace(item.next)}
-                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
-                            >
-                              {item.title_en}
-                            </div>
-                        )}
                       </div>
                   ))}
             </div>
