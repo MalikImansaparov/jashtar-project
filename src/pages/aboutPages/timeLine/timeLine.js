@@ -31,8 +31,8 @@ const TimeLine = () => {
             {response?.map((item) => (
               <Tab key={item.id}>
                 <p className="xl:pl-10">
-                  {item.start_date.split('-').reverse().join('-')} :{' '}
-                  {item.finish_date.split('-').reverse().join('-')}
+                  {item.start_date.split('-').reverse().join('.')} -{' '}
+                  {item.finish_date.split('-').reverse().join('.')}
                 </p>
               </Tab>
             ))}

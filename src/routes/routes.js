@@ -22,12 +22,14 @@ import CategoryList from "../pages/documentPage/DocList/category";
 import DocumentDetail from "../pages/documentPage/DocChldren/categoryDetail";
 import {YoungCouncil} from "../pages/cordinationPages/youthCouncil";
 import {VolunterForm} from "../components/main/FormPage/VolunterForm";
+import InfoTimeLine from "../pages/aboutPages/timeLine/infoTab";
 
 export const publicRoutes = [
     { path: '/', component: MainPage },
     { path: '/valuation', component: Valuation },
     { path: '/management', component: Leadership },
     { path: '/timeline', component: TimeLine },
+    { path: '/timeline/:id', component: InfoTimeLine },
     { path: '/ministry', component: Ministry },
     { path: '/projects', component: Projects },
     { path: '/contacts', component: Contacts },

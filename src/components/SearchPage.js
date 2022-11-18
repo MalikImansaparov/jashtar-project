@@ -237,6 +237,41 @@ const SearchPage = () => {
                     )}
                   </div>
                 ))}
+              {items.chronology && items.chronology.length > 0 && (
+                  <p className="font-medium">
+                    {t('timeline')}
+                    <span className="ml-1">({items.chronology.length})</span>
+                  </p>
+              )}
+              {items.chronology &&
+                  items.chronology.map((item, idx) => (
+                      <div key={idx} className="mb-4">
+                        {i18n.language === 'ky' && (
+                            <div
+                                onClick={() => window.location.replace(item.next)}
+                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
+                            >
+                              {item.title_ky}
+                            </div>
+                        )}
+                        {i18n.language === 'ru' && (
+                            <div
+                                onClick={() => window.location.replace(item.next)}
+                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
+                            >
+                              {item.title_ru}
+                            </div>
+                        )}
+                        {i18n.language === 'en' && (
+                            <div
+                                onClick={() => window.location.replace(item.next)}
+                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
+                            >
+                              {item.title_en}
+                            </div>
+                        )}
+                      </div>
+                  ))}
             </div>
           </div>
         </div>
