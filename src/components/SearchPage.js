@@ -28,75 +28,75 @@ const SearchPage = () => {
           <div className="ml-[32px] py-6 1xs:py-2 2xs:py-2">
             <div className="max-w-[1100px] h-auto mb-4">
               {items.news && items.news.length > 0 && (
-                  <p className=" font-medium">
-                    {t('news')}
-                    <span className="ml-1">({items.news.length})</span>
-                  </p>
+                <p className=" font-medium">
+                  {t('news')}
+                  <span className="ml-1">({items.news.length})</span>
+                </p>
               )}
               {items.news &&
-                  items.news.map((item, idx) => (
-                      <div key={idx} className="mb-4">
-                        {i18n.language === 'ky' && (
-                            <div
-                                onClick={() => window.location.replace(item.next)}
-                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
-                            >
-                              {item.title_ky}
-                            </div>
-                        )}
-                        {i18n.language === 'ru' && (
-                            <div
-                                onClick={() => window.location.replace(item.next)}
-                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
-                            >
-                              {item.title_ru}
-                            </div>
-                        )}
-                        {i18n.language === 'en' && (
-                            <div
-                                onClick={() => window.location.replace(item.next)}
-                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
-                            >
-                              {item.title_en}
-                            </div>
-                        )}
+                items.news.map((item, idx) => (
+                  <div key={idx} className="mb-4">
+                    {i18n.language === 'ky' && (
+                      <div
+                        onClick={() => window.location.replace(item.next)}
+                        className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
+                      >
+                        {item.title_ky}
                       </div>
-                  ))}
+                    )}
+                    {i18n.language === 'ru' && (
+                      <div
+                        onClick={() => window.location.replace(item.next)}
+                        className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
+                      >
+                        {item.title_ru}
+                      </div>
+                    )}
+                    {i18n.language === 'en' && (
+                      <div
+                        onClick={() => window.location.replace(item.next)}
+                        className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
+                      >
+                        {item.title_en}
+                      </div>
+                    )}
+                  </div>
+                ))}
               {items.events && items.events.length > 0 && (
-                  <p className=" font-medium">
-                    {t('events')}
-                    <span className="ml-1">({items.events.length})</span>
-                  </p>
+                <p className=" font-medium">
+                  {t('events')}
+                  <span className="ml-1">({items.events.length})</span>
+                </p>
               )}
               {items.events &&
-                  items.events.map((item, idx) => (
-                      <div key={idx} className="mb-4">
-                        {i18n.language === 'ky' && (
-                            <div
-                                onClick={() => window.location.replace(item.next)}
-                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
-                            >
-                              {item.title_ky}
-                            </div>
-                        )}
-                        {i18n.language === 'ru' && (
-                            <div
-                                onClick={() => window.location.replace(item.next)}
-                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
-                            >
-                              {item.title_ru}
-                            </div>
-                        )}
-                        {i18n.language === 'en' && (
-                            <div
-                                onClick={() => window.location.replace(item.next)}
-                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
-                            >
-                              {item.title_en}
-                            </div>
-                        )}
+                items.events.map((item, idx) => (
+                  <div key={idx} className="mb-4">
+                    {i18n.language === 'ky' && (
+                      <div
+                        onClick={() => window.location.replace(item.next)}
+                        className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
+                      >
+                        {item.title_ky}
                       </div>
-                  ))}
+                    )}
+                    {i18n.language === 'ru' && (
+                      <div
+                        onClick={() => window.location.replace(item.next)}
+                        className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
+                      >
+                        {item.title_ru}
+                      </div>
+                    )}
+                    {i18n.language === 'en' && (
+                      <div
+                        onClick={() => window.location.replace(item.next)}
+                        className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
+                      >
+                        {item.title_en}
+                      </div>
+                    )}
+                  </div>
+                ))}
               {items.docs && items.docs.length > 0 && (
                 <p className="font-medium">
                   {t('documents')}
@@ -238,23 +238,23 @@ const SearchPage = () => {
                   </div>
                 ))}
               {items.chronology && items.chronology.length > 0 && (
-                  <p className="font-medium">
-                    {t('timeline')}
-                    <span className="ml-1">({items.chronology.length})</span>
-                  </p>
+                <p className="font-medium">
+                  {t('timeline')}
+                  <span className="ml-1">({items.chronology.length})</span>
+                </p>
               )}
               {items.chronology &&
-                  items.chronology.map((item, idx) => (
-                      <div key={idx} className="mb-4">
-                            <div
-                                onClick={() => window.location.replace(item.next)}
-                                className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
-                            >
-                              {item.start_time.split('-').reverse().join('.')} - {' '}
-                              {item.finish_time.split('-').reverse().join('.')}
-                            </div>
-                      </div>
-                  ))}
+                items.chronology.map((item, idx) => (
+                  <div key={idx} className="mb-4">
+                    <div
+                      onClick={() => window.location.replace(item.next)}
+                      className="text-[16px] my-4 mb-4 font-medium text-blue cursor-pointer"
+                    >
+                      {item.start_date.split('-').reverse().join('.')} -{' '}
+                      {item.finish_date.split('-').reverse().join('.')}
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
         </div>

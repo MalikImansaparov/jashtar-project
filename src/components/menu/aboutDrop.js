@@ -28,7 +28,7 @@ const AboutDrop = () => {
           <Link to="/valuation" className="menu-list mt-[5px]">
             {t('valuation')}
           </Link>
-          <Link to="/management" className="menu-list">
+          <Link to="/leadership" className="menu-list">
             {t('leadship')}
           </Link>
           <Link to="/timeline" className="menu-list">

@@ -32,7 +32,7 @@ export const VolunterForm = () => {
               backgroundImage: `url(${uri}${response.background_image})`,
             }}
           >
-            <div className="absolute top-0 left-0 right-0 bg-gradient-ministry w-full min-h-[481px] md:min-h-[581px] z-0"></div>
+            <div className="absolute top-0 left-0 right-0 bg-gradient-ministry w-full min-h-[648px] md:min-h-[581px] z-0"></div>
             <div
               className="container max-w-[1236px] m-auto  text-white bg-gradient-banner opacity-[100%] absolute top-0 left-0 right-0 flex 2md:pt-24
                             items-center z-10 xl:max-w-[1090px] 2lg:max-w-[900px] lg:max-w-[800px] 2md:max-w-[700px] md:max-w-[600px]"
