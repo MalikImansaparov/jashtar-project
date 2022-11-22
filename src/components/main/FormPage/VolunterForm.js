@@ -52,10 +52,10 @@ export const VolunterForm = () => {
                     <Sanitized html={response.desc_en} />
                   )}
                 </p>
-                <div className="flex justify-around items-center">
+                <div className="flex justify-around items-center wrapper flex-wrap xs:mt-4 container">
                   <p>{t('join')}</p>
                   <div
-                    className="w-[189px] h-[34px] flex justify-center items-center bg-orange rounded text-white text-[15px] font-medium cursor-pointer"
+                    className="lg:mt-4 w-[189px] h-[34px] flex justify-center items-center bg-orange rounded text-white text-[15px] font-medium cursor-pointer"
                     onClick={() => window.open(response.apply)}
                   >
                     {t('form')}
