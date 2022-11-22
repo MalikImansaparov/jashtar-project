@@ -62,7 +62,7 @@ const Menu = () => {
     const toggleMenu = () => { setOpenBurger(!openBurger)}
         return (
           <div className="relative mb-0 font-inter">
-            { openModal && (
+            {openModal && (
               <div className="bg-blue">
                 <div className="wrapper justify-between h-[78px] flex items-center font-inter">
                   <div
@@ -124,7 +124,7 @@ const Menu = () => {
                 </div>
               </div>
             )}
-              {openSearch && (
+            {openSearch && (
               <div className="w-full h-[78px] bg-blueLight z-10">
                 <div className="wrapper py-[22px] px-2">
                   <input
@@ -132,9 +132,7 @@ const Menu = () => {
                     autoFocus={true}
                     className="bg-blueLight border-none outline-none w-[98.5%] h-[24px] font-medium text-[15px] lg:w-[96.5%] 2md:w-[94.5%]"
                     placeholder={t('search')}
-                    onKeyDown={(e) =>
-                      e.key === 'Enter' && handleChange(e)
-                    }
+                    onKeyDown={(e) => e.key === 'Enter' && handleChange(e)}
                   />
                   <img
                     src={close}
@@ -203,7 +201,7 @@ const Menu = () => {
                         <Link to="/valuation" className="menu-list">
                           {t('valuation')}
                         </Link>
-                        <Link to="/management" className="menu-list">
+                        <Link to="/leadership" className="menu-list">
                           {t('leadship')}
                         </Link>
                         <Link to="/timeline" className="menu-list">
