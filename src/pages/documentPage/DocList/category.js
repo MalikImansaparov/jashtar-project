@@ -13,7 +13,7 @@ const CategoryList = () => {
     const {i18n ,t} = useTranslation();
 
     return (
-        <div className="flex">
+        <div className="flex max-w-[1440px] m-auto">
             <DocSidebar/>
             <div className="pl-[37px] min-h-screen mb-[62px] font-inter 3lg:pl-[17px] mt-[32px] 1md:pl-[7px] sm:pl-[5px] sm:pr-[5px]">
                 {response &&

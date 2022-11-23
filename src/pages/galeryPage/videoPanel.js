@@ -15,7 +15,7 @@ const VideoPanel = () => {
     const [response, setResponse] = useState([])
     const [pageCount, setpageCount] = useState(0);
     const {t, i18n} = useTranslation()
-    const limit = 6
+    const limit = 8
 
     const getData = async () => {
             const res = await fetch(

@@ -40,17 +40,17 @@ export const Contacts = () => {
                   <div className="flex items-center max-w-[70%] h-[232px] bg-[#3070B633] pl-14 mt-12 md:mt-6 xl:pl-6 xl:max-w-[90%] md:h-[52px]
                    md:bg-none md:mb-[30px] md:py-12 md:pl-3 m-auto">
                     {i18n.language === 'ky' && (
-                      <p className="font-semibold text-[18px] text-white leading-[23px] w-[65%] 3lg:w-[100%] 3xs:text-[14px]">
+                      <p className="font-normal text-[18px] text-white leading-[23px] w-[65%] 3lg:w-[100%] 3xs:text-[14px]">
                         {item.title_ky}
                       </p>
                     )}
                     {i18n.language === 'ru' && (
-                      <p className="font-semibold text-[18px] text-white leading-[23px] w-[65%] 3lg:w-[100%] 3xs:text-[14px]">
+                      <p className="font-normal text-[18px] text-white leading-[23px] w-[65%] 3lg:w-[100%] 3xs:text-[14px]">
                         {item.title_ru}
                       </p>
                     )}
                     {i18n.language === 'en' && (
-                      <p className="font-semibold text-[18px] text-white leading-[23px] w-[65%] 3lg:w-[100%] 3xs:text-[14px]">
+                      <p className="font-normal text-[18px] text-white leading-[23px] w-[65%] 3lg:w-[100%] 3xs:text-[14px]">
                         {item.title_en}
                       </p>
                     )}

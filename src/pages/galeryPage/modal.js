@@ -3,7 +3,7 @@ import React from "react";
 const MODAL_STYLES = {
     position: "absolute",
     zIndex: "9999",
-    top: "400px",
+    top: "60vh",
     left: "50%",
     bottom: "500px",
     transform: "translate(-50%, -50%)",

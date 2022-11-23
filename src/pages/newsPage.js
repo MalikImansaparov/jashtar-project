@@ -9,7 +9,6 @@ import {useTranslation} from "react-i18next";
 import {Sanitized} from "../components/general/sanitize";
 
 const NewsPage = () => {
-
     const {isLoading} = useFetch(base + newsUrl + `/news/src/jashtar/`);
     const [response, setResponse] = useState([])
     const [pageCount, setpageCount] = useState(0);

@@ -36,7 +36,7 @@ const InfoLeadership = () => {
 
     return (
       <div className="w-full relative pb-[63px]">
-        <div className="h-[310px] w-[32.7%] xl:w-[35%] 2lg:w-[38%] lg:w-[41%] 2md:w-[45%] 3md:w-[48%] 1md:hidden absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl"></div>
+        <div className="h-[310px] 3xl:w-[32.7%] xl:w-[35%] 2lg:w-[38%] lg:w-[41%] 2md:w-[45%] 3md:w-[48%] 1md:hidden absolute top-[190px] left-0 rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl"></div>
         <div className="wrapper">
           <div className="container mb-8 mt-16 sm:mt-8">
             <BreadCrumbs crumbs={crumbs} title={''} />

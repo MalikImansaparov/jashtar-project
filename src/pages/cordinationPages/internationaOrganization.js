@@ -118,7 +118,7 @@ export const InternationOrganization = () => {
                     className="flex items-center shadow-enroll py-[10px] px-[30px] my-4 align-middle rounded-[12px] w-full cursor-pointer hover:shadow-2xl sm:px-[10px]"
                     onClick={() => openModal(item.id)}
                   >
-                    <div className="flex justify-center items-center pr-[10px] mr-[12px] w-auto h-[80px] overflow-hidden xs:pr-0">
+                    <div className="flex justify-center items-center pr-[10px] mr-[12px] w-[200px] h-[80px] overflow-hidden xs:pr-0">
                       <img
                         src={uri + item.org_image}
                         alt="organization"

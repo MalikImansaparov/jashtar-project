@@ -24,7 +24,7 @@ const Valuation = () => {
 
     return (
       <div className="h-auto font-inter h-[100vh]">
-        <div className="wrapper ">
+        <div className="wrapper">
           <BreadCrumb />
         </div>
         {response &&
