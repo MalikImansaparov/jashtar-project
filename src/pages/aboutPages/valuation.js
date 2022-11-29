@@ -23,20 +23,20 @@ const Valuation = () => {
     }
 
     return (
-      <div className="h-auto font-inter h-[100vh]">
+      <div className="h-auto font-inter">
         <div className="wrapper">
           <BreadCrumb />
         </div>
         {response &&
           response.map((item) => (
             <div
-              className="flex max-w-[1236px] m-auto shadow-xl rounded px-8 py-4 bg-white"
+              className="flex max-w-[1236px] m-auto shadow-xl rounded px-8 py-4 bg-white mb-10 items-center"
               key={item.id}
             >
               {i18n.language === 'ky' && (
                 <div className="flex">
                   <div>
-                    <div className="m-auto max-w-[231px] max-h-[131px] overflow-hidden">
+                    <div className="m-auto max-w-[231px] max-h-[131px] overflow-hidden ">
                       <img
                         src={uri + item.image}
                         alt="values"
@@ -46,11 +46,11 @@ const Valuation = () => {
                     <p className="name mt-[10px] 2md:mt-1">
                       {item.full_name_ky}
                     </p>
-                    <p className="text-[11px] font-normal text-center px-[20px] 2md:px-0 sm:text-[10px]">
+                    <p className="text-[11px] font-normal text-center 2md:px-0 sm:text-[10px] max-w-[231px]">
                       {item.annotation_ky}
                     </p>
                   </div>
-                  <div className="ml-[32px] pt-[33px] 1sm:pt-[10px]">
+                  <div className="ml-[32px] pt-4 align-items:center 1sm:pt-[10px]">
                     <div className="flex max-w-[857px] justify-center mb-4 min-h-[88px]">
                       <img
                         src={left}
@@ -72,7 +72,7 @@ const Valuation = () => {
               {i18n.language === 'ru' && (
                 <div className="flex">
                   <div>
-                    <div className="m-auto max-w-[231px] max-h-[131px] overflow-hidden">
+                    <div className="m-auto max-w-[231px] max-h-[131px] overflow-hidden pt-4">
                       <img
                         src={uri + item.image}
                         alt="values"
@@ -108,7 +108,7 @@ const Valuation = () => {
               {i18n.language === 'en' && (
                 <div className="flex">
                   <div>
-                    <div className="m-auto max-w-[231px] max-h-[131px] overflow-hidden">
+                    <div className="m-auto max-w-[231px] max-h-[131px] overflow-hidden pt-4">
                       <img
                         src={uri + item.image}
                         alt="values"

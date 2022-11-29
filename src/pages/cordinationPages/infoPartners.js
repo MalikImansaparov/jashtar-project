@@ -49,7 +49,7 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                       {i18n.language === 'ky' && (
                         <>
                           <div
-                            className="float-left mr-[45px] w-[312px] h-auto md:w-[250px]
+                            className="float-left mr-[45px] w-[312px] max-h-[295px] md:w-[250px]
                        1sm:w-[150px] xs:ml-0 md:mr-[30px] rounded shadow-2xl flex mb-[15px]"
                           >
                             <img
@@ -73,7 +73,7 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                       {i18n.language === 'ru' && (
                         <>
                           <div
-                            className="float-left mr-[45px] w-[312px] h-auto md:w-[250px]
+                            className="float-left mr-[45px] w-[312px] max-h-[295px] md:w-[250px]
                        1sm:w-[150px] xs:ml-0 md:mr-[30px] rounded shadow-2xl flex mb-[15px]"
                           >
                             <img
@@ -97,7 +97,7 @@ const InfoPartners = ({openRegisterModal, setOpenRegisterModal}) => {
                       {i18n.language === 'en' && (
                         <>
                           <div
-                            className="float-left mr-[45px] w-[312px] h-auto md:w-[250px]
+                            className="float-left mr-[45px] w-[312px] max-h-[295px] md:w-[250px]
                        1sm:w-[150px] xs:ml-0 md:mr-[30px] rounded shadow-2xl flex mb-[15px]"
                           >
                             <img
