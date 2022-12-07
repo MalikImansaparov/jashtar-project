@@ -3,7 +3,7 @@ export const project = [
   { id: 1, title: 'Bilim', url: 'https://bilim.jashtar.info/' },
   { id: 2, title: 'Insan', url: 'https://insan.jashtar.info/' },
   { id: 3, title: 'Elbook', url: 'https://elbook.jashtar.info/' },
-  { id: 4, title: 'Volunteer', url: '/' },
+  { id: 4, title: 'Volunteer', url: 'https://volunteer.jashtar.info/' },
 ];
 
 export const about = [

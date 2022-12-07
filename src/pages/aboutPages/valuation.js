@@ -36,7 +36,7 @@ const Valuation = () => {
               {i18n.language === 'ky' && (
                 <div className="flex">
                   <div>
-                    <div className="m-auto max-w-[231px] max-h-[131px] overflow-hidden ">
+                    <div className="m-auto w-[230px] h-[130px] overflow-hidden ">
                       <img
                         src={uri + item.image}
                         alt="values"

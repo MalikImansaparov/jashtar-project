@@ -190,6 +190,7 @@ html, body {
     list-style: none;
     outline: none;
 }
+
 .pagination > .active > a {
     background-color: #F2F6F9;
     color: black;
@@ -231,6 +232,58 @@ html, body {
 }
 .pagination > li:last-child > a,
 .pagination > li:last-child > span {
+    color: gray;
+}
+
+
+
+.paginGallery {
+    display: flex;
+    list-style: none;
+    outline: none;
+}
+
+.paginGallery > .active > a {
+    background-color: #F2F6F9;
+    color: black;
+}
+
+.paginGallery > li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 38px;
+    margin: 4px;
+    border-radius: 4px;
+    background-color: #F2F6F9;
+}
+
+.paginGallery > li > a {
+    margin: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+.paginGallery > .active > a, .paginGallery > .active > span, .paginGallery > .active > a:hover, .paginGallery > .active > span:hover, .paginGallery > .active > a:focus, .paginGallery > .active > span:focus{
+    border-color: blue;
+    outline: none ;
+}
+
+.paginGallery > li > a, .paginGallery > li > span{
+    color: blue;
+}
+
+.paginGallery > li:first-child > a, .paginGallery > li:first-child > span, .paginGallery > li:last-child > a, .paginGallery > li:last-child > span{
+    border-radius: unset
+}
+
+.paginGallery > li:first-child > a,
+.paginGallery > li:first-child > span {
+    color: gray;
+}
+.paginGallery> li:last-child > a,
+.paginGallery > li:last-child > span {
     color: gray;
 }
 

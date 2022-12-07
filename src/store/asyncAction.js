@@ -8,13 +8,14 @@ const csrfToken = getCookie('csrftoken');
 
 export const asyncSearch = createAsyncThunk(
   'search/fetchMaterial',
-  async (value, { rejectWithValue, dispatch }) => {
+  async ({ val, val2 }, { rejectWithValue, dispatch }) => {
     try {
       const response = await axios({
         method: 'post',
         url: base + searchUrl + '/search/',
         data: {
-          body: `${value}`,
+          body: `${val}`,
+          bdy: `${val2}`,
         },
         headers: {
           'Content-Type': 'application/json',

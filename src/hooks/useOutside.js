@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import ReactDOM from "react-dom";
 
 export const useClickOutside = handler => {
+  document.body.style.overflow = '';
     const ref = useRef();
 
     useEffect(() => {

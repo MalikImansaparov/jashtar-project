@@ -1,18 +1,18 @@
 import React from "react";
 
 const MODAL_STYLES = {
-    position: "absolute",
-    zIndex: "1000",
-    top: "60vh",
-    left: "50%",
-    bottom: "200px",
-    transform: "translate(-50%, -50%)",
-    paddingBottom: '30px',
-    height: '100%',
-    background: "#fff",
-    overflow: "auto",
-    borderRadius: "4px",
-    outline: "none",
+  position: 'absolute',
+  zIndex: '1000',
+  top: '60vh',
+  left: '50%',
+  bottom: '200px',
+  transform: 'translate(-50%, -50%)',
+  paddingBottom: '0px',
+  height: '100%',
+  background: '#fff',
+  overflow: 'auto',
+  borderRadius: '4px',
+  outline: 'none',
 };
 const OVERLAY_STYLE = {
     position: "fixed",

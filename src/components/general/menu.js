@@ -54,9 +54,9 @@ const Menu = () => {
 
     const handleChange = (e) => {
         const val = e.target.value
-            e.preventDefault()
-            navigate('/search')
-           dispatch(asyncSearch(val))
+        e.preventDefault();
+        navigate('/search');
+        dispatch(asyncSearch({ val: 2, val2: 2 }));
     }
 
     const toggleMenu = () => { setOpenBurger(!openBurger)}

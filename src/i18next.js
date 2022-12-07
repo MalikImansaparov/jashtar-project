@@ -9,37 +9,38 @@ import {initReactI18next, useTranslation} from "react-i18next";
 const availableLanguages = ["en", "ru", "ky"];
 
 export const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
+  i18n.changeLanguage(lng);
+  sessionStorage.setItem('lng', lng);
 };
 
 i18n
-    .use(XHR)
-    .use(LanguageDetector)
-    .use(initReactI18next)
-    .init({
-        lng: 'ky',
-        detection: {
-        debug: false,
-            checkWhitelist: true
-        },
-        whitelist: availableLanguages,
-        interpolation: {
-            escapeValue: false
-        },
+  .use(XHR)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    lng: sessionStorage.getItem('lng') || 'ky',
+    detection: {
+      debug: false,
+      checkWhitelist: true,
+    },
+    whitelist: availableLanguages,
+    interpolation: {
+      escapeValue: false,
+    },
 
-        resources: {
-            ky: {
-                translations: translationKG
-            },
-            en: {
-                translations: translationEng
-            },
-            ru: {
-                translations: translationRu
-            },
-        },
-        ns: ["translations"],
-        defaultNS: "translations"
-    });
+    resources: {
+      ky: {
+        translations: translationKG,
+      },
+      en: {
+        translations: translationEng,
+      },
+      ru: {
+        translations: translationRu,
+      },
+    },
+    ns: ['translations'],
+    defaultNS: 'translations',
+  });
 
 export default i18n;
