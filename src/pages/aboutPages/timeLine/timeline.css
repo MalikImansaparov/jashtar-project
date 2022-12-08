@@ -10,8 +10,8 @@
 }
 
 .react-tabs__tab {
-    padding-top: 61px;
-    padding-bottom: 61px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 267px;
     list-style: none;
     cursor: pointer;
@@ -23,8 +23,8 @@
     width: 326px;
     position: relative;
     left: -59px;
-    padding-top: 61px;
-    padding-bottom: 61px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 60px;
     background: rgba(48, 112, 182, 0.2);
     mix-blend-mode: darken;

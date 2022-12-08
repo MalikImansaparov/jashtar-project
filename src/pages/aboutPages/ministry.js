@@ -28,7 +28,9 @@ const Ministry = () => {
             <div
               className="w-full h-[100vh] relative z-0 pb-8 font-inter xs:h-[664px]"
               key={item.id}
-              style={{ backgroundImage: `url(${uri}${item.background_image})` }}
+              style={{ backgroundImage: `url(${uri}${item.background_image})`,
+              backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover' }}
             >
               <div className="absolute top-0 left-0 bg-gradient-banner w-full h-[624px] xs:h-[664px] z-0"></div>
               <div

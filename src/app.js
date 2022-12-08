@@ -22,8 +22,8 @@ function App() {
             />
           ))}
         </Routes>
-        <div className="box-border h-[100%] pb-[80px]"></div>
-        <div className="h-[80px] mt-[-80px] ">
+        <div className="box-border h-[83px] pb-[80px]"></div>
+        <div className="h-[83px] mt-[-80px] ">
           <Footer />
         </div>
       </div>
