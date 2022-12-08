@@ -66,7 +66,7 @@ const EventsPage = () => {
         <div className="container">
           <BreadCrumb />
         </div>
-        <div className="flex justify-around flex-wrap text-justify">
+        <div className="flex justify-around flex-wrap">
           {response.results &&
             response.results.map((item) => (
               <Link
@@ -117,7 +117,7 @@ const EventsPage = () => {
                       </p>
                     </>
                   )}
-                  <div className="w-[324px] my-4 text-sm font-medium">
+                  <div className="w-[324px] h-[40px] overflow-hidden my-4 text-sm font-medium">
                     <p className="text-grey flex">
                       <img
                         src={dots}
@@ -135,30 +135,39 @@ const EventsPage = () => {
                         className="mr-[10px] w-[8px] h-[8px] mt-1.5"
                         alt="dots"
                       />
-                      {t('location')}
+
                       {i18n.language === 'ky' && (
-                        <span className="text-black">
-                          &nbsp;
-                          {item.location_ky.length > 20
-                            ? item.location_ky.slice(0, 20) + '...'
-                            : item.location_ky}
-                        </span>
+                        <>
+                          <div>{t('location')}</div>
+                          <span className="text-black">
+                            &nbsp;
+                            {item.location_ky.length > 20
+                              ? item.location_ky.slice(0, 20) + '...'
+                              : item.location_ky}
+                          </span>
+                        </>
                       )}
                       {i18n.language === 'ru' && (
-                        <span className="text-black">
-                          &nbsp;
-                          {item.location_ru.length > 20
-                            ? item.location_ru.slice(0, 20) + '...'
-                            : item.location_ru}
-                        </span>
+                        <>
+                          <div className="w-[43%]">{t('location')}</div>
+                          <span className="text-black">
+                            &nbsp;
+                            {item.location_ru.length > 20
+                              ? item.location_ru.slice(0, 20) + '...'
+                              : item.location_ru}
+                          </span>
+                        </>
                       )}
                       {i18n.language === 'en' && (
-                        <span className="text-black">
-                          &nbsp;
-                          {item.location_en.length > 20
-                            ? item.location_en.slice(0, 20) + '...'
-                            : item.location_en}
-                        </span>
+                        <>
+                          <div>{t('location')}</div>
+                          <span className="text-black">
+                            &nbsp;
+                            {item.location_en.length > 20
+                              ? item.location_en.slice(0, 20) + '...'
+                              : item.location_en}
+                          </span>
+                        </>
                       )}
                     </p>
                   </div>
@@ -167,23 +176,23 @@ const EventsPage = () => {
             ))}
         </div>
         <div className="paginate">
-            <ReactPaginate
-              nextLabel="❯"
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={3}
-              marginPagesDisplayed={2}
-              pageCount={pageCount}
-              previousLabel="❮"
-              pageClassName="page-item"
-              pageLinkClassName="page-link"
-              previousClassName="page-item"
-              previousLinkClassName="page-link"
-              nextClassName="page-item"
-              nextLinkClassName="page-link"
-              containerClassName="pagination"
-              activeClassName="active"
-              renderOnZeroPageCount={null}
-            />
+          <ReactPaginate
+            nextLabel="❯"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={3}
+            marginPagesDisplayed={2}
+            pageCount={pageCount}
+            previousLabel="❮"
+            pageClassName="page-item"
+            pageLinkClassName="page-link"
+            previousClassName="page-item"
+            previousLinkClassName="page-link"
+            nextClassName="page-item"
+            nextLinkClassName="page-link"
+            containerClassName="pagination"
+            activeClassName="active"
+            renderOnZeroPageCount={null}
+          />
         </div>
       </div>
     );

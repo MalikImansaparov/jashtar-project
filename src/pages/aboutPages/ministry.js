@@ -26,7 +26,7 @@ const Ministry = () => {
         {response &&
           response.map((item) => (
             <div
-              className="w-full h-[604px] relative z-0 pb-8 font-inter xs:h-[664px]"
+              className="w-full h-[100vh] relative z-0 pb-8 font-inter xs:h-[664px]"
               key={item.id}
               style={{ backgroundImage: `url(${uri}${item.background_image})` }}
             >

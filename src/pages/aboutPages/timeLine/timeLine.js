@@ -11,6 +11,7 @@ import { Sanitized } from '../../../components/general/sanitize';
 const TimeLine = () => {
   const { isLoading, response } = useFetch(base + aboutUrl + '/chronology/');
   const { t, i18n } = useTranslation();
+  window.scrollTo(0, 0);
 
   if (isLoading) {
     return (
@@ -28,17 +29,18 @@ const TimeLine = () => {
       <div className="max-w-[1236px] m-auto">
         <Tabs>
           <TabList>
-            {response?.map((item) => (
-              <Tab key={item.id}>
-                <p className="xl:pl-10">
-                  {item.start_date.split('-').reverse().join('.')} -{' '}
-                  {item.finish_date.split('-').reverse().join('.')}
-                </p>
-              </Tab>
-            ))}
+            {response &&
+              response.map((item) => (
+                <Tab key={item.id}>
+                  <p className="xl:pl-10">
+                    {item.start_date.split('-').reverse().join('.')} -{' '}
+                    {item.finish_date.split('-').reverse().join('.')}
+                  </p>
+                </Tab>
+              ))}
           </TabList>
           {response &&
-            response.reverse().map((item) => (
+            response.map((item) => (
               <TabPanel key={item.id}>
                 <div className="max-w-[975px] ">
                   <div className="flex flex-wrap justify-around ">

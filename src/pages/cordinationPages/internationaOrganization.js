@@ -36,7 +36,7 @@ export const InternationOrganization = () => {
               <BreadCrumb />
             </div>
             {i18n.language === 'ky' && (
-              <div className="text-justify ">
+              <div className="text-justify">
                 <div className="text-blue text-base font-semibold mb-8 ">
                   {item.title_ky}
                 </div>
@@ -77,13 +77,13 @@ export const InternationOrganization = () => {
         {response &&
           response.map((i) => (
             <div
-              className="flex flex-wrap w-[760px] md:w-[378px] xs:w-[340px]"
+              className="flex flex-wrap w-[780px] md:w-[378px] xs:w-[340px]"
               key={i.id}
             >
               {i.intorganizationpart.map((item) => (
                 <div
                   key={item.id}
-                  className="flex w-[371px] shadow-sm p-3 rounded-[12px] mb-4 2xs:w-[350px] xs:p-1"
+                  className="flex w-[371px] mr-[15px] shadow-sm p-3 rounded-[12px] mb-4 2xs:w-[350px] xs:p-1"
                 >
                   <div className="h-[62px] w-[62px] overflow-hidden z-10 m-auto rounded-[50%] my-[14px] xs:my-[8px]">
                     <img
@@ -92,14 +92,36 @@ export const InternationOrganization = () => {
                       className="h-auto w-[100%] mr-4"
                     />
                   </div>
-                  <div className="max-w-[243px] 2xs:max-w-[220px] m-auto">
-                    <p className="text-[12px] mb-1 font-normal text-blue">
-                      {item.full_name_ky}
-                    </p>
-                    <p className="text-[11px] font-light mr-0">
-                      {item.annotation_ky}
-                    </p>
-                  </div>
+                  {i18n.language === 'ky' && (
+                    <div className="max-w-[243px] 2xs:max-w-[220px] m-auto">
+                      <p className="text-[12px] mb-1 font-normal text-blue">
+                        {item.full_name_ky}
+                      </p>
+                      <p className="text-[11px] font-light mr-0">
+                        {item.annotation_ky}
+                      </p>
+                    </div>
+                  )}
+                  {i18n.language === 'ru' && (
+                    <div className="max-w-[243px] 2xs:max-w-[220px] m-auto">
+                      <p className="text-[12px] mb-1 font-normal text-blue">
+                        {item.full_name_ru}
+                      </p>
+                      <p className="text-[11px] font-light mr-0">
+                        {item.annotation_ru}
+                      </p>
+                    </div>
+                  )}
+                  {i18n.language === 'en' && (
+                    <div className="max-w-[243px] 2xs:max-w-[220px] m-auto">
+                      <p className="text-[12px] mb-1 font-normal text-blue">
+                        {item.full_name_en}
+                      </p>
+                      <p className="text-[11px] font-light mr-0">
+                        {item.annotation_en}
+                      </p>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
