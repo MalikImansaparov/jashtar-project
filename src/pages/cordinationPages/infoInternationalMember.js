@@ -27,7 +27,6 @@ const InfoInternationalProject = ({openRegisterModal, setOpenRegisterModal }) =>
           <div
             className="w-[1236px] h-auto bg-white rounded-[12px] p-[37px] font-inter xl:max-w-[1090px] 2lg:max-w-[900px]
                 2md:max-w-[750px] md:max-w-[600px] 1sm:max-w-[500px] 1xs:max-w-[450px] xs:max-w-[380px]"
-            ref={ref}
           >
             {isLoading && (
               <div role="status" className="flex justify-center my-28 pb-24">
