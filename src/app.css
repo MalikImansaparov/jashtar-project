@@ -55,7 +55,7 @@ btn-blue:hover {
 }
 
 .button {
-    @apply m-auto w-[189px] h-[34px] flex justify-center items-center bg-orange rounded text-white mt-[20px] mb-2 text-[15px] font-medium xl:mt-[12px] lg:text-sm lg:font-normal lg:w-[169px] lg:mt-[4px] lg:h-[28px] md:mt-[12px] md:text-[14px];
+    @apply m-auto w-[189px] h-[34px] flex justify-center items-center bg-orange rounded text-white mt-[5px] mb-[5px] text-[15px] font-medium xl:mt-[12px] lg:text-sm lg:font-normal lg:w-[169px] lg:mt-[4px] lg:h-[28px] md:mt-[12px] md:text-[14px];
 }
 
 .btn {

@@ -60,11 +60,11 @@ const NewsPage = () => {
     }
 
     return (
-      <div className="wrapper font-inter min-h-[100vh]">
-        <div className="container">
+      <div className=" font-inter min-h-[100vh">
+        <div className="container wrapper">
           <BreadCrumb />
         </div>
-        <div className="flex justify-center flex-wrap">
+        <div className="wrapper flex justify-between flex-wrap">
           {response.results &&
             response.results.map((item) => (
               <Link
@@ -127,24 +127,24 @@ const NewsPage = () => {
               </Link>
             ))}
         </div>
-        <div className="paginate">
-            <ReactPaginate
-              nextLabel="❯"
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={3}
-              marginPagesDisplayed={2}
-              pageCount={pageCount}
-              previousLabel="❮"
-              pageClassName="page-item"
-              pageLinkClassName="page-link"
-              previousClassName="page-item"
-              previousLinkClassName="page-link"
-              nextClassName="page-item"
-              nextLinkClassName="page-link"
-              containerClassName="pagination"
-              activeClassName="active"
-              renderOnZeroPageCount={null}
-            />
+        <div className="wrapper paginate">
+          <ReactPaginate
+            nextLabel="❯"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={3}
+            marginPagesDisplayed={2}
+            pageCount={pageCount}
+            previousLabel="❮"
+            pageClassName="page-item"
+            pageLinkClassName="page-link"
+            previousClassName="page-item"
+            previousLinkClassName="page-link"
+            nextClassName="page-item"
+            nextLinkClassName="page-link"
+            containerClassName="pagination"
+            activeClassName="active"
+            renderOnZeroPageCount={null}
+          />
         </div>
       </div>
     );

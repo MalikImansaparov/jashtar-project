@@ -35,12 +35,12 @@ const Volunter = () => {
                     alt="icon"
                     className="w-[60px] h-[60px] m-auto lg:w-[48px] lg:h-[45px]"
                   />
-                  <p className="text-[22px] font-semibold mb-1 xl:mb-1 text-[20px] lg:text-[18px] md:text-[14px]">
+                  <p className="text-[22px] font-semibold  xl:mb-1 text-[20px] lg:text-[18px] md:text-[14px]">
                     {item.title_ky}
                   </p>
                   <div
                     className="flex justify-center font-normal text-base max-w-[422px] leading-5 text-grey lg:text-[14px]
-                                  2md:text-[14px] md:text-[12px] md:leading-3 md:mx-0.5"
+                                  2md:text-[14px] md:text-[12px] md:leading-3 md:mx-0.5 h-[100px] overflow-hidden"
                   >
                     <Sanitized html={item.desc_ky} />
                   </div>
@@ -107,12 +107,12 @@ const Volunter = () => {
                     alt="icon"
                     className="w-[60px] h-[60px] m-auto lg:w-[48px] lg:h-[45px]"
                   />
-                  <p className="text-[22px] font-semibold mb-1 xl:mb-1 text-[20px] lg:text-[18px] md:text-[14px]">
+                  <p className="text-[22px] font-semibold  xl:mb-1 text-[20px] lg:text-[18px] md:text-[14px]">
                     {item.title_ru}
                   </p>
                   <div
                     className="flex justify-center font-normal text-base max-w-[422px] leading-5 text-grey lg:text-[14px]
-                                  2md:text-[14px] md:text-[12px] md:leading-3 md:mx-0.5"
+                                  2md:text-[14px] md:text-[12px] md:leading-3 md:mx-0.5 h-[100px] overflow-hidden"
                   >
                     <Sanitized html={item.desc_ru} />
                   </div>
@@ -184,7 +184,7 @@ const Volunter = () => {
                   </p>
                   <div
                     className="flex justify-center font-normal text-base max-w-[422px] leading-5 text-grey lg:text-[14px]
-                                  2md:text-[14px] md:text-[12px] md:leading-3 md:mx-0.5"
+                                  2md:text-[14px] md:text-[12px] md:leading-3 md:mx-0.5 h-[100px] overflow-hidden"
                   >
                     <Sanitized html={item.desc_en} />
                   </div>

@@ -62,11 +62,11 @@ const EventsPage = () => {
     }
 
     return (
-      <div className="wrapper font-inter min-h-[100vh]">
-        <div className="container">
+      <div className=" font-inter min-h-[100vh]">
+        <div className="container wrapper">
           <BreadCrumb />
         </div>
-        <div className="flex justify-around flex-wrap">
+        <div className="flex justify-around flex-wrap wrapper">
           {response.results &&
             response.results.map((item) => (
               <Link
@@ -125,7 +125,7 @@ const EventsPage = () => {
                         alt="dots"
                       />
                       <span>{t('date')}</span>
-                      <span className="text-black ">
+                      <span className="text-black">
                         &nbsp;{item.event_date.split('-').reverse().join('-')}
                       </span>
                     </p>
@@ -175,7 +175,7 @@ const EventsPage = () => {
               </Link>
             ))}
         </div>
-        <div className="paginate">
+        <div className="paginate wrapper">
           <ReactPaginate
             nextLabel="❯"
             onPageChange={handlePageClick}

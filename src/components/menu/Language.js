@@ -16,25 +16,25 @@ export const Language = () => {
     }
 
     return (
-        <div className="group relative">
+      <div className="group relative">
         <button className="flex text-white relative" onClick={toggleModal}>
-            <img src={lang} className='pt-2 mr-[7px] relative' alt='lang'/>
-            <span className="text-sm font-normal">{t("lang")}</span>
+          <img src={lang} className="pt-3 mr-[7px] relative" alt="lang" />
+          <span className="text-sm font-normal pt-1">{t('lang')}</span>
         </button>
-            { openModal &&
-                <ul className="absolute z-10 cursor-pointer">
-                    <li className="btn-blue mt-[28px]" onClick={() => onChange("ky")}>
-                        <>Кыргызча</>
-                    </li>
-                    <li className="btn-blue" onClick={() => onChange("ru")}>
-                        <>Русский</>
-                    </li>
-                    <li className="btn-blue" onClick={() => onChange("en")}>
-                        <>English</>
-                    </li>
-                </ul>
-            }
-        </div>
+        {openModal && (
+          <ul className="absolute z-10 cursor-pointer">
+            <li className="btn-blue mt-[28px]" onClick={() => onChange('ky')}>
+              <>Кыргызча</>
+            </li>
+            <li className="btn-blue" onClick={() => onChange('ru')}>
+              <>Русский</>
+            </li>
+            <li className="btn-blue" onClick={() => onChange('en')}>
+              <>English</>
+            </li>
+          </ul>
+        )}
+      </div>
     );
 };
 

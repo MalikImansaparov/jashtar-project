@@ -30,7 +30,7 @@ export const UniversitySoviet = () => {
                 <BreadCrumb />
               </div>
               {i18n.language === 'ky' && (
-                <div className=" text-justify ">
+                <div className=" text-justify">
                   <div className="text-blue text-base font-semibold mb-8 ">
                     {item.title_ky}
                   </div>
@@ -132,6 +132,7 @@ export const UniversitySoviet = () => {
                   {i.universitymemb.map((item) => (
                     <div
                       key={item.id}
+                      onClick={() => window.open(item.url)}
                       className="flex items-center shadow-enroll p-[10px] w-full my-4 align-middle rounded-[12px] cursor-pointer hover:shadow-2xl sm:px-[10px] "
                     >
                       <div className="flex justify-center items-center mr-[12px] w-[54px] h-[64px] overflow-hidden xs:pr-0">

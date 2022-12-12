@@ -50,13 +50,13 @@ const PhotoPanel = () => {
     };
 
     return (
-      <div className="wrapper">
+      <div className="">
         <div className="flex flex-wrap mt-8 2lg:justify-center">
           {response.results &&
             response.results.map((item) => (
               <div
                 key={item.id}
-                className="relative top-0 left-0 right-0 bottom-0 max-w-[379px] xl:max-w-[329px] md:max-w-[379px] xs:max-w-[329px] cursor-pointer mb-4 mx-4"
+                className="relative top-0 left-0 right-0 bottom-0 max-w-[379px] xl:max-w-[329px] md:max-w-[379px] xs:max-w-[329px] cursor-pointer mb-4 mx-3"
                 onClick={() => openModal(item.id)}
               >
                 <div className="w-[100%] inline-block relative">
