@@ -41,7 +41,7 @@ const GalleryInfo = ({openRegisterModal, setOpenRegisterModal}) => {
             <div className="flex justify-end mt-[37px] mb-[27px] cursor-pointer">
               <img src={close} alt="close icon" onClick={onClose} />
             </div>
-            <div ref={ref}>
+            <div>
               {response && (
                 <div>
                   <Swiper

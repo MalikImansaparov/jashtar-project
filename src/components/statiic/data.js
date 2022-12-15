@@ -4,6 +4,7 @@ export const project = [
   { id: 2, title: 'Insan', url: 'https://insan.jashtar.info/' },
   { id: 3, title: 'Elbook', url: 'https://elbook.jashtar.info/' },
   { id: 4, title: 'Volunteer', url: 'https://volunteer.jashtar.info/' },
+  { id: 5, title: 'E-Jashtar', url: 'http://e-jashtar.kg/' },
 ];
 
 export const about = [

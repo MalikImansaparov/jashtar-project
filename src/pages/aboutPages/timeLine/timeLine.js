@@ -129,17 +129,17 @@ const TimeLine = () => {
                     ))}
                   </div>
                   {i18n.language === 'ky' && (
-                    <div className="text-justify font-inter lg:text-[14px] mr-[20px] 1xs:text-[12px]">
+                    <div className="text-justify font-inter lg:text-[14px] mr-[20px] 1xs:text-[12px] max-w-[975px]">
                       <Sanitized html={item.desc_ky} />
                     </div>
                   )}
                   {i18n.language === 'ru' && (
-                    <div className="text-justify font-inter lg:text-[14px] mr-[20px] 1xs:text-[12px]">
+                    <div className="text-justify font-inter lg:text-[14px] mr-[20px] 1xs:text-[12px] max-w-[975px]">
                       <Sanitized html={item.desc_ru} />
                     </div>
                   )}
                   {i18n.language === 'en' && (
-                    <div className="text-justify font-inter lg:text-[14px] mr-[20px] 1xs:text-[12px]">
+                    <div className="text-justify font-inter lg:text-[14px] mr-[20px] 1xs:text-[12px] max-w-[975px]">
                       <Sanitized html={item.desc_en} />
                     </div>
                   )}
