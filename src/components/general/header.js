@@ -32,7 +32,7 @@ const Header = () => {
             {project.map((item) => (
               <div
                 key={item.id}
-                className="text-sm font-bold mx-[16px] underline cursor-pointer xl:mx-[14px] lg:mx-[8px]"
+                className="text-sm font-bold mx-[8px] underline cursor-pointer"
                 onClick={() => window.open(item.url, '_blank')}
               >
                 {item.title}

@@ -133,7 +133,7 @@ export const YoungCouncil = () => {
                   {i.yorganizationmemb.map((item) => (
                     <div
                       key={item.id}
-                      className="flex items-center shadow-enroll py-[10px] px-[30px] my-4 align-middle rounded-[12px] w-full cursor-pointer hover:shadow-2xl sm:px-[10px]"
+                      className="flex items-center shadow-enroll py-[10px] px-[30px] my-4 align-middle rounded-[12px] w-full sm:px-[10px]"
                     >
                       <img
                         src={emblem}
