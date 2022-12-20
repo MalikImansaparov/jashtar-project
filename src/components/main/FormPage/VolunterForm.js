@@ -30,6 +30,9 @@ export const VolunterForm = () => {
             key={response.id}
             style={{
               backgroundImage: `url(${uri}${response.background_image})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
             }}
           >
             <div className="absolute top-0 left-0 right-0 bg-gradient-ministry w-full min-h-[648px] xs:min-h-[664px] z-0"></div>
