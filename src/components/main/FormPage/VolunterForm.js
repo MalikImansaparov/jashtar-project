@@ -26,7 +26,7 @@ export const VolunterForm = () => {
       <>
         {response && (
           <div
-            className="w-full h-[604px] relative z-0 pb-8 font-inter xs:h-[664px]"
+            className="wrapper h-[604px] relative z-0 pb-8 font-inter xs:h-[664px]"
             key={response.id}
             style={{
               backgroundImage: `url(${uri}${response.background_image})`,
