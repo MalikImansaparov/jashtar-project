@@ -29,7 +29,7 @@ const Projects = () => {
     }
 
     return (
-      <div className="w-full min-h-[70vh] font-inter">
+      <div className="w-full font-inter min-h-[80vh]">
         <div className="wrapper container max-w-[1196px] mb-0">
           <BreadCrumb />
         </div>
