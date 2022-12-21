@@ -23,7 +23,7 @@ export const JashtarProject = () => {
     }
 
   return (
-    <div className="w-full relative min-h-[80vh] font-inter text-justify">
+    <div className="w-full relative font-inter text-justify min-h-[80vh]">
       <div className="h-[210px] max-w-[47%] absolute top-[140px] left-[-100px] rounded bg-[#3070B633] bg-gradient-jashtar shadow-2xl"></div>
       <div className="wrapper text-[16px] font-normal leading-5">
         <div>
